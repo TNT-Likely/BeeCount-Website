@@ -1,0 +1,34 @@
+{
+  "link.title.文档": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=文档 in the footer"
+  },
+  "link.title.社区": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=社区 in the footer"
+  },
+  "link.title.下载": {
+    "message": "Download",
+    "description": "The title of the footer links column with title=下载 in the footer"
+  },
+  "link.item.label.快速开始": {
+    "message": "Quick Start",
+    "description": "The label of footer link with label=快速开始 linking to /docs/getting-started"
+  },
+  "link.item.label.功能介绍": {
+    "message": "Features",
+    "description": "The label of footer link with label=功能介绍 linking to /docs/features"
+  },
+  "link.item.label.App Store": {
+    "message": "App Store",
+    "description": "The label of footer link with label=App Store"
+  },
+  "link.item.label.TestFlight": {
+    "message": "TestFlight",
+    "description": "The label of footer link with label=TestFlight"
+  },
+  "link.item.label.Android APK": {
+    "message": "Android APK",
+    "description": "The label of footer link with label=Android APK"
+  }
+}

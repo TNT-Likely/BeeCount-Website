@@ -1,0 +1,218 @@
+{
+  "homepage.title": {
+    "message": "BeeCount",
+    "description": "The homepage title"
+  },
+  "homepage.tagline": {
+    "message": "Simple, Secure, and Private Personal Finance Tracker",
+    "description": "The homepage tagline"
+  },
+  "homepage.getStarted": {
+    "message": "Get Started",
+    "description": "The get started button text"
+  },
+  "homepage.hero.title": {
+    "message": "BeeCount",
+    "description": "Hero section title"
+  },
+  "homepage.hero.slogan": {
+    "message": "Your Data, Your Control - Open Source Finance Tracker",
+    "description": "Hero section slogan"
+  },
+  "homepage.hero.scrollHint": {
+    "message": "Scroll down to learn more",
+    "description": "Scroll hint text"
+  },
+  "homepage.hero.preview.home": {
+    "message": "Home",
+    "description": "Home preview alt text"
+  },
+  "homepage.hero.preview.homeDark": {
+    "message": "Home Dark Mode",
+    "description": "Home dark mode preview alt text"
+  },
+  "homepage.features.title": {
+    "message": "Features",
+    "description": "Features section title"
+  },
+  "homepage.features.subtitle": {
+    "message": "A personal finance tool designed for your needs",
+    "description": "Features section subtitle"
+  },
+  "homepage.features.ai.title": {
+    "message": "AI Smart Tracking",
+    "description": "AI feature title"
+  },
+  "homepage.features.ai.desc": {
+    "message": "Voice, image, and chat recording\nSmart amount and category recognition",
+    "description": "AI feature description"
+  },
+  "homepage.features.privacy.title": {
+    "message": "Privacy First",
+    "description": "Privacy feature title"
+  },
+  "homepage.features.privacy.desc": {
+    "message": "Local data storage\nFull control over your data",
+    "description": "Privacy feature description"
+  },
+  "homepage.features.sync.title": {
+    "message": "Multi-Device Sync",
+    "description": "Sync feature title"
+  },
+  "homepage.features.sync.desc": {
+    "message": "iCloud / WebDAV / S3\nSelf-hosted server support",
+    "description": "Sync feature description"
+  },
+  "homepage.features.stats.title": {
+    "message": "Analytics",
+    "description": "Statistics feature title"
+  },
+  "homepage.features.stats.desc": {
+    "message": "Income & expense trends\nCategory breakdown at a glance",
+    "description": "Statistics feature description"
+  },
+  "homepage.features.ledger.title": {
+    "message": "Multiple Ledgers",
+    "description": "Ledger feature title"
+  },
+  "homepage.features.ledger.desc": {
+    "message": "Daily, travel, projects\nIndependent management for each",
+    "description": "Ledger feature description"
+  },
+  "homepage.features.budget.title": {
+    "message": "Tags & Budgets",
+    "description": "Budget feature title"
+  },
+  "homepage.features.budget.desc": {
+    "message": "Flexible tag categories\nBudget alerts for spending control",
+    "description": "Budget feature description"
+  },
+  "homepage.features.recurring.title": {
+    "message": "Recurring Entries",
+    "description": "Recurring feature title"
+  },
+  "homepage.features.recurring.desc": {
+    "message": "Auto-record fixed expenses\nNever miss rent or utilities",
+    "description": "Recurring feature description"
+  },
+  "homepage.features.auto.title": {
+    "message": "Auto Tracking",
+    "description": "Auto tracking feature title"
+  },
+  "homepage.features.auto.desc": {
+    "message": "iOS Shortcuts\nAndroid screenshot recognition",
+    "description": "Auto tracking feature description"
+  },
+  "homepage.features.account.title": {
+    "message": "Account Management",
+    "description": "Account feature title"
+  },
+  "homepage.features.account.desc": {
+    "message": "Multi-account balance tracking\nAuto-balance transfers",
+    "description": "Account feature description"
+  },
+  "homepage.screenshots.title": {
+    "message": "App Preview",
+    "description": "Screenshots section title"
+  },
+  "homepage.screenshots.subtitle": {
+    "message": "Beautifully designed interface with light and dark mode",
+    "description": "Screenshots section subtitle"
+  },
+  "homepage.screenshots.light": {
+    "message": "Light Mode",
+    "description": "Light mode tab title"
+  },
+  "homepage.screenshots.dark": {
+    "message": "Dark Mode",
+    "description": "Dark mode tab title"
+  },
+  "homepage.screenshots.alt.home": {
+    "message": "Home",
+    "description": "Home screenshot alt"
+  },
+  "homepage.screenshots.alt.stats": {
+    "message": "Statistics",
+    "description": "Statistics screenshot alt"
+  },
+  "homepage.screenshots.alt.discover": {
+    "message": "Discover",
+    "description": "Discover screenshot alt"
+  },
+  "homepage.screenshots.alt.record": {
+    "message": "Record",
+    "description": "Record screenshot alt"
+  },
+  "homepage.screenshots.alt.homeDark": {
+    "message": "Home Dark",
+    "description": "Home dark screenshot alt"
+  },
+  "homepage.screenshots.alt.aiChat": {
+    "message": "AI Chat",
+    "description": "AI chat screenshot alt"
+  },
+  "homepage.cloudSync.title": {
+    "message": "Multiple Cloud Sync Options",
+    "description": "Cloud sync section title"
+  },
+  "homepage.cloudSync.subtitle": {
+    "message": "Flexible data storage, choose the sync solution that works for you",
+    "description": "Cloud sync section subtitle"
+  },
+  "homepage.community.title": {
+    "message": "Open Source",
+    "description": "Community section title"
+  },
+  "homepage.community.desc1": {
+    "message": "BeeCount is fully open source, hosted on GitHub.",
+    "description": "Community description line 1"
+  },
+  "homepage.community.desc2": {
+    "message": "No ads, no subscriptions, no hidden fees.",
+    "description": "Community description line 2"
+  },
+  "homepage.community.desc3": {
+    "message": "Star us on GitHub and help make it better!",
+    "description": "Community description line 3"
+  },
+  "homepage.community.stats.openSource": {
+    "message": "Open Source",
+    "description": "Open source stat label"
+  },
+  "homepage.community.stats.ads": {
+    "message": "Ads",
+    "description": "Ads stat label"
+  },
+  "homepage.community.contact": {
+    "message": "Contact",
+    "description": "Contact section title"
+  },
+  "homepage.community.wechat": {
+    "message": "WeChat: LinYiXiao_Sx",
+    "description": "WeChat contact"
+  },
+  "homepage.community.xiaohongshu": {
+    "message": "Xiaohongshu @BeeCount",
+    "description": "Xiaohongshu contact"
+  },
+  "homepage.community.douyin": {
+    "message": "Douyin @BeeCount",
+    "description": "Douyin contact"
+  },
+  "homepage.openSource.title": {
+    "message": "Open Source",
+    "description": "Open source section title"
+  },
+  "homepage.openSource.description": {
+    "message": "BeeCount is a fully open-source project hosted on GitHub. Star, fork, submit issues or PRs - let's make it better together!",
+    "description": "Open source section description"
+  },
+  "homepage.seo.title": {
+    "message": "BeeCount - Simple and Secure Personal Finance Tracker",
+    "description": "SEO title"
+  },
+  "homepage.seo.description": {
+    "message": "BeeCount is a free and open-source personal finance app for iOS and Android. Simple, secure, with multiple cloud sync options.",
+    "description": "SEO description"
+  }
+}

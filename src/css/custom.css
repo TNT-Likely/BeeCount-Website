@@ -1,0 +1,190 @@
+/**
+ * BeeCount Website Custom Styles
+ */
+
+:root {
+  /* BeeCount 蜜蜂黄 #F8C91C */
+  --ifm-color-primary: #F8C91C;
+  --ifm-color-primary-dark: #e5b80d;
+  --ifm-color-primary-darker: #d9ae0c;
+  --ifm-color-primary-darkest: #b28f0a;
+  --ifm-color-primary-light: #f9d039;
+  --ifm-color-primary-lighter: #f9d44a;
+  --ifm-color-primary-lightest: #fbe07a;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  /* BeeCount 蜜蜂黄 #F8C91C */
+  --ifm-color-primary: #F8C91C;
+  --ifm-color-primary-dark: #e5b80d;
+  --ifm-color-primary-darker: #d9ae0c;
+  --ifm-color-primary-darkest: #b28f0a;
+  --ifm-color-primary-light: #f9d039;
+  --ifm-color-primary-lighter: #f9d44a;
+  --ifm-color-primary-lightest: #fbe07a;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section */
+.hero {
+  padding: 4rem 0;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+[data-theme='dark'] .hero__subtitle {
+  color: var(--ifm-color-emphasis-500);
+}
+
+/* Feature Cards */
+.feature-card {
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Screenshot Gallery */
+.screenshot-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.screenshot-gallery img {
+  height: 400px;
+  width: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  scroll-snap-align: start;
+}
+
+/* Download Buttons */
+.download-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.download-button--primary {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.download-button--primary:hover {
+  background: var(--ifm-color-primary-dark);
+  color: white;
+  text-decoration: none;
+}
+
+.download-button--secondary {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.download-button--secondary:hover {
+  background: var(--ifm-color-emphasis-300);
+  text-decoration: none;
+}
+
+/* Section Styles */
+.section {
+  padding: 4rem 0;
+}
+
+.section--alt {
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .section--alt {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.section__title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section__subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 3rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .screenshot-gallery img {
+    height: 300px;
+  }
+}
+
+/* ===========================================
+   Embed Mode - 用于 App 内嵌
+   使用方式: 在 URL 添加 ?embed=true
+   示例: https://beecount.app/docs/intro?embed=true&mode=dark
+   =========================================== */
+body.embed-mode .navbar {
+  display: none !important;
+}
+
+body.embed-mode .footer {
+  display: none !important;
+}
+
+body.embed-mode .theme-doc-breadcrumbs {
+  display: none !important;
+}
+
+body.embed-mode .pagination-nav {
+  display: none !important;
+}
+
+/* 调整内嵌模式下的内容区域 */
+body.embed-mode .main-wrapper {
+  padding-top: 0 !important;
+}
+
+body.embed-mode article {
+  padding: 1rem;
+}
