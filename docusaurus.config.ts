@@ -47,6 +47,20 @@ const config: Config = {
     ],
   ],
 
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en", "zh"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        docsRouteBasePath: "/docs",
+        indexBlog: false,
+      },
+    ],
+  ],
+
   themeConfig: {
     image: 'img/social-card.png',
     navbar: {

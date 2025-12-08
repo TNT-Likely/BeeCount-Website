@@ -15,12 +15,17 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },
-  "keywords": ["beecount", "记账", "flutter"],
+  "keywords": [
+    "beecount",
+    "记账",
+    "flutter"
+  ],
   "author": "TNT-Likely",
   "license": "MIT",
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
+    "@easyops-cn/docusaurus-search-local": "^0.52.2",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.2.1",
