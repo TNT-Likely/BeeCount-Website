@@ -356,8 +356,127 @@
   font-size: 1.75rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 1.5rem 0;
   line-height: 1.5;
+}
+
+/* 观看视频链接 */
+.videoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(248, 201, 28, 0.9);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.videoLink:hover {
+  color: #F8C91C;
+  text-decoration: none;
+}
+
+.playIcon {
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  background: rgba(248, 201, 28, 0.15);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.videoLink:hover .playIcon {
+  background: rgba(248, 201, 28, 0.25);
+  transform: scale(1.1);
+}
+
+/* 视频弹窗 */
+.videoModal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.videoModalContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.videoModalClose {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.videoModalClose:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.videoPlayer {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.videoCredit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.videoCredit:hover {
+  background: rgba(251, 114, 153, 0.2);
+  color: #FB7299;
+  text-decoration: none;
+}
+
+.bilibiliIcon {
+  width: 20px;
+  height: 20px;
+  color: #FB7299;
 }
 
 /* 下载按钮组 */
@@ -860,6 +979,22 @@
 
 [data-theme='light'] .heroSlogan {
   color: #333;
+}
+
+[data-theme='light'] .videoLink {
+  color: rgba(180, 140, 0, 0.9);
+}
+
+[data-theme='light'] .videoLink:hover {
+  color: #B48C00;
+}
+
+[data-theme='light'] .playIcon {
+  background: rgba(248, 201, 28, 0.2);
+}
+
+[data-theme='light'] .videoLink:hover .playIcon {
+  background: rgba(248, 201, 28, 0.35);
 }
 
 [data-theme='light'] .btnSecondary {

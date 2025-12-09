@@ -20,7 +20,7 @@ BeeCount supports multiple accounts, each with independent balance tracking.
 2. Tap "+" to add an account
 3. Select account type
 4. Enter name and initial balance
-5. Optionally select icon and color
+5. Optionally select an icon
 
 ## Account Balance
 
@@ -41,7 +41,3 @@ Tap an account to view:
 ## Default Account
 
 Set default accounts for income and expenses. They'll be auto-selected when recording for improved efficiency.
-
-## Hide Account
-
-Rarely used accounts can be hidden. They won't appear in the list, but data is preserved.

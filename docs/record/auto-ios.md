@@ -6,6 +6,13 @@ sidebar_position: 3
 
 通过 iOS 快捷指令 + 截图识别，实现支付后快速记账。
 
+## 视频教程
+
+<video width="100%" controls>
+  <source src="/img/ios-auto-record-tutorial.mp4" type="video/mp4" />
+  您的浏览器不支持视频播放
+</video>
+
 ## 工作原理
 
 1. 创建快捷指令：截屏 → 蜜蜂记账识别

@@ -6,6 +6,13 @@ sidebar_position: 3
 
 Use iOS Shortcuts + screenshot recognition to quickly record after payments.
 
+## Video Tutorial
+
+<video width="100%" controls>
+  <source src="/img/ios-auto-record-tutorial.mp4" type="video/mp4" />
+  Your browser does not support video playback
+</video>
+
 ## How It Works
 
 1. Create a Shortcut: Screenshot → BeeCount recognition

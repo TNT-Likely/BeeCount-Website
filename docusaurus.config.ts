@@ -90,7 +90,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `© ${new Date().getFullYear()} 蜜蜂记账 BeeCount`,
+      copyright: `© ${new Date().getFullYear()} 蜜蜂记账 BeeCount<br/><span style="font-size: 0.85em; opacity: 0.7;">友情链接：<a href="https://www.ghxi.com/" target="_blank" rel="noopener noreferrer" style="color: inherit;">果核剥壳</a> · <a href="https://m.bilibili.com/space/501149848" target="_blank" rel="noopener noreferrer" style="color: inherit;">B站 @星之墨辰</a></span>`,
     },
     prism: {
       theme: prismThemes.github,

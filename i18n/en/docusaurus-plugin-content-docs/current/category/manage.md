@@ -20,7 +20,7 @@ The app includes commonly used categories:
 
 1. Go to "Me" → "Data Management" → "Category Management"
 2. Tap "+" in the top right
-3. Select an icon and color
+3. Select an icon
 4. Enter category name
 5. Save
 
@@ -30,7 +30,6 @@ Tap a category to open the edit page where you can modify:
 
 - Category name
 - Icon
-- Color
 
 ## Sort Categories
 
