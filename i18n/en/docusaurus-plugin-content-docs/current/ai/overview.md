@@ -45,9 +45,14 @@ Zhipu GLM offers multiple models to choose from:
 
 ### Zhipu AI
 
+<video width="100%" controls>
+  <source src="/img/zhipu-register-tutorial.mp4" type="video/mp4" />
+  Your browser does not support video playback
+</video>
+
 1. Visit [Zhipu Open Platform](https://open.bigmodel.cn/)
 2. Register an account
-3. Create an API Key
-4. Copy to BeeCount
+3. Go to "API Keys" page and create a new API Key
+4. Copy the API Key to BeeCount
 
-New users typically have free credits available.
+> 💡 New users typically have free credits available after registration. GLM-4-Flash model is completely free.

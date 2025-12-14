@@ -45,9 +45,14 @@ sidebar_position: 1
 
 ### 智谱 AI
 
+<video width="100%" controls>
+  <source src="/img/zhipu-register-tutorial.mp4" type="video/mp4" />
+  您的浏览器不支持视频播放
+</video>
+
 1. 访问 [智谱开放平台](https://open.bigmodel.cn/)
 2. 注册账号
-3. 创建 API Key
-4. 复制到蜜蜂记账
+3. 进入「API 密钥」页面，创建新的 API Key
+4. 复制 API Key 到蜜蜂记账
 
-新用户通常有免费额度可用。
+> 💡 新用户注册后通常有免费额度可用，GLM-4-Flash 模型完全免费。

@@ -18,6 +18,7 @@ const sidebars: SidebarsConfig = {
         'record/auto-ios',
         'record/auto-android',
         'record/import-export',
+        'record/quick-actions',
       ],
     },
     {

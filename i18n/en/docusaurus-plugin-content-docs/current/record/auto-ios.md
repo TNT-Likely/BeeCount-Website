@@ -55,6 +55,8 @@ Use iOS Shortcuts + screenshot recognition to quickly record after payments.
 3. Auto-screenshots and recognizes amount, merchant info
 4. Confirm to complete recording
 
+> ✨ **New in v2.3.3**: Screenshots are automatically saved as transaction attachments, and a "Shortcut Screenshot" tag is added for easy filtering later.
+
 ## Other Trigger Methods
 
 Besides Back Tap, you can also trigger via:
