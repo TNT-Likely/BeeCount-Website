@@ -13,7 +13,7 @@
   padding-top: 0 !important;
 }
 
-/* 导航栏样式（滚动后显示） */
+/* 导航栏样式 - 首页默认隐藏，滚动后显示 */
 .homeWrapper :global(.navbar) {
   position: fixed !important;
   top: 0;
@@ -1240,5 +1240,95 @@
   .meteors {
     display: none;
   }
+}
 
+/* 针对小屏幕宽度优化（如 iPhone 8/SE，375px） */
+@media (max-width: 390px) {
+  .heroContent {
+    gap: 1rem;
+  }
+
+  .heroBrand {
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .heroLogo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .heroTitleMain {
+    font-size: 1.5rem;
+  }
+
+  .heroTitleSub {
+    font-size: 0.8rem;
+  }
+
+  .heroSlogan {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .videoLink {
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .phoneShowcase {
+    width: 240px;
+    height: 280px;
+  }
+
+  .phoneFrame {
+    width: 130px;
+    border-radius: 18px;
+  }
+
+  .phoneFrameBack {
+    top: 25px;
+  }
+
+  .heroButtons {
+    gap: 0.5rem;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.875rem;
+    border-radius: 12px;
+  }
+
+  .scrollHint {
+    bottom: 1rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* 针对超小屏幕高度优化（如 iPhone SE 667px 高度） */
+@media (max-width: 390px) and (max-height: 700px) {
+  .heroSlogan {
+    margin-bottom: 0.25rem;
+  }
+
+  .videoLink {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .phoneShowcase {
+    width: 200px;
+    height: 230px;
+  }
+
+  .phoneFrame {
+    width: 110px;
+    border-radius: 14px;
+  }
+
+  .scrollHint {
+    display: none;
+  }
 }
