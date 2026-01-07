@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 
 /**
  * Root wrapper component
@@ -12,7 +12,7 @@ import React, {useEffect} from 'react';
  * - https://beecount.app/docs/intro?mode=dark&embed=true
  * - https://beecount.app/en/docs/intro?mode=light
  */
-export default function Root({children}: {children: React.ReactNode}): JSX.Element {
+export default function Root({children}: {children: React.ReactNode}): React.ReactElement {
   useEffect(() => {
     // 客户端执行
     if (typeof window === 'undefined') return;

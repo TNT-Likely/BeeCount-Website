@@ -1,7 +1,5 @@
 import clsx from 'clsx';
 import {useEffect, useState} from 'react';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import Translate, {translate} from '@docusaurus/Translate';
@@ -399,7 +397,7 @@ function CommunitySection() {
   );
 }
 
-export default function Home(): JSX.Element {
+export default function Home(): React.ReactElement {
   useScrollNavbar();
 
   return (
