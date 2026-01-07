@@ -1,6 +1,24 @@
 # Dependencies
 node_modules
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+mcp_env/
+venv/
+ENV/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+*.egg-info/
+dist/
+build/
+
 # Build
 build
 .docusaurus
@@ -21,3 +39,10 @@ yarn-error.log*
 # IDE
 .idea
 .vscode
+.trae
+
+# MCP 向量数据库（在服务器上重新生成）
+mcp/data/chroma/
+
+# MCP 模型缓存（自动下载）
+.cache/huggingface/

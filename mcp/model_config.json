@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "beecount": {
+      "command": "python",
+      "args": [
+        "run_server.py"
+      ],
+      "cwd": "./mcp"
+    }
+  }
+}
