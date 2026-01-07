@@ -1,6 +1,24 @@
 # Dependencies
 node_modules
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+mcp_env/
+venv/
+ENV/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+*.egg-info/
+dist/
+build/
+
 # Build
 build
 .docusaurus
@@ -21,3 +39,4 @@ yarn-error.log*
 # IDE
 .idea
 .vscode
+.trae
