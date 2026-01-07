@@ -1,10 +1,11 @@
-from typing import List
+from typing import List, Dict, Any, Optional
 from pathlib import Path
 
 from fastmcp import FastMCP
 
 from .config import config
 from .utils import logger, search_files, read_file_content, get_file_info
+from .vector_store import get_vector_store
 
 
 mcp = FastMCP(config.server_name)
@@ -226,6 +227,12 @@ def get_project_info() -> str:
     """
     try:
         project_root = config.project_root
+        
+        # 获取向量存储统计
+        vector_store = get_vector_store()
+        zh_stats = vector_store.get_stats("zh")
+        en_stats = vector_store.get_stats("en")
+        
         info = {
             "name": config.server_name,
             "version": config.server_version,
@@ -235,15 +242,127 @@ def get_project_info() -> str:
             "description": "BeeCount MCP Server for documentation access (docs and i18n directories)"
         }
         
-        return f"""Project Information:
+        output = f"""Project Information:
 Name: {info['name']}
 Version: {info['version']}
 Root: {info['root']}
 Docs Root: {info['docs_root']}
 i18n Root: {info['i18n_root']}
-Description: {info['description']}"""
+Description: {info['description']}
+
+Vector Search Statistics:
+Chinese (zh): {zh_stats.get('total_chunks', 0)} chunks, {zh_stats.get('total_documents', 0)} documents
+English (en): {en_stats.get('total_chunks', 0)} chunks, {en_stats.get('total_documents', 0)} documents
+Model: {config.embedding_model}"""
+        
+        return output
     except Exception as e:
         logger.error(f"Error in get_project_info: {e}")
+        return f"Error: {str(e)}"
+
+
+@mcp.tool()
+def semantic_search(query: str, top_k: int = 5, language: str = "zh", min_score: Optional[float] = None) -> str:
+    """
+    基于语义相似度搜索文档（智能搜索）
+    
+    Args:
+        query: 搜索查询字符串（支持自然语言）
+        top_k: 返回的最大结果数（默认：5）
+        language: 语言选择，"zh"表示中文文档，"en"表示英文文档（默认："zh"）
+        min_score: 最小相似度分数（0-1之间），低于此分数的结果将被过滤（默认：0.5）
+    
+    Returns:
+        匹配的文档片段和相似度分数
+    """
+    try:
+        logger.info(f"Semantic search: {query}, language: {language}, top_k: {top_k}")
+        
+        if not query or not query.strip():
+            return "Error: query cannot be empty"
+        
+        # 获取向量存储
+        vector_store = get_vector_store()
+        
+        # 执行语义搜索
+        results: List[Dict[str, Any]] = vector_store.search(
+            query=query,
+            top_k=top_k,
+            language=language,
+            min_score=min_score or config.min_similarity_score
+        )
+        
+        if not results:
+            return f"No documents found matching query: {query}"
+        
+        # 格式化结果
+        output = f"Found {len(results)} relevant documents:\n\n"
+        
+        for i, result in enumerate(results, 1):
+            metadata: Dict[str, Any] = result["metadata"]
+            similarity: float = result["similarity"]
+            content: str = result["content"]
+            
+            output += f"--- Result {i} (Similarity: {similarity:.3f}) ---\n"
+            output += f"File: {metadata.get('file_path', 'Unknown')}\n"
+            output += f"Title: {metadata.get('title', 'Unknown')}\n"
+            output += f"Category: {metadata.get('category', 'Unknown')}\n"
+            output += f"Online View: {metadata.get('url', 'N/A')}\n"
+            output += f"\nContent:\n{content}\n\n"
+        
+        return output
+    except Exception as e:
+        logger.error(f"Error in semantic_search: {e}")
+        return f"Error: {str(e)}"
+
+
+
+@mcp.tool()
+def get_vector_stats(language: str = "zh") -> str:
+    """
+    获取向量存储统计信息
+    
+    Args:
+        language: 语言选择，"zh"表示中文文档，"en"表示英文文档（默认："zh"）
+    
+    Returns:
+        向量存储统计信息
+    """
+    try:
+        logger.info(f"Getting vector stats for language: {language}")
+        
+        # 获取向量存储
+        vector_store = get_vector_store()
+        
+        # 获取统计信息
+        stats = vector_store.get_stats(language=language)
+        
+        if "error" in stats:
+            return f"Error: {stats['error']}"
+        
+        # 格式化统计信息
+        output = f"""Vector Store Statistics:
+Language: {stats['language']}
+Collection: {stats['collection_name']}
+Total Chunks: {stats['total_chunks']}
+Total Documents: {stats['total_documents']}
+
+Model Information:
+- Model Name: {stats['model']['model_name']}
+- Dimension: {stats['model']['dimension']}
+- Max Sequence Length: {stats['model']['max_seq_length']}
+- Loaded: {stats['model']['is_loaded']}
+
+Categories:"""
+        
+        for category, count in stats['categories'].items():
+            output += f"\n- {category}: {count} chunks"
+        
+        output += f"\n\nPersist Directory: {stats['persist_directory']}"
+        
+        return output
+    except Exception as e:
+        logger.error(f"Error in get_vector_stats: {e}")
         return f"Error: {str(e)}"
 
 

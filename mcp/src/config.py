@@ -13,6 +13,13 @@ class Settings(BaseSettings):
     log_level: str = Field(default="INFO", description="日志级别")
     website_url: str = Field(default="https://beecount.youths.cc", description="网站URL")
     
+    # 向量搜索配置
+    embedding_model: str = Field(default="paraphrase-multilingual-MiniLM-L12-v2", description="嵌入模型名称")
+    vector_db_path: str = Field(default="./data/chroma", description="向量数据库路径")
+    chunk_size: int = Field(default=800, description="文档分块大小")
+    chunk_overlap: int = Field(default=150, description="文档分块重叠大小")
+    min_similarity_score: float = Field(default=0.5, description="最小相似度分数")
+    
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
@@ -55,6 +62,26 @@ class Config:
     @property
     def website_url(self) -> str:
         return self.settings.website_url
+    
+    @property
+    def embedding_model(self) -> str:
+        return self.settings.embedding_model
+    
+    @property
+    def vector_db_path(self) -> str:
+        return self.settings.vector_db_path
+    
+    @property
+    def chunk_size(self) -> int:
+        return self.settings.chunk_size
+    
+    @property
+    def chunk_overlap(self) -> int:
+        return self.settings.chunk_overlap
+    
+    @property
+    def min_similarity_score(self) -> float:
+        return self.settings.min_similarity_score
     
     def get_document_url(self, file_path: str, language: str = "zh") -> str:
         """根据文件路径生成对应的网站 URL"""

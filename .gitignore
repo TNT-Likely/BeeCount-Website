@@ -40,3 +40,9 @@ yarn-error.log*
 .idea
 .vscode
 .trae
+
+# MCP 向量数据库（在服务器上重新生成）
+mcp/data/chroma/
+
+# MCP 模型缓存（自动下载）
+.cache/huggingface/
