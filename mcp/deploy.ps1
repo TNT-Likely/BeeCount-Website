@@ -8,6 +8,32 @@ Write-Host "BeeCount MCP Server 部署脚本" -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host ""
 
+# 获取脚本所在目录的完整路径
+$scriptDir = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
+
+# 确定mcp项目目录
+# 如果脚本在mcp目录内（即$scriptDir包含mcp），则mcpProjectDir就是$scriptDir
+# 否则，假设当前目录下有mcp文件夹
+if ($scriptDir -match "\\mcp$" -or $scriptDir -match "/mcp$") {
+    $mcpProjectDir = $scriptDir
+} else {
+    $mcpProjectDir = Join-Path -Path (Get-Location) -ChildPath "mcp"
+}
+
+# 定义虚拟环境目录（mcp同级）
+$mcpParentDir = Split-Path -Path $mcpProjectDir -Parent
+$venvDir = Join-Path -Path $mcpParentDir -ChildPath "mcp_env"
+
+# 检查mcp项目目录是否存在
+if (-not (Test-Path -Path $mcpProjectDir -PathType Container)) {
+    Write-Host "✗ 错误: 未找到mcp项目目录！" -ForegroundColor Red
+    Write-Host "  使用方法1：在mcp的同级目录执行 .\mcp\deploy.ps1"
+    Write-Host "  使用方法2：进入mcp目录执行 .\deploy.ps1"
+    exit 1
+}
+Write-Host "✓ 定位到MCP项目目录: $mcpProjectDir" -ForegroundColor Green
+Write-Host ""
+
 # 检查 Python 版本
 Write-Host "[1/8] 检查 Python 版本..." -ForegroundColor Yellow
 try {
@@ -73,62 +99,96 @@ switch ($modelChoice) {
 }
 Write-Host ""
 
-# 创建虚拟环境
-Write-Host "[4/8] 创建虚拟环境..." -ForegroundColor Yellow
-if (Test-Path "mcp_env") {
-    Write-Host "虚拟环境已存在，跳过创建" -ForegroundColor Yellow
+# 创建虚拟环境（mcp同级）
+Write-Host "[4/8] 创建虚拟环境（mcp同级）..." -ForegroundColor Yellow
+if (Test-Path -Path $venvDir) {
+    Write-Host "虚拟环境已存在（$venvDir），跳过创建" -ForegroundColor Yellow
 } else {
-    python -m venv mcp_env
-    Write-Host "✓ 虚拟环境创建成功" -ForegroundColor Green
+    python -m venv $venvDir
+    Write-Host "✓ 虚拟环境创建成功: $venvDir" -ForegroundColor Green
 }
 Write-Host ""
 
 # 激活虚拟环境并安装依赖
 Write-Host "[5/8] 激活虚拟环境并安装依赖..." -ForegroundColor Yellow
-& .\mcp_env\Scripts\Activate.ps1
+# 拼接激活脚本路径
+$activateScript = Join-Path -Path $venvDir -ChildPath "Scripts\Activate.ps1"
+& $activateScript
+
+$requirementsPath = Join-Path -Path $mcpProjectDir -ChildPath "requirements.txt"
+if (-not (Test-Path -Path $requirementsPath)) {
+    Write-Host "✗ 错误: 未找到requirements.txt（路径：$requirementsPath）" -ForegroundColor Red
+    exit 1
+}
 
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r $requirementsPath
 Write-Host "✓ 依赖安装完成" -ForegroundColor Green
 Write-Host ""
 
 # 配置环境变量
 Write-Host "[6/8] 配置环境变量..." -ForegroundColor Yellow
-if (Test-Path ".env") {
-    Write-Host ".env 文件已存在，跳过创建" -ForegroundColor Yellow
+$envExamplePath = Join-Path -Path $mcpProjectDir -ChildPath ".env.example"
+$envPath = Join-Path -Path $mcpProjectDir -ChildPath ".env"
+
+if (Test-Path -Path $envPath) {
+    Write-Host ".env 文件已存在（$envPath），跳过创建" -ForegroundColor Yellow
 } else {
-    Copy-Item .env.example .env
+    if (-not (Test-Path -Path $envExamplePath)) {
+        Write-Host "✗ 错误: 未找到.env.example（路径：$envExamplePath）" -ForegroundColor Red
+        exit 1
+    }
+    Copy-Item -Path $envExamplePath -Destination $envPath -Force
     
     # 更新模型配置
-    (Get-Content .env) -replace "^EMBEDDING_MODEL=.*", "EMBEDDING_MODEL=$embeddingModel" | Set-Content .env
+    (Get-Content -Path $envPath) -replace "^EMBEDDING_MODEL=.*", "EMBEDDING_MODEL=$embeddingModel" | Set-Content -Path $envPath
     
-    Write-Host "✓ .env 文件创建成功" -ForegroundColor Green
+    Write-Host "✓ .env 文件创建成功: $envPath" -ForegroundColor Green
     Write-Host "请根据需要修改 .env 文件中的其他配置" -ForegroundColor Yellow
 }
 Write-Host ""
 
 # 生成向量索引
 Write-Host "[7/8] 生成向量索引..." -ForegroundColor Yellow
+$runServerPath = Join-Path -Path $mcpProjectDir -ChildPath "run_server.py"
+if (-not (Test-Path -Path $runServerPath)) {
+    Write-Host "✗ 错误: 未找到run_server.py（路径：$runServerPath）" -ForegroundColor Red
+    exit 1
+}
+
 Write-Host "这可能需要几分钟时间，请耐心等待..."
-python run_server.py --rebuild-index
+# 切换到mcp目录执行脚本（避免路径相关的相对导入问题）
+Push-Location -Path $mcpProjectDir
+python run_server.py --rebuild-index --language ALL --force
+Pop-Location
 Write-Host "✓ 向量索引生成完成" -ForegroundColor Green
 Write-Host ""
 
-# 测试服务
+# 测试服务  
 Write-Host "[8/8] 测试 MCP 服务..." -ForegroundColor Yellow
+# -------------------------- 核心修改5：指定mcp内的测试脚本路径 --------------------------
+$testBasicPath = Join-Path -Path $mcpProjectDir -ChildPath "tests\test_basic.py"
+$testVectorPath = Join-Path -Path $mcpProjectDir -ChildPath "tests\test_vector.py"
+
+# 测试基础功能
+Push-Location -Path $mcpProjectDir
 $testResult = python tests\test_basic.py 2>&1
 if ($LASTEXITCODE -eq 0) {
     Write-Host "✓ 基础测试通过" -ForegroundColor Green
 } else {
     Write-Host "⚠ 基础测试失败，请检查日志" -ForegroundColor Yellow
+    Write-Host "测试输出: $testResult"
 }
 
+# 测试向量搜索
 $testResult = python tests\test_vector.py 2>&1
 if ($LASTEXITCODE -eq 0) {
     Write-Host "✓ 向量搜索测试通过" -ForegroundColor Green
 } else {
     Write-Host "⚠ 向量搜索测试失败，请检查日志" -ForegroundColor Yellow
+    Write-Host "测试输出: $testResult"
 }
+Pop-Location
 Write-Host ""
 
 # 完成
@@ -136,23 +196,32 @@ Write-Host "======================================" -ForegroundColor Cyan
 Write-Host "部署完成！" -ForegroundColor Green
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "启动 MCP 服务:"
-Write-Host "  .\mcp_env\Scripts\activate"
-Write-Host "  python run_server.py"
+Write-Host "当前目录结构（推荐）："
+Write-Host "  $mcpParentDir/"
+Write-Host "  ├── mcp/ (项目代码目录)"
+Write-Host "  └── mcp_env/ (虚拟环境目录)"
+Write-Host ""
+Write-Host "启动 MCP 服务步骤:"
+Write-Host "  1. 激活虚拟环境: $venvDir\Scripts\activate"
+Write-Host "  2. 进入mcp目录: cd $mcpProjectDir"
+Write-Host "  3. 启动服务: python run_server.py"
 Write-Host ""
 Write-Host "后台运行 (PowerShell):"
+Write-Host "  $venvDir\Scripts\activate"
+Write-Host "  cd $mcpProjectDir"
 Write-Host "  Start-Process python -ArgumentList 'run_server.py' -WindowStyle Hidden"
 Write-Host ""
 Write-Host "后台运行 (CMD):"
+Write-Host "  $venvDir\Scripts\activate.bat"
+Write-Host "  cd /d $mcpProjectDir"
 Write-Host "  start /B python run_server.py > mcp.log 2>&1"
 Write-Host ""
 Write-Host "使用 Windows 服务 (推荐):"
 Write-Host "  # 安装 NSSM (Non-Sucking Service Manager)"
-Write-Host "  nssm install BeeCountMCP python"
-Write-Host "  nssm set BeeCountMCP AppDirectory (Get-Location)"
+Write-Host "  nssm install BeeCountMCP $venvDir\Scripts\python.exe"
+Write-Host "  nssm set BeeCountMCP AppDirectory $mcpProjectDir"
 Write-Host "  nssm set BeeCountMCP AppParameters run_server.py"
-Write-Host "  nssm set BeeCountMCP AppEnvironmentExtra PATH=%PATH%;(Get-Location)\mcp_env\Scripts"
 Write-Host "  nssm start BeeCountMCP"
 Write-Host ""
 Write-Host "提示: 向量数据库已生成，后续文档更新后需要重新构建索引" -ForegroundColor Yellow
-Write-Host "提示: 重建索引命令: python run_server.py --rebuild-index --language ALL" -ForegroundColor Yellow
+Write-Host "提示: 重建索引命令: cd $mcpProjectDir && python run_server.py --rebuild-index --language ALL" -ForegroundColor Yellow

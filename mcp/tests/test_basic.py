@@ -21,7 +21,7 @@ def test_config():
     assert config.server_name == "BeeCount MCP Server"
     assert config.server_version == "1.0.0"
     assert config.log_level == "INFO"
-    print("✓ Config test passed")
+    print("PASSED: Config test passed")
 
 
 def test_logger():
@@ -29,7 +29,7 @@ def test_logger():
     print("Testing logger...")
     logger = setup_logger("test_logger")
     logger.info("Test log message")
-    print("✓ Logger test passed")
+    print("PASSED: Logger test passed")
 
 
 def test_format_error():
@@ -39,7 +39,7 @@ def test_format_error():
     formatted = format_error(error)
     assert "ValueError" in formatted
     assert "Test error" in formatted
-    print("✓ Error formatting test passed")
+    print("PASSED: Error formatting test passed")
 
 
 def test_truncate_text():
@@ -50,7 +50,7 @@ def test_truncate_text():
     
     assert truncate_text(short_text, 500) == short_text
     assert len(truncate_text(long_text, 500)) == 503
-    print("✓ Text truncation test passed")
+    print("PASSED: Text truncation test passed")
 
 
 def test_validate_path():
@@ -66,7 +66,7 @@ def test_validate_path():
     except FileNotFoundError:
         pass
     
-    print("✓ Path validation test passed")
+    print("PASSED: Path validation test passed")
 
 
 def test_search_files():
@@ -80,7 +80,7 @@ def test_search_files():
     md_files = search_files(project_root, "*.md")
     assert len(md_files) > 0
     
-    print(f"✓ File search test passed (found {len(python_files)} Python files, {len(md_files)} Markdown files)")
+    print(f"PASSED: File search test passed (found {len(python_files)} Python files, {len(md_files)} Markdown files)")
 
 
 def test_read_file_content():
@@ -92,7 +92,7 @@ def test_read_file_content():
     assert len(content) > 0
     assert "Settings" in content
     
-    print("✓ File reading test passed")
+    print("PASSED: File reading test passed")
 
 
 def test_get_file_info():
@@ -105,7 +105,7 @@ def test_get_file_info():
     assert info["is_file"] == True
     assert info["size"] > 0
     
-    print("✓ File info test passed")
+    print("PASSED: File info test passed")
 
 
 def test_mcp_tools():
@@ -122,7 +122,7 @@ def test_mcp_tools():
     assert "read_file" in tool_names
     assert "get_project_info" in tool_names
     
-    print(f"✓ MCP tools test passed (found {len(tools)} tools)")
+    print(f"PASSED: MCP tools test passed (found {len(tools)} tools)")
 
 
 def run_all_tests():
@@ -151,7 +151,7 @@ def run_all_tests():
             test()
             passed += 1
         except Exception as e:
-            print(f"✗ {test.__name__} failed: {e}")
+            print(f"FAILED: {test.__name__} failed: {e}")
             failed += 1
     
     print("\n" + "="*50)

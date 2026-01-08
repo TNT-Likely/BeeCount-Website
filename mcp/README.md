@@ -1,10 +1,11 @@
 # BeeCount MCP Server
 
-BeeCount MCP服务器是一个基于Model Context Protocol (MCP) 的文档访问服务，专注于提供BeeCount网站的使用说明文档。
+BeeCount MCP服务器是一个基于Model Context Protocol (MCP) 的文档访问服务，专注于提供BeeCount网站的使用说明文档，支持中英文双语查询和智能语义搜索。
 
 ## 功能特性
 
 ### 基础功能
+
 - 文档查询和检索（支持中文和英文文档）
 - 文件列表和浏览（docs和i18n目录）
 - 文件内容读取（支持行范围选择）
@@ -15,6 +16,7 @@ BeeCount MCP服务器是一个基于Model Context Protocol (MCP) 的文档访问
 - 错误处理和异常管理
 
 ### 智能语义搜索（升级版）
+
 - 基于向量嵌入的语义搜索
 - 支持自然语言查询
 - 跨语言文档检索（中英文混合）
@@ -24,11 +26,13 @@ BeeCount MCP服务器是一个基于Model Context Protocol (MCP) 的文档访问
 - 向量存储统计信息
 - 高性能搜索（毫秒级响应）
 
-### 为什么需要模型？
+<details>
+<summary>为什么需要模型？</summary>
 
 **MCP 服务端必须运行嵌入模型**，原因如下：
 
 1. **语义搜索的核心原理**
+
    ```
    用户查询: "如何创建预算？"
        ↓
@@ -50,6 +54,7 @@ BeeCount MCP服务器是一个基于Model Context Protocol (MCP) 的文档访问
    - ✅ 返回排序后的结果
 
 **关键理解：**
+
 ```
 第三方 AI = 客户端（调用者）
 MCP 服务端 = 服务提供者（需要模型）
@@ -59,7 +64,10 @@ MCP 服务端 = 服务提供者（需要模型）
 - 你（第三方 AI）只需要发送查询
 - Google（MCP 服务端）有搜索引擎和索引
 
-### 为什么需要重新生成向量数据库？
+</details>
+
+<details>
+<summary>为什么需要重新生成向量数据库？</summary>
 
 **向量数据库必须重新生成的情况：**
 
@@ -108,6 +116,8 @@ python run_server.py --rebuild-index --language ALL --force
 | 增量更新 | 只处理新增/修改的文档 | 日常文档更新 |
 | 强制重建 | 删除所有数据，重新生成 | 首次部署、更换模型、数据损坏 |
 
+</details>
+
 ## 项目结构
 
 ```
@@ -141,41 +151,18 @@ mcp/
 └── mcp.service.example     # systemd 服务配置示例
 ```
 
-## 安装
-
-### 1. 创建虚拟环境
-
-```bash
-python -m venv mcp_env
-source mcp_env/bin/activate  # Linux/Mac
-# 或
-mcp_env\Scripts\activate     # Windows
-```
-
-### 2. 安装依赖
-
-```bash
-cd mcp
-pip install -r requirements.txt
-```
-
-### 3. 配置环境变量
-
-复制 `.env.example` 为 `.env` 并根据需要修改配置：
-
-```bash
-cp .env.example .env
-```
-
 ## 使用
 
-### 部署到服务器
+### 部署与安装
+
+BeeCount MCP Server 支持本地和服务器部署，推荐优先使用自动化脚本进行部署，简单快捷。
 
 #### 自动部署（推荐）
 
-使用部署脚本自动完成所有配置：
+使用部署脚本可以自动完成所有配置，包括环境准备、依赖安装、模型选择和索引生成：
 
 **Linux/Mac:**
+
 ```bash
 cd mcp
 chmod +x deploy.sh
@@ -183,6 +170,7 @@ chmod +x deploy.sh
 ```
 
 **Windows:**
+
 ```powershell
 cd mcp
 .\deploy.ps1
@@ -197,13 +185,38 @@ cd mcp
 6. 运行测试验证
 
 **部署脚本选项：**
+
 - 选项 1: L12-v2 (420MB, 高精度)
 - 选项 2: L6-v2 (200MB, 轻量服务器推荐)
 - 选项 3: L8-v2 (300MB, 中等精度)
 
 #### 手动部署
 
-如果需要手动部署，请参考以下步骤：
+如果需要手动部署，请按照以下步骤操作：
+
+##### 1. 创建虚拟环境
+
+```bash
+python -m venv mcp_env
+source mcp_env/bin/activate  # Linux/Mac
+# 或
+mcp_env\Scripts\activate     # Windows
+```
+
+##### 2. 安装依赖
+
+```bash
+cd mcp
+pip install -r requirements.txt
+```
+
+##### 3. 配置环境变量
+
+复制 `.env.example` 为 `.env` 并根据需要修改配置：
+
+```bash
+cp .env.example .env
+```
 
 ### 配置 MCP 服务器
 
@@ -234,11 +247,13 @@ cd mcp
 #### 方法二：使用 MCP Inspector
 
 1. 安装MCP Inspector：
+
 ```bash
 npm install -g @modelcontextprotocol/inspector
 ```
 
 2. 启动服务器并连接到Inspector：
+
 ```bash
 mcp-inspector python run_server.py
 ```
@@ -248,6 +263,7 @@ mcp-inspector python run_server.py
 ### 启动MCP服务器
 
 #### 前台运行（开发调试）
+
 ```bash
 python run_server.py
 ```
@@ -255,6 +271,7 @@ python run_server.py
 #### 后台运行（生产环境）
 
 **Linux/Mac:**
+
 ```bash
 # 使用 nohup
 nohup python run_server.py > mcp.log 2>&1 &
@@ -271,6 +288,7 @@ sudo journalctl -u mcp -f
 ```
 
 **Windows:**
+
 ```powershell
 # PowerShell 后台运行
 Start-Process python -ArgumentList 'run_server.py' -WindowStyle Hidden
@@ -289,6 +307,7 @@ nssm start BeeCountMCP
 ```
 
 #### 查看日志
+
 ```bash
 # 查看实时日志
 tail -f mcp.log
@@ -302,6 +321,7 @@ tail -n 100 mcp.log
 服务器提供以下MCP工具：
 
 #### 1. query_document
+
 在项目文档中搜索内容。
 
 **参数：**
@@ -316,6 +336,7 @@ query_document("budget", max_results=10, language="en")
 ```
 
 #### 2. list_files
+
 列出指定目录中的md文档文件。
 
 **参数：**
@@ -329,9 +350,11 @@ list_files("getting-started", language="en")
 ```
 
 #### 3. read_file
+
 读取文件内容。
 
 **参数：**
+
 - `file_path` (str): 文件路径（相对于docs或i18n根目录）
 - `line_range` (str): 行范围，支持以下格式：
   - "0~100": 读取第1-100行（默认）
@@ -341,6 +364,7 @@ list_files("getting-started", language="en")
 - `language` (str): 语言选择，"zh"表示中文文档，"en"表示英文文档（默认："zh"）
 
 **示例：**
+
 ```python
 read_file("getting-started/installation.md", line_range="0~50", language="zh")
 read_file("getting-started/installation.md", line_range="101~200", language="en")
@@ -348,14 +372,17 @@ read_file("changelog.md", line_range="all", language="zh")
 ```
 
 #### 4. list_media_files
+
 列出指定目录中的媒体文件（图片/视频）并获取基本信息。
 
 **参数：**
+
 - `directory` (str): 目录路径（相对于static目录，默认："."）
 - `media_type` (str): 媒体类型，"image"表示图片文件，"video"表示视频文件，"all"表示所有媒体文件（默认："image"）
 - `language` (str): 语言选择，"zh"表示中文文档，"en"表示英文文档（默认："zh"）
 
 **示例：**
+
 ```python
 list_media_files("img/preview/zh", media_type="image", language="zh")
 list_media_files("img", media_type="video", language="zh")
@@ -363,51 +390,63 @@ list_media_files("img", media_type="all", language="zh")
 ```
 
 #### 5. get_project_info
+
 获取项目基本信息（包含向量搜索统计）。
 
 **参数：**
+
 无
 
 **示例：**
+
 ```python
 get_project_info()
 ```
 
 #### 6. semantic_search
+
 基于语义相似度搜索文档（智能搜索）。
 
 **参数：**
+
 - `query` (str): 搜索查询字符串（支持自然语言）
 - `top_k` (int): 返回的最大结果数（默认：5）
 - `language` (str): 语言选择，"zh"表示中文文档，"en"表示英文文档（默认："zh"）
 - `min_score` (float): 最小相似度分数（0-1之间），低于此分数的结果将被过滤（默认：0.5）
 
 **示例：**
+
 ```python
 semantic_search("如何创建预算", top_k=5, language="zh")
 semantic_search("how to create budget", top_k=5, language="en")
 ```
 
 #### 7. rebuild_vector_index
+
 重建向量索引（用于文档更新后重新索引）。
 
 **参数：**
+
 - `language` (str): 语言选择，"zh"表示中文文档，"en"表示英文文档（默认："zh"）
 - `force` (bool): 是否强制重建（删除现有索引后重新创建）（默认：False）
 
 **示例：**
+
 ```python
 rebuild_vector_index(language="zh", force=False)
 rebuild_vector_index(language="en", force=True)  # 强制重建
 ```
 
 #### 8. get_vector_stats
+
 获取向量存储统计信息。
 
 **参数：**
+
 - `language` (str): 语言选择，"zh"表示中文文档，"en"表示英文文档（默认："zh"）
 
 **示例：**
+
 ```python
 get_vector_stats(language="zh")
 get_vector_stats(language="en")
@@ -416,11 +455,13 @@ get_vector_stats(language="en")
 ## 测试
 
 ### 运行基础测试
+
 ```bash
 python tests/test_basic.py
 ```
 
 ### 运行向量搜索测试
+
 ```bash
 python tests/test_vector.py
 ```
