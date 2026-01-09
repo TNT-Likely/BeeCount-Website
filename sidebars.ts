@@ -45,6 +45,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'statistics/overview',
         'statistics/chart',
+        'statistics/calendar',
       ],
     },
     {
@@ -74,6 +75,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'personalize/theme',
         'personalize/dark-mode',
+        'personalize/color-scheme',
       ],
     },
     'faq',

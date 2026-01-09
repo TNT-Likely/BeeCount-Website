@@ -87,3 +87,40 @@ AI recognition may have errors. You can manually edit and save.
 1. Add BeeCount to battery optimization whitelist
 2. Allow background running
 3. Lock the app in recent tasks
+
+## Why Not Use Accessibility Service?
+
+Some accounting apps use Accessibility Service for automatic recording, but BeeCount chose the screenshot recognition approach for the following reasons:
+
+### 1. Compliance Issues
+
+Accessibility Service is designed for users with visual impairments, intended for screen reading and accessibility scenarios. Using it for automatic accounting is feature abuse and may violate app store policies.
+
+### 2. Privacy and Security
+
+Accessibility Service requires continuous screen monitoring and can read all app interface information, including:
+- Chat messages
+- Personal information
+- Password inputs
+- Other sensitive data
+
+This poses serious privacy and security risks.
+
+### 3. High Development and Maintenance Costs
+
+- **Large adaptation workload** - Need to adapt to each app's interface structure individually
+- **Low ROI** - Apps like Alipay and WeChat frequently update their interfaces, requiring continuous maintenance
+- **Poor compatibility** - Some apps use image-rendered interfaces that Accessibility Service cannot read
+- **System differences** - Inconsistent compatibility across different Android versions and manufacturer ROMs
+
+### BeeCount's Approach Advantages
+
+In comparison, the screenshot recognition approach offers:
+
+- ✅ **Privacy-friendly** - Only processes when user actively takes screenshots, no screen monitoring
+- ✅ **Compliant and secure** - Doesn't abuse system permissions
+- ✅ **Universal** - Supports payment screenshots from any app, no individual adaptation needed
+- ✅ **Easy maintenance** - AI-based recognition adapts better to interface changes
+- ✅ **User control** - Users know exactly when recognition is triggered
+
+While it requires users to manually take screenshots, this small action provides better privacy protection and a more stable experience.

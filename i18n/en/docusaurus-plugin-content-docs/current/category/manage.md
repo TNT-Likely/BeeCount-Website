@@ -29,7 +29,32 @@ The app includes commonly used categories:
 Tap a category to open the edit page where you can modify:
 
 - Category name
-- Icon
+- Icon (supports built-in icons and custom images)
+
+## Custom Category Icons
+
+In addition to the built-in icon library, you can set custom images for categories:
+
+1. Enter category edit page
+2. Tap the icon selection area
+3. Select "Custom Icon"
+4. Choose an image from your photo library
+
+### Custom Icon Features
+
+- **Auto-Crop** - Images are automatically cropped to square
+- **Cloud Sync** - If cloud sync is enabled, custom icons sync automatically
+- **Config Export** - Custom icon data is included when exporting configuration
+- **Attachment Support** - Custom icon image files are included when exporting attachments
+
+### Usage Recommendations
+
+Custom icons are suitable for:
+
+- Merchant brand logos (e.g., Starbucks, McDonald's)
+- Special categories (e.g., pets, hobbies)
+- More intuitive visual recognition
+- Personalized accounting experience
 
 ## Sort Categories
 
