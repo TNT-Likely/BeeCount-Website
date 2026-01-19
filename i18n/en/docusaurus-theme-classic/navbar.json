@@ -11,6 +11,10 @@
     "message": "Blog",
     "description": "Navbar item with label 博客"
   },
+  "item.label.捐赠": {
+    "message": "Donate",
+    "description": "Navbar item with label 捐赠"
+  },
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"

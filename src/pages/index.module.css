@@ -1092,6 +1092,99 @@
 }
 
 /* ==========================================
+   捐赠支持区域
+   ========================================== */
+.donate {
+  padding: 3rem 0;
+  background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+  position: relative;
+}
+
+.donate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(248, 201, 28, 0.2), transparent);
+}
+
+.donateContent {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  background: rgba(248, 201, 28, 0.03);
+  border: 1px solid rgba(248, 201, 28, 0.15);
+}
+
+.donateIcon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.donateText {
+  flex: 1;
+}
+
+.donateText h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+.donateText p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.donateBtn {
+  flex-shrink: 0;
+  padding: 0.875rem 1.75rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #F8C91C 0%, #FFB800 100%);
+  color: #000;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.donateBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(248, 201, 28, 0.3);
+  text-decoration: none;
+  color: #000;
+}
+
+/* 捐赠区域 - 亮色模式 */
+[data-theme='light'] .donate {
+  background: linear-gradient(180deg, #fff 0%, #fafafa 100%);
+}
+
+[data-theme='light'] .donate::before {
+  background: linear-gradient(90deg, transparent, rgba(248, 201, 28, 0.3), transparent);
+}
+
+[data-theme='light'] .donateContent {
+  background: rgba(248, 201, 28, 0.05);
+  border-color: rgba(248, 201, 28, 0.2);
+}
+
+[data-theme='light'] .donateText h3 {
+  color: #1a1a1a;
+}
+
+[data-theme='light'] .donateText p {
+  color: #666;
+}
+
+/* ==========================================
    响应式设计
    ========================================== */
 @media (max-width: 1024px) {
@@ -1139,6 +1232,22 @@
 
   .communityRight {
     max-width: 100%;
+  }
+
+  .donateContent {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .donateText {
+    order: 2;
+  }
+
+  .donateBtn {
+    order: 3;
+    width: 100%;
+    text-align: center;
   }
 }
 

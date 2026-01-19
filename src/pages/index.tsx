@@ -349,7 +349,7 @@ function CommunitySection() {
             </p>
             <div className={styles.communityStats}>
               <div className={styles.statItem}>
-                <span className={styles.statNum}>700+</span>
+                <span className={styles.statNum}>1000+</span>
                 <span className={styles.statLabel}>Stars</span>
               </div>
               <div className={styles.statItem}>
@@ -399,6 +399,40 @@ function CommunitySection() {
   );
 }
 
+// 捐赠支持
+function DonateSection() {
+  const {i18n} = useDocusaurusContext();
+  const isZh = i18n.currentLocale === 'zh-Hans' || i18n.currentLocale === 'zh';
+  const donateUrl = isZh
+    ? 'https://github.com/TNT-Likely/BeeCount/blob/main/docs/donate/README_ZH.md'
+    : 'https://github.com/TNT-Likely/BeeCount/blob/main/docs/donate/README_EN.md';
+
+  return (
+    <section className={styles.donate}>
+      <div className={styles.container}>
+        <div className={styles.donateContent}>
+          <div className={styles.donateIcon}>💝</div>
+          <div className={styles.donateText}>
+            <h3><Translate id="homepage.donate.title">支持项目</Translate></h3>
+            <p>
+              <Translate id="homepage.donate.desc">
+                蜜蜂记账是完全免费开源的项目，没有广告和付费功能。如果您觉得有帮助，欢迎捐赠支持项目持续发展。
+              </Translate>
+            </p>
+          </div>
+          <a
+            href={donateUrl}
+            className={styles.donateBtn}
+            target="_blank"
+            rel="noopener noreferrer">
+            <Translate id="homepage.donate.btn">了解捐赠方式</Translate>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): JSX.Element {
   useScrollNavbar();
 
@@ -412,6 +446,7 @@ export default function Home(): JSX.Element {
         <FeaturesSection />
         <ScreenshotSection />
         <CommunitySection />
+        <DonateSection />
       </main>
     </Layout>
   );

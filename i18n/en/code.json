@@ -214,5 +214,25 @@
   "homepage.seo.description": {
     "message": "BeeCount is a free and open-source personal finance app for iOS and Android. Simple, secure, with multiple cloud sync options.",
     "description": "SEO description"
+  },
+  "homepage.donate.title": {
+    "message": "Support the Project",
+    "description": "Donate section title"
+  },
+  "homepage.donate.desc": {
+    "message": "BeeCount is completely free and open source, with no ads or paid features. If you find it helpful, consider supporting the project's continued development.",
+    "description": "Donate section description"
+  },
+  "homepage.donate.btn": {
+    "message": "Learn How to Donate",
+    "description": "Donate button text"
+  },
+  "homepage.hero.watchVideo": {
+    "message": "Watch Introduction Video",
+    "description": "Watch video link text"
+  },
+  "homepage.video.credit": {
+    "message": "Video by: UP @星之墨辰",
+    "description": "Video credit text"
   }
 }

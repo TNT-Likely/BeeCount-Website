@@ -78,6 +78,11 @@ const config: Config = {
         },
         // {to: '/blog', label: '博客', position: 'left'},
         {
+          to: '/donate',
+          label: '捐赠',
+          position: 'left',
+        },
+        {
           type: 'localeDropdown',
           position: 'right',
         },
