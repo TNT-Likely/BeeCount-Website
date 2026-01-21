@@ -234,5 +234,33 @@
   "homepage.video.credit": {
     "message": "Video by: UP @星之墨辰",
     "description": "Video credit text"
+  },
+  "homepage.beedns.title": {
+    "message": "BeeDNS",
+    "description": "BeeDNS section title"
+  },
+  "homepage.beedns.desc": {
+    "message": "A clean and efficient DNS record management tool with Aliyun DNS support.",
+    "description": "BeeDNS section description"
+  },
+  "homepage.beedns.btn": {
+    "message": "Learn More",
+    "description": "BeeDNS button text"
+  },
+  "homepage.beedns.feature1": {
+    "message": "Fast & Simple",
+    "description": "BeeDNS feature 1"
+  },
+  "homepage.beedns.feature2": {
+    "message": "Secure",
+    "description": "BeeDNS feature 2"
+  },
+  "homepage.beedns.feature3": {
+    "message": "Operation Logs",
+    "description": "BeeDNS feature 3"
+  },
+  "homepage.beedns.feature4": {
+    "message": "Multi-Provider",
+    "description": "BeeDNS feature 4"
   }
 }

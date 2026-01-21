@@ -188,3 +188,16 @@ body.embed-mode .main-wrapper {
 body.embed-mode article {
   padding: 1rem;
 }
+
+/* 隐藏 footer 外部链接的箭头图标 */
+.footer__links a[href^="http"] svg,
+.footer__links a[href^="https"] svg,
+.footer__link-item svg[class*="external"] {
+  display: none !important;
+}
+
+/* 备用方案：隐藏所有 footer 链接的外部图标 */
+.footer a[target="_blank"] svg,
+.footer__link-item::after {
+  display: none !important;
+}

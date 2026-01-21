@@ -95,7 +95,53 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `© ${new Date().getFullYear()} 蜜蜂记账 BeeCount<br/><span style="font-size: 0.85em; opacity: 0.7;">友情链接：<a href="https://www.ghxi.com/" target="_blank" rel="noopener noreferrer" style="color: inherit;">果核剥壳</a> · <a href="https://m.bilibili.com/space/501149848" target="_blank" rel="noopener noreferrer" style="color: inherit;">B站 @星之墨辰</a></span>`,
+      links: [
+        {
+          title: '社区',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/TNT-Likely/BeeCount',
+            },
+            {
+              label: '小红书 @蜜蜂记账',
+              href: 'https://xhslink.com/m/8K1ekg7EFOq',
+            },
+            {
+              label: '抖音 @蜜蜂记账',
+              href: 'https://v.douyin.com/YG7tUweYYyQ/',
+            },
+          ],
+        },
+        {
+          title: '相关产品',
+          items: [
+            {
+              html: `<a href="https://beedns.youths.cc" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem 1rem; background: rgba(248, 201, 28, 0.08); border: 1px solid rgba(248, 201, 28, 0.2); border-radius: 10px; text-decoration: none; margin-top: 0.5rem;">
+                <span style="font-size: 1.75rem; line-height: 1;">🐝</span>
+                <span>
+                  <span style="display: block; font-weight: 600; color: #F8C91C; margin-bottom: 0.25rem;">蜜蜂域名 BeeDNS</span>
+                  <span style="display: block; font-size: 0.8em; color: rgba(255,255,255,0.6); line-height: 1.4;">简洁高效的 DNS 管理工具<br/>支持阿里云 DNS</span>
+                </span>
+              </a>`,
+            },
+          ],
+        },
+        {
+          title: '友情链接',
+          items: [
+            {
+              label: '果核剥壳',
+              href: 'https://www.ghxi.com/',
+            },
+            {
+              label: 'B站 @星之墨辰',
+              href: 'https://m.bilibili.com/space/501149848',
+            },
+          ],
+        },
+      ],
+      copyright: `© ${new Date().getFullYear()} 蜜蜂记账 BeeCount`,
     },
     prism: {
       theme: prismThemes.github,
