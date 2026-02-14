@@ -81,6 +81,15 @@ In "Project Settings" → "API", find:
 5. Enter Storage Name: `beecount-backups`
 6. Save and test connection
 
+### 7. Configure Synchronization
+
+1. In your Supabase project, go to "Authentication" in the left sidebar.
+2. Open the Users page.
+3. Click "Add user" → "Create new user".
+4. Enter an email address and password, then create the user.
+5. In BeeCount, go to "Mine" → "Sync".
+6. Click "Login/Register" and enter the email address and password created above.
+
 ## Notes
 
 - Free tier has some limitations, but sufficient for personal use
