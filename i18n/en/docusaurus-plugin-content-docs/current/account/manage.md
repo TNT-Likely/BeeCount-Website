@@ -38,6 +38,10 @@ Tap an account to view:
 - Transaction history
 - Statistics charts
 
+## Account Sorting
+
+Accounts are grouped by type (cash, savings, credit card, etc.). Within each group, you can long-press and drag to reorder accounts to your preferred order.
+
 ## Default Account
 
 Set default accounts for income and expenses. They'll be auto-selected when recording for improved efficiency.

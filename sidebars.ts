@@ -71,6 +71,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '安全与隐私',
+      items: [
+        'security/app-lock',
+      ],
+    },
+    {
+      type: 'category',
       label: '个性化',
       items: [
         'personalize/theme',

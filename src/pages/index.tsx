@@ -234,7 +234,7 @@ function FeaturesSection() {
       titleId: 'homepage.features.privacy.title',
       title: '隐私安全',
       descId: 'homepage.features.privacy.desc',
-      desc: '数据本地存储\n完全掌控自己的数据',
+      desc: '应用锁 + 生物识别\n多任务自动模糊屏幕',
     },
     {
       icon: '☁️',

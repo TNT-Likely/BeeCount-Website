@@ -63,6 +63,22 @@ If you want to switch from Device A to Device B:
 
 The current cloud sync solution is based on file synchronization and does not support real-time conflict resolution. Simultaneous editing on multiple devices may cause data conflicts or loss.
 
+### Multi-Device Sync Toggle
+
+If you only use one device, you can disable the "Multi-device Sync" toggle:
+
+- Go to "Me" → "Cloud Services" → Turn off "Multi-device Sync"
+- When disabled, entering the cloud sync page won't automatically check the cloud, reducing lag and data usage
+- You can still trigger sync manually when needed
+
+### Diff Preview
+
+Cloud sync supports diff preview, allowing you to review specific changes between local and cloud data before syncing:
+
+- Shows added, modified, and deleted transactions one by one
+- Selectively sync specific changes
+- A quick-start guide popup appears on first use
+
 ### Future Plans
 
 We are considering upgrading the cloud sync architecture to support true multi-device real-time collaboration. Until then, please strictly follow the steps above when switching devices.

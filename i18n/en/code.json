@@ -48,11 +48,11 @@
     "description": "AI feature description"
   },
   "homepage.features.privacy.title": {
-    "message": "Privacy First",
+    "message": "Privacy & Security",
     "description": "Privacy feature title"
   },
   "homepage.features.privacy.desc": {
-    "message": "Local data storage\nFull control over your data",
+    "message": "App lock + biometric auth\nAuto-blur in multitask view",
     "description": "Privacy feature description"
   },
   "homepage.features.sync.title": {
