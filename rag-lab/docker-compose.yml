@@ -1,0 +1,42 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.13.4
+    container_name: beecount-rag-qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - ./data/qdrant:/qdrant/storage
+
+  rag-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: beecount-rag-api
+    env_file:
+      - ./.env
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      DOCS_ZH_DIR: /workspace/docs
+      DOCS_EN_DIR: /workspace/i18n/en/docusaurus-plugin-content-docs/current
+      DATA_DIR: /app/data
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      OPENAI_COMPAT_API_KEY: ${OPENAI_COMPAT_API_KEY:-}
+      OPENAI_COMPAT_DEFAULT_PROVIDER: ${OPENAI_COMPAT_DEFAULT_PROVIDER:-local}
+      OPENAI_COMPAT_FALLBACK_PROVIDER: ${OPENAI_COMPAT_FALLBACK_PROVIDER:-cloud}
+      OPENAI_COMPAT_ENABLE_STREAM: ${OPENAI_COMPAT_ENABLE_STREAM:-true}
+    depends_on:
+      - qdrant
+    ports:
+      - "8008:8008"
+    volumes:
+      - ./data:/app/data
+      - ..:/workspace:ro
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: beecount-rag-ollama
+    profiles: ["ollama"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./data/ollama:/root/.ollama

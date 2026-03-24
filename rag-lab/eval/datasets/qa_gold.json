@@ -1,0 +1,965 @@
+{
+  "dataset_version": "v1.0.0",
+  "cases": [
+    {
+      "case_id": "zh-001",
+      "locale": "zh",
+      "query": "请说明文档中“预算管理”的要点。",
+      "expected_urls": [
+        "/docs/account/budget"
+      ]
+    },
+    {
+      "case_id": "zh-002",
+      "locale": "zh",
+      "query": "“多账本管理”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/account/ledger"
+      ]
+    },
+    {
+      "case_id": "zh-003",
+      "locale": "zh",
+      "query": "我想了解“账户管理”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/account/manage"
+      ]
+    },
+    {
+      "case_id": "zh-004",
+      "locale": "zh",
+      "query": "文档里关于“AI 对话”的说明是什么？",
+      "expected_urls": [
+        "/docs/ai/chat"
+      ]
+    },
+    {
+      "case_id": "zh-005",
+      "locale": "zh",
+      "query": "请说明文档中“图片识别”的要点。",
+      "expected_urls": [
+        "/docs/ai/image"
+      ]
+    },
+    {
+      "case_id": "zh-006",
+      "locale": "zh",
+      "query": "“AI 助手概览”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/ai/overview"
+      ]
+    },
+    {
+      "case_id": "zh-007",
+      "locale": "zh",
+      "query": "我想了解“语音记账”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/ai/voice"
+      ]
+    },
+    {
+      "case_id": "zh-008",
+      "locale": "zh",
+      "query": "文档里关于“分类管理”的说明是什么？",
+      "expected_urls": [
+        "/docs/category/manage"
+      ]
+    },
+    {
+      "case_id": "zh-009",
+      "locale": "zh",
+      "query": "请说明文档中“二级分类”的要点。",
+      "expected_urls": [
+        "/docs/category/subcategory"
+      ]
+    },
+    {
+      "case_id": "zh-010",
+      "locale": "zh",
+      "query": "“标签系统”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/category/tag"
+      ]
+    },
+    {
+      "case_id": "zh-011",
+      "locale": "zh",
+      "query": "我想了解“更新日志”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/changelog"
+      ]
+    },
+    {
+      "case_id": "zh-012",
+      "locale": "zh",
+      "query": "文档里关于“iCloud 同步”的说明是什么？",
+      "expected_urls": [
+        "/docs/cloud-sync/icloud"
+      ]
+    },
+    {
+      "case_id": "zh-013",
+      "locale": "zh",
+      "query": "请说明文档中“云同步概述”的要点。",
+      "expected_urls": [
+        "/docs/cloud-sync/overview"
+      ]
+    },
+    {
+      "case_id": "zh-014",
+      "locale": "zh",
+      "query": "“S3 协议同步”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/cloud-sync/s3"
+      ]
+    },
+    {
+      "case_id": "zh-015",
+      "locale": "zh",
+      "query": "我想了解“Supabase 同步”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/cloud-sync/supabase"
+      ]
+    },
+    {
+      "case_id": "zh-016",
+      "locale": "zh",
+      "query": "文档里关于“WebDAV 同步”的说明是什么？",
+      "expected_urls": [
+        "/docs/cloud-sync/webdav"
+      ]
+    },
+    {
+      "case_id": "zh-017",
+      "locale": "zh",
+      "query": "请说明文档中“参与贡献”的要点。",
+      "expected_urls": [
+        "/docs/contributing"
+      ]
+    },
+    {
+      "case_id": "zh-018",
+      "locale": "zh",
+      "query": "“常见问题”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/faq"
+      ]
+    },
+    {
+      "case_id": "zh-019",
+      "locale": "zh",
+      "query": "我想了解“账户管理”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/features/account"
+      ]
+    },
+    {
+      "case_id": "zh-020",
+      "locale": "zh",
+      "query": "文档里关于“预算管理”的说明是什么？",
+      "expected_urls": [
+        "/docs/features/budget"
+      ]
+    },
+    {
+      "case_id": "zh-021",
+      "locale": "zh",
+      "query": "请说明文档中“分类管理”的要点。",
+      "expected_urls": [
+        "/docs/features/category"
+      ]
+    },
+    {
+      "case_id": "zh-022",
+      "locale": "zh",
+      "query": "“记账功能”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/features/record"
+      ]
+    },
+    {
+      "case_id": "zh-023",
+      "locale": "zh",
+      "query": "我想了解“周期记账”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/features/recurring"
+      ]
+    },
+    {
+      "case_id": "zh-024",
+      "locale": "zh",
+      "query": "文档里关于“统计分析”的说明是什么？",
+      "expected_urls": [
+        "/docs/features/statistics"
+      ]
+    },
+    {
+      "case_id": "zh-025",
+      "locale": "zh",
+      "query": "请说明文档中“标签系统”的要点。",
+      "expected_urls": [
+        "/docs/features/tag"
+      ]
+    },
+    {
+      "case_id": "zh-026",
+      "locale": "zh",
+      "query": "“第一笔记账”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/getting-started/first-record"
+      ]
+    },
+    {
+      "case_id": "zh-027",
+      "locale": "zh",
+      "query": "我想了解“安装指南”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/getting-started/installation"
+      ]
+    },
+    {
+      "case_id": "zh-028",
+      "locale": "zh",
+      "query": "文档里关于“欢迎使用蜜蜂记账”的说明是什么？",
+      "expected_urls": [
+        "/docs/intro"
+      ]
+    },
+    {
+      "case_id": "zh-029",
+      "locale": "zh",
+      "query": "请说明文档中“收支颜色方案”的要点。",
+      "expected_urls": [
+        "/docs/personalize/color-scheme"
+      ]
+    },
+    {
+      "case_id": "zh-030",
+      "locale": "zh",
+      "query": "“暗黑模式”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/personalize/dark-mode"
+      ]
+    },
+    {
+      "case_id": "zh-031",
+      "locale": "zh",
+      "query": "我想了解“主题色设置”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/personalize/theme"
+      ]
+    },
+    {
+      "case_id": "zh-032",
+      "locale": "zh",
+      "query": "文档里关于“交易附件”的说明是什么？",
+      "expected_urls": [
+        "/docs/record/attachment"
+      ]
+    },
+    {
+      "case_id": "zh-033",
+      "locale": "zh",
+      "query": "请说明文档中“Android 自动记账”的要点。",
+      "expected_urls": [
+        "/docs/record/auto-android"
+      ]
+    },
+    {
+      "case_id": "zh-034",
+      "locale": "zh",
+      "query": "“iOS 自动记账”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/record/auto-ios"
+      ]
+    },
+    {
+      "case_id": "zh-035",
+      "locale": "zh",
+      "query": "我想了解“基础记账”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/record/basic"
+      ]
+    },
+    {
+      "case_id": "zh-036",
+      "locale": "zh",
+      "query": "文档里关于“数据导入导出”的说明是什么？",
+      "expected_urls": [
+        "/docs/record/import-export"
+      ]
+    },
+    {
+      "case_id": "zh-037",
+      "locale": "zh",
+      "query": "请说明文档中“长按快捷操作”的要点。",
+      "expected_urls": [
+        "/docs/record/quick-actions"
+      ]
+    },
+    {
+      "case_id": "zh-038",
+      "locale": "zh",
+      "query": "“周期记账”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/record/recurring"
+      ]
+    },
+    {
+      "case_id": "zh-039",
+      "locale": "zh",
+      "query": "我想了解“日历功能”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/statistics/calendar"
+      ]
+    },
+    {
+      "case_id": "zh-040",
+      "locale": "zh",
+      "query": "文档里关于“图表分析”的说明是什么？",
+      "expected_urls": [
+        "/docs/statistics/chart"
+      ]
+    },
+    {
+      "case_id": "zh-041",
+      "locale": "zh",
+      "query": "请说明文档中“统计概览”的要点。",
+      "expected_urls": [
+        "/docs/statistics/overview"
+      ]
+    },
+    {
+      "case_id": "zh-042",
+      "locale": "zh",
+      "query": "“预算管理”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/account/budget"
+      ]
+    },
+    {
+      "case_id": "zh-043",
+      "locale": "zh",
+      "query": "我想了解“多账本管理”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/account/ledger"
+      ]
+    },
+    {
+      "case_id": "zh-044",
+      "locale": "zh",
+      "query": "文档里关于“账户管理”的说明是什么？",
+      "expected_urls": [
+        "/docs/account/manage"
+      ]
+    },
+    {
+      "case_id": "zh-045",
+      "locale": "zh",
+      "query": "请说明文档中“AI 对话”的要点。",
+      "expected_urls": [
+        "/docs/ai/chat"
+      ]
+    },
+    {
+      "case_id": "zh-046",
+      "locale": "zh",
+      "query": "“图片识别”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/ai/image"
+      ]
+    },
+    {
+      "case_id": "zh-047",
+      "locale": "zh",
+      "query": "我想了解“AI 助手概览”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/ai/overview"
+      ]
+    },
+    {
+      "case_id": "zh-048",
+      "locale": "zh",
+      "query": "文档里关于“语音记账”的说明是什么？",
+      "expected_urls": [
+        "/docs/ai/voice"
+      ]
+    },
+    {
+      "case_id": "zh-049",
+      "locale": "zh",
+      "query": "请说明文档中“分类管理”的要点。",
+      "expected_urls": [
+        "/docs/category/manage"
+      ]
+    },
+    {
+      "case_id": "zh-050",
+      "locale": "zh",
+      "query": "“二级分类”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/category/subcategory"
+      ]
+    },
+    {
+      "case_id": "zh-051",
+      "locale": "zh",
+      "query": "我想了解“标签系统”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/category/tag"
+      ]
+    },
+    {
+      "case_id": "zh-052",
+      "locale": "zh",
+      "query": "文档里关于“更新日志”的说明是什么？",
+      "expected_urls": [
+        "/docs/changelog"
+      ]
+    },
+    {
+      "case_id": "zh-053",
+      "locale": "zh",
+      "query": "请说明文档中“iCloud 同步”的要点。",
+      "expected_urls": [
+        "/docs/cloud-sync/icloud"
+      ]
+    },
+    {
+      "case_id": "zh-054",
+      "locale": "zh",
+      "query": "“云同步概述”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/cloud-sync/overview"
+      ]
+    },
+    {
+      "case_id": "zh-055",
+      "locale": "zh",
+      "query": "我想了解“S3 协议同步”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/cloud-sync/s3"
+      ]
+    },
+    {
+      "case_id": "zh-056",
+      "locale": "zh",
+      "query": "文档里关于“Supabase 同步”的说明是什么？",
+      "expected_urls": [
+        "/docs/cloud-sync/supabase"
+      ]
+    },
+    {
+      "case_id": "zh-057",
+      "locale": "zh",
+      "query": "请说明文档中“WebDAV 同步”的要点。",
+      "expected_urls": [
+        "/docs/cloud-sync/webdav"
+      ]
+    },
+    {
+      "case_id": "zh-058",
+      "locale": "zh",
+      "query": "“参与贡献”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/contributing"
+      ]
+    },
+    {
+      "case_id": "zh-059",
+      "locale": "zh",
+      "query": "我想了解“常见问题”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/faq"
+      ]
+    },
+    {
+      "case_id": "zh-060",
+      "locale": "zh",
+      "query": "文档里关于“账户管理”的说明是什么？",
+      "expected_urls": [
+        "/docs/features/account"
+      ]
+    },
+    {
+      "case_id": "zh-061",
+      "locale": "zh",
+      "query": "请说明文档中“预算管理”的要点。",
+      "expected_urls": [
+        "/docs/features/budget"
+      ]
+    },
+    {
+      "case_id": "zh-062",
+      "locale": "zh",
+      "query": "“分类管理”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/features/category"
+      ]
+    },
+    {
+      "case_id": "zh-063",
+      "locale": "zh",
+      "query": "我想了解“记账功能”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/features/record"
+      ]
+    },
+    {
+      "case_id": "zh-064",
+      "locale": "zh",
+      "query": "文档里关于“周期记账”的说明是什么？",
+      "expected_urls": [
+        "/docs/features/recurring"
+      ]
+    },
+    {
+      "case_id": "zh-065",
+      "locale": "zh",
+      "query": "请说明文档中“统计分析”的要点。",
+      "expected_urls": [
+        "/docs/features/statistics"
+      ]
+    },
+    {
+      "case_id": "zh-066",
+      "locale": "zh",
+      "query": "“标签系统”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/features/tag"
+      ]
+    },
+    {
+      "case_id": "zh-067",
+      "locale": "zh",
+      "query": "我想了解“第一笔记账”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/getting-started/first-record"
+      ]
+    },
+    {
+      "case_id": "zh-068",
+      "locale": "zh",
+      "query": "文档里关于“安装指南”的说明是什么？",
+      "expected_urls": [
+        "/docs/getting-started/installation"
+      ]
+    },
+    {
+      "case_id": "zh-069",
+      "locale": "zh",
+      "query": "请说明文档中“欢迎使用蜜蜂记账”的要点。",
+      "expected_urls": [
+        "/docs/intro"
+      ]
+    },
+    {
+      "case_id": "zh-070",
+      "locale": "zh",
+      "query": "“收支颜色方案”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/personalize/color-scheme"
+      ]
+    },
+    {
+      "case_id": "zh-071",
+      "locale": "zh",
+      "query": "我想了解“暗黑模式”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/personalize/dark-mode"
+      ]
+    },
+    {
+      "case_id": "zh-072",
+      "locale": "zh",
+      "query": "文档里关于“主题色设置”的说明是什么？",
+      "expected_urls": [
+        "/docs/personalize/theme"
+      ]
+    },
+    {
+      "case_id": "zh-073",
+      "locale": "zh",
+      "query": "请说明文档中“交易附件”的要点。",
+      "expected_urls": [
+        "/docs/record/attachment"
+      ]
+    },
+    {
+      "case_id": "zh-074",
+      "locale": "zh",
+      "query": "“Android 自动记账”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/record/auto-android"
+      ]
+    },
+    {
+      "case_id": "zh-075",
+      "locale": "zh",
+      "query": "我想了解“iOS 自动记账”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/record/auto-ios"
+      ]
+    },
+    {
+      "case_id": "zh-076",
+      "locale": "zh",
+      "query": "文档里关于“基础记账”的说明是什么？",
+      "expected_urls": [
+        "/docs/record/basic"
+      ]
+    },
+    {
+      "case_id": "zh-077",
+      "locale": "zh",
+      "query": "请说明文档中“数据导入导出”的要点。",
+      "expected_urls": [
+        "/docs/record/import-export"
+      ]
+    },
+    {
+      "case_id": "zh-078",
+      "locale": "zh",
+      "query": "“长按快捷操作”在 BeeCount 文档里怎么解释？",
+      "expected_urls": [
+        "/docs/record/quick-actions"
+      ]
+    },
+    {
+      "case_id": "zh-079",
+      "locale": "zh",
+      "query": "我想了解“周期记账”，请基于文档回答。",
+      "expected_urls": [
+        "/docs/record/recurring"
+      ]
+    },
+    {
+      "case_id": "zh-080",
+      "locale": "zh",
+      "query": "文档里关于“日历功能”的说明是什么？",
+      "expected_urls": [
+        "/docs/statistics/calendar"
+      ]
+    },
+    {
+      "case_id": "en-001",
+      "locale": "en",
+      "query": "What does the docs say about \"Budget Management\"?",
+      "expected_urls": [
+        "/en/docs/account/budget"
+      ]
+    },
+    {
+      "case_id": "en-002",
+      "locale": "en",
+      "query": "Please summarize \"Multiple Ledgers\" based on docs.",
+      "expected_urls": [
+        "/en/docs/account/ledger"
+      ]
+    },
+    {
+      "case_id": "en-003",
+      "locale": "en",
+      "query": "How is \"Account Management\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/account/manage"
+      ]
+    },
+    {
+      "case_id": "en-004",
+      "locale": "en",
+      "query": "Give the key points of \"AI Chat\" from docs.",
+      "expected_urls": [
+        "/en/docs/ai/chat"
+      ]
+    },
+    {
+      "case_id": "en-005",
+      "locale": "en",
+      "query": "What does the docs say about \"Image Recognition\"?",
+      "expected_urls": [
+        "/en/docs/ai/image"
+      ]
+    },
+    {
+      "case_id": "en-006",
+      "locale": "en",
+      "query": "Please summarize \"AI Assistant Overview\" based on docs.",
+      "expected_urls": [
+        "/en/docs/ai/overview"
+      ]
+    },
+    {
+      "case_id": "en-007",
+      "locale": "en",
+      "query": "How is \"Voice Recording\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/ai/voice"
+      ]
+    },
+    {
+      "case_id": "en-008",
+      "locale": "en",
+      "query": "Give the key points of \"Category Management\" from docs.",
+      "expected_urls": [
+        "/en/docs/category/manage"
+      ]
+    },
+    {
+      "case_id": "en-009",
+      "locale": "en",
+      "query": "What does the docs say about \"Subcategories\"?",
+      "expected_urls": [
+        "/en/docs/category/subcategory"
+      ]
+    },
+    {
+      "case_id": "en-010",
+      "locale": "en",
+      "query": "Please summarize \"Tag System\" based on docs.",
+      "expected_urls": [
+        "/en/docs/category/tag"
+      ]
+    },
+    {
+      "case_id": "en-011",
+      "locale": "en",
+      "query": "How is \"Changelog\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/changelog"
+      ]
+    },
+    {
+      "case_id": "en-012",
+      "locale": "en",
+      "query": "Give the key points of \"iCloud Sync\" from docs.",
+      "expected_urls": [
+        "/en/docs/cloud-sync/icloud"
+      ]
+    },
+    {
+      "case_id": "en-013",
+      "locale": "en",
+      "query": "What does the docs say about \"Cloud Sync Overview\"?",
+      "expected_urls": [
+        "/en/docs/cloud-sync/overview"
+      ]
+    },
+    {
+      "case_id": "en-014",
+      "locale": "en",
+      "query": "Please summarize \"S3 Protocol Sync\" based on docs.",
+      "expected_urls": [
+        "/en/docs/cloud-sync/s3"
+      ]
+    },
+    {
+      "case_id": "en-015",
+      "locale": "en",
+      "query": "How is \"Supabase Sync\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/cloud-sync/supabase"
+      ]
+    },
+    {
+      "case_id": "en-016",
+      "locale": "en",
+      "query": "Give the key points of \"WebDAV Sync\" from docs.",
+      "expected_urls": [
+        "/en/docs/cloud-sync/webdav"
+      ]
+    },
+    {
+      "case_id": "en-017",
+      "locale": "en",
+      "query": "What does the docs say about \"Contributing\"?",
+      "expected_urls": [
+        "/en/docs/contributing"
+      ]
+    },
+    {
+      "case_id": "en-018",
+      "locale": "en",
+      "query": "Please summarize \"FAQ\" based on docs.",
+      "expected_urls": [
+        "/en/docs/faq"
+      ]
+    },
+    {
+      "case_id": "en-019",
+      "locale": "en",
+      "query": "How is \"Account Management\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/features/account"
+      ]
+    },
+    {
+      "case_id": "en-020",
+      "locale": "en",
+      "query": "Give the key points of \"Budget Management\" from docs.",
+      "expected_urls": [
+        "/en/docs/features/budget"
+      ]
+    },
+    {
+      "case_id": "en-021",
+      "locale": "en",
+      "query": "What does the docs say about \"Category Management\"?",
+      "expected_urls": [
+        "/en/docs/features/category"
+      ]
+    },
+    {
+      "case_id": "en-022",
+      "locale": "en",
+      "query": "Please summarize \"Recording Transactions\" based on docs.",
+      "expected_urls": [
+        "/en/docs/features/record"
+      ]
+    },
+    {
+      "case_id": "en-023",
+      "locale": "en",
+      "query": "How is \"Recurring Entries\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/features/recurring"
+      ]
+    },
+    {
+      "case_id": "en-024",
+      "locale": "en",
+      "query": "Give the key points of \"Statistics & Analysis\" from docs.",
+      "expected_urls": [
+        "/en/docs/features/statistics"
+      ]
+    },
+    {
+      "case_id": "en-025",
+      "locale": "en",
+      "query": "What does the docs say about \"Tag System\"?",
+      "expected_urls": [
+        "/en/docs/features/tag"
+      ]
+    },
+    {
+      "case_id": "en-026",
+      "locale": "en",
+      "query": "Please summarize \"Your First Record\" based on docs.",
+      "expected_urls": [
+        "/en/docs/getting-started/first-record"
+      ]
+    },
+    {
+      "case_id": "en-027",
+      "locale": "en",
+      "query": "How is \"Installation Guide\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/getting-started/installation"
+      ]
+    },
+    {
+      "case_id": "en-028",
+      "locale": "en",
+      "query": "Give the key points of \"Welcome to BeeCount\" from docs.",
+      "expected_urls": [
+        "/en/docs/intro"
+      ]
+    },
+    {
+      "case_id": "en-029",
+      "locale": "en",
+      "query": "What does the docs say about \"Income/Expense Color Scheme\"?",
+      "expected_urls": [
+        "/en/docs/personalize/color-scheme"
+      ]
+    },
+    {
+      "case_id": "en-030",
+      "locale": "en",
+      "query": "Please summarize \"Dark Mode\" based on docs.",
+      "expected_urls": [
+        "/en/docs/personalize/dark-mode"
+      ]
+    },
+    {
+      "case_id": "en-031",
+      "locale": "en",
+      "query": "How is \"Theme Settings\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/personalize/theme"
+      ]
+    },
+    {
+      "case_id": "en-032",
+      "locale": "en",
+      "query": "Give the key points of \"Transaction Attachments\" from docs.",
+      "expected_urls": [
+        "/en/docs/record/attachment"
+      ]
+    },
+    {
+      "case_id": "en-033",
+      "locale": "en",
+      "query": "What does the docs say about \"Android Auto Recording\"?",
+      "expected_urls": [
+        "/en/docs/record/auto-android"
+      ]
+    },
+    {
+      "case_id": "en-034",
+      "locale": "en",
+      "query": "Please summarize \"iOS Auto Recording\" based on docs.",
+      "expected_urls": [
+        "/en/docs/record/auto-ios"
+      ]
+    },
+    {
+      "case_id": "en-035",
+      "locale": "en",
+      "query": "How is \"Basic Recording\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/record/basic"
+      ]
+    },
+    {
+      "case_id": "en-036",
+      "locale": "en",
+      "query": "Give the key points of \"Import & Export\" from docs.",
+      "expected_urls": [
+        "/en/docs/record/import-export"
+      ]
+    },
+    {
+      "case_id": "en-037",
+      "locale": "en",
+      "query": "What does the docs say about \"Quick Actions\"?",
+      "expected_urls": [
+        "/en/docs/record/quick-actions"
+      ]
+    },
+    {
+      "case_id": "en-038",
+      "locale": "en",
+      "query": "Please summarize \"Recurring Entries\" based on docs.",
+      "expected_urls": [
+        "/en/docs/record/recurring"
+      ]
+    },
+    {
+      "case_id": "en-039",
+      "locale": "en",
+      "query": "How is \"Calendar\" explained in BeeCount docs?",
+      "expected_urls": [
+        "/en/docs/statistics/calendar"
+      ]
+    },
+    {
+      "case_id": "en-040",
+      "locale": "en",
+      "query": "Give the key points of \"Chart Analysis\" from docs.",
+      "expected_urls": [
+        "/en/docs/statistics/chart"
+      ]
+    }
+  ]
+}
