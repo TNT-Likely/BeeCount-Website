@@ -1,0 +1,121 @@
+name: Deploy MCP Server
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'i18n/**'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          cd mcp
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Build vector index
+        env:
+          EMBEDDING_MODEL: paraphrase-multilingual-MiniLM-L12-v2
+        run: |
+          echo "Building vector index for all languages..."
+          cd mcp
+          python run_server.py --rebuild-index --language ALL --force
+          
+          echo "Vector index statistics:"
+          python -c "
+from src.vector_store import get_vector_store
+zh_stats = get_vector_store().get_stats('zh')
+en_stats = get_vector_store().get_stats('en')
+print(f'  Chinese (zh): {zh_stats[\"total_chunks\"]} chunks, {zh_stats[\"total_documents\"]} documents')
+print(f'  English (en): {en_stats[\"total_chunks\"]} chunks, {en_stats[\"total_documents\"]} documents')
+print(f'  Total: {zh_stats[\"total_chunks\"] + en_stats[\"total_chunks\"]} chunks')
+"
+      
+      - name: Package vector database
+        run: |
+          echo "Packaging vector database..."
+          cd mcp
+          tar -czf chroma-data.tar.gz data/chroma/
+          ls -lh chroma-data.tar.gz
+      
+      - name: Upload to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "mcp/chroma-data.tar.gz"
+          target: "${{ secrets.SERVER_PATH }}"
+          strip_components: 1
+      
+      - name: Extract and restart service
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ${{ secrets.SERVER_PATH }}
+            echo "Extracting vector database..."
+            tar -xzf chroma-data.tar.gz
+            rm -f chroma-data.tar.gz
+            echo "Restarting MCP service..."
+            sudo systemctl restart mcp
+            echo "Checking service status..."
+            sudo systemctl status mcp --no-pager
+      
+      - name: Verify deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ${{ secrets.SERVER_PATH }}
+            echo "Checking vector database..."
+            python -c "
+from src.vector_store import get_vector_store
+stats = get_vector_store().get_stats('zh')
+print(f'Chinese chunks: {stats[\"total_chunks\"]}')
+"
+            
+            python -c "
+from src.vector_store import get_vector_store
+stats = get_vector_store().get_stats('en')
+print(f'English chunks: {stats[\"total_chunks\"]}')
+"
+            
+            echo "Checking service status..."
+            sudo systemctl is-active mcp
+      
+      - name: Deployment summary
+        run: |
+          echo "=========================================="
+          echo "Deployment Summary"
+          echo "=========================================="
+          echo "✓ Vector index built successfully"
+          echo "✓ Vector database uploaded to server"
+          echo "✓ MCP service restarted"
+          echo ""
+          echo "Next steps:"
+          echo "1. Verify the service is running: ssh user@server 'sudo systemctl status mcp'"
+          echo "2. Check logs: ssh user@server 'sudo journalctl -u mcp -f'"
+          echo "3. Test the MCP tools"
+          echo "=========================================="
