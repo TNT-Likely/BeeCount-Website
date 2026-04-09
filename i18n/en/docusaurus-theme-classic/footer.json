@@ -30,5 +30,29 @@
   "link.item.label.Android APK": {
     "message": "Android APK",
     "description": "The label of footer link with label=Android APK"
+  },
+  "link.title.相关产品": {
+    "message": "Products",
+    "description": "The title of the footer links column with title=相关产品 in the footer"
+  },
+  "link.title.友情链接": {
+    "message": "Links",
+    "description": "The title of the footer links column with title=友情链接 in the footer"
+  },
+  "link.item.label.果核剥壳": {
+    "message": "JEEK",
+    "description": "The label of footer link with label=果核剥壳 linking to https://www.ghxi.com/"
+  },
+  "link.item.label.B站 @星之墨辰": {
+    "message": "Bilibili @星之墨辰",
+    "description": "The label of footer link with label=B站 @星之墨辰"
+  },
+  "link.item.label.小红书 @蜜蜂记账": {
+    "message": "Xiaohongshu @BeeCount",
+    "description": "The label of footer link with label=小红书 @蜜蜂记账"
+  },
+  "link.item.label.抖音 @蜜蜂记账": {
+    "message": "Douyin @BeeCount",
+    "description": "The label of footer link with label=抖音 @蜜蜂记账"
   }
 }
