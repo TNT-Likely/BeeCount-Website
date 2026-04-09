@@ -125,6 +125,15 @@ const config: Config = {
                 </span>
               </a>`,
             },
+            {
+              html: `<a href="https://ziqu.youths.cc" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem 1rem; background: rgba(45, 140, 111, 0.08); border: 1px solid rgba(45, 140, 111, 0.2); border-radius: 10px; text-decoration: none; margin-top: 0.5rem;">
+                <span style="font-size: 1.75rem; line-height: 1;">🀄</span>
+                <span>
+                  <span style="display: block; font-weight: 600; color: #2d8c6f; margin-bottom: 0.25rem;">字趣 Ziqu</span>
+                  <span style="display: block; font-size: 0.8em; color: rgba(255,255,255,0.6); line-height: 1.4;">好玩的中文汉字成语小游戏<br/>成语Wordle · 成语接龙 · 诗词填空</span>
+                </span>
+              </a>`,
+            },
           ],
         },
         {
