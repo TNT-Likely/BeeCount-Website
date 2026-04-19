@@ -56,11 +56,11 @@
     "description": "Privacy feature description"
   },
   "homepage.features.sync.title": {
-    "message": "Multi-Device Sync",
+    "message": "Realtime Multi-Device",
     "description": "Sync feature title"
   },
   "homepage.features.sync.desc": {
-    "message": "iCloud / WebDAV / S3\nSelf-hosted server support",
+    "message": "BeeCount Cloud self-hosted\niCloud / WebDAV / S3 also supported",
     "description": "Sync feature description"
   },
   "homepage.features.stats.title": {

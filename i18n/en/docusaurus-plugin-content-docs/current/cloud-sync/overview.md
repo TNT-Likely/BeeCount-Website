@@ -8,18 +8,20 @@ BeeCount supports multiple cloud sync options for flexible and controllable data
 
 ## Why Cloud Sync?
 
-- **Data Backup** - Prevent data loss
-- **Device Migration** - Quickly restore data on new devices
-- **Device Switching** - Switch between different devices (requires correct procedure)
+- **Data Backup** — Prevent data loss
+- **Device Migration** — Quickly restore on a new device
+- **Multi-device collaboration** — Phone / tablet / Web in real time (BeeCount Cloud)
+- **Device Switching** — Move between devices
 
 ## Supported Sync Methods
 
-| Method | Best For | Difficulty |
-|--------|----------|------------|
-| [iCloud](./icloud) | iOS users | ⭐ Easiest |
-| [Supabase](./supabase) | Free cloud database | ⭐⭐ Easy |
-| [WebDAV](./webdav) | NAS/Self-hosted users | ⭐⭐ Easy |
-| [S3](./s3) | Technical users | ⭐⭐⭐ Medium |
+| Method | Best for | Difficulty | Realtime |
+|--------|---------|------------|----------|
+| [**BeeCount Cloud**](./beecount-cloud) 🆕 | Multi-device realtime + Web | ⭐⭐ Easy | ✅ Yes |
+| [iCloud](./icloud) | iOS users | ⭐ Easiest | ⚠️ iOS only |
+| [Supabase](./supabase) | Free cloud database | ⭐⭐ Easy | ❌ Manual upload/download |
+| [WebDAV](./webdav) | NAS / self-hosted | ⭐⭐ Easy | ❌ Manual upload/download |
+| [S3](./s3) | Technical users | ⭐⭐⭐ Medium | ❌ Manual upload/download |
 
 ## Data Security
 
@@ -29,56 +31,48 @@ BeeCount supports multiple cloud sync options for flexible and controllable data
 
 ## Recommendations
 
-- **iOS Users**: iCloud is recommended - zero configuration
-- **Android Users**: Supabase or WebDAV recommended
-- **Technical Users**: Self-host S3 or WebDAV
+- **Multi-device / family use** → **BeeCount Cloud** self-hosted, phone + Web in seconds
+- **iOS-only single user** → **iCloud**, zero config
+- **Don't want to run a server** → **Supabase**, generous free tier
+- **Have NAS / Jianguoyun** → **WebDAV**
+- **Prefer object storage** → **S3** (Cloudflare R2 / AWS S3 / MinIO)
 
-## Multi-Device Usage Guide
+## Two sync models
 
-:::warning Important Notice
+The cloud options fall into two camps — pick based on what you actually need:
 
-Multi-device collaborative editing is currently not supported. To switch between multiple devices, follow these steps:
+### Realtime sync (BeeCount Cloud)
+
+Edit a row on A → WebSocket push → B sees it within seconds. **No manual action** — feels like chat messages arriving.
+
+### Snapshot sync (iCloud / Supabase / WebDAV / S3)
+
+Upload your local data as a **full snapshot** overwriting the cloud copy; new device downloads the **full snapshot** overwriting local. Good for "single user, mostly one device, occasional device swap".
+
+:::tip Multi-device with snapshot sync
+
+Snapshot sync **does not** support simultaneous editing on two devices — the later upload overwrites the earlier one. Steps:
+
+1. **On the original device**: make sure data is uploaded to cloud
+2. **On the new device**: clear local ledgers → download from cloud
+3. **Avoid** editing on two devices at once, to prevent conflicts
+
+If you need realtime multi-device sync, switch to **BeeCount Cloud**.
 
 :::
 
-### Correct Device Switching Steps
+## Diff preview (snapshot sync)
 
-If you want to switch from Device A to Device B:
+iCloud / Supabase / WebDAV / S3 support a **diff preview** before upload/download:
 
-1. **On Device A**
-   - Ensure data has synced to cloud
-   - Check last sync time in cloud sync settings
-
-2. **On Device B**
-   - Delete all local ledgers (or clear app data)
-   - Configure the same cloud sync service
-   - Download data from cloud
-
-3. **Important Notes**
-   - ⚠️ Confirm Device A data is uploaded before switching
-   - ⚠️ Device B must clear local data before downloading
-   - ⚠️ Do not edit data on two devices simultaneously
-
-### Why Not Support Multi-Device Collaboration?
-
-The current cloud sync solution is based on file synchronization and does not support real-time conflict resolution. Simultaneous editing on multiple devices may cause data conflicts or loss.
-
-### Multi-Device Sync Toggle
-
-If you only use one device, you can disable the "Multi-device Sync" toggle:
-
-- Go to "Me" → "Cloud Services" → Turn off "Multi-device Sync"
-- When disabled, entering the cloud sync page won't automatically check the cloud, reducing lag and data usage
-- You can still trigger sync manually when needed
-
-### Diff Preview
-
-Cloud sync supports diff preview, allowing you to review specific changes between local and cloud data before syncing:
-
-- Shows added, modified, and deleted transactions one by one
+- Shows added, modified, and deleted transactions row by row
 - Selectively sync specific changes
-- A quick-start guide popup appears on first use
+- A guide popup appears on first use
 
-### Future Plans
+## Multi-device toggle (snapshot sync)
 
-We are considering upgrading the cloud sync architecture to support true multi-device real-time collaboration. Until then, please strictly follow the steps above when switching devices.
+If you only use one device, turn off the "Multi-device sync" toggle:
+
+- **Me** → **Cloud Services** → disable "Multi-device sync"
+- Once off, entering the sync page no longer hits the cloud automatically — less lag, less data
+- Trigger manually when you need it

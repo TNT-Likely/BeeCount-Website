@@ -239,9 +239,9 @@ function FeaturesSection() {
     {
       icon: '☁️',
       titleId: 'homepage.features.sync.title',
-      title: '多端同步',
+      title: '多端实时同步',
       descId: 'homepage.features.sync.desc',
-      desc: 'iCloud / WebDAV / S3\n支持自建服务器',
+      desc: 'BeeCount Cloud 自建云\niCloud / WebDAV / S3 任选',
     },
     {
       icon: '📊',
