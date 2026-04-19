@@ -63,6 +63,7 @@ const sidebars: SidebarsConfig = {
       label: '云同步',
       items: [
         'cloud-sync/overview',
+        'cloud-sync/beecount-cloud',
         'cloud-sync/icloud',
         'cloud-sync/supabase',
         'cloud-sync/webdav',
