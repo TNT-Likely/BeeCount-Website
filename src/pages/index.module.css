@@ -629,23 +629,96 @@
   color: rgba(0, 0, 0, 0.9);
 }
 
-/* 浏览器窗口 frame:traffic light + url bar + 截图 */
-.browserFrame {
+/* 浏览器双窗口叠放容器 —— 跟 phoneShowcase 对齐,前/后两 frame 分别承载
+   light / dark 两种主题截图,视觉节奏跟 mobile 侧的双手机一致。 */
+.browserShowcase {
+  position: relative;
   width: 520px;
   max-width: 100%;
+  height: 380px;
+  perspective: 1400px;
+}
+
+/* 浏览器窗口 frame:traffic light + url bar + 截图 */
+.browserFrame {
+  position: absolute;
+  width: 440px;
   border-radius: 12px;
   overflow: hidden;
+  background: #fafafa;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 前景(日间模式 light)—— 左前,轻微浮动。 */
+.browserShowcase > .browserFrame:first-child {
+  z-index: 2;
+  left: 0;
+  top: 20px;
+  animation: browserFloat 4s ease-in-out infinite;
+}
+
+/* 后景(暗黑模式 dark)—— 右后,旋转 + 缩放 + 半透明。 */
+.browserFrameBack {
+  z-index: 1;
+  right: 0;
+  top: 80px;
   background: #1a1a1a;
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.55),
     0 0 0 1px rgba(255, 255, 255, 0.08),
     0 0 60px rgba(248, 201, 28, 0.08);
-  transform: perspective(1400px) rotateY(-4deg) rotateX(2deg);
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(6deg) scale(0.9);
+  opacity: 0.85;
+  animation: browserFloatBack 4s ease-in-out 1s infinite;
 }
 
-.deviceShowcase:hover .browserFrame {
-  transform: perspective(1400px) rotateY(0deg) rotateX(0deg) translateY(-4px);
+.browserFrameBack .browserChrome {
+  background: #2a2a2a;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.browserFrameBack .browserUrl {
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes browserFloat {
+  0%, 100% {
+    transform: translateY(0) rotateY(-6deg) rotateX(1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateY(-6deg) rotateX(1deg);
+  }
+}
+
+@keyframes browserFloatBack {
+  0%, 100% {
+    transform: rotate(6deg) scale(0.9) translateY(0);
+  }
+  50% {
+    transform: rotate(6deg) scale(0.9) translateY(-8px);
+  }
+}
+
+/* Hover:暗黑 frame 上前,light 退后 —— 跟 phoneShowcase 的 hover 逻辑对齐。 */
+.deviceShowcase:hover .browserShowcase > .browserFrame:first-child {
+  transform: rotate(-4deg) translateX(-40px) scale(1.05);
+  z-index: 1;
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.deviceShowcase:hover .browserFrameBack {
+  transform: rotate(0deg) translateX(30px) scale(1.02);
+  opacity: 1;
+  z-index: 2;
+  box-shadow:
+    0 50px 120px rgba(0, 0, 0, 0.65),
+    0 0 80px rgba(248, 201, 28, 0.2);
 }
 
 .browserChrome {
@@ -653,8 +726,8 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.6rem 1rem;
-  background: #2a2a2a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ececec;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .browserDots {
@@ -674,9 +747,9 @@
   flex: 1;
   text-align: center;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.55);
   font-family: -apple-system, system-ui, monospace;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
   padding: 0.25rem 0.6rem;
   max-width: 70%;
@@ -692,21 +765,11 @@
   height: auto;
 }
 
-[data-theme='light'] .browserFrame {
-  background: #f5f5f5;
+/* light 主题下再稍微柔化前景 frame 的阴影(默认已经是 light) */
+[data-theme='light'] .browserShowcase > .browserFrame:first-child {
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.15),
+    0 30px 80px rgba(0, 0, 0, 0.18),
     0 0 0 1px rgba(0, 0, 0, 0.06);
-}
-
-[data-theme='light'] .browserChrome {
-  background: #e5e5e5;
-  border-bottom-color: rgba(0, 0, 0, 0.08);
-}
-
-[data-theme='light'] .browserUrl {
-  color: rgba(0, 0, 0, 0.55);
-  background: rgba(0, 0, 0, 0.04);
 }
 
 /* 手机展示区域 */

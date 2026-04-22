@@ -100,7 +100,7 @@ function DeviceShowcase() {
     if (paused) return;
     const timer = setInterval(() => {
       setMode((prev) => (prev === 'mobile' ? 'web' : 'mobile'));
-    }, 5000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [paused]);
 
@@ -126,26 +126,45 @@ function DeviceShowcase() {
         </div>
       </div>
 
-      {/* Web 形态:浏览器 chrome(traffic lights + URL bar)+ Web 仪表盘截图。 */}
+      {/* Web 形态:双浏览器窗口叠放,跟 mobile 的双手机叠放节奏对齐 ——
+          前:light 模式交易列表(zh-02-transactions 背景是白的);
+          后:dark 模式仪表盘(zh-01-home 背景是黑的,旋转 + 缩放 offset)。 */}
       <div
         className={clsx(styles.deviceView, styles.deviceViewWeb)}
         style={{ opacity: mode === 'web' ? 1 : 0, pointerEvents: mode === 'web' ? 'auto' : 'none' }}
         aria-hidden={mode !== 'web'}
       >
-        <div className={styles.browserFrame}>
-          <div className={styles.browserChrome}>
-            <div className={styles.browserDots}>
-              <span style={{ background: '#ff5f56' }} />
-              <span style={{ background: '#ffbd2e' }} />
-              <span style={{ background: '#27c93f' }} />
+        <div className={styles.browserShowcase}>
+          <div className={styles.browserFrame}>
+            <div className={styles.browserChrome}>
+              <div className={styles.browserDots}>
+                <span style={{ background: '#ff5f56' }} />
+                <span style={{ background: '#ffbd2e' }} />
+                <span style={{ background: '#27c93f' }} />
+              </div>
+              <div className={styles.browserUrl}>beecount.local · Transactions</div>
             </div>
-            <div className={styles.browserUrl}>beecount.local · Dashboard</div>
+            <img
+              src={`/img/preview/web/${lang}-02-transactions.png`}
+              alt={translate({id: 'homepage.hero.preview.webLight', message: 'Web 日间模式'})}
+              className={styles.browserScreen}
+            />
           </div>
-          <img
-            src={`/img/preview/web/${lang}-01-home.png`}
-            alt={translate({id: 'homepage.hero.preview.web', message: 'Web 仪表盘'})}
-            className={styles.browserScreen}
-          />
+          <div className={clsx(styles.browserFrame, styles.browserFrameBack)}>
+            <div className={styles.browserChrome}>
+              <div className={styles.browserDots}>
+                <span style={{ background: '#ff5f56' }} />
+                <span style={{ background: '#ffbd2e' }} />
+                <span style={{ background: '#27c93f' }} />
+              </div>
+              <div className={styles.browserUrl}>beecount.local · Dashboard</div>
+            </div>
+            <img
+              src={`/img/preview/web/${lang}-01-home.png`}
+              alt={translate({id: 'homepage.hero.preview.webDark', message: 'Web 暗黑模式'})}
+              className={styles.browserScreen}
+            />
+          </div>
         </div>
       </div>
 
