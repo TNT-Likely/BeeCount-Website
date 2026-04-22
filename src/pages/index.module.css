@@ -834,6 +834,90 @@
 }
 
 /* ==========================================
+   Web 端展示区域
+   ========================================== */
+.webShowcase {
+  padding: 8rem 0;
+  background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+  position: relative;
+}
+
+.webShowcaseGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.webShowcaseItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.webShowcaseItem img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.webShowcaseItem img:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(248, 201, 28, 0.12);
+}
+
+.webShowcaseCaption {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  text-align: center;
+  margin: 0;
+}
+
+.webShowcaseCta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+[data-theme='light'] .webShowcase {
+  background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+[data-theme='light'] .webShowcaseItem img {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='light'] .webShowcaseCaption {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .webShowcase {
+    padding: 4rem 0;
+  }
+  .webShowcaseGrid {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .webShowcaseCaption {
+    font-size: 0.85rem;
+    padding: 0 1rem;
+  }
+}
+
+/* ==========================================
    社区区域
    ========================================== */
 .community {

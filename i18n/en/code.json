@@ -159,6 +159,38 @@
     "message": "Flexible data storage, choose the sync solution that works for you",
     "description": "Cloud sync section subtitle"
   },
+  "homepage.hero.webButton": {
+    "message": "Web App",
+    "description": "Hero section Web button label"
+  },
+  "homepage.webShowcase.title": {
+    "message": "Web App",
+    "description": "Web showcase section title"
+  },
+  "homepage.webShowcase.subtitle": {
+    "message": "Bundled with BeeCount Cloud since 3.0. Use it in any browser; install as PWA for a native-app feel on desktop/Dock.",
+    "description": "Web showcase section subtitle"
+  },
+  "homepage.webShowcase.alt.home": {
+    "message": "Web dashboard",
+    "description": "Web home screenshot alt text"
+  },
+  "homepage.webShowcase.alt.transactions": {
+    "message": "Web transactions",
+    "description": "Web transactions screenshot alt text"
+  },
+  "homepage.webShowcase.caption.home": {
+    "message": "💰 Dashboard: income/expense, net worth, category heatmap, trends at a glance",
+    "description": "Web home screenshot caption"
+  },
+  "homepage.webShowcase.caption.transactions": {
+    "message": "📒 Transactions: filter by keyword / category / account / date / tag",
+    "description": "Web transactions screenshot caption"
+  },
+  "homepage.webShowcase.btn": {
+    "message": "One-click Docker self-host",
+    "description": "Web showcase CTA button"
+  },
   "homepage.community.title": {
     "message": "Open Source",
     "description": "Community section title"
