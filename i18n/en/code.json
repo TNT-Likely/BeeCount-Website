@@ -163,6 +163,18 @@
     "message": "Web App",
     "description": "Hero section Web button label"
   },
+  "homepage.hero.preview.web": {
+    "message": "Web dashboard",
+    "description": "Web preview alt text"
+  },
+  "homepage.hero.device.mobile": {
+    "message": "Mobile",
+    "description": "Hero device tab for mobile view"
+  },
+  "homepage.hero.device.web": {
+    "message": "Web",
+    "description": "Hero device tab for web view"
+  },
   "homepage.webShowcase.title": {
     "message": "Web App",
     "description": "Web showcase section title"

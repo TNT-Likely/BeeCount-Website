@@ -86,6 +86,90 @@ function VideoModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
   );
 }
 
+// Hero 右侧的设备预览 —— mobile(双手机叠放)/ web(笔记本 + 浏览器 chrome)
+// 5 秒自动切换,hover 暂停,底部指示点可手动切。两种形态尺寸相近(400x500),
+// 切换时交叉 fade 而不是重排,避免 hero 高度抖动。
+function DeviceShowcase() {
+  const [mode, setMode] = useState<'mobile' | 'web'>('mobile');
+  const [paused, setPaused] = useState(false);
+  const {i18n} = useDocusaurusContext();
+  const isZh = i18n.currentLocale === 'zh-Hans' || i18n.currentLocale === 'zh';
+  const lang = isZh ? 'zh' : 'en';
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = setInterval(() => {
+      setMode((prev) => (prev === 'mobile' ? 'web' : 'mobile'));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [paused]);
+
+  return (
+    <div
+      className={styles.deviceShowcase}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Mobile 形态:原来的双手机叠放,保持不变。 */}
+      <div
+        className={clsx(styles.deviceView, styles.deviceViewMobile)}
+        style={{ opacity: mode === 'mobile' ? 1 : 0, pointerEvents: mode === 'mobile' ? 'auto' : 'none' }}
+        aria-hidden={mode !== 'mobile'}
+      >
+        <div className={styles.phoneShowcase}>
+          <div className={styles.phoneFrame}>
+            <img src="/img/preview/zh/01-home.png" alt={translate({id: 'homepage.hero.preview.home', message: '首页'})} className={styles.phoneScreen} />
+          </div>
+          <div className={clsx(styles.phoneFrame, styles.phoneFrameBack)}>
+            <img src="/img/preview/dark/01-home.png" alt={translate({id: 'homepage.hero.preview.homeDark', message: '首页暗黑'})} className={styles.phoneScreen} />
+          </div>
+        </div>
+      </div>
+
+      {/* Web 形态:浏览器 chrome(traffic lights + URL bar)+ Web 仪表盘截图。 */}
+      <div
+        className={clsx(styles.deviceView, styles.deviceViewWeb)}
+        style={{ opacity: mode === 'web' ? 1 : 0, pointerEvents: mode === 'web' ? 'auto' : 'none' }}
+        aria-hidden={mode !== 'web'}
+      >
+        <div className={styles.browserFrame}>
+          <div className={styles.browserChrome}>
+            <div className={styles.browserDots}>
+              <span style={{ background: '#ff5f56' }} />
+              <span style={{ background: '#ffbd2e' }} />
+              <span style={{ background: '#27c93f' }} />
+            </div>
+            <div className={styles.browserUrl}>beecount.local · Dashboard</div>
+          </div>
+          <img
+            src={`/img/preview/web/${lang}-01-home.png`}
+            alt={translate({id: 'homepage.hero.preview.web', message: 'Web 仪表盘'})}
+            className={styles.browserScreen}
+          />
+        </div>
+      </div>
+
+      {/* 指示点 + label,点击切换。位置在右侧预览下方。 */}
+      <div className={styles.deviceTabs}>
+        <button
+          type="button"
+          className={clsx(styles.deviceTab, mode === 'mobile' && styles.deviceTabActive)}
+          onClick={() => setMode('mobile')}
+        >
+          <Translate id="homepage.hero.device.mobile">Mobile</Translate>
+        </button>
+        <button
+          type="button"
+          className={clsx(styles.deviceTab, mode === 'web' && styles.deviceTabActive)}
+          onClick={() => setMode('web')}
+        >
+          <Translate id="homepage.hero.device.web">Web</Translate>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // 全屏 Hero 区域 - 第一屏（极简版 + 预览图）
 function HeroSection() {
   const [showVideo, setShowVideo] = useState(false);
@@ -196,16 +280,9 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* 右侧：手机预览图 */}
+        {/* 右侧:设备预览 —— mobile ↔ web 自动切换 */}
         <div className={styles.heroRight}>
-          <div className={styles.phoneShowcase}>
-            <div className={styles.phoneFrame}>
-              <img src="/img/preview/zh/01-home.png" alt={translate({id: 'homepage.hero.preview.home', message: '首页'})} className={styles.phoneScreen} />
-            </div>
-            <div className={clsx(styles.phoneFrame, styles.phoneFrameBack)}>
-              <img src="/img/preview/dark/01-home.png" alt={translate({id: 'homepage.hero.preview.homeDark', message: '首页暗黑'})} className={styles.phoneScreen} />
-            </div>
-          </div>
+          <DeviceShowcase />
         </div>
       </div>
 

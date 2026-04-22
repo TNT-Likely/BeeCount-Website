@@ -554,6 +554,161 @@
   height: 20px;
 }
 
+/* Hero 设备展示:mobile / web 两种形态的容器,自动切换 + 交叉 fade。
+   两种形态都绝对定位在容器中心,容器自己撑着 500px 高度防 hero 抖动。 */
+.deviceShowcase {
+  position: relative;
+  width: 540px;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deviceView {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease-in-out;
+}
+
+/* 形态切换指示(tabs / dots) */
+.deviceTabs {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.deviceTab {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.deviceTab:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.deviceTabActive {
+  background: rgba(248, 201, 28, 0.9);
+  color: #000;
+}
+
+.deviceTabActive:hover {
+  color: #000;
+}
+
+[data-theme='light'] .deviceTabs {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .deviceTab {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+[data-theme='light'] .deviceTab:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* 浏览器窗口 frame:traffic light + url bar + 截图 */
+.browserFrame {
+  width: 520px;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 60px rgba(248, 201, 28, 0.08);
+  transform: perspective(1400px) rotateY(-4deg) rotateX(2deg);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.deviceShowcase:hover .browserFrame {
+  transform: perspective(1400px) rotateY(0deg) rotateX(0deg) translateY(-4px);
+}
+
+.browserChrome {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: #2a2a2a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.browserDots {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.browserDots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: block;
+}
+
+.browserUrl {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: -apple-system, system-ui, monospace;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  max-width: 70%;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.browserScreen {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+[data-theme='light'] .browserFrame {
+  background: #f5f5f5;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='light'] .browserChrome {
+  background: #e5e5e5;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .browserUrl {
+  color: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.04);
+}
+
 /* 手机展示区域 */
 .phoneShowcase {
   position: relative;
@@ -1305,6 +1460,17 @@
     width: 200px;
   }
 
+  .deviceShowcase {
+    width: 100%;
+    max-width: 420px;
+    height: 440px;
+  }
+
+  .browserFrame {
+    width: 100%;
+    max-width: 420px;
+  }
+
   .featureGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -1382,6 +1548,32 @@
   .phoneFrameBack {
     right: 10px;
     top: 35px;
+  }
+
+  .deviceShowcase {
+    width: 100%;
+    max-width: 320px;
+    height: 380px;
+  }
+
+  .browserFrame {
+    max-width: 320px;
+    border-radius: 10px;
+  }
+
+  .browserChrome {
+    padding: 0.45rem 0.7rem;
+    gap: 0.5rem;
+  }
+
+  .browserDots span {
+    width: 8px;
+    height: 8px;
+  }
+
+  .browserUrl {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
   }
 
   .heroLeft {
