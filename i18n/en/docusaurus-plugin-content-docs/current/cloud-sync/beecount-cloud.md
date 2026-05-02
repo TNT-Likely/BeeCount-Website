@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+description: "BeeCount Cloud is the official self-hosted sync server. One-line Docker deployment, real-time multi-device sync across phone, web and tablet."
+keywords: [BeeCount Cloud, self-hosted finance, Docker expense tracker, multi-device sync, self-hosted budget]
 ---
 
 # BeeCount Cloud (Self-hosted)

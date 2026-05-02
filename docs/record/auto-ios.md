@@ -1,5 +1,7 @@
 ---
 sidebar_position: 3
+description: iOS 自动记账教程:通过快捷指令 + 截图识别,在支付宝/微信支付完成后一键自动记账,无需手动输入金额和分类。
+keywords: [iOS自动记账, iPhone自动记账, 苹果自动记账, 快捷指令记账, 截图记账]
 ---
 
 # iOS 自动记账

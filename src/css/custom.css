@@ -162,7 +162,7 @@
 /* ===========================================
    Embed Mode - 用于 App 内嵌
    使用方式: 在 URL 添加 ?embed=true
-   示例: https://beecount.app/docs/intro?embed=true&mode=dark
+   示例: https://count.beejz.com/docs/intro?embed=true&mode=dark
    =========================================== */
 body.embed-mode .navbar {
   display: none !important;

@@ -1,5 +1,7 @@
 ---
 sidebar_position: 4
+description: Android 自动记账教程:支付宝/微信支付后通过截图识别或分享自动生成记账记录,告别手动输入。
+keywords: [Android自动记账, 安卓自动记账, 微信自动记账, 支付宝自动记账, 截图记账]
 ---
 
 # Android 自动记账

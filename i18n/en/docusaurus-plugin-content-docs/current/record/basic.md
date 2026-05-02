@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: "BeeCount basic recording guide: log expenses, income and transfers with a minimal interface designed for daily use."
+keywords: [BeeCount tutorial, expense recording, income tracking, transfer logging, daily budgeting]
 ---
 
 # Basic Recording

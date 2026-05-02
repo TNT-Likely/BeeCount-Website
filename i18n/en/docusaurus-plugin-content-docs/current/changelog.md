@@ -1,5 +1,7 @@
 ---
 sidebar_position: 102
+description: "BeeCount version history and feature release notes. 3.0 introduces self-hosted BeeCount Cloud sync and Web access."
+keywords: [BeeCount changelog, BeeCount releases, BeeCount versions]
 ---
 
 # Changelog

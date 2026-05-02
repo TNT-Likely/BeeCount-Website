@@ -7,7 +7,7 @@ const config: Config = {
   tagline: '简洁、安全、可控的个人记账工具',
   favicon: 'img/favicon.ico',
 
-  url: 'https://beecount.app',
+  url: 'https://count.beejz.com',
   baseUrl: '/',
 
   organizationName: 'TNT-Likely',
@@ -62,7 +62,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/social-card.png',
+    // og:image 由 src/theme/Root.tsx 根据 locale 动态注入(中英两版)
     navbar: {
       title: '蜜蜂记账',
       logo: {
@@ -122,6 +122,15 @@ const config: Config = {
                 <span>
                   <span style="display: block; font-weight: 600; color: #F8C91C; margin-bottom: 0.25rem;">蜜蜂域名 BeeDNS</span>
                   <span style="display: block; font-size: 0.8em; color: rgba(255,255,255,0.6); line-height: 1.4;">简洁高效的 DNS 管理工具<br/>支持阿里云 DNS</span>
+                </span>
+              </a>`,
+            },
+            {
+              html: `<a href="https://assets.beejz.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem 1rem; background: rgba(255, 154, 60, 0.08); border: 1px solid rgba(255, 154, 60, 0.2); border-radius: 10px; text-decoration: none; margin-top: 0.5rem;">
+                <span style="font-size: 1.75rem; line-height: 1;">💼</span>
+                <span>
+                  <span style="display: block; font-weight: 600; color: #FF9A3C; margin-bottom: 0.25rem;">蜜蜂资产 BeeAssets</span>
+                  <span style="display: block; font-size: 0.8em; color: rgba(255,255,255,0.6); line-height: 1.4;">个人资产管理工具<br/>多账户 · 多币种 · 净值追踪</span>
                 </span>
               </a>`,
             },

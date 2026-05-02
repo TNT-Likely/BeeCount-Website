@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: 蜜蜂记账支持 iCloud、WebDAV、S3、Supabase、自建 BeeCount Cloud 等多种云同步方案,数据存储完全自主可控。
+keywords: [蜜蜂记账云同步, 记账数据同步, iCloud记账, WebDAV同步, S3记账, 自建云记账]
 ---
 
 # 云同步概述

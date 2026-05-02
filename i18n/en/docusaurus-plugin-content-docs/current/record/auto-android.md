@@ -1,5 +1,7 @@
 ---
 sidebar_position: 4
+description: "Android auto-recording guide: capture WeChat Pay/Alipay transactions automatically via screenshot OCR or share-to-app — skip manual entry."
+keywords: [Android auto recording, automatic expense tracking, screenshot OCR, share to budget app]
 ---
 
 # Android Auto Recording

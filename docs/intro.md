@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: 蜜蜂记账是一款开源免费的个人记账 App,支持 iOS、Android、Web。简洁安全、数据本地存储,支持 iCloud/WebDAV/S3/自建云等多种同步方式,无广告无会员。
+keywords: [蜜蜂记账, 个人记账, 开源记账, 免费记账软件, BeeCount, 记账APP]
 ---
 
 # 欢迎使用蜜蜂记账

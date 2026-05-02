@@ -1,5 +1,7 @@
 ---
 sidebar_position: 102
+description: 蜜蜂记账版本更新历史与功能迭代日志。3.0 新增 BeeCount Cloud 自建云同步、Web 端访问等核心特性。
+keywords: [蜜蜂记账更新日志, 蜜蜂记账版本, BeeCount changelog]
 ---
 
 # 更新日志

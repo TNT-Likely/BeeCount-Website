@@ -1,5 +1,7 @@
 ---
 sidebar_position: 100
+description: "BeeCount FAQ: data backup, cloud sync, auto-recording, multi-device sync, security and privacy questions answered."
+keywords: [BeeCount FAQ, expense tracker FAQ, finance app help, BeeCount support]
 ---
 
 # FAQ

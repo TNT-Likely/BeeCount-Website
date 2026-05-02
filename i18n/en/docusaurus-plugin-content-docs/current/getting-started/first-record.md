@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+description: "First-time user guide for BeeCount. Create your first transaction in 3 steps — perfect for users new to expense tracking apps."
+keywords: [BeeCount getting started, first transaction, expense tracker tutorial]
 ---
 
 # Your First Record

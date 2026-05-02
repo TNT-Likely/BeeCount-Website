@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: "BeeCount integrates AI for smart recording: chat-based input, image recognition, and voice recording — making expense tracking effortless."
+keywords: [AI expense tracker, smart finance app, voice budgeting, image expense recognition, BeeCount AI]
 ---
 
 # AI Assistant Overview
