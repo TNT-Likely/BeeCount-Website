@@ -1,5 +1,7 @@
 ---
 sidebar_position: 3
+description: "iOS auto-recording guide: combine Shortcuts and screenshot OCR to record transactions automatically after payments — no manual entry."
+keywords: [iOS auto recording, iPhone expense tracker, Shortcuts budgeting, screenshot OCR finance]
 ---
 
 # iOS Auto Recording

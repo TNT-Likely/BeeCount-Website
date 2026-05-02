@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: "BeeCount is a free, open-source personal finance app for iOS, Android and Web. Simple, secure, with local storage and multiple cloud sync options. No ads, no premium tier."
+keywords: [BeeCount, personal finance, expense tracker, open source budget app, free money manager, iOS finance app, Android finance app]
 ---
 
 # Welcome to BeeCount

@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: 蜜蜂记账应用锁配置教程,支持 PIN 码和指纹/Face ID 生物识别,保护你的财务数据隐私。
+keywords: [记账应用锁, PIN码, 生物识别, 蜜蜂记账隐私, 财务隐私保护]
 ---
 
 # 应用锁

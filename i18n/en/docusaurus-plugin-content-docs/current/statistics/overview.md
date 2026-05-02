@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: "BeeCount statistics features: multi-dimensional charts, expense calendar, monthly reports — visualize your spending habits clearly."
+keywords: [expense statistics, finance charts, budget analytics, BeeCount reports]
 ---
 
 # Statistics Overview

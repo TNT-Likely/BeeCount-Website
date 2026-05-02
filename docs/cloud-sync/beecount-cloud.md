@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+description: BeeCount Cloud 是蜜蜂记账官方推出的自建云同步服务,Docker 一键部署,支持手机+Web+平板多端实时协同,数据完全自主掌控。
+keywords: [BeeCount Cloud, 蜜蜂记账自建云, Docker记账云, 自建记账同步, 多端同步记账]
 ---
 
 # BeeCount Cloud 自建云

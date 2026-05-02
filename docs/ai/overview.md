@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: 蜜蜂记账集成 AI 助手,支持智能对话记账、图片识别记账、语音记账,让记账更智能轻松。
+keywords: [AI记账, 智能记账, 语音记账, 图片识别记账, 蜜蜂记账AI]
 ---
 
 # AI 助手概览

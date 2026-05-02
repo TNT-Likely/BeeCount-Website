@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: "Download and install BeeCount on iOS (App Store, TestFlight) or Android (APK). Step-by-step setup for first-time users."
+keywords: [BeeCount download, BeeCount install, iOS finance app install, Android budget APK]
 ---
 
 # Installation Guide

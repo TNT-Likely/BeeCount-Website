@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: 蜜蜂记账下载安装教程,支持 iOS App Store、TestFlight、Android APK 多种安装方式。
+keywords: [蜜蜂记账下载, 蜜蜂记账安装, BeeCount下载, 记账APP下载]
 ---
 
 # 安装指南

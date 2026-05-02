@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: "BeeCount supports iCloud, WebDAV, S3, Supabase and self-hosted BeeCount Cloud sync. Your data, your control."
+keywords: [BeeCount cloud sync, finance app sync, iCloud expense tracker, WebDAV sync, S3 sync, self-hosted finance]
 ---
 
 # Cloud Sync Overview

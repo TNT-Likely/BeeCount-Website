@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+description: "Configure BeeCount app lock with PIN and biometric authentication (Face ID, fingerprint) to keep your financial data private."
+keywords: [expense tracker app lock, PIN code budgeting, biometric finance app, BeeCount privacy]
 ---
 
 # App Lock
