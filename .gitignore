@@ -21,3 +21,6 @@ yarn-error.log*
 # IDE
 .idea
 .vscode
+
+# Claude Code worktrees & local config
+.claude/
