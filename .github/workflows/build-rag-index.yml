@@ -1,0 +1,59 @@
+name: Build RAG Index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'i18n/en/docusaurus-plugin-content-docs/current/**'
+      - 'scripts/build_docs_index.py'
+      - 'scripts/requirements.txt'
+      - '.github/workflows/build-rag-index.yml'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force rebuild even when corpus hash unchanged'
+        required: false
+        default: 'false'
+
+# corpus 内容没改时 paths 过滤就不会触发;改了但 markdown 内容相同
+# (格式化 / whitespace)时,脚本里的 hash 检查会兜底 skip。
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements.txt
+
+      - run: pip install -r scripts/requirements.txt
+
+      - name: Build docs index
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python scripts/build_docs_index.py --force
+          else
+            python scripts/build_docs_index.py
+          fi
+        env:
+          EMBEDDING_BASE_URL: https://api.siliconflow.cn/v1
+          EMBEDDING_API_KEY: ${{ secrets.SILICONFLOW_KEY }}
+          EMBEDDING_MODEL: BAAI/bge-m3
+
+      - name: Commit index if changed
+        run: |
+          git config user.name 'beecount-rag-bot'
+          git config user.email 'rag-bot@beecount.local'
+          git add data/docs-index.zh.sqlite data/docs-index.en.sqlite data/docs-index.hash
+          if git diff --cached --quiet; then
+            echo 'no index change to commit'
+          else
+            git commit -m "chore(rag): rebuild docs index [skip ci]"
+            git push
+          fi
