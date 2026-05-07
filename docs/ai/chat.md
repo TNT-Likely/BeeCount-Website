@@ -54,3 +54,18 @@ AI：根据您的记账数据分析：
 ## 自定义提示词
 
 在 AI 设置中可以自定义提示词，让 AI 更符合你的使用习惯。
+
+## Web 端文字记账
+
+登录 [BeeCount Cloud](../cloud-sync/beecount-cloud.md) Web 端后,桌面浏览器可以**直接粘贴文字**给 AI 转交易:
+
+1. 任意页面按 **⌘K / Ctrl+K** 打开命令面板
+2. **粘贴一段文字** — 微信账单文本块、Excel 选区、自然语言描述如「昨天打车 30 + 午饭 25」
+3. 默认动作切到「AI 记账(文字)」→ Enter
+4. 弹出 N 笔交易草稿,逐笔确认 → 批量保存
+
+服务器端用 chat LLM(智谱 GLM-4-Flash / DeepSeek 等,需在 [AI 配置](./overview.md#web-端-ai-配置) 里绑定)解析。
+
+### Web 端 ⌘K 也能问 AI 文档
+
+输入 `?xxx` 前缀 → 命令面板默认动作切到「问 AI:xxx」→ Enter → 弹出 RAG 检索 + LLM 回答的对话窗。底层用 BeeCount-Website 文档站索引,问"怎么开启二次验证 / Docker 部署 / 标签怎么用"等都能从官方文档拿答案。

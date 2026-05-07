@@ -42,3 +42,11 @@ The home page and budget page display:
 - Calculated by calendar month
 - Automatically resets on the 1st of each month
 - View historical budget performance
+
+## Web Budget Management
+
+Sign in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web → avatar menu → **Budget** page:
+
+- **Total / per-category budgets** — CRUD parity with mobile, real-time sync.
+- **Home budget bar** — desktop home shows the current month's budget bar; over-budget turns red.
+- **Historical month switcher** — desktop table view makes historical execution easier to scan.

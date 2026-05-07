@@ -106,3 +106,14 @@ This allows you to leverage each provider's strengths for the best experience.
 2. Register an account
 3. Create an API Key
 4. API URL: `https://api.deepseek.com/v1`
+
+## Web AI Configuration
+
+Sign in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web → avatar menu → **AI Config**:
+
+- **Provider CRUD** — add, edit, or delete custom providers. The built-in "Zhipu GLM" cannot be deleted (matches mobile constraint); deleting a provider that's currently bound to a capability automatically falls back to the built-in.
+- **Capability binding** — three Select dropdowns (text chat / vision / speech), one per capability; providers that lack the relevant model are disabled.
+- **Test buttons** — every model input has a **[Test]** button on the right that runs a real LLM call through the server (CORS-free); a "Test all" button at the bottom runs all configured capabilities serially and shows server-returned errors inline on failure.
+- **Cross-device sync** — web changes push to mobile in real time via `profile_change` WS, and vice versa.
+
+API keys are shown in plain text by default (matching mobile); be mindful when sharing your screen. Deep parameters (custom_prompt / strategy / bill_extraction_enabled / use_vision) remain on mobile and are not exposed on the web.

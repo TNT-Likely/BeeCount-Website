@@ -54,3 +54,12 @@ When exporting transaction data, you can choose to include attachments:
 - Attachments are stored locally and will take up device storage
 - During cloud sync, attachments are also synced (depending on cloud storage plan)
 - Consider cleaning up unnecessary attachments periodically
+
+## Web Attachments
+
+After signing in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web:
+
+- **AI screenshot recording auto-attaches** — when you paste an image via ⌘K and AI recognizes N transactions, **all N transactions share the same original image** as the attachment; see [Image recognition](../ai/image.md#web-image-recording).
+- **📎 chip on transaction rows** — rows with attachments show an icon; clicking opens an attachment carousel (prev / next).
+- **Detail dialog viewer** — click a transaction row to open the detail dialog where attachments can be enlarged or downloaded.
+- **Storage** — web attachments live on the BeeCount Cloud server's `attachment_storage_dir`, deduplicated by sha256 with mobile so the same file is never uploaded twice.

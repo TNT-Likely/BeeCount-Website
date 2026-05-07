@@ -108,3 +108,14 @@ sidebar_position: 1
 删除分类时，可以选择将该分类下的交易迁移到其他分类。
 
 ![分类迁移](/img/preview/zh/08-category-migration.png)
+
+## Web 端分类管理
+
+登录 [BeeCount Cloud](../cloud-sync/beecount-cloud.md) Web 端 → 顶部导航**分类**页面:
+
+- **创建 / 编辑 / 删除** — 跟手机端一致,改动通过云同步秒级推到手机
+- **二级分类** — 桌面表格视图下层级关系一目了然,适合一次性梳理一大批分类
+- **点击分类卡片** — 弹出该分类下交易明细 Dialog(无限滚动 + 标签 chip 上色)
+- **导入时自动创建** — Web 端 [导入账本数据](../record/import-export.md) 时不存在的分类自动批量创建,跟手机端导入行为一致
+
+自定义图标目前仍在手机端管理,Web 端展示时按 `iconCloudFileId` 从 server 拉缩略图。

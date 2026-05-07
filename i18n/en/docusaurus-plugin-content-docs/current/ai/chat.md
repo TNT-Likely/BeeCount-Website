@@ -54,3 +54,18 @@ Long-press a message in the chat to perform these actions:
 ## Custom Prompts
 
 In AI settings, you can customize prompts to make AI better match your usage habits.
+
+## Web Text Recording
+
+After signing in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web, the desktop browser can **paste text directly** for AI to convert into transactions:
+
+1. On any page, press **⌘K / Ctrl+K** to open the command palette
+2. **Paste a text block** — WeChat bill text, Excel selection, natural language like "Taxi yesterday 30 + lunch 25"
+3. The default action becomes "AI bill (text)" → Enter
+4. A dialog shows N transaction drafts to review, then save in batch
+
+The server uses a chat LLM (Zhipu GLM-4-Flash / DeepSeek etc., bind it in [AI Config](./overview.md#web-ai-configuration)) to parse.
+
+### Ask the docs from ⌘K
+
+Type the `?xxx` prefix → the command palette default action switches to "Ask AI: xxx" → Enter → opens a RAG-powered Q&A dialog. It indexes the BeeCount-Website docs, so questions like "how to enable 2FA / Docker deploy / how do tags work" return answers grounded in the official documentation.

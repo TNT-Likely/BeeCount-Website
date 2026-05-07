@@ -56,3 +56,16 @@ Income/expense color scheme is independent from theme color:
 - Theme color affects navigation bar, buttons and other UI elements
 - Income/expense colors specifically affect amount displays
 - Both can be freely combined to create a personalized interface
+
+## Web Profile (color / avatar / display name)
+
+Sign in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web → avatar menu → **Profile**:
+
+- **Avatar** — click your avatar → pick an image (≤4 MB); syncs to mobile via cloud
+- **Display name** — click the name to inline-edit; Enter to save, Esc to cancel
+- **Income/expense color** — click the chip in "Synced preferences" to toggle; real-time bidirectional sync with mobile
+- **Dark-mode header pattern** — Select with 4 options (None / Icons / Particles / Honeycomb)
+- **Balance display** — Select (Full amount / Compact)
+- **Show transaction time** — iOS-style Switch
+
+Any-side change pushes via the `profile_change` WS event to the other side in real time.

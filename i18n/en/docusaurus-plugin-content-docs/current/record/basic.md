@@ -43,3 +43,14 @@ Transfers move funds between different accounts:
 - Enter transfer amount
 
 The system automatically updates both account balances.
+
+## Web Recording
+
+After logging in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web, desktop entry is faster:
+
+- **+ New transaction button** — top-right of the transactions page opens a dialog
+- **⌘K / Ctrl+K command palette** — works on any page; type amount or note, pick "New transaction"
+- **Bulk operations** — list view supports multi-select delete / export CSV (see [Transactions](../features/record.md))
+- **Desktop keyboard flow** — number pad, Tab to switch fields, Enter to save
+
+Transactions created on web sync to mobile within seconds via cloud, and vice versa.

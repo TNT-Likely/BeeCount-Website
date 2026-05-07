@@ -108,3 +108,14 @@ Long-press and drag categories to reorder them. Place frequently used categories
 When deleting a category, you can choose to migrate its transactions to another category.
 
 ![Category Migration](/img/preview/zh/08-category-migration.png)
+
+## Web Category Management
+
+Sign in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web → top nav **Categories**:
+
+- **Create / edit / delete** — same as mobile, changes propagate to mobile via cloud within seconds
+- **Subcategories** — the desktop table view makes level-1/level-2 hierarchies easy to manage in bulk
+- **Click a category card** — opens a dialog showing all transactions in that category (infinite scroll, color-coded tag chips)
+- **Auto-created on import** — when [importing ledger data](../record/import-export.md), missing categories are bulk-created with the same logic as mobile import
+
+Custom category icons are still managed on mobile; the web reads them by `iconCloudFileId` from the server for display.

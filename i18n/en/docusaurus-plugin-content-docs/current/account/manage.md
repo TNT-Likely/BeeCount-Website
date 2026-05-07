@@ -63,3 +63,14 @@ Accounts are grouped by type (cash, savings, credit card, etc.). Within each gro
 ## Default Account
 
 Set default accounts for income and expenses. They'll be auto-selected when recording for improved efficiency.
+
+## Web Account Management
+
+Sign in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web → top nav **Assets**:
+
+- **Create / edit / delete** — same as mobile, propagates to mobile via cloud within seconds
+- **Click an account card** — opens a dialog with all transactions tied to that account, great for quickly skimming history
+- **Auto-create on import** — when [importing ledger data](../record/import-export.md), unknown account names are bulk-created, mirroring mobile import
+- **Asset composition donut on home** — desktop visualization is clearer
+
+Deep credit-card configuration (limit / statement day / due day) and default-account picks remain on mobile; the web shows them read-only.

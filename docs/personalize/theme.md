@@ -47,3 +47,11 @@ sidebar_position: 1
 - 超大
 
 适合不同视力需求的用户。
+
+## Web 端主题色
+
+登录 [BeeCount Cloud](../cloud-sync/beecount-cloud.md) Web 端 → 头像菜单 → **个人资料** → 顶部「主题色」chip:
+
+- 弹出 PrimaryColorPicker,跟手机端同款 20 色调色板(深橙 / 粉红 / 紫色 / 蓝色 / 绿色...)
+- **Web 本地优先** — 改完只存当前浏览器 localStorage,不会推回手机
+- **手机端反向同步** — 手机改主题色会自动下发到 Web;但本地改过后以本地为准,手机后续变更不覆盖

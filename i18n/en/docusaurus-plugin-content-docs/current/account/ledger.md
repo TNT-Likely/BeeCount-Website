@@ -40,3 +40,13 @@ Each ledger's data is completely independent:
 Deleting a ledger also deletes all transactions in that ledger. Please proceed with caution.
 
 We recommend exporting data as a backup first.
+
+## Web Ledger Management
+
+Sign in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web → avatar menu → **Ledgers**:
+
+- **Create / edit / delete** — same as mobile. **On first sign-in with no ledgers yet, the top-bar ledger picker becomes a "+ Create ledger" CTA** for one-click setup.
+- **Ledger cards** — show tx count / income / expense / balance / last-updated time; click to edit name & currency, ↑ upload icon on the top-right [imports data](../record/import-export.md) into that ledger.
+- **Top-bar ledger picker** — global switcher; all lists / stats / AI recording follow the current ledger.
+
+Web and mobile share the same ledgers; changes sync in real-time via [BeeCount Cloud](../cloud-sync/beecount-cloud.md).

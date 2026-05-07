@@ -47,3 +47,11 @@ Adjust the app font size:
 - Extra Large
 
 Suitable for users with different visual needs.
+
+## Web Theme Color
+
+Sign in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web → avatar menu → **Profile** → top "Theme color" chip:
+
+- Opens a PrimaryColorPicker — the same 20-color palette as mobile (deep orange / pink / purple / blue / green ...)
+- **Web is local-first** — changes are stored in the current browser's localStorage and don't push back to mobile
+- **Mobile pushes forward** — mobile theme changes auto-deploy to web; once you've overridden it locally, subsequent mobile changes won't overwrite your local pick

@@ -49,3 +49,27 @@ If you forget your PIN code, you can reset it by:
 :::warning Note
 Make sure your data is backed up via cloud sync before resetting, or local data may be lost.
 :::
+
+## Web Two-Factor Authentication (2FA)
+
+The [BeeCount Cloud](../cloud-sync/beecount-cloud.md) web supports TOTP 2FA — scan a QR with Google Authenticator / 1Password / Authy and the login flow asks for a 6-digit code in addition to your password.
+
+### Enable 2FA
+
+1. Sign in on the web → avatar menu → **Profile**
+2. Click the "Two-factor auth" chip at the top → opens the setup wizard
+3. Scan the QR with an authenticator app (or paste the secret manually)
+4. Enter the current 6-digit code to confirm
+5. Save the 8 one-time recovery codes (print or store in a password manager — they're your lifeline if you lose the device)
+
+Once enabled, sign-in becomes **password → 6-digit code**. The first sign-in on a device "trusts it for 30 days"; you can revoke trust manually in Devices.
+
+### Disable 2FA
+
+Profile page → 2FA chip → enter current code → disable.
+
+### Device management
+
+Avatar menu → **Devices**: lists every logged-in web / mobile device (IP, last-active time, client type). Revoke any suspicious device's access token in one click; the next request from that device bounces back to login.
+
+> Note: The mobile app does not surface a 2FA toggle today. 2FA policy is managed on the web, and the policy applies to all login entry points.

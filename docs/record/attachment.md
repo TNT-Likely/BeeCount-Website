@@ -54,3 +54,12 @@ sidebar_position: 5
 - 附件存储在本地，会占用设备存储空间
 - 云同步时，附件也会同步（取决于云存储方案）
 - 建议定期清理不需要的附件
+
+## Web 端附件
+
+登录 [BeeCount Cloud](../cloud-sync/beecount-cloud.md) Web 端后:
+
+- **AI 截图记账自动绑定附件** — ⌘K 粘贴图片做 AI 记账时,N 笔交易**自动共享**这一张原图作为附件;详见 [AI 图片识别](../ai/image.md#web-端图片记账)
+- **交易行 📎 chip** — 列表里有附件的交易显示附件图标,点击调出 attachment carousel(支持上下张切换)
+- **交易详情查看附件** — 点击交易行打开 detail dialog,附件区可放大查看 / 下载
+- **附件存储** — Web 端附件存在 BeeCount Cloud server 的 `attachment_storage_dir`,跟手机端通过 sha256 dedup 共享,跨设备一份不重传
