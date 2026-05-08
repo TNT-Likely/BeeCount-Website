@@ -1,273 +1,150 @@
+<div align="center">
+
 # BeeCount Website
 
-蜜蜂记账官方网站与文档 - 基于 Docusaurus 构建
+蜜蜂记账官网与文档 · Docusaurus 3 · 中英双语 · 内置 RAG 索引
 
-[官网地址](https://beecount.com) | [GitHub](https://github.com/TNT-Likely/BeeCount)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Docusaurus](https://img.shields.io/badge/Docusaurus-3-2E8555?logo=docusaurus&logoColor=white)](https://docusaurus.io/)
+[![Node](https://img.shields.io/badge/Node-18%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 
-## 项目简介
+[🌐 官网 count.beejz.com](https://count.beejz.com) · [📦 主仓库](https://github.com/TNT-Likely/BeeCount) · [🌐 English](README_EN.md)
 
-本项目是蜜蜂记账（BeeCount）的官方文档网站，包含：
+</div>
 
-- 📖 **使用文档** - 详细的功能说明和使用指南
-- 🚀 **快速开始** - 新手入门教程
-- 💡 **最佳实践** - 记账技巧和建议
-- ❓ **常见问题** - 用户常见问题解答
-- 🌍 **多语言支持** - 中文、English
+---
 
-## 技术栈
+蜜蜂记账（BeeCount）的官方文档站点，包含使用指南、FAQ、更新日志，并为 BeeCount-Platform 的 ⌘K AI 文档搜索提供 RAG 索引。
 
-- **框架**: [Docusaurus 3](https://docusaurus.io/)
-- **语言**: TypeScript
-- **UI**: React 19
-- **搜索**: [@easyops-cn/docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local)
+- 📖 文档与多语言（中文 / English）
+- 🔍 站内本地搜索（@easyops-cn/docusaurus-search-local）
+- 🤖 RAG 索引产物（SiliconFlow embedding，供 Cloud 端 `/api/v1/ai/ask` 消费）
+- 🚀 静态托管（Cloudflare Pages）
 
-## 开发指南
-
-### 环境要求
-
-- Node.js 18+
-- pnpm 8+
-
-### 安装依赖
+## 🚀 快速开始
 
 ```bash
 pnpm install
+pnpm start          # 中文（默认）→ http://localhost:3000
+pnpm start:en       # 英文
+pnpm build          # 生产构建
+pnpm serve          # 预览构建产物
 ```
 
-### 本地开发
+环境要求：Node 18+ · pnpm 8+
 
-#### 启动中文文档（默认）
+## 🤖 RAG 索引
+
+本仓库为 BeeCount-Platform 的 AI 文档问答（⌘K → A1）维护向量索引。
+
+**流程**：docs 改动 → CI 触发 → sha256 比对 → 按 H2/H3 切 chunk（~850 字）→ 调 SiliconFlow embedding → 写 `data/docs-index.{zh,en}.sqlite` → 提交回 main → Cloud CI clone 后打进 docker image。
 
 ```bash
-pnpm start
+# 本地构建索引
+pip install -r scripts/requirements.txt
+EMBEDDING_API_KEY=sk-xxx python scripts/build_docs_index.py
+# --force 跳过 hash 检查
 ```
 
-访问 http://localhost:3000
+**CI**：`.github/workflows/build-rag-index.yml`，docs 改动时自动跑（需要 repo secret `SILICONFLOW_KEY`）。
 
-#### 启动英文文档
+详细说明：[`scripts/README.md`](scripts/README.md) · 设计文档：BeeCount-Platform `.docs/web-cmdk-ai-doc-search.md`
 
-```bash
-pnpm start:en
-```
-
-访问 http://localhost:3000
-
-### 构建生产版本
-
-```bash
-pnpm build
-```
-
-构建产物在 `build/` 目录
-
-### 本地预览构建结果
-
-```bash
-pnpm serve
-```
-
-## 文档结构
+## 📁 目录结构
 
 ```
-docs/                     # 中文文档
-├── getting-started/      # 快速开始
-├── record/               # 记账功能
-├── category/             # 分类与标签
-├── account/              # 账户与账本
-├── statistics/           # 统计分析
-├── ai/                   # AI 助手
-├── cloud-sync/           # 云同步
-├── personalize/          # 个性化
-├── faq.md               # 常见问题
-└── changelog.md         # 更新日志
-
-i18n/en/docusaurus-plugin-content-docs/current/  # 英文文档
-└── (与中文目录结构一致)
-
-static/                  # 静态资源
-├── img/                 # 图片资源
-│   ├── preview/        # 应用预览图
-│   │   ├── zh/        # 中文界面截图
-│   │   └── en/        # 英文界面截图
-│   └── logo.svg       # Logo
-└── ...
-
-src/                     # 源代码
-├── components/          # React 组件
-├── css/                # 样式文件
-└── pages/              # 自定义页面
+docs/                                              # 中文文档（一级目录 = sidebar 分类）
+i18n/en/docusaurus-plugin-content-docs/current/    # 英文文档（结构对齐）
+data/                                              # RAG 产物
+├── docs-index.zh.sqlite                          #   中文向量索引
+├── docs-index.en.sqlite                          #   英文向量索引
+└── docs-index.hash                               #   corpus sha256（增量构建用）
+scripts/build_docs_index.py                        # RAG 构建脚本
+src/                                               # React 自定义页面 / 组件
+static/img/preview/{zh,en}/                        # 中英截图
 ```
 
-## 编写文档
-
-### 添加新文档
-
-1. **创建 Markdown 文件**
-
-在 `docs/` 目录下创建相应的 `.md` 文件，例如 `docs/features/new-feature.md`
-
-2. **添加 Frontmatter**
-
-```markdown
----
-sidebar_position: 1
----
-
-# 文档标题
-
-文档内容...
-```
-
-3. **更新侧边栏配置**
-
-在 `sidebars.ts` 中添加文档路径：
-
-```typescript
-{
-  type: 'category',
-  label: '功能',
-  items: [
-    'features/new-feature',  // 添加这里
-  ],
-}
-```
-
-4. **添加英文翻译**
-
-在 `i18n/en/docusaurus-plugin-content-docs/current/` 对应位置创建英文版本
-
-### 文档编写规范
-
-#### Markdown 格式
-
-- 使用标准 Markdown 语法
-- 支持 MDX（可嵌入 React 组件）
-- 图片放在 `static/img/` 目录，使用相对路径引用：`![描述](/img/path/to/image.png)`
-
-#### 代码块
-
-\```dart
-// Dart 代码示例
-void main() {
-  print('Hello BeeCount!');
-}
-\```
-
-#### 告示框
-
-```markdown
-:::tip 提示
-这是一条提示信息
-:::
-
-:::warning 警告
-这是一条警告信息
-:::
-
-:::danger 危险
-这是一条危险提示
-:::
-
-:::info 信息
-这是一条普通信息
-:::
-```
-
-#### 截图规范
-
-- 中文界面截图放在 `static/img/preview/zh/`
-- 英文界面截图放在 `static/img/preview/en/`
-- 文件名使用数字编号：`01-home.png`, `02-settings.png`
-- 推荐尺寸：竖屏 1080x1920 或等比例
-- 格式：PNG（支持透明背景）
-
-### 国际化（i18n）
-
-#### 翻译文档
-
-1. 使用生成命令创建翻译模板：
-
-```bash
-pnpm write-translations
-```
-
-2. 在 `i18n/en/` 目录下编辑翻译文件
-
-#### 翻译 UI 文本
-
-编辑 `i18n/en/docusaurus-plugin-content-docs/current.json`
-
-## 搜索功能
-
-本项目使用本地搜索插件，构建时自动生成搜索索引。支持：
-
-- 中英文搜索
-- 页面标题搜索
-- 页面内容搜索
-- 搜索结果高亮
-
-## 贡献指南
-
-欢迎贡献文档！请遵循以下步骤：
-
-1. Fork 本仓库
-2. 创建功能分支 (`git checkout -b doc/feature-name`)
-3. 提交更改 (`git commit -m 'docs: 添加新文档'`)
-4. 推送到分支 (`git push origin doc/feature-name`)
-5. 创建 Pull Request
-
-### Commit 规范
-
-使用语义化提交信息：
-
-- `docs: 添加/更新文档内容`
-- `feat: 添加新功能`
-- `fix: 修复问题`
-- `style: 样式调整`
-- `refactor: 重构代码`
-
-## 部署
-
-本项目使用静态网站托管服务部署，支持：
-
-- GitHub Pages
-- Vercel
-- Netlify
-- 其他静态托管服务
-
-### 自动部署
-
-推送到 `main` 分支时自动触发构建和部署
-
-### 手动部署
-
-```bash
-pnpm build
-# 将 build/ 目录部署到服务器
-```
-
-## 常用命令
+## 🛠 常用命令
 
 | 命令 | 说明 |
 |------|------|
-| `pnpm start` | 启动中文文档开发服务器 |
-| `pnpm start:en` | 启动英文文档开发服务器 |
-| `pnpm build` | 构建生产版本 |
-| `pnpm serve` | 本地预览构建结果 |
-| `pnpm clear` | 清理缓存 |
-| `pnpm write-translations` | 生成翻译模板 |
+| `pnpm start` / `start:en` | 启动开发服务器（zh / en） |
+| `pnpm build` | 生产构建 → `build/` |
+| `pnpm serve` | 预览构建产物 |
+| `pnpm clear` | 清缓存 |
+| `pnpm write-translations` | 生成 i18n 翻译模板 |
 
-## 相关链接
+<details>
+<summary><b>📝 开发指南（点击展开）</b></summary>
 
-- [蜜蜂记账主仓库](https://github.com/TNT-Likely/BeeCount)
-- [Docusaurus 官方文档](https://docusaurus.io/)
-- [Markdown 语法指南](https://www.markdownguide.org/)
+### 添加新文档
 
-## 许可证
+1. 在 `docs/<分类>/` 下创建 `.md`，加 frontmatter：
+   ```markdown
+   ---
+   sidebar_position: 1
+   ---
 
-MIT License
+   # 标题
+   ```
+2. `sidebars.ts` 加路径
+3. 在 `i18n/en/docusaurus-plugin-content-docs/current/<分类>/` 同名位置加英文版
 
-## 联系方式
+### 文档规范
 
-- 问题反馈: [GitHub Issues](https://github.com/TNT-Likely/BeeCount/issues)
-- 文档问题: [GitHub Issues](https://github.com/TNT-Likely/BeeCount-Website/issues)
+- 标准 Markdown / MDX（可嵌入 React 组件）
+- 图片放 `static/img/`，引用用绝对路径 `/img/...`
+- 截图：`static/img/preview/{zh,en}/01-home.png` 形式编号，竖屏 1080×1920
+- 告示框：`:::tip` / `:::warning` / `:::danger` / `:::info`
+
+### 国际化
+
+```bash
+pnpm write-translations           # 生成翻译模板
+# 编辑 i18n/en/docusaurus-plugin-content-docs/current.json（UI 文案）
+# 编辑 i18n/en/docusaurus-plugin-content-docs/current/**/*.md（文档正文）
+```
+
+### 注意
+
+- 改 `docs/**` 或 `i18n/en/.../current/**` 会触发 RAG 重建 CI
+- 大改结构请先确认 `sidebars.ts` 与英文目录同步，避免站内死链
+
+</details>
+
+<details>
+<summary><b>🤝 贡献规范（点击展开）</b></summary>
+
+### 流程
+
+1. Fork → 切分支：`git checkout -b doc/<topic>`
+2. 提交（commit 规范见下）
+3. Push 到 fork → 创建 PR
+
+### Commit 规范
+
+中文 commit message，遵循 [Conventional Commits](https://www.conventionalcommits.org/zh-hans/v1.0.0/)：
+
+| 类型 | 用途 |
+|------|------|
+| `docs:` | 新增 / 修改文档内容 |
+| `feat:` | 新功能（页面、组件） |
+| `fix:` | 修复（拼写、链接、构建错误） |
+| `style:` | 仅样式调整 |
+| `refactor:` | 不改变行为的结构调整 |
+| `chore:` | 依赖升级、CI、配置 |
+
+不要在 commit message 包含 Claude Code 等 AI 工具相关信息。
+
+### PR 检查清单
+
+- [ ] 中英文档同步（如果改了 `docs/`，对应 `i18n/en/...` 也更新）
+- [ ] 本地 `pnpm build` 通过（无 broken link / 编译错误）
+- [ ] 截图放对目录（`zh/` vs `en/`）
+- [ ] 不要提交 `data/docs-index.*.sqlite`（CI 自动重建）
+
+</details>
+
+## 📄 License
+
+[MIT](LICENSE) © TNT-Likely · 主项目仓库 [TNT-Likely/BeeCount](https://github.com/TNT-Likely/BeeCount)
