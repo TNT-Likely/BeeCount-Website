@@ -1,6 +1,6 @@
-<div align="center">
+# BeeCount Website &nbsp; [中文](README.md)
 
-# BeeCount Website
+<div align="center">
 
 Official website & docs for BeeCount · Docusaurus 3 · zh / en bilingual · ships RAG index
 
@@ -8,7 +8,7 @@ Official website & docs for BeeCount · Docusaurus 3 · zh / en bilingual · shi
 [![Docusaurus](https://img.shields.io/badge/Docusaurus-3-2E8555?logo=docusaurus&logoColor=white)](https://docusaurus.io/)
 [![Node](https://img.shields.io/badge/Node-18%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 
-[🌐 Site count.beejz.com](https://count.beejz.com) · [📦 Main Repo](https://github.com/TNT-Likely/BeeCount) · [🌐 中文](README.md)
+[🌐 Site count.beejz.com](https://count.beejz.com) · [📦 Main Repo](https://github.com/TNT-Likely/BeeCount)
 
 </div>
 

@@ -1,6 +1,6 @@
-<div align="center">
+# BeeCount Website &nbsp; [English](README_EN.md)
 
-# BeeCount Website
+<div align="center">
 
 蜜蜂记账官网与文档 · Docusaurus 3 · 中英双语 · 内置 RAG 索引
 
@@ -8,7 +8,7 @@
 [![Docusaurus](https://img.shields.io/badge/Docusaurus-3-2E8555?logo=docusaurus&logoColor=white)](https://docusaurus.io/)
 [![Node](https://img.shields.io/badge/Node-18%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 
-[🌐 官网 count.beejz.com](https://count.beejz.com) · [📦 主仓库](https://github.com/TNT-Likely/BeeCount) · [🌐 English](README_EN.md)
+[🌐 官网 count.beejz.com](https://count.beejz.com) · [📦 主仓库](https://github.com/TNT-Likely/BeeCount)
 
 </div>
 
