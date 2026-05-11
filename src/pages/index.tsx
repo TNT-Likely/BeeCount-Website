@@ -534,10 +534,6 @@ function CommunitySection() {
           <div className={styles.communityRight}>
             <h3><Translate id="homepage.community.contact">联系作者</Translate></h3>
             <div className={styles.socialLinks}>
-              <a href="#" className={styles.socialLink}>
-                <span className={styles.socialIcon}>💬</span>
-                <span><Translate id="homepage.community.wechat">微信: LinYiXiao_Sx</Translate></span>
-              </a>
               <a href="https://xhslink.com/m/8K1ekg7EFOq" className={styles.socialLink} target="_blank" rel="noopener noreferrer">
                 <span className={styles.socialIcon}>📕</span>
                 <span><Translate id="homepage.community.xiaohongshu">小红书 @蜜蜂记账</Translate></span>

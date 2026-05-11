@@ -231,10 +231,6 @@
     "message": "Contact",
     "description": "Contact section title"
   },
-  "homepage.community.wechat": {
-    "message": "WeChat: LinYiXiao_Sx",
-    "description": "WeChat contact"
-  },
   "homepage.community.xiaohongshu": {
     "message": "Xiaohongshu @BeeCount",
     "description": "Xiaohongshu contact"
