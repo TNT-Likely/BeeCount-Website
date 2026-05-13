@@ -7,7 +7,7 @@ keywords: [蜜蜂记账 MCP, Claude Desktop 记账, Cursor 记账, LLM 记账, A
 
 # MCP
 
-> 3.2 新增 · BeeCount Cloud 内置功能 · 跟 Claude Desktop / Cursor / Cline 集成
+> BeeCount Cloud 1.2.0 起内置 · 跟 Claude Desktop / Cursor / Cline 集成
 
 [Model Context Protocol (MCP)](https://modelcontextprotocol.io) 是 Anthropic 推出的 LLM 工具集成协议。BeeCount Cloud 内置 MCP server,让你直接在 Claude Desktop / Cursor / Cline 里跟 LLM 自然语言对话来管理账本。
 
@@ -48,6 +48,18 @@ LLM 会自动选合适的 tool 帮你查询/记录,你不用打开 BeeCount。
 :::
 
 ### 2. 在 LLM 客户端配置
+
+:::tip 关于 transport
+BeeCount Cloud server 暴露的是 **SSE** 端点(`/api/v1/mcp/sse`)。下面 Claude Desktop / Cursor / Cline 的示例都用 `npx mcp-remote` —— 这是个 **stdio↔SSE 桥**,给只支持 stdio 的客户端用(兼容性最广)。
+
+**如果你的客户端原生支持 SSE**(如 Claude Code、新版 Cursor),可以**跳过桥直连 SSE**,更轻量:
+```bash
+claude mcp add --transport sse --scope user beecount \
+  https://your-beecount-cloud.com/api/v1/mcp/sse \
+  --header "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
+两种方式 server 端看到的都是同一个 SSE 连接,行为完全一致,选你客户端支持的最简单那条。
+:::
 
 #### Claude Desktop
 

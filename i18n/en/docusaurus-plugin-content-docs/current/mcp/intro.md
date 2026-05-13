@@ -7,7 +7,7 @@ keywords: [BeeCount MCP, Claude Desktop bookkeeping, Cursor bookkeeping, LLM acc
 
 # MCP
 
-> New in 3.2 · Built into BeeCount Cloud · Integrates with Claude Desktop / Cursor / Cline
+> Built into BeeCount Cloud since 1.2.0 · Integrates with Claude Desktop / Cursor / Cline
 
 [Model Context Protocol (MCP)](https://modelcontextprotocol.io) is Anthropic's LLM tool-integration standard. BeeCount Cloud ships a built-in MCP server so you can manage your ledgers from inside Claude Desktop / Cursor / Cline through natural-language chat.
 
@@ -48,6 +48,18 @@ Only configure trusted clients. Never share it, never commit to git. If compromi
 :::
 
 ### 2. Configure the LLM client
+
+:::tip About transports
+The BeeCount Cloud server exposes an **SSE** endpoint (`/api/v1/mcp/sse`). The examples below for Claude Desktop / Cursor / Cline use `npx mcp-remote`, a **stdio↔SSE bridge** for clients that only speak stdio (the most compatible path).
+
+**If your client speaks SSE natively** (Claude Code, recent Cursor versions), you can **skip the bridge and connect directly**:
+```bash
+claude mcp add --transport sse --scope user beecount \
+  https://your-beecount-cloud.com/api/v1/mcp/sse \
+  --header "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
+Either way the server sees the same SSE connection — behavior is identical, pick whichever your client supports most easily.
+:::
 
 #### Claude Desktop
 
