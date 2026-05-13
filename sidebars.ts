@@ -64,6 +64,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'cloud-sync/overview',
         'cloud-sync/beecount-cloud',
+        'cloud-sync/mcp',
         'cloud-sync/icloud',
         'cloud-sync/supabase',
         'cloud-sync/webdav',
