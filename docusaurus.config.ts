@@ -76,6 +76,11 @@ const config: Config = {
           position: 'left',
           label: '文档',
         },
+        {
+          to: '/docs/mcp',
+          label: 'MCP',
+          position: 'left',
+        },
         // {to: '/blog', label: '博客', position: 'left'},
         {
           to: '/donate',

@@ -1,5 +1,6 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
+slug: /mcp
 description: 通过 MCP(Model Context Protocol)让 Claude Desktop、Cursor、Cline 等 LLM 客户端直接读写你的 BeeCount 账本。
 keywords: [蜜蜂记账 MCP, Claude Desktop 记账, Cursor 记账, LLM 记账, AI agent 记账, MCP server]
 ---
@@ -24,7 +25,7 @@ LLM 会自动选合适的 tool 帮你查询/记录,你不用打开 BeeCount。
 
 ## 前置条件
 
-- ✅ 已部署 **BeeCount Cloud**(参考[自建云部署](./beecount-cloud.md))
+- ✅ 已部署 **BeeCount Cloud**(参考[自建云部署](../cloud-sync/beecount-cloud.md))
 - ✅ 至少一个 LLM 客户端:Claude Desktop / Cursor / Cline / 其他支持 MCP 的应用
 - ✅ 网络:LLM 客户端能访问到你的 BeeCount Cloud 地址(局域网 / 公网均可)
 

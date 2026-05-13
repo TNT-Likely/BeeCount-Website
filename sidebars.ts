@@ -64,12 +64,16 @@ const sidebars: SidebarsConfig = {
       items: [
         'cloud-sync/overview',
         'cloud-sync/beecount-cloud',
-        'cloud-sync/mcp',
         'cloud-sync/icloud',
         'cloud-sync/supabase',
         'cloud-sync/webdav',
         'cloud-sync/s3',
       ],
+    },
+    {
+      type: 'category',
+      label: 'MCP',
+      items: ['mcp/intro'],
     },
     {
       type: 'category',

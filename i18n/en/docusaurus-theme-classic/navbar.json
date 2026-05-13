@@ -7,6 +7,10 @@
     "message": "Docs",
     "description": "Navbar item with label 文档"
   },
+  "item.label.MCP": {
+    "message": "MCP",
+    "description": "Navbar item with label MCP"
+  },
   "item.label.博客": {
     "message": "Blog",
     "description": "Navbar item with label 博客"

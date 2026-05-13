@@ -1,5 +1,6 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
+slug: /mcp
 description: Let Claude Desktop, Cursor, Cline, and other LLM clients read and write your BeeCount ledgers via the Model Context Protocol (MCP).
 keywords: [BeeCount MCP, Claude Desktop bookkeeping, Cursor bookkeeping, LLM accounting, AI agent bookkeeping, MCP server]
 ---
@@ -24,7 +25,7 @@ The LLM picks the right tool and queries/edits your data — no need to open Bee
 
 ## Prerequisites
 
-- ✅ **BeeCount Cloud** deployed (see [Self-hosted Cloud](./beecount-cloud.md))
+- ✅ **BeeCount Cloud** deployed (see [Self-hosted Cloud](../cloud-sync/beecount-cloud.md))
 - ✅ At least one MCP-capable LLM client: Claude Desktop / Cursor / Cline / etc.
 - ✅ Network reach: the LLM client must be able to reach your BeeCount Cloud URL (LAN, VPN, or public)
 
