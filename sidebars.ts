@@ -70,11 +70,7 @@ const sidebars: SidebarsConfig = {
         'cloud-sync/s3',
       ],
     },
-    {
-      type: 'category',
-      label: 'MCP',
-      items: ['mcp/intro'],
-    },
+    'mcp/intro',
     {
       type: 'category',
       label: '安全与隐私',

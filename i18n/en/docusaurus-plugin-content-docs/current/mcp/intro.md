@@ -5,7 +5,7 @@ description: Let Claude Desktop, Cursor, Cline, and other LLM clients read and w
 keywords: [BeeCount MCP, Claude Desktop bookkeeping, Cursor bookkeeping, LLM accounting, AI agent bookkeeping, MCP server]
 ---
 
-# MCP Server (Let LLMs operate your ledger directly)
+# MCP
 
 > New in 3.2 · Built into BeeCount Cloud · Integrates with Claude Desktop / Cursor / Cline
 

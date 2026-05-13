@@ -122,20 +122,20 @@ const config: Config = {
           title: '相关产品',
           items: [
             {
+              html: `<a href="https://assets.beejz.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem 1rem; background: rgba(255, 154, 60, 0.08); border: 1px solid rgba(255, 154, 60, 0.2); border-radius: 10px; text-decoration: none; margin-top: 0.5rem;">
+                <span style="font-size: 1.75rem; line-height: 1;">💼</span>
+                <span>
+                  <span style="display: block; font-weight: 600; color: #FF9A3C; margin-bottom: 0.25rem;">蜜蜂家当 BeeAssets</span>
+                  <span style="display: block; font-size: 0.8em; color: rgba(255,255,255,0.6); line-height: 1.4;">个人资产管理工具<br/>多账户 · 多币种 · 净值追踪</span>
+                </span>
+              </a>`,
+            },
+            {
               html: `<a href="https://dns.beejz.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem 1rem; background: rgba(248, 201, 28, 0.08); border: 1px solid rgba(248, 201, 28, 0.2); border-radius: 10px; text-decoration: none; margin-top: 0.5rem;">
                 <span style="font-size: 1.75rem; line-height: 1;">🐝</span>
                 <span>
                   <span style="display: block; font-weight: 600; color: #F8C91C; margin-bottom: 0.25rem;">蜜蜂域名 BeeDNS</span>
                   <span style="display: block; font-size: 0.8em; color: rgba(255,255,255,0.6); line-height: 1.4;">简洁高效的 DNS 管理工具<br/>支持阿里云 DNS</span>
-                </span>
-              </a>`,
-            },
-            {
-              html: `<a href="https://assets.beejz.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.875rem 1rem; background: rgba(255, 154, 60, 0.08); border: 1px solid rgba(255, 154, 60, 0.2); border-radius: 10px; text-decoration: none; margin-top: 0.5rem;">
-                <span style="font-size: 1.75rem; line-height: 1;">💼</span>
-                <span>
-                  <span style="display: block; font-weight: 600; color: #FF9A3C; margin-bottom: 0.25rem;">蜜蜂资产 BeeAssets</span>
-                  <span style="display: block; font-size: 0.8em; color: rgba(255,255,255,0.6); line-height: 1.4;">个人资产管理工具<br/>多账户 · 多币种 · 净值追踪</span>
                 </span>
               </a>`,
             },

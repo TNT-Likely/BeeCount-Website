@@ -5,7 +5,7 @@ description: 通过 MCP(Model Context Protocol)让 Claude Desktop、Cursor、Cli
 keywords: [蜜蜂记账 MCP, Claude Desktop 记账, Cursor 记账, LLM 记账, AI agent 记账, MCP server]
 ---
 
-# MCP Server(让 LLM 直接操作账本)
+# MCP
 
 > 3.2 新增 · BeeCount Cloud 内置功能 · 跟 Claude Desktop / Cursor / Cline 集成
 
