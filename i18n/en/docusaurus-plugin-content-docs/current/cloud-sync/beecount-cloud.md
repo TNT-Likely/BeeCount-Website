@@ -19,7 +19,7 @@ BeeCount Cloud is the **official self-hosted sync server** — deploy it in one 
 
 | User type | Why it fits |
 |---|---|
-| 🏠 Households | Each member has their own account with isolated data (shared ledgers coming later) |
+| 🏠 Households | Each member has their own account **plus shared ledgers** — invite family to write into the same book, Owner / Editor roles included |
 | 📱 One person, many devices | Phone / iPad / Web — seconds to sync, no more manual "upload / download" |
 | 🖥️ NAS / VPS owners | Docker one-shot, data stays on your own machine |
 | 👨‍💻 Technical users | Open source, auditable, fork-friendly |
@@ -103,7 +103,17 @@ After first login, **change the password immediately** (top-right avatar → acc
 2. Click **Add user**, enter their email + a temporary password
 3. Hand them the credentials; they sign in from the app or Web
 
-Each user's data is isolated today. **Shared ledgers (multiple users editing the same ledger)** is on the roadmap.
+Each user's data is isolated by default. For multi-person scenarios use **shared ledgers**: an Owner generates an invite code in the App / Web and Editors join by entering it.
+
+### Shared ledgers (multi-user collaboration)
+
+- **Owner / Editor roles** — Owners rename / invite / remove members; Editors co-write transactions and can't see the Owner's other ledgers
+- **Realtime sync** — WebSocket fan-out, every member sees changes within seconds
+- **Who wrote it / who last edited it** — every transaction is tagged with creator + last editor (avatar + role)
+- **Member balance stats** — dedicated dialog on Web (chart-rich, bar + pie) / compact list on App
+- **Three-platform parity** — invite / join / leave / kick works on iOS, Android, and Web
+
+See the [Shared ledgers](../shared-ledger) doc for full usage.
 
 ## Advanced config
 

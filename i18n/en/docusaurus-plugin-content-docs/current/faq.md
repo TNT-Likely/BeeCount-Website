@@ -38,7 +38,9 @@ You can create an "Investment" category and "Investment Account" to record, but 
 
 ### Q: Can multiple people share a ledger?
 
-Real-time multi-user collaboration is not currently supported, but you can share cloud sync configuration for simple data sharing.
+**Yes.** After self-hosting [BeeCount Cloud](./cloud-sync/beecount-cloud), the Owner can generate an invite code from the App or Web; family / friends enter it to join the same ledger. Everyone syncs in real time and every transaction is tagged with "who wrote it / who last edited it". Owner and Editor roles are enforced; iOS, Android, and Web all work. See [Shared ledgers](./shared-ledger) for full usage.
+
+> Only the BeeCount Cloud backend supports shared ledgers (other sync targets like iCloud / WebDAV / S3 are single-user multi-device — data doesn't cross between users).
 
 ## Sync Related
 

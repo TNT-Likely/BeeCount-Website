@@ -70,6 +70,7 @@ const sidebars: SidebarsConfig = {
         'cloud-sync/s3',
       ],
     },
+    'shared-ledger',
     'mcp/intro',
     {
       type: 'category',
