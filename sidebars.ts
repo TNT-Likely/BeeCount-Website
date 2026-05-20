@@ -74,6 +74,13 @@ const sidebars: SidebarsConfig = {
     'mcp/intro',
     {
       type: 'category',
+      label: '数据维护',
+      items: [
+        'maintenance/data-cleanup',
+      ],
+    },
+    {
+      type: 'category',
       label: '安全与隐私',
       items: [
         'security/app-lock',

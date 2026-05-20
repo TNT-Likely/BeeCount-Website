@@ -20,6 +20,12 @@
   "sidebar.tutorialSidebar.category.云同步": {
     "message": "Cloud Sync"
   },
+  "sidebar.tutorialSidebar.category.数据维护": {
+    "message": "Data Maintenance"
+  },
+  "sidebar.tutorialSidebar.category.安全与隐私": {
+    "message": "Security & Privacy"
+  },
   "sidebar.tutorialSidebar.category.个性化": {
     "message": "Personalization"
   }
