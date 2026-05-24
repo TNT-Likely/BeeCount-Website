@@ -8,7 +8,7 @@ BeeCount supports dark mode for eye comfort and power saving.
 
 ## Enable Dark Mode
 
-1. Go to "Me" → "Appearance" → "Personalization"
+1. Go to "Me" → "Personalization" → "Style & Theme"
 2. Tap "Dark Mode"
 3. Select mode:
    - **Follow System** - Automatically follows system settings

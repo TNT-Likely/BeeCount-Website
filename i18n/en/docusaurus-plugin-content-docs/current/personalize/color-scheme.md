@@ -15,7 +15,7 @@ Different regions have different color associations:
 
 ## Change Color Scheme
 
-1. Go to "Mine" → "Appearance Settings" → "Personalization"
+1. Go to "Me" → "Personalization" → "Style & Theme"
 2. Tap "Income/Expense Color Scheme"
 3. Select your preferred scheme
 

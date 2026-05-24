@@ -16,7 +16,7 @@ BeeCount supports app lock to protect your financial privacy with PIN and biomet
 
 ## Enable App Lock
 
-1. Go to "Me" → "Data Management"
+1. Go to "Me" → "Personalization"
 2. Enable "App Lock"
 3. Set a 4-digit PIN code
 4. Optionally enable biometric authentication (fingerprint/Face ID)

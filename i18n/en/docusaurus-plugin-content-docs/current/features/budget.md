@@ -6,13 +6,23 @@ sidebar_position: 6
 
 Set budgets to control spending and develop healthy financial habits.
 
+## Open Budget Management
+
+Each ledger has independent budgets. Since 3.2.1 the entry has moved into the
+ledger menu:
+
+1. Go to "Me" → "Ledger Management"
+2. **Long press** the target ledger (visible to any member; Owner can edit)
+3. Choose "Budget Management"
+
+> Old path (3.2.0 and earlier): "Me" → "Budget Management" as a top-level entry.
+
 ## Total Budget
 
 Set a monthly total expense budget and track spending progress in real-time.
 
-1. Go to "Discover" → "Budget Management"
-2. Tap "Set Total Budget"
-3. Enter your monthly budget amount
+1. Tap "Set Total Budget" in the Budget Management page
+2. Enter your monthly budget amount
 
 ## Category Budgets
 

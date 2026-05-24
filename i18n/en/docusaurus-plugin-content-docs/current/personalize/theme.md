@@ -10,7 +10,7 @@ BeeCount supports custom theme colors for a personalized interface.
 
 ## Change Theme Color
 
-1. Go to "Me" → "Appearance" → "Personalization"
+1. Go to "Me" → "Personalization" → "Style & Theme"
 2. Tap "Theme Color"
 3. Choose a preset color or customize
 
