@@ -24,6 +24,17 @@ AI: Got it! I've recorded an expense:
     Confirm to save?
 ```
 
+Since 3.2.3, AI Chat also supports **detecting multiple transactions in one message**:
+
+```
+User: Record: taxi 30 today, dinner 45, bubble tea 18
+AI: I detected 3 transactions, please confirm:
+    1. Expense / Transportation / $30 / today
+    2. Expense / Food / $45 / today
+    3. Expense / Food / $18 / today
+    Save all? (you can deselect individual rows)
+```
+
 ### Queries
 
 ```

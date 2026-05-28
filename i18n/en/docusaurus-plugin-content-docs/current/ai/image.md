@@ -32,6 +32,14 @@ AI will attempt to identify:
 - Transaction time
 - Purchase items
 
+## Multiple Transactions per Image
+
+Since 3.2.3, the mobile AI flow supports **detecting multiple transactions from a single image** (previously only the first was kept). Bill screenshots, supermarket receipts, monthly Alipay / WeChat statements with many rows all yield a draft list of N transactions:
+
+- Confirm / tweak amount, category, account, tags and note per row
+- The original image is attached to **every one** of the N transactions, so the source is reachable from any of them
+- Tap "Skip" on any row to drop it — only the rows you want get saved
+
 ## Tips
 
 - Use clear, legible images

@@ -29,6 +29,13 @@ Tap any date to view all transactions for that day:
 - Category icons and amounts
 - Notes information
 
+## Record Directly on the Selected Date
+
+Since 3.2.3, after you select a date on the calendar, a "**Record on this day**" entry appears above the transaction list. Tap it to jump straight into the entry form with the date pre-filled — no more switching to the record page and manually picking the day.
+
+- Great for backfilling past days: flip to a date, see if anything is missing, tap and add
+- Date / month switches now use skeleton placeholders so the page no longer flickers on reload
+
 ## Quick Navigation
 
 - **Swipe Left/Right** - Switch months

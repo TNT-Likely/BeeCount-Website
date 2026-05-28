@@ -20,7 +20,9 @@ Use iOS Shortcuts + screenshot recognition to quickly record after payments.
 1. Create a Shortcut: Screenshot → BeeCount recognition
 2. Bind to "Back Tap" gesture
 3. Double-tap the back of your phone after payment
-4. Auto-screenshot and recognize amount, complete recording
+4. **The app runs silently in the background**: screenshot → AI recognition → result delivered via a system notification — **the app is no longer pulled to the foreground** (since 3.2.3). You get two notifications: an "in progress" and a "final result" with the specific failure reason on errors.
+
+The whole flow doesn't interrupt the payment page / current app — you can keep scrolling WeChat / Alipay. Tap the notification to jump back into BeeCount and review the just-recorded transaction.
 
 ## Configuration Steps
 
@@ -54,10 +56,12 @@ Use iOS Shortcuts + screenshot recognition to quickly record after payments.
 
 1. After completing payment, stay on the payment success page
 2. Double-tap the back of your phone (or manually run the shortcut)
-3. Auto-screenshots and recognizes amount, merchant info
-4. Confirm to complete recording
+3. The system takes the screenshot + runs AI recognition in the background, then surfaces a notification with the result
+4. (Optional) tap the notification to jump back to BeeCount and review / adjust
 
-> ✨ **New in v2.3.3**: Screenshots are automatically saved as transaction attachments, and a "Shortcut Screenshot" tag is added for easy filtering later.
+> ✨ **Improved in v3.2.3**: the whole flow runs silently in the background — the app is no longer pulled to the foreground. Notifications are split into "in progress" / "final result", and failures show the specific reason (network / API quota / AI not configured, etc.) instead of always saying "AI not configured".
+
+> ✨ **Since v2.3.3**: screenshots are automatically saved as transaction attachments, and a "Shortcut Screenshot" tag is added for easy filtering later.
 
 ## Other Trigger Methods
 

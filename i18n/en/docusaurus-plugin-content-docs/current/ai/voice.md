@@ -35,6 +35,17 @@ Say a sentence, and AI automatically recognizes and completes the record.
 - Time: Today, yesterday, last week, etc.
 - Category: Common spending scenarios auto-matched
 
+## Multiple Transactions in One Sentence
+
+Since 3.2.3, voice recording supports **multiple transactions per utterance** (previously only the first one was kept). For example:
+
+```
+"Taxi 30 today, dinner 45, bubble tea 18"
+→ Three transaction drafts, confirm row-by-row and save in one go
+```
+
+Great for catch-up entries: on the way home, dictate the few things you spent on today in one breath — no need to long-press the mic three times.
+
 ## Notes
 
 - Microphone permission required
