@@ -140,7 +140,7 @@ VS Code → Cline 图标 → 右上角 `…` → **Edit MCP Settings**
 
 LLM 会调用 `list_ledgers` tool,返回你账本列表。
 
-## 17 个可用 tool
+## 18 个可用 tool
 
 ### 查询(`mcp:read`)
 
@@ -163,6 +163,7 @@ LLM 会调用 `list_ledgers` tool,返回你账本列表。
 | Tool | 用途 | 备注 |
 |---|---|---|
 | `create_transaction` | 新建交易 | |
+| `create_transactions` | 批量新建交易 | 一次提交多笔 —— 导入对账单 / Excel 的高效方式;多账本时需显式指定账本 |
 | `update_transaction` | 改交易 | 只改传入的字段 |
 | `delete_transaction` | 删交易 | **二次确认** — LLM 第一次调用返"待确认"占位符,你说"删"后才真删 |
 | `create_category` | 新建分类 | |

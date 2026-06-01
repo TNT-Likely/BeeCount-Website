@@ -140,7 +140,7 @@ In your LLM client, start a new chat and ask:
 
 The LLM will call `list_ledgers` and answer with your ledger list.
 
-## The 17 tools
+## The 18 tools
 
 ### Read (`mcp:read`)
 
@@ -163,6 +163,7 @@ The LLM will call `list_ledgers` and answer with your ledger list.
 | Tool | Purpose | Notes |
 |---|---|---|
 | `create_transaction` | Create a transaction | |
+| `create_transactions` | Create many transactions | One call commits many — the efficient path for importing statements / spreadsheets; pass an explicit ledger when you have multiple |
 | `update_transaction` | Edit a transaction | Only changes fields you pass |
 | `delete_transaction` | Delete a transaction | **Two-step confirmation** — first call returns a "needs confirmation" placeholder; only deletes on explicit second call |
 | `create_category` | Create a category | |
