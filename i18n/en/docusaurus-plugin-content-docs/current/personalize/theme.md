@@ -37,6 +37,16 @@ The theme color is applied to:
 - Icon accents
 - Chart colors
 
+## Skins
+
+> ✨ **New in v3.3.0**
+
+"Appearance" now includes **Skins**: decorative header artwork that follows your theme color, in both light and dark mode.
+
+- Built-in gradient / scene / geometric styles
+- Syncs across devices
+- Config import/export so you can share your setup
+
 ## Font Size
 
 Adjust the app font size:

@@ -12,6 +12,24 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.4.0 highlights
+
+- 📅 **Month Start Day**: each ledger can define when "this month" begins (1-28) — great for payday budgeters and credit-card statement cycles. Home, statistics, budgets, annual reports, widgets, AI — the entire pipeline follows your accounting period, synced across devices. See the [docs](./account/month-start-day.md). Self-hosted users need to upgrade **BeeCount Cloud to 1.4.0** (web is on the same cycle; the upgrade also auto-fixes a historical under-count in web account statistics).
+- 🍎 **iOS 27 compatibility**: the Shortcuts auto-recording flow no longer gets interrupted by missing notification permission — bookkeeping works even without granting notifications.
+
+## 3.3.0 highlights
+
+- 🎨 **Skins**: decorative header artwork on the home screen follows your theme color — built-in gradient / scene / geometric styles, works in both light and dark mode, syncs across devices, with config import/export.
+- ➕ **Keypad arithmetic**: the amount keypad now supports + − × ÷ — long-press or double-tap to switch; handy for splitting bills or merging receipts right on the keypad.
+- 👤 **Custom nickname**: edit your display name from the avatar entry on the "Me" page, paired with a time-of-day greeting.
+
+## 3.2.4 / 3.2.5 highlights
+
+- 🤖 AI recording compatibility: string amounts, Chinese-formatted dates, and inference-model parameter quirks all handled; auto-tagging now respects the "auto-tag" toggle.
+- 🗂 Categories support the same name for expense and income; the transaction list always shows the category name.
+- 💳 Account & asset management overhaul: edit page redesigned, credit-card display aligned (web updated to match; asset page isolates by currency).
+- 🔁 Recurring transactions no longer allow selecting a past start date, preventing retroactive dirty data.
+
 ## 3.2.1 highlights
 
 - 📦 **Android APK shrunk by 77%** (70.2 MB → 16 MB): removed OCR, split per ABI (arm64 main / armv7 compat / x86_64 emulator / universal fallback), deleted tflite dead code

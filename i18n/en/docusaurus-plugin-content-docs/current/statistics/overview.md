@@ -20,6 +20,8 @@ The home page header shows current month:
 
 Tap the eye icon to hide/show amounts.
 
+> ✨ **Since v3.4.0**: "this month" can start on any day you choose — set the ledger's [Month Start Day](../account/month-start-day.md) (1-28) to your payday, and home, statistics and budgets all follow your accounting cycle.
+
 ## Statistics Page
 
 Tap "Statistics" in the bottom navigation for detailed analysis:

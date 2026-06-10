@@ -39,9 +39,11 @@ The home page and budget page display:
 
 ## Budget Cycle
 
-- Calculated by calendar month
-- Automatically resets on the 1st of each month
+- Calculated by calendar month by default
+- Automatically resets on the 1st of each month by default
 - View historical budget performance
+
+> ✨ **Since v3.4.0**: the budget period follows the ledger's [Month Start Day](./month-start-day.md). Set it to your payday (e.g. the 10th) and budgets run on a "10th → 9th" cycle; the web budget progress uses the same boundaries.
 
 ## Web Budget Management
 

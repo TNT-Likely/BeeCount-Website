@@ -22,6 +22,8 @@ Tap the **"+" button** at the bottom center to open the recording page.
 4. **Select Account** - Choose the associated account
 5. **Save** - Tap the save button in the top right
 
+> ✨ **Since v3.3.0**: the amount keypad supports + − × ÷ — long-press or double-tap to switch, handy for splitting bills or merging receipts right on the keypad.
+
 ### Optional Information
 
 - **Note** - Add a transaction description

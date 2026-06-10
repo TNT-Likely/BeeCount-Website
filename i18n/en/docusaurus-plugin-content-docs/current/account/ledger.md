@@ -34,6 +34,7 @@ Each ledger's data is completely independent:
 - Transaction records
 - Statistics
 - Categories can be shared or independent
+- Statistics period — each ledger can set its own [Month Start Day](./month-start-day.md) (✨ v3.4.0), e.g. align a personal ledger to payday and a credit-card ledger to its statement day
 
 ## Delete a Ledger
 

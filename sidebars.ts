@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'account/manage',
         'account/ledger',
+        'account/month-start-day',
         'account/budget',
       ],
     },

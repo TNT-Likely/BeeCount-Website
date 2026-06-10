@@ -84,3 +84,10 @@ Besides Back Tap, you can also trigger via:
 1. Ensure screenshot includes the complete payment amount
 2. Stay on payment success page long enough
 3. Can manually adjust in BeeCount
+
+**Screenshot fires on iOS 27 but nothing gets recorded?**
+
+iOS 27 tightened notification permissions: calls from unauthorized apps now fail outright (previously they failed silently).
+
+- **App ≥ 3.4.0**: handled — bookkeeping completes even without notification permission; you just won't see progress notifications. Enable notifications in Settings for the full experience.
+- **App ≤ 3.2.5**: the whole flow gets interrupted in this scenario — upgrade the App or grant notification permission.

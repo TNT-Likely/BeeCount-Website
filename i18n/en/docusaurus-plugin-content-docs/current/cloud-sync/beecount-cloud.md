@@ -24,6 +24,12 @@ BeeCount Cloud is the **official self-hosted sync server** — deploy it in one 
 | 🖥️ NAS / VPS owners | Docker one-shot, data stays on your own machine |
 | 👨‍💻 Technical users | Open source, auditable, fork-friendly |
 
+:::tip Upgrade notes (1.4.0)
+- The App 3.4.0 [Month Start Day](../account/month-start-day.md) requires **Cloud ≥ 1.4.0**: older servers ignore the setting (it looks like it "doesn't sync"). Upgrade the server first, then the App.
+- Upgrading to 1.4.0 runs database migrations automatically and **backfills** a historical issue where some web-created transactions lacked an account link, making web account statistics too low — no manual action needed.
+- Since 1.3.12 the web CSV import converts times using the client's timezone (fixes the 8-hour offset).
+:::
+
 ## Deploy
 
 Save the following as `docker-compose.yml`:
