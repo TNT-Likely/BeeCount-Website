@@ -18,7 +18,7 @@ BeeCount supports creating multiple independent ledgers for different recording 
 
 ## Create a Ledger
 
-1. Go to "Discover" page, tap the ledger icon in the top right to enter "Ledger Management"
+1. Tap the ledger name at the top of the Home tab to enter "Ledger Management"
 2. Tap "+" to create a ledger
 3. Enter ledger name
 4. Optionally select an icon

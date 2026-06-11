@@ -8,7 +8,7 @@ Automatically record fixed income and expenses - ideal for salary, rent, subscri
 
 ## Create a Recurring Entry
 
-1. Go to "Discover" → "Recurring Entries"
+1. Go to "Me" → "Automation" → "Recurring Bills"
 2. Tap "+" to create a new recurring entry
 3. Fill in transaction details (amount, category, account, etc.)
 4. Set the frequency and execution time

@@ -11,7 +11,7 @@ Set budgets to control spending and develop healthy financial habits.
 Each ledger has independent budgets. Since 3.2.1 the entry has moved into the
 ledger menu:
 
-1. Go to "Me" → "Ledger Management"
+1. Go to "Ledger Management" (tap the ledger name at the top of the Home tab)
 2. **Long press** the target ledger (visible to any member; Owner can edit)
 3. Choose "Budget Management"
 

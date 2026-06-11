@@ -39,7 +39,7 @@ Zhipu GLM offers multiple models to choose from:
 
 ## Configure AI
 
-1. Go to "Me" → "Smart Recording" → "AI Assistant", or "Discover" → "Common Features" → "AI Settings"
+1. Go to "Me" → "Smart Billing" → "AI Assistant"
 2. Select AI service provider
 3. Enter API Key
 4. Save configuration
@@ -57,7 +57,7 @@ In addition to the built-in Zhipu GLM, you can add any OpenAI-compatible provide
 
 ### Add Custom Provider
 
-1. Go to "Me" → "Smart Recording" → "AI Assistant"
+1. Go to "Me" → "Smart Billing" → "AI Assistant"
 2. Tap "Add Provider"
 3. Fill in provider details:
    - **Name** - Custom name for easy identification

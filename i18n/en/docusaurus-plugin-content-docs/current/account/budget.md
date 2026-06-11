@@ -10,9 +10,10 @@ Set budgets to control spending and develop healthy financial habits.
 
 Set a monthly total expense budget:
 
-1. Go to "Discover" → "Budget Management"
-2. Tap "Set Total Budget"
-3. Enter monthly budget amount
+1. Go to "Ledger Management" (tap the ledger name at the top of the Home tab)
+2. **Long-press** the target ledger → choose "Budget Management"
+3. Tap "Set Total Budget"
+4. Enter monthly budget amount
 
 ## Category Budgets
 

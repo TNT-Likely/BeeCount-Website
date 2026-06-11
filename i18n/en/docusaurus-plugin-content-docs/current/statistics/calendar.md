@@ -8,7 +8,7 @@ The calendar feature lets you intuitively view daily income and expense, quickly
 
 ## Access Calendar
 
-1. Tap "Statistics" in the bottom navigation
+1. Tap "Stats" in the bottom navigation
 2. Tap "Calendar" tab at the top
 
 ## Calendar View

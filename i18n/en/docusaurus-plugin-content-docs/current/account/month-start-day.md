@@ -14,7 +14,7 @@ Your salary arrives on the 10th, your credit card bills on the 15th — yet ever
 
 **App:**
 
-1. Go to **Me** → **Ledger Management**
+1. Go to **Ledger Management** (tap the ledger name at the top of the **Home** tab)
 2. **Long-press** the target ledger → **Edit Ledger**
 3. Tap **Month start day**, choose a day from 1 to 28, and save
 

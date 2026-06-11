@@ -17,7 +17,7 @@ BeeCount supports multiple accounts, each with independent balance tracking.
 
 ## Create an Account
 
-1. Go to "Me" → "Asset Management"
+1. Tap "Assets" in the bottom navigation
 2. Tap "+" to add an account
 3. Select account type
 4. Enter name and initial balance

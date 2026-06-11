@@ -23,7 +23,7 @@ Take a screenshot after payment, and BeeCount automatically recognizes it.
 ### Enable Screenshot Listening
 
 1. Open BeeCount
-2. Go to "Me" > "Auto Recording"
+2. Go to "Me" → "Smart Billing" → "Auto Screenshot Billing"
 3. Enable "Screenshot Auto Recognition"
 4. Grant storage permission
 

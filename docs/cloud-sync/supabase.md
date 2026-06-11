@@ -85,7 +85,7 @@ sidebar_position: 4
 1. 在Supabase项目左侧菜单点击「Authentication」
 2. 在「User」界面点击「Add user」→「Create new user」
 3. 创建邮箱和密码
-4. 进入蜜蜂记账「我的」→「同步」
+4. 进入蜜蜂记账「我的」→「云服务」
 5. 点击「登录」，输入第三步的邮箱和密码
 
 ## 注意事项

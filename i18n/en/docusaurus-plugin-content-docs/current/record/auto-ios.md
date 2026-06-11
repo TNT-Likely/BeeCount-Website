@@ -28,7 +28,7 @@ The whole flow doesn't interrupt the payment page / current app — you can keep
 
 ### Option 1: In-App Guide (Recommended)
 
-1. Open BeeCount, go to "Discover" → "Shortcuts"
+1. Open BeeCount, go to "Me" → "Smart Billing" → "Shortcuts"
 2. Follow the guided steps on the page
 3. Tap "Add Shortcut" to auto-create
 4. Follow the prompts to bind to Back Tap

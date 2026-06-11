@@ -24,7 +24,7 @@ Tap the eye icon to hide/show amounts.
 
 ## Statistics Page
 
-Tap "Statistics" in the bottom navigation for detailed analysis:
+Tap "Stats" in the bottom navigation for detailed analysis:
 
 ### Income & Expense Trends
 

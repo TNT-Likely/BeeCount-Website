@@ -8,8 +8,8 @@ Smart financial assistant - communicate with AI in natural language.
 
 ## Start a Chat
 
-1. Tap "Discover" → "AI Assistant"
-2. Or tap the AI icon on the home page
+1. Tap the AI icon at the top right of the Home tab
+2. Or long-press the app icon → "AI Assistant"
 
 ## Chat Examples
 

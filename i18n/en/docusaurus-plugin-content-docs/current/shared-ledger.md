@@ -24,7 +24,7 @@ Two roles in Phase 1 (Viewer-only and Owner-transfer ship in Phase 3):
 
 ### App
 
-1. **Ledgers** tab → long-press the shared ledger → choose **Members**
+1. **Ledger Management** page (tap the ledger name at the top of the **Home** tab) → long-press the shared ledger → choose **Members**
 2. On the member page → tap **Invite new member**
 3. Pick TTL (1 h / 24 h / 3 d / 7 d) → tap **Generate code**
 4. Copy the 6-character code or trigger system share (full text + URL)
@@ -41,7 +41,7 @@ Two roles in Phase 1 (Viewer-only and Owner-transfer ship in Phase 3):
 
 ### App
 
-1. **Me** → **Join shared ledger**
+1. **Ledger Management** page → **Join shared ledger**
 2. Enter the 6-character code → **Preview** (verify which ledger / who invited) → **Join**
 3. After joining: the app pulls the Owner's resource snapshot (categories / accounts / tags) + historical transactions; the picker now uses the Owner's resources. Your own ledgers are untouched.
 

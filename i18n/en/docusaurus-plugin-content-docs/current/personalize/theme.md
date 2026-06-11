@@ -10,7 +10,7 @@ BeeCount supports custom theme colors for a personalized interface.
 
 ## Change Theme Color
 
-1. Go to "Me" → "Personalization" → "Style & Theme"
+1. Go to "Me" → "Personalization"
 2. Tap "Theme Color"
 3. Choose a preset color or customize
 
@@ -41,7 +41,7 @@ The theme color is applied to:
 
 > ✨ **New in v3.3.0**
 
-"Appearance" now includes **Skins**: decorative header artwork that follows your theme color, in both light and dark mode.
+"Personalization" now includes **Skins**: decorative header artwork that follows your theme color, in both light and dark mode.
 
 - Built-in gradient / scene / geometric styles
 - Syncs across devices

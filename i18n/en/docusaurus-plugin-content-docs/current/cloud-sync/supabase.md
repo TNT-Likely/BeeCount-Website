@@ -87,7 +87,7 @@ In "Project Settings" → "API", find:
 2. Open the Users page.
 3. Click "Add user" → "Create new user".
 4. Enter an email address and password, then create the user.
-5. In BeeCount, go to "Mine" → "Sync".
+5. In BeeCount, go to "Me" → "Cloud Service".
 6. Click "Login/Register" and enter the email address and password created above.
 
 ## Notes
