@@ -47,6 +47,54 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    // App 内嵌(embed)模式:App 的「使用帮助」WebView 打开文档站时带
+    // ?embed=1&theme=dark|light&primary=RRGGBB。内联脚本必须在 Docusaurus
+    // 启动前执行(preBody),否则暗黑主题首屏闪白。
+    // - embed 标记存 sessionStorage:query 只在首次加载存在,SPA 内部导航靠
+    //   <html data-bee-embed> 属性维持(不用 class:hydration 会重写 className),硬刷新/直链靠 sessionStorage 还原
+    // - theme 写 localStorage['theme'](Docusaurus colorMode 的存储键)
+    // - primary 设置 --ifm-color-primary 及衍生明暗档(对齐 App 主题色)
+    // 对应隐藏规则见 src/css/custom.css 的 html[data-bee-embed] 段。
+    function beeEmbedPlugin() {
+      return {
+        name: 'bee-embed-mode',
+        injectHtmlTags() {
+          return {
+            preBodyTags: [
+              {
+                tagName: 'script',
+                innerHTML: `(function(){try{
+var q=new URLSearchParams(location.search);
+if(q.get('embed')==='1'){sessionStorage.setItem('bee-embed','1');}
+if(sessionStorage.getItem('bee-embed')==='1'){document.documentElement.setAttribute('data-bee-embed','1');}
+var t=q.get('theme');
+if(t==='dark'||t==='light'){localStorage.setItem('theme',t);document.documentElement.setAttribute('data-theme',t);}
+var p=q.get('primary');
+if(p&&/^[0-9a-fA-F]{6}$/.test(p)){sessionStorage.setItem('bee-primary',p);}
+var sp=sessionStorage.getItem('bee-primary');
+if(sp){
+  var n=parseInt(sp,16),r=(n>>16)&255,g=(n>>8)&255,b=n&255;
+  var mix=function(c,t2,k){return Math.round(c+(t2-c)*k);};
+  var rgb=function(k,t2){return 'rgb('+mix(r,t2,k)+','+mix(g,t2,k)+','+mix(b,t2,k)+')';};
+  var s=document.documentElement.style;
+  s.setProperty('--ifm-color-primary','#'+sp);
+  s.setProperty('--ifm-color-primary-dark',rgb(0.1,0));
+  s.setProperty('--ifm-color-primary-darker',rgb(0.15,0));
+  s.setProperty('--ifm-color-primary-darkest',rgb(0.3,0));
+  s.setProperty('--ifm-color-primary-light',rgb(0.1,255));
+  s.setProperty('--ifm-color-primary-lighter',rgb(0.15,255));
+  s.setProperty('--ifm-color-primary-lightest',rgb(0.3,255));
+}
+}catch(e){}})();`,
+              },
+            ],
+          };
+        },
+      };
+    },
+  ],
+
   themes: [
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),

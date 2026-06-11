@@ -201,3 +201,30 @@ body.embed-mode article {
 .footer__link-item::after {
   display: none !important;
 }
+
+/* ========== App 内嵌(embed)模式 ==========
+ * App「使用帮助」WebView 带 ?embed=1 打开时,<html> 会带上 data-bee-embed 属性
+ * (不用 class:Docusaurus hydration 会整体重写 html className,data 属性才能存活)
+ * (注入逻辑见 docusaurus.config.ts 的 bee-embed-mode 插件)。
+ * 隐藏所有带外部链接/下载入口的 chrome,避免应用商店审核风险。 */
+html[data-bee-embed] .navbar {
+  display: none !important;
+}
+html[data-bee-embed] footer.footer {
+  display: none !important;
+}
+html[data-bee-embed] div[class^='announcementBar'] {
+  display: none !important;
+}
+html[data-bee-embed] .theme-edit-this-page,
+html[data-bee-embed] .theme-doc-version-badge,
+html[data-bee-embed] .theme-last-updated {
+  display: none !important;
+}
+/* navbar 隐藏后消除顶部留白与锚点偏移 */
+html[data-bee-embed] {
+  --ifm-navbar-height: 0px;
+}
+html[data-bee-embed] #__docusaurus {
+  padding-top: 0 !important;
+}
