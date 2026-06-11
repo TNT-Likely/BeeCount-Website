@@ -67,16 +67,7 @@ const config: Config = {
                 innerHTML: `(function(){try{
 var q=new URLSearchParams(location.search);
 if(q.get('embed')==='1'){sessionStorage.setItem('bee-embed','1');}
-if(sessionStorage.getItem('bee-embed')==='1'){
-  document.documentElement.setAttribute('data-bee-embed','1');
-  document.addEventListener('click',function(e){
-    var a=e.target&&e.target.closest&&e.target.closest('a.navbar__brand');
-    if(!a)return;
-    e.preventDefault();e.stopPropagation();
-    var en=location.pathname==='/en'||location.pathname.indexOf('/en/')===0;
-    location.assign((en?'/en':'')+'/docs/intro/');
-  },true);
-}
+if(sessionStorage.getItem('bee-embed')==='1'){document.documentElement.setAttribute('data-bee-embed','1');}
 var t=q.get('theme');
 if(t==='dark'||t==='light'){localStorage.setItem('theme',t);document.documentElement.setAttribute('data-theme',t);}
 var p=q.get('primary');

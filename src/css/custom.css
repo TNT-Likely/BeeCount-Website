@@ -208,8 +208,9 @@ body.embed-mode article {
  * (注入逻辑见 docusaurus.config.ts 的 bee-embed-mode 插件)。
  * 隐藏所有带外部链接/下载入口的 chrome,避免应用商店审核风险。 */
 /* navbar 保留 —— 搜索与汉堡目录是文档站的核心入口;只隐藏带外链/跳出
- * 风险的项(捐赠、GitHub、语言切换),手机侧栏里的同款项一并隐藏。
- * logo/标题保留,但点击改为回文档首页(见 config 内联脚本的点击代理) */
+ * 风险的项(捐赠、GitHub、语言切换)与冗余的 logo/标题(App 自己的标题栏
+ * 已写「使用帮助」),手机侧栏里的同款项一并隐藏 */
+html[data-bee-embed] .navbar__brand,
 html[data-bee-embed] .navbar a[href*='github.com'],
 html[data-bee-embed] .navbar a[href$='/donate'],
 html[data-bee-embed] .navbar .dropdown,
