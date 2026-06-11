@@ -207,7 +207,15 @@ body.embed-mode article {
  * (不用 class:Docusaurus hydration 会整体重写 html className,data 属性才能存活)
  * (注入逻辑见 docusaurus.config.ts 的 bee-embed-mode 插件)。
  * 隐藏所有带外部链接/下载入口的 chrome,避免应用商店审核风险。 */
-html[data-bee-embed] .navbar {
+/* navbar 保留 —— 搜索与汉堡目录是文档站的核心入口;只隐藏带外链/跳出
+ * 风险的项(捐赠、GitHub、语言切换),手机侧栏里的同款项一并隐藏。
+ * logo/标题保留,但点击改为回文档首页(见 config 内联脚本的点击代理) */
+html[data-bee-embed] .navbar a[href*='github.com'],
+html[data-bee-embed] .navbar a[href$='/donate'],
+html[data-bee-embed] .navbar .dropdown,
+html[data-bee-embed] .navbar-sidebar a[href*='github.com'],
+html[data-bee-embed] .navbar-sidebar a[href$='/donate'],
+html[data-bee-embed] .navbar-sidebar .dropdown {
   display: none !important;
 }
 html[data-bee-embed] footer.footer {
@@ -220,11 +228,4 @@ html[data-bee-embed] .theme-edit-this-page,
 html[data-bee-embed] .theme-doc-version-badge,
 html[data-bee-embed] .theme-last-updated {
   display: none !important;
-}
-/* navbar 隐藏后消除顶部留白与锚点偏移 */
-html[data-bee-embed] {
-  --ifm-navbar-height: 0px;
-}
-html[data-bee-embed] #__docusaurus {
-  padding-top: 0 !important;
 }
