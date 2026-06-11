@@ -21,6 +21,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15  # 正常 1-2 分钟;防退避重试把 runner 挂满 1 小时
     permissions:
       contents: write
     steps:
@@ -45,6 +46,7 @@ jobs:
           EMBEDDING_BASE_URL: https://api.siliconflow.cn/v1
           EMBEDDING_API_KEY: ${{ secrets.SILICONFLOW_KEY }}
           EMBEDDING_MODEL: BAAI/bge-m3
+          PYTHONUNBUFFERED: '1'  # 进度实时打到 CI 日志,不攒缓冲
 
       - name: Commit index if changed
         run: |

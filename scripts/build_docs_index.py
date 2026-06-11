@@ -238,9 +238,13 @@ def embed_chunks(chunks: list[Chunk], client: OpenAI) -> None:
                     c.vector = item.embedding
                 break
             except Exception as e:
+                msg = str(e)
+                # 余额不足(SiliconFlow 30001)重试也不会好,直接失败 ——
+                # 否则 5^n 退避能干等 1 小时,CI 看起来像"卡死"
+                if "30001" in msg or "balance is insufficient" in msg.lower():
+                    raise
                 if attempt == 5:
                     raise
-                msg = str(e)
                 # 限速 / 容量错误 → 长退避;其它 → 短重试
                 is_rate_limit = (
                     "429" in msg or "403" in msg
