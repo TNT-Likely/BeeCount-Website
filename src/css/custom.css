@@ -219,6 +219,10 @@ html[data-bee-embed] .navbar-sidebar a[href$='/donate'],
 html[data-bee-embed] .navbar-sidebar .dropdown {
   display: none !important;
 }
+/* 面包屑第一项是「回官网首页」的小房子,embed 下隐藏(回文档首页走汉堡菜单) */
+html[data-bee-embed] .theme-doc-breadcrumbs .breadcrumbs__item:first-child {
+  display: none !important;
+}
 html[data-bee-embed] footer.footer {
   display: none !important;
 }
