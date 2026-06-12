@@ -37,6 +37,8 @@ const sidebars: SidebarsConfig = {
         'account/manage',
         'account/ledger',
         'account/month-start-day',
+        'account/multi-currency',
+        'account/net-worth-trend',
         'account/budget',
       ],
     },

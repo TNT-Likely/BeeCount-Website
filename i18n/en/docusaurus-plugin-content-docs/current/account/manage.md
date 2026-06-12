@@ -39,6 +39,8 @@ The asset management page shows a net worth overview of all accounts:
 - **Asset composition chart** - Visual breakdown of account types
 - **Total assets / liabilities** - Clear financial overview at a glance
 
+> ✨ **Since v3.5.0**: once a [base currency](./multi-currency.md) is set, the asset page can convert multi-currency accounts into a **single base-currency summary**; the chart at the top switches between [net worth over time](./net-worth-trend.md) and asset composition with one tap.
+
 ## Credit Card Features
 
 Credit card accounts support additional features:

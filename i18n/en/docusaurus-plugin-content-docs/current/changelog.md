@@ -12,6 +12,14 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.5.0 highlights
+
+- 💱 **Multi-currency**: set a base currency, maintain exchange rates per currency, and have the asset page convert accounts into the base currency for one unified summary (single-currency setups are unchanged). See [Multi-currency](./account/multi-currency.md). Self-hosted users need to upgrade **BeeCount Cloud to 1.5.0** (base-currency sync / manual rates / rate proxy are provided by the server).
+- 📈 **Net worth over time**: a net worth trend chart on the asset page — switch between Trend and Composition with one tap; the full-screen page supports 3 / 6 / 12 month and all-time ranges × net worth / total assets / total liabilities. Net worth, composition, and trend are all converted to the base currency, and shared ledgers you joined as a member are always excluded. See [Net worth over time](./account/net-worth-trend.md).
+- 🎨 **4 new header skins**; Android 13+ **dynamic themed icon** (follows the system color).
+- 🔘 A visible action entry in the bottom-right of each ledger card (equivalent to the long-press menu — budget management and friends are no longer hard to find).
+- 📖 "Help" now opens the documentation center in an embedded WebView.
+
 ## 3.4.0 highlights
 
 - 📅 **Month Start Day**: each ledger can define when "this month" begins (1-28) — great for payday budgeters and credit-card statement cycles. Home, statistics, budgets, annual reports, widgets, AI — the entire pipeline follows your accounting period, synced across devices. See the [docs](./account/month-start-day.md). Self-hosted users need to upgrade **BeeCount Cloud to 1.4.0** (web is on the same cycle; the upgrade also auto-fixes a historical under-count in web account statistics).

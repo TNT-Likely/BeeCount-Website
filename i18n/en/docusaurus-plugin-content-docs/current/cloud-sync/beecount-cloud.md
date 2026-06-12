@@ -24,6 +24,12 @@ BeeCount Cloud is the **official self-hosted sync server** — deploy it in one 
 | 🖥️ NAS / VPS owners | Docker one-shot, data stays on your own machine |
 | 👨‍💻 Technical users | Open source, auditable, fork-friendly |
 
+:::tip Upgrade notes (1.5.0)
+- The App 3.5.0 [Multi-currency](../account/multi-currency.md) and [Net worth over time](../account/net-worth-trend.md) require **Cloud ≥ 1.5.0**: the server provides base-currency sync, manual exchange rates, a rate proxy, and the net-worth-history read endpoint. **Always upgrade the server first, then the App.**
+- **No database schema migration in this release**: net-worth-history is a read-only endpoint and multi-currency syncs at the user-global level (user-global projection), so `docker compose pull && docker compose up -d` is all you need — your data is untouched.
+- Older servers don't recognize the base currency, so the conversion setting "won't sync" and the remote net worth trend is unavailable; upgrading to 1.5.0 brings them into alignment.
+:::
+
 :::tip Upgrade notes (1.4.0)
 - The App 3.4.0 [Month Start Day](../account/month-start-day.md) requires **Cloud ≥ 1.4.0**: older servers ignore the setting (it looks like it "doesn't sync"). Upgrade the server first, then the App.
 - Upgrading to 1.4.0 runs database migrations automatically and **backfills** a historical issue where some web-created transactions lacked an account link, making web account statistics too low — no manual action needed.
