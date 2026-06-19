@@ -24,6 +24,10 @@ BeeCount Cloud is the **official self-hosted sync server** — deploy it in one 
 | 🖥️ NAS / VPS owners | Docker one-shot, data stays on your own machine |
 | 👨‍💻 Technical users | Open source, auditable, fork-friendly |
 
+:::tip Upgrade notes (1.5.1)
+- The App 3.5.1 [Transaction flags](../record/flags.md) require **Cloud ≥ 1.5.1**: in cloud mode the server's income/expense and budget summaries filter by the Exclude from Income/Expense and Exclude from Budget flags; older servers don't recognize the flags, so cloud-side stats would still count flagged transactions (local mode and single-device stats are unaffected and always correct). **Always upgrade the server first, then the App.**
+:::
+
 :::tip Upgrade notes (1.5.0)
 - The App 3.5.0 [Multi-currency](../account/multi-currency.md) and [Net worth over time](../account/net-worth-trend.md) require **Cloud ≥ 1.5.0**: the server provides base-currency sync, manual exchange rates, a rate proxy, and the net-worth-history read endpoint. **Always upgrade the server first, then the App.**
 - **No database schema migration in this release**: net-worth-history is a read-only endpoint and multi-currency syncs at the user-global level (user-global projection), so `docker compose pull && docker compose up -d` is all you need — your data is untouched.

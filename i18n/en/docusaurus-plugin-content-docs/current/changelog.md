@@ -12,6 +12,14 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.5.1 highlights
+
+- 🚩 **Transaction flags**: each transaction has two independent toggles — Exclude from Income/Expense and Exclude from Budget. Keep reimbursements from inflating your stats and one-off costs from throwing off your budget; flags **do not affect account balance or net worth** — the record stays, it just doesn't count toward stats/budget. See [Transaction flags](./record/flags.md). Self-hosted users need to upgrade **BeeCount Cloud to 1.5.1** (server-side filtering of income/expense and budget by flag; local stats are unaffected).
+- 🤖 **More accurate and stable AI recognition**: non-receipt images are no longer misrecognized as transactions; relaxed vision/voice timeouts make large images and files less likely to time out.
+- 🔁 Fixed an issue where "daily" recurring transactions could not be generated.
+- 🖼 Clearer prompt when an image is recognized as not being a receipt.
+- 📲 Fixed an issue where, on some devices, opening the entry screen from a browser or shortcut occasionally did nothing.
+
 ## 3.5.0 highlights
 
 - 💱 **Multi-currency**: set a base currency, maintain exchange rates per currency, and have the asset page convert accounts into the base currency for one unified summary (single-currency setups are unchanged). See [Multi-currency](./account/multi-currency.md). Self-hosted users need to upgrade **BeeCount Cloud to 1.5.0** (base-currency sync / manual rates / rate proxy are provided by the server).
