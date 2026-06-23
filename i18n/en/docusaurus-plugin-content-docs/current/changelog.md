@@ -12,6 +12,12 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.5.2 highlights
+
+- 🏷 **Switchable note display**: the transaction list adds a "Note display" option — "Category first" (category name + note in small text, the default) or "Note first" (show the note when present); prefer the classic style? Switch back in Settings → Appearance. The same on web requires **BeeCount Cloud 1.5.2**.
+- 💱 **Many more currencies**: supported currencies expanded from 45 to **151**, covering the full set of international currencies (added Kenyan Shilling (KES), Central/West African CFA Franc (XAF/XOF), and more across Africa, the Middle East, and Latin America). See [Multi-currency](./account/multi-currency.md). The same expansion on web requires **BeeCount Cloud 1.5.2**.
+- ☁️ **Cloud sync page guide**: the sync page adds a collapsible explainer — how incremental vs full sync works, why it sometimes stalls (full upload/download has no resume), and how to check the Log Center when something goes wrong — to cut down on "why won't it sync?" confusion.
+
 ## 3.5.1 highlights
 
 - 🚩 **Transaction flags**: each transaction has two independent toggles — Exclude from Income/Expense and Exclude from Budget. Keep reimbursements from inflating your stats and one-off costs from throwing off your budget; flags **do not affect account balance or net worth** — the record stays, it just doesn't count toward stats/budget. See [Transaction flags](./record/flags.md). Self-hosted users need to upgrade **BeeCount Cloud to 1.5.1** (server-side filtering of income/expense and budget by flag; local stats are unaffected).

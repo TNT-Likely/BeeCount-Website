@@ -14,6 +14,10 @@ You hold CNY, USD, and JPY accounts at the same time, but the asset page only gr
 If all your accounts use the same currency, behavior is identical to previous versions — no conversion is shown, no base currency is needed. This feature is invisible to you.
 :::
 
+:::info Full international currency coverage (since v3.5.2)
+The selectable currencies now cover the full ISO 4217 set — **151** in total (added Kenyan Shilling (KES), Central/West African CFA Franc (XAF/XOF), and more across Africa, the Middle East, and Latin America). Major currencies show localized names; the rest use standard English names. Custom currencies are not supported.
+:::
+
 ## Set a Base Currency
 
 1. Go to **Me** → **Multi-currency / Exchange rates** (or the settings entry next to the converted summary on the asset page)
