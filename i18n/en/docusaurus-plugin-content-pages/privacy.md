@@ -44,7 +44,7 @@ BeeCount itself does not collect or sell your data, and we do not operate server
 When you enable AI features and configure a provider, BeeCount sends — for the request you initiate — receipt/screenshot images, voice recordings, text you type, and the category names, account names and transaction records needed to complete recognition or analysis, to the provider you configured:
 
 - **Zhipu GLM** (default, `open.bigmodel.cn`, operated by Zhipu) — subject to Zhipu's privacy policy.
-- **Any OpenAI-compatible service you configure** (e.g. OpenAI, SiliconFlow, DeepSeek) — subject to that provider's privacy policy.
+- **Any other third-party AI service you configure** — subject to that provider's privacy policy.
 
 AI is **OFF by default and requires your own API key**. Before any data is sent, the app shows an in-app notice naming the provider and the data involved and asks for your consent. BeeCount itself neither receives nor stores this data.
 
