@@ -13,6 +13,15 @@ Say a sentence, and AI automatically recognizes and completes the record.
 3. AI automatically recognizes and fills in details
 4. Confirm and save
 
+## Trigger Modes (since 3.5.5)
+
+Choose how recording starts and stops in **Settings → Smart Billing → Voice trigger mode**:
+
+- **Auto-detect pause** (default): recording starts as soon as the dialog opens and ends automatically after a pause. The pause threshold is adjustable (0.5–4s, default 1.5s) — if longer sentences keep getting cut off, simply increase it
+- **Hold to talk**: like sending a voice message — hold the microphone to record, release to recognize. Best for longer entries; presses shorter than 0.5s are treated as accidental and discarded
+
+Both modes are protected by a 60-second recording cap. The trigger mode and pause duration sync across devices via cloud sync.
+
 ## Voice Examples
 
 ```
