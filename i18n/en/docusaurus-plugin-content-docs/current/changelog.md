@@ -12,6 +12,11 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.5.5 highlights
+
+- 🎙 **"Hold to talk" for voice bookkeeping**: a new WeChat-style trigger mode — hold to record, release to recognize, so longer entries are never cut off; switch it in Settings → Smart Billing. See [Voice Recording](./ai/voice.md).
+- ⏱ **Adjustable pause detection**: in auto-detect mode the pause threshold is relaxed from a fixed 0.8s to a default of 1.5s and is now adjustable (0.5–4s), so a natural mid-sentence pause no longer ends recognition early; both the trigger mode and pause duration sync across devices.
+
 ## 3.5.2 highlights
 
 - 🏷 **Switchable note display**: the transaction list adds a "Note display" option — "Category first" (category name + note in small text, the default) or "Note first" (show the note when present); prefer the classic style? Switch back in Settings → Appearance. The same on web requires **BeeCount Cloud 1.5.2**.
