@@ -50,15 +50,18 @@ Only configure trusted clients. Never share it, never commit to git. If compromi
 ### 2. Configure the LLM client
 
 :::tip About transports
-The BeeCount Cloud server exposes an **SSE** endpoint (`/api/v1/mcp/sse`). The examples below for Claude Desktop / Cursor / Cline use `npx mcp-remote`, a **stdio↔SSE bridge** for clients that only speak stdio (the most compatible path).
+The BeeCount Cloud server exposes a single **Streamable HTTP** endpoint (`/api/v1/mcp`).
 
-**If your client speaks SSE natively** (Claude Code, recent Cursor versions), you can **skip the bridge and connect directly**:
+**Clients that speak Streamable HTTP natively** (e.g. Claude Code) **connect directly** — no bridge:
 ```bash
-claude mcp add --transport sse --scope user beecount \
-  https://your-beecount-cloud.com/api/v1/mcp/sse \
+claude mcp add --transport http --scope user beecount \
+  https://your-beecount-cloud.com/api/v1/mcp \
   --header "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
-Either way the server sees the same SSE connection — behavior is identical, pick whichever your client supports most easily.
+
+The Claude Desktop / Cursor / Cline examples below use `npx mcp-remote` as a stdio bridge for clients that only speak stdio (the most compatible path); use the URL `/api/v1/mcp` (no longer `/sse`) — mcp-remote negotiates Streamable HTTP automatically.
+
+> The legacy SSE endpoint (`/api/v1/mcp/sse`) has been replaced by Streamable HTTP and is no longer served.
 :::
 
 #### Claude Desktop
@@ -75,7 +78,7 @@ Config file:
       "args": [
         "-y",
         "mcp-remote",
-        "https://your-beecount-cloud.com/api/v1/mcp/sse",
+        "https://your-beecount-cloud.com/api/v1/mcp",
         "--header",
         "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
       ]
@@ -98,7 +101,7 @@ Config file: `~/.cursor/mcp.json` (or Settings → Features → MCP UI editor)
       "args": [
         "-y",
         "mcp-remote",
-        "https://your-beecount-cloud.com/api/v1/mcp/sse",
+        "https://your-beecount-cloud.com/api/v1/mcp",
         "--header",
         "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
       ]
@@ -121,7 +124,7 @@ VS Code → Cline icon → top-right `…` → **Edit MCP Settings**
       "args": [
         "-y",
         "mcp-remote",
-        "https://your-beecount-cloud.com/api/v1/mcp/sse",
+        "https://your-beecount-cloud.com/api/v1/mcp",
         "--header",
         "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
       ],

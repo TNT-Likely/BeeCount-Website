@@ -50,15 +50,18 @@ LLM 会自动选合适的 tool 帮你查询/记录,你不用打开 BeeCount。
 ### 2. 在 LLM 客户端配置
 
 :::tip 关于 transport
-BeeCount Cloud server 暴露的是 **SSE** 端点(`/api/v1/mcp/sse`)。下面 Claude Desktop / Cursor / Cline 的示例都用 `npx mcp-remote` —— 这是个 **stdio↔SSE 桥**,给只支持 stdio 的客户端用(兼容性最广)。
+BeeCount Cloud server 暴露的是 **Streamable HTTP** 单端点(`/api/v1/mcp`)。
 
-**如果你的客户端原生支持 SSE**(如 Claude Code、新版 Cursor),可以**跳过桥直连 SSE**,更轻量:
+**原生支持 Streamable HTTP 的客户端**(如 Claude Code)**直连最省心**,不用桥:
 ```bash
-claude mcp add --transport sse --scope user beecount \
-  https://your-beecount-cloud.com/api/v1/mcp/sse \
+claude mcp add --transport http --scope user beecount \
+  https://your-beecount-cloud.com/api/v1/mcp \
   --header "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
-两种方式 server 端看到的都是同一个 SSE 连接,行为完全一致,选你客户端支持的最简单那条。
+
+下面 Claude Desktop / Cursor / Cline 的示例用 `npx mcp-remote` 给只支持 stdio 的客户端做桥接(兼容性最广);URL 用 `/api/v1/mcp`、不再带 `/sse`,mcp-remote 会自动协商 Streamable HTTP。
+
+> 早期版本的老式 SSE 端点(`/api/v1/mcp/sse`)已被 Streamable HTTP 取代,不再提供。
 :::
 
 #### Claude Desktop
@@ -75,7 +78,7 @@ claude mcp add --transport sse --scope user beecount \
       "args": [
         "-y",
         "mcp-remote",
-        "https://your-beecount-cloud.com/api/v1/mcp/sse",
+        "https://your-beecount-cloud.com/api/v1/mcp",
         "--header",
         "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
       ]
@@ -98,7 +101,7 @@ claude mcp add --transport sse --scope user beecount \
       "args": [
         "-y",
         "mcp-remote",
-        "https://your-beecount-cloud.com/api/v1/mcp/sse",
+        "https://your-beecount-cloud.com/api/v1/mcp",
         "--header",
         "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
       ]
@@ -121,7 +124,7 @@ VS Code → Cline 图标 → 右上角 `…` → **Edit MCP Settings**
       "args": [
         "-y",
         "mcp-remote",
-        "https://your-beecount-cloud.com/api/v1/mcp/sse",
+        "https://your-beecount-cloud.com/api/v1/mcp",
         "--header",
         "Authorization:Bearer bcmcp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
       ],
