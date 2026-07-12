@@ -24,6 +24,12 @@ BeeCount Cloud is the **official self-hosted sync server** — deploy it in one 
 | 🖥️ NAS / VPS owners | Docker one-shot, data stays on your own machine |
 | 👨‍💻 Technical users | Open source, auditable, fork-friendly |
 
+:::tip Upgrade notes (1.6.0)
+- App 3.6.0's [ledger multi-currency](../account/multi-currency.md) (transactions store the original currency + a converted snapshot in the ledger's base currency) requires **Cloud ≥ 1.6.0**: the server projection gains currency / conversion columns, ledger-level stats sum on the converted amount, and editing an amount on Web recomputes the conversion. **Upgrade the server first, then the App.**
+- **This release includes a database schema migration** (the transactions table gains `currency_code` / `native_amount` columns + historical backfill), run automatically on image startup — `docker compose pull && docker compose up -d` is all you need, no manual steps.
+- Older servers don't recognize these columns, so foreign transactions recorded by the new App lose their conversion on Web / across devices and ledger stats sum raw original amounts; upgrading to 1.6.0 brings it into alignment.
+:::
+
 :::tip Upgrade notes (1.5.1)
 - The App 3.5.1 [Transaction flags](../record/flags.md) require **Cloud ≥ 1.5.1**: in cloud mode the server's income/expense and budget summaries filter by the Exclude from Income/Expense and Exclude from Budget flags; older servers don't recognize the flags, so cloud-side stats would still count flagged transactions (local mode and single-device stats are unaffected and always correct). **Always upgrade the server first, then the App.**
 :::
