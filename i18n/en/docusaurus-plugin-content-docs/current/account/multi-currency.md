@@ -18,6 +18,19 @@ If all your accounts use the same currency, behavior is identical to previous ve
 The selectable currencies now cover the full ISO 4217 set — **151** in total (added Kenyan Shilling (KES), Central/West African CFA Franc (XAF/XOF), and more across Africa, the Middle East, and Latin America). Major currencies show localized names; the rest use standard English names. Custom currencies are not supported.
 :::
 
+## In-Ledger Multi-Currency Transactions (v3.6.0)
+
+Since v3.6.0, multi-currency extends beyond the asset-page conversion below to **every transaction inside a ledger**:
+
+- Each ledger has a **base currency** (formerly the "ledger currency", set on the ledger edit page) — the ledger's monthly totals, category summaries, and budget usage all use it as the reference
+- When recording, you can **choose the transaction's currency**: it follows the account's currency when an account is selected, or you can pick it manually when no account is chosen; for a foreign currency, the amount converted to the ledger base currency previews live under the amount
+- The ledger's stats **automatically convert foreign transactions to the base currency at the exchange rate** before summing, so different currencies in one ledger finally add up
+- Every transaction always **keeps the original amount you actually paid**; the converted snapshot is taken at record time and then **fixed** — changing a rate later never alters the recorded conversion of past transactions
+
+:::info "Ledger base currency" vs "user base currency" — two levels
+The "user base currency" in the lower half of this page converts different-currency **accounts** across ledgers into one net worth figure on the asset page; the "ledger base currency" here converts different-currency **transactions** within a single ledger for its stats. They are separate, but **share the same rates you maintain**. Single-currency ledgers are unaffected.
+:::
+
 ## Set a Base Currency
 
 1. Go to **Me** → **Multi-currency / Exchange rates** (or the settings entry next to the converted summary on the asset page)
@@ -55,9 +68,10 @@ Once a base currency and rates are set, the top of the asset page shows a **unif
 
 ## Version Requirements
 
-| Client | Requirement |
-|---|---|
-| App | ≥ 3.5.0 |
-| BeeCount Cloud (self-hosted) | ≥ 1.5.0 (base currency / manual rates / rate proxy are provided by the server; upgrade the server first, then the App) |
+| Feature | App | BeeCount Cloud (self-hosted) |
+|---|---|---|
+| Asset-page conversion (user base currency) | ≥ 3.5.0 | ≥ 1.5.0 |
+| In-ledger multi-currency transactions (ledger base currency) | ≥ 3.6.0 | ≥ 1.6.0 |
 
-The base currency and rates sync at the **user-global** level (user-global projection); this release has no database schema migration. Older servers don't recognize the base-currency setting, which looks like "the conversion setting doesn't sync" — upgrading Cloud to 1.5.0 brings it into alignment.
+- **Asset conversion (v3.5.0)**: the base currency and rates sync at the **user-global** level (user-global projection), with no database migration; older servers don't recognize the base-currency setting ("the conversion setting doesn't sync") — upgrading Cloud to 1.5.0 brings it into alignment.
+- **Ledger multi-currency (v3.6.0)**: the transactions table gains currency / conversion columns and **includes a database schema migration** (runs automatically on image startup, with historical backfill); older servers don't recognize these columns, so foreign transactions recorded by the new App lose their conversion on Web / across devices and ledger stats sum raw original amounts — upgrade Cloud to 1.6.0 to align. **Upgrade the server first, then the App.**

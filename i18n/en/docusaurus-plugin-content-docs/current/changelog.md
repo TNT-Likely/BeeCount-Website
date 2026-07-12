@@ -12,6 +12,11 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.6.0 highlights
+
+- 💱 **Multi-currency ledgers**: a single ledger can now hold transactions in different currencies — pick a currency when recording, and the ledger's monthly / category / budget stats are **automatically converted to the ledger's base currency at the exchange rate** ("ledger currency" is now the "base currency"). Travel and cross-border spending can live in one ledger and still add up; each entry keeps the original amount you actually paid, and the converted snapshot is taken at record time and then fixed. See [Multi-currency](./account/multi-currency.md). The same on web requires **BeeCount Cloud 1.6.0**.
+- 🚩 **Refreshed currency picker**: shows country flags and live rates against the base currency, with common currencies pinned to the top; the converted base-currency amount previews live under the amount while recording.
+
 ## 3.5.5 highlights
 
 - 🎙 **"Hold to talk" for voice bookkeeping**: a new WeChat-style trigger mode — hold to record, release to recognize, so longer entries are never cut off; switch it in Settings → Smart Billing. See [Voice Recording](./ai/voice.md).
