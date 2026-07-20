@@ -12,6 +12,12 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.6.1 highlights
+
+- 🙈 **Hide accounts**: **hide** accounts you no longer use instead of deleting them — hidden accounts leave the account pickers when recording or transferring, while their history and balance **stay intact and still count toward net worth**, and you can restore them anytime. No more deleting an old card or closed wallet just to keep things tidy and losing the history with it. See [Account management](./account/manage.md). Web visibility and "hidden state surviving a reinstall" require **BeeCount Cloud 1.6.1**.
+- 🔍 **Filter records by category**: quickly narrow transactions by category when searching.
+- 📝 **Personalized note-history suggestions**: customize the time range, sort order, and count of the note suggestions shown while recording.
+
 ## 3.6.0 highlights
 
 - 💱 **Multi-currency ledgers**: a single ledger can now hold transactions in different currencies — pick a currency when recording, and the ledger's monthly / category / budget stats are **automatically converted to the ledger's base currency at the exchange rate** ("ledger currency" is now the "base currency"). Travel and cross-border spending can live in one ledger and still add up; each entry keeps the original amount you actually paid, and the converted snapshot is taken at record time and then fixed. See [Multi-currency](./account/multi-currency.md). The same on web requires **BeeCount Cloud 1.6.0**.

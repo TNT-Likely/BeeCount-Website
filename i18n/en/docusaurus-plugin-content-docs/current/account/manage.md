@@ -66,6 +66,20 @@ Accounts are grouped by type (cash, savings, credit card, etc.). Within each gro
 
 Set default accounts for income and expenses. They'll be auto-selected when recording for improved efficiency.
 
+## Hide Accounts
+
+Accounts you no longer use (a replaced bank card, a closed wallet, a car you sold…) can be **hidden** instead of deleted:
+
+- **Once hidden**, an account no longer appears in the account pickers when recording, transferring, or setting up recurring transactions, and the account management page moves it into a "Hidden" section at the bottom;
+- but its **history and balance stay fully intact and still count toward net worth / asset composition / the net-worth trend** — hiding only removes it from the pickers, it doesn't change where your money is;
+- you can **restore** it to active status anytime.
+
+Tap "Hide account" on the account edit page (next to Delete); to bring it back, open the "Hidden" section at the bottom of the account management page and tap "Restore".
+
+> **Why hide instead of delete?** Deleting wipes the account and leaves its past transactions without an owner; hiding keeps all the data and is reversible. Use delete only when you want an account gone from your assets entirely.
+>
+> In cloud mode the hidden state syncs across devices; **web visibility, and keeping the hidden state through a full sync after reinstalling the app**, require the server upgraded to **BeeCount Cloud 1.6.1** or later (local and two-device incremental sync are unaffected).
+
 ## Web Account Management
 
 Sign in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web → top nav **Assets**:
