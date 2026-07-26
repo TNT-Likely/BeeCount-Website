@@ -12,6 +12,10 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.7.0 highlights
+
+- 🧩 **Home screen widgets, fully upgraded**: from a single style to **6 content types × 12 size variants** — overview / net assets / quick add / budget / recent transactions / dashboard, in small / medium / large. The picker shows real previews, every widget taps through to its matching page, and quick-add category buttons open the record screen with the category preselected; dark mode, language, and theme color all follow the app. See [Home screen widgets](./record/widgets.md)
+
 ## 3.6.1 highlights
 
 - 🙈 **Hide accounts**: **hide** accounts you no longer use instead of deleting them — hidden accounts leave the account pickers when recording or transferring, while their history and balance **stay intact and still count toward net worth**, and you can restore them anytime. No more deleting an old card or closed wallet just to keep things tidy and losing the history with it. See [Account management](./account/manage.md). Web visibility and "hidden state surviving a reinstall" require **BeeCount Cloud 1.6.1**.

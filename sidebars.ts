@@ -20,6 +20,7 @@ const sidebars: SidebarsConfig = {
         'record/auto-android',
         'record/import-export',
         'record/quick-actions',
+        'record/widgets',
       ],
     },
     {
