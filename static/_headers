@@ -1,5 +1,13 @@
 # Cloudflare Pages security headers
 # Applies to every path. Updated when CSP needs adjusting.
+#
+# ⚠️ CSP 与 Cloudflare Web Analytics:必须放行下面两个源,否则统计全丢。
+#   - script-src  需 https://static.cloudflareinsights.com (信标脚本 beacon.min.js)
+#   - connect-src 需 https://cloudflareinsights.com        (信标上报 /cdn-cgi/rum)
+# 历史教训:2026-05-02 commit 8b20d2c 换主域时加了严格 CSP,漏放这两个源,
+# 导致 Cloudflare Pages 自动注入的信标被浏览器拒绝执行 —— Web Analytics
+# 连续三个月显示个位数访问,而服务端「帐户分析」实际是 26k+/7天。
+# 2026-08-01 修复。以后收紧 CSP 时不要再把这两个源删掉。
 
 /*
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
@@ -8,4 +16,4 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; media-src 'self'; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
