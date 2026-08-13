@@ -31,6 +31,17 @@ Since v3.6.0, multi-currency extends beyond the asset-page conversion below to *
 The "user base currency" in the lower half of this page converts different-currency **accounts** across ledgers into one net worth figure on the asset page; the "ledger base currency" here converts different-currency **transactions** within a single ledger for its stats. They are separate, but **share the same rates you maintain**. Single-currency ledgers are unaffected.
 :::
 
+## Smart Entry Recognizes Currencies (v3.7.1)
+
+From v3.7.1, transactions extracted by [smart entry](../ai/overview.md) — chat, voice, photos, and auto-capture — can carry a currency instead of always being recorded in the ledger's base currency:
+
+- Say "spent 3000 yen in Tokyo" or photograph a foreign receipt, and it is recorded in that currency, then converted into your stats by the rules above
+- Spoken names, currency symbols, and English names all map to ISO currencies
+- **No guessing when it's ambiguous**: writings like `$`, `¥`, rupee, or peso that can't be pinned down without context fall back to the base currency — recording 45 USD as 45 CNY costs far more than not recognizing it
+- Rates are fetched on demand before saving; **a failed fetch never blocks recording** — the entry is provisionally stored at 1:1 with a notice, and you can convert it later from the banner on the statistics page
+
+If you've customized the AI prompt template, the prompt editor detects a missing currency section and offers a one-tap patch — it won't overwrite your customization.
+
 ## Set a Base Currency
 
 1. Go to **Me** → **Multi-currency / Exchange rates** (or the settings entry next to the converted summary on the asset page)

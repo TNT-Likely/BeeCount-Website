@@ -12,6 +12,13 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.7.1 highlights
+
+- 🎂 **Anniversary skins**: marking one year since the first release, two commemorative skins arrive — **Constellation No.1** (ten stars forming a "1", with a glowing bee trailing a comet tail across a milky way, nebula, and shooting stars) and **Birthday Cake** (a cake with a candle shaped like a "1", its flame flickering as sugar sparks drift up). These are also BeeCount's **first animated skins**, and the skin picker now groups skins by series. See [Theme settings](./personalize/theme.md). Selecting them from the web dropdown requires **BeeCount Cloud 1.6.3**
+- 🔋 **Skin animation switch**: Personalization gains a **Skin animation** toggle — turn it off and animated skins freeze on a still frame (chosen at the moment the composition is most complete, so the static version looks good on its own) and save power
+- 💱 **Smart entry understands currencies**: foreign-currency amounts recognized from voice, photos, text, and auto-capture are **recorded in that currency** instead of always falling back to the base currency. Spoken names, symbols, and English names all map to ISO currencies — and when a symbol is genuinely ambiguous it falls back to the base currency rather than guessing. See [Multi-currency](./account/multi-currency.md)
+- 📅 **Jump around the calendar**: tap the month title at the top of the calendar to jump straight to any year and month instead of paging through
+
 ## 3.7.0 highlights
 
 - 🧩 **Home screen widgets, fully upgraded**: from a single style to **6 content types × 12 size variants** — overview / net assets / quick add / budget / recent transactions / dashboard, in small / medium / large. The picker shows real previews, every widget taps through to its matching page, and quick-add category buttons open the record screen with the category preselected; dark mode, language, and theme color all follow the app. See [Home screen widgets](./record/widgets.md)
