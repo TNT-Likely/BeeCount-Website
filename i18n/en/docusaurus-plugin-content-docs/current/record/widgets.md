@@ -18,7 +18,7 @@ Pin your books to the home screen — see today's spending, your net worth trend
 |------|------|------|------|
 | Overview | S · M | Today's expense, this month's expense / income | Opens the transactions page |
 | Net assets | S · M · L | Net worth and trend line; large adds total assets / liabilities and account details | Opens the assets page |
-| Quick add | S · M | Frequent category buttons + "Add" | Category buttons open the record screen **with that category preselected** |
+| Quick add | S · M | Frequent category buttons + "Add"; medium fills the card with a 2×4 grid of 7 category shortcuts (v3.7.2) | Category buttons open the record screen **with that category preselected** |
 | Budget | S · M | Monthly budget used % / remaining | Opens the budget page |
 | Recent transactions | M · L | Latest records | Tap a row to open **that transaction's detail** |
 | Dashboard | L | Monthly overview + trend + recent records + quick add, all in one | Each block jumps to its matching page |

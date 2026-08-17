@@ -42,6 +42,24 @@ From v3.7.1, transactions extracted by [smart entry](../ai/overview.md) — chat
 
 If you've customized the AI prompt template, the prompt editor detects a missing currency section and offers a one-tap patch — it won't overwrite your customization.
 
+## Recurring Bills Pick a Currency (v3.7.2)
+
+From v3.7.2, [recurring bills](../record/recurring.md) understand currencies too. Previously their account picker was hard-filtered to the ledger's base currency — foreign-currency accounts weren't selectable at all, and generated entries always landed in the base currency:
+
+- Choose a **currency** when editing a recurring bill; changing it re-filters the account candidates for that currency (an account never mixes currencies, so any already-selected account is cleared and must be picked again)
+- When an account is selected, its **account currency** wins; with no account, the template's currency is used
+- Conversion is **not frozen on the template**: every generated entry converts at the **rate in effect that day**. A recurring bill means "$10 a month", not "72 CNY a month" — when the rate moves, later entries follow it
+- The list shows the **ISO code** in front of foreign-currency amounts (rather than the symbol — JPY and CNY both render as "¥", so swapping in a symbol would mark nothing)
+- Config export / import carries the currency along
+
+:::info Cross-currency transfers still aren't supported
+Both sides of a recurring transfer are filtered to the same currency, so they're inherently single-currency. Cross-currency transfers are out of scope for this release.
+:::
+
+:::info Existing templates are untouched
+An existing recurring bill has no currency set, which means "the ledger's base currency" — its behavior is **identical** to before the upgrade, and nothing needs adjusting.
+:::
+
 ## Set a Base Currency
 
 1. Go to **Me** → **Multi-currency / Exchange rates** (or the settings entry next to the converted summary on the asset page)

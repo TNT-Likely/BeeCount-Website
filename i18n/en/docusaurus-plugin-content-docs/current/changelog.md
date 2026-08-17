@@ -12,6 +12,11 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.7.2 highlights
+
+- 💱 **Recurring bills support currencies**: pick a **currency** when creating a recurring bill, and foreign-currency accounts finally become selectable; every generated entry **converts at that day's rate**, so "$10 a month" is never frozen into one fixed base-currency amount, and foreign-currency templates show their ISO code next to the amount in the list. See [Multi-currency](./account/multi-currency.md)
+- 🧩 **Medium Quick Add widget redesigned**: the medium card switches from a single row of 5 cells to a **2×4 grid** that fills the card, with **7** category shortcuts instead of 4 — no more half-empty card. See [Home screen widgets](./record/widgets.md)
+
 ## 3.7.1 highlights
 
 - 🎂 **Anniversary skins**: marking one year since the first release, two commemorative skins arrive — **Constellation No.1** (ten stars forming a "1", with a glowing bee trailing a comet tail across a milky way, nebula, and shooting stars) and **Birthday Cake** (a cake with a candle shaped like a "1", its flame flickering as sugar sparks drift up). These are also BeeCount's **first animated skins**, and the skin picker now groups skins by series. See [Theme settings](./personalize/theme.md). Selecting them from the web dropdown requires **BeeCount Cloud 1.6.3**
