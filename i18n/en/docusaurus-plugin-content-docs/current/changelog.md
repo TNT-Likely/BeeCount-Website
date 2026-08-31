@@ -12,6 +12,10 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.7.3 highlights
+
+- 🏷️ **Period filters for tag details**: Tag details now support monthly, yearly, and all-time filters. Statistics and transactions stay in sync with the selected period, and monthly views honor your custom month-start day.
+
 ## 3.7.2 highlights
 
 - 💱 **Recurring bills support currencies**: pick a **currency** when creating a recurring bill, and foreign-currency accounts finally become selectable; every generated entry **converts at that day's rate**, so "$10 a month" is never frozen into one fixed base-currency amount, and foreign-currency templates show their ISO code next to the amount in the list. See [Multi-currency](./account/multi-currency.md)
