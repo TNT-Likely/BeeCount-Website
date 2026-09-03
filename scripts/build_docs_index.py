@@ -41,7 +41,6 @@ SITE_BASE = "https://count.beejz.com"
 # - BGE-M3 max 8192 tokens,完全够;但小 chunk 信号更纯,LLM 看完更准
 # - 实测 chunk 越小,RAG 检索精度越高(单 chunk 主题集中)
 TARGET_CHUNK_CHARS = 430
-MIN_CHUNK_CHARS = 80       # 短于这个的 H2 不切,避免碎片
 MAX_CHUNK_CHARS = 700      # 超过强切(留余量给 BGE-large 512-token 限制)
 
 # BGE-M3:支持长 context(8K)+ 中英双语 + 跟 BGE-large-zh 同维度(1024)
@@ -113,7 +112,7 @@ def split_to_chunks(body: str) -> Iterator[tuple[str, str]]:
     # 开头到第一个 H2 之间的内容(intro 部分)
     if matches[0].start() > 0:
         intro = body[: matches[0].start()].strip()
-        if len(intro) >= MIN_CHUNK_CHARS:
+        if intro:
             yield "", intro
 
     for i, m in enumerate(matches):
@@ -145,7 +144,7 @@ def _split_section(section: str, content: str) -> Iterator[tuple[str, str]]:
 
     if matches[0].start() > 0:
         intro = content[: matches[0].start()].strip()
-        if len(intro) >= MIN_CHUNK_CHARS:
+        if intro:
             yield section, f"## {section}\n\n{intro}"
 
     for i, m in enumerate(matches):
@@ -195,11 +194,12 @@ def parse_doc(md_path: Path, base: Path, lang: str) -> Iterator[Chunk]:
     url = doc_url_for(rel, lang)
 
     for section, content in split_to_chunks(body):
-        if len(content.strip()) < MIN_CHUNK_CHARS:
-            continue
+        # 每个非空标题段都是可检索的语义单元。短操作说明（例如「删除附件」）
+        # 不能因字符数被丢弃；补齐文档标题，避免短段失去业务上下文。
+        content = f"# {title}\n\n{content}"
         yield Chunk(
             content=content,
-            doc_path=str(rel),
+            doc_path=rel.as_posix(),
             doc_title=str(title),
             section=section,
             url=url,
