@@ -13,20 +13,18 @@
 from __future__ import annotations
 
 import hashlib
-import json
 import os
 import re
 import sqlite3
 import sys
 import time
+from collections.abc import Iterator
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Iterator
 
 import frontmatter
 import numpy as np
 from openai import OpenAI
-
 
 # 配置 ─────────────────────────────────────────────────────────────────────
 
@@ -49,6 +47,9 @@ MAX_CHUNK_CHARS = 700      # 超过强切(留余量给 BGE-large 512-token 限�
 EMBEDDING_BASE_URL = os.getenv("EMBEDDING_BASE_URL", "https://api.siliconflow.cn/v1")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-m3")
 EMBEDDING_BATCH = int(os.getenv("EMBEDDING_BATCH", "16"))
+# Bump whenever the SQLite schema or retrieval-relevant index representation
+# changes, so CI rebuilds even if markdown content is unchanged.
+INDEX_FORMAT_VERSION = "2"
 
 
 # 数据结构 ─────────────────────────────────────────────────────────────────
@@ -68,8 +69,9 @@ class Chunk:
 
 
 def compute_corpus_hash() -> str:
-    """所有 docs 文件内容的 sha256(中英都包括)。任意一篇改一个字符 → hash 变。"""
+    """所有 docs 内容和索引格式的 sha256。任一改变都会触发重建。"""
     h = hashlib.sha256()
+    h.update(f"docs-index-format:{INDEX_FORMAT_VERSION}\0".encode())
     for base in (DOCS_ZH, DOCS_EN):
         if not base.exists():
             continue
@@ -285,18 +287,28 @@ def write_sqlite(chunks: list[Chunk], out_path: Path, dim: int) -> None:
                 url TEXT,
                 vector BLOB NOT NULL
             );
+            CREATE VIRTUAL TABLE chunks_fts USING fts5(
+                content,
+                doc_title,
+                section,
+                tokenize='trigram'
+            );
             CREATE TABLE meta (
                 key TEXT PRIMARY KEY,
                 value TEXT
             );
             """
         )
-        for chunk in chunks:
+        for chunk_id, chunk in enumerate(chunks, start=1):
             vec = np.asarray(chunk.vector, dtype=np.float32).tobytes()
             conn.execute(
-                "INSERT INTO chunks (content, doc_path, doc_title, section, url, vector) "
-                "VALUES (?, ?, ?, ?, ?, ?)",
-                (chunk.content, chunk.doc_path, chunk.doc_title, chunk.section, chunk.url, vec),
+                "INSERT INTO chunks (id, content, doc_path, doc_title, section, url, vector) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?)",
+                (chunk_id, chunk.content, chunk.doc_path, chunk.doc_title, chunk.section, chunk.url, vec),
+            )
+            conn.execute(
+                "INSERT INTO chunks_fts(rowid, content, doc_title, section) VALUES (?, ?, ?, ?)",
+                (chunk_id, chunk.content, chunk.doc_title, chunk.section),
             )
         conn.execute(
             "INSERT INTO meta (key, value) VALUES (?, ?), (?, ?), (?, ?), (?, ?)",
