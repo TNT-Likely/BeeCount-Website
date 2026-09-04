@@ -10,10 +10,10 @@
 
 ### 流程
 
-1. 计算 `docs/` + `i18n/en/.../current/` 所有 markdown 内容的 sha256
+1. 计算 `docs/` + `i18n/en/.../current/` 所有 markdown 内容及索引格式版本的 sha256
 2. 跟 `data/docs-index.hash` 比对 — 一致则 skip(可加 `--force` 强制重建)
-3. 不一致 → 按 H2 / H3 切 chunks(每段 ~850 字),调 SiliconFlow embedding API,
-   写 `data/docs-index.{zh,en}.sqlite`
+3. 不一致 → 按 H2 / H3 切 chunks(每段 ~850 字),调 SiliconFlow embedding API，
+   写向量与 FTS5 `trigram` 关键词索引到 `data/docs-index.{zh,en}.sqlite`
 4. 更新 `data/docs-index.hash`
 
 ### 本地跑
@@ -59,6 +59,16 @@ CREATE TABLE meta (
     key TEXT PRIMARY KEY,
     value TEXT                    -- embedding_model / dim / build_time / chunk_count
 );
+
+CREATE VIRTUAL TABLE chunks_fts USING fts5(
+    content,
+    doc_title,
+    section,
+    tokenize='trigram'
+);
 ```
 
-Server 端 `numpy.frombuffer(vector, dtype=np.float32)` 读向量。
+Server 端以 `numpy.frombuffer(vector, dtype=np.float32)` 做向量召回，
+再以 `chunks_fts` 做标题、章节和正文的关键词召回；两路候选使用 RRF 融合。
+`chunks_fts.rowid` 与 `chunks.id` 一一对应。索引格式版本变化也会触发 CI 重建，
+因此新 schema 不会被旧的 corpus hash 跳过。
