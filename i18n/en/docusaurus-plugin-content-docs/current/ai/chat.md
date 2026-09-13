@@ -55,6 +55,15 @@ AI: Based on your records:
     2. Entertainment spending is concentrated on weekends...
 ```
 
+### Agent conversations
+
+The AI Assistant calls local ledger tools when needed:
+
+- Totals and category, tag, or account breakdowns are aggregated locally, without the detail-list limit.
+- Tool execution progress appears in the conversation before the final answer or transaction card.
+- Memory and tool permissions are managed on the device; ledger writes follow the permission settings.
+- Recent local context is retained for natural follow-up questions.
+
 ## Message Actions
 
 Long-press a message in the chat to perform these actions:

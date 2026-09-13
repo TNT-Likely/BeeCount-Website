@@ -12,6 +12,10 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.8.1 highlights
+
+- 🤖 **AI Assistant experience upgrade**: smoother multi-turn conversations, live tool execution progress, more accurate local ledger summaries, and clearer memory, permission, and result feedback.
+
 ## 3.7.3 highlights
 
 - 🏷️ **Period filters for tag details**: Tag details now support monthly, yearly, and all-time filters. Statistics and transactions stay in sync with the selected period, and monthly views honor your custom month-start day.
