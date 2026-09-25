@@ -15,6 +15,11 @@ BeeCount Cloud 是**官方推出的自建云同步服务端**,用 Docker 一行�
 - 👥 **多用户独立**:一个服务器可以多人注册账号,各自数据完全隔离
 - 🐳 **一键部署**:Docker Compose 配置文件不到 10 行
 
+:::tip 版本升级提示(1.6.7)
+- App 3.8.2 的[账户余额校准](../account/manage.md)支持把余额差额记成普通收入 / 支出;Cloud 1.6.7 同步调整净值历史计算,不再把历史 `adjustment` 类型当作入账交易。自建云用户请**先升级 Cloud,再升级 App**
+- **本版无数据库 schema 迁移**;旧 `adjustment` 记录保留在库中,但不再影响云端净值历史。`docker compose pull && docker compose up -d` 即可升级
+:::
+
 ## 适合谁
 
 | 用户类型 | 推荐理由 |

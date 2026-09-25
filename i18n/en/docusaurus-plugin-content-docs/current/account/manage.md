@@ -31,6 +31,10 @@ The system automatically updates balances based on transactions:
 - **Income** → Balance increases
 - **Transfer** → Source decreases, destination increases
 
+### Reconcile an Account Balance
+
+When you edit and save a daily account's current balance, you can choose to update the balance directly or create a regular income/expense transaction for the difference under the **Reconciliation** category. Cloud net-worth history requires **BeeCount Cloud 1.6.7**; upgrade Cloud before the app.
+
 ## Asset Management
 
 The asset management page shows a net worth overview of all accounts:

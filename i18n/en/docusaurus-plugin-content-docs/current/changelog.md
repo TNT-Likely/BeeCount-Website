@@ -12,6 +12,12 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.8.2 highlights
+
+- 🔁 **Record another entry**: double-tap Done on a new expense or income to save it and return straight to category selection for the next entry. See [Basic Recording](./record/basic.md).
+- 🧾 **Reconcile account balances**: when changing the current balance, choose a direct correction or create a regular income/expense entry for the difference. Cloud net-worth history requires **BeeCount Cloud 1.6.7**; upgrade Cloud before the app. See [Account Management](./account/manage.md).
+- 🗂 **Category empty states**: create a category directly from an empty list or restore the default categories in one tap.
+
 ## 3.8.1 highlights
 
 - 🤖 **AI Assistant experience upgrade**: smoother multi-turn conversations, live tool execution progress, more accurate local ledger summaries, and clearer memory, permission, and result feedback.

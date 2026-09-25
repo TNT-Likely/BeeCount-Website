@@ -24,6 +24,10 @@ Tap the **"+" button** at the bottom center to open the recording page.
 
 > ✨ **Since v3.3.0**: the amount keypad supports + − × ÷ — long-press or double-tap to switch, handy for splitting bills or merging receipts right on the keypad.
 
+### Record Another Entry
+
+For a new expense or income, double-tap **Done** to save the current entry and return to category selection for the next one. A single tap keeps the usual behavior: save and return to the transaction list.
+
 ### Optional Information
 
 - **Note** - Add a transaction description
