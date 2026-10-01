@@ -75,7 +75,7 @@ A separate, theme-tinted section below the latest eligible answer shows two ques
 
 ### Automatic summaries for long conversations
 
-When history length or the character budget reaches a threshold, the assistant continues with a summary of older messages plus recent original messages. Context usage and summarization status are visible; usage is a character-based estimate, not the provider's exact token count.
+When history length or the character budget reaches a threshold, the assistant continues with a summary of older messages plus recent original messages. The trigger uses message count and a character budget, not the provider's exact token count. There is currently no dedicated context-usage meter or summarization-progress panel.
 
 Summary caches are isolated by conversation and ledger and invalidated when older messages are edited or deleted. If summarization fails, bounded history is used instead. Summaries can omit details, are not current financial facts, and do not automatically become long-term memory. Ask for a fresh query when you need up-to-date figures.
 
