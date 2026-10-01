@@ -44,6 +44,12 @@ Zhipu GLM offers multiple models to choose from:
 3. Enter API Key
 4. Save configuration
 
+### Model requirements for ledger chat (3.8.3)
+
+Ledger queries in the AI Assistant require a text model with **native tool calling**. An OpenAI-compatible endpoint or successful plain-text reply does not guarantee that capability. The text-model test in provider management checks tool support and shows actual provider errors on failure. Test again after changing the model or configuration.
+
+Models with streaming tool support can display replies incrementally; other providers may use a non-streaming fallback. See [AI Chat](./chat.md) for the conversation UI, context summaries, and data-sharing boundaries.
+
 ## Custom AI Providers
 
 In addition to the built-in Zhipu GLM, you can add any OpenAI-compatible provider:

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-description: "BeeCount home screen widgets: 6 content types (overview / net assets / quick add / budget / recent transactions / dashboard) in 12 size variants. Check your books without opening the app, add a record in one tap, with dark mode and theme color fully synced."
+description: "BeeCount home screen widgets: 8 content types in 14 size variants, now including Spending Rhythm and Record Bee Trail. Check your ledger without opening the app, with matching dark mode and theme colors."
 keywords: [BeeCount widgets, home screen widget, expense tracker widget, quick add widget]
 ---
 
@@ -8,11 +8,13 @@ keywords: [BeeCount widgets, home screen widget, expense tracker widget, quick a
 
 > ✨ **Fully upgraded in v3.7.0**: from a single style to **6 content types × 12 size variants**, on both iOS and Android.
 
+> 🐝 **Two additions in v3.8.3**: medium Spending Rhythm and small Record Bee Trail bring the total to **8 content types and 14 size variants**.
+
 Pin your books to the home screen — see today's spending, your net worth trend, and what's left of the budget without opening the app. Want to record something? Tap a category button on the widget and jump straight into the record screen.
 
 ![Home widget lineup](/img/widgets-showcase-en.png)
 
-## 6 types × 12 variants
+## 8 types and 14 variants
 
 | Widget | Sizes | Shows | Tap action |
 |------|------|------|------|
@@ -22,6 +24,18 @@ Pin your books to the home screen — see today's spending, your net worth trend
 | Budget | S · M | Monthly budget used % / remaining | Opens the budget page |
 | Recent transactions | M · L | Latest records | Tap a row to open **that transaction's detail** |
 | Dashboard | L | Monthly overview + trend + recent records + quick add, all in one | Each block jumps to its matching page |
+| Spending Rhythm | M | Spending heatmap for the last 30 days and a comparison of the latest seven days with the previous seven | Opens statistics |
+| Record Bee Trail | S | Recorded-day honeycomb, current streak, and recorded-day percentage over the last 28 days | Opens transactions |
+
+The lineup image above shows the v3.7.0 styles. Preview the two new widgets in your system widget picker.
+
+## Spending Rhythm and Record Bee Trail
+
+**Spending Rhythm** displays spending across the last 30 calendar days. Darker cells represent higher spending relative to other days in that window. A short label compares the latest seven days with the previous seven as steady, increasing, or decreasing. It describes records, not whether spending is financially healthy.
+
+**Record Bee Trail** focuses on recording habits. Honeycomb cells show which of the last 28 days have records, along with the consecutive recorded days ending today and the percentage of recorded days in the window. If today has no record, the streak is zero; the displayed streak is capped at the 28-day window. It uses transaction dates, so backdated entries affect those dates rather than creating an independent check-in history.
+
+Both widgets use calendar-day records from the current ledger. Their 30/28-day windows do not shift with your custom month-start day. Records marked Exclude from Income/Expense are excluded. Empty windows show an empty state rather than inferred data.
 
 ## How to add
 

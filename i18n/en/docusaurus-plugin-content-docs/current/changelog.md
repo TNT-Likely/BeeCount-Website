@@ -12,6 +12,11 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.8.3 highlights
+
+- 🤖 **AI Assistant reading and follow-ups**: a full-width layout, streaming replies, expandable processing and tool progress, contextual questions under each latest eligible answer, and automatic context summaries for long conversations. See [AI Chat](./ai/chat.md).
+- 🧩 **Two new home screen widgets**: Spending Rhythm shows spending activity over the last 30 days; Record Bee Trail uses a honeycomb to show recorded days and the current streak over the last 28 days. Both are available on iOS and Android. See [Home Screen Widgets](./record/widgets.md).
+
 ## 3.8.2 highlights
 
 - 🔁 **Record another entry**: double-tap Done on a new expense or income to save it and return straight to category selection for the next entry. See [Basic Recording](./record/basic.md).
