@@ -20,6 +20,14 @@ BeeCount Cloud 是**官方推出的自建云同步服务端**,用 Docker 一行�
 - **本版无数据库 schema 迁移**;旧 `adjustment` 记录保留在库中,但不再影响云端净值历史。`docker compose pull && docker compose up -d` 即可升级
 :::
 
+## 项目合作与接入帮助
+
+Cloud 1.6.8 起，Web 右上角头像 →「关于」提供 [BeeCount 项目商务合作](/business) 入口；AI 配置页的服务商区域下方提供 [服务商接入指南](../ai/overview.md)。外链在新窗口打开，保留当前 Cloud 会话。
+
+自建实例运营者可在 Compose 的 `environment` 中设置 `PROJECT_PARTNERSHIPS_ENABLED: "false"`，重新部署容器即可隐藏两个入口，无需重新构建前端。
+
+1.6.8 同时修复 MCP 导入无时区交易的时间偏移：使用 Cloud 的 `SCHEDULER_TIMEZONE`，其次使用 `TZ`（官方镜像默认 `Asia/Shanghai`）；显式时间偏移保持原意。旧交易不自动改动，本版无数据库 schema 迁移。升级使用 `docker compose pull && docker compose up -d`，完整时间规则见 [MCP 文档](https://github.com/TNT-Likely/BeeCount-Cloud/blob/1.6.8/docs/MCP.md#交易时间与-csv-时区)。
+
 ## 适合谁
 
 | 用户类型 | 推荐理由 |

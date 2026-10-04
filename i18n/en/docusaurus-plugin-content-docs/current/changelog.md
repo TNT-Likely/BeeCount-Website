@@ -12,6 +12,10 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## BeeCount Cloud 1.6.8 highlights
+
+- 🤝 **Project partnerships and AI setup help**: Web's About dialog now links to project partnerships, and AI settings includes a provider setup guide. Self-host operators can hide both links through runtime configuration. See [BeeCount Cloud](./cloud-sync/beecount-cloud.md#project-partnerships-and-setup-help).
+
 ## 3.8.4 highlights
 
 - 🖼 **Keep original attachments**: enable Keep Original Attachments in Smart Billing to preserve the dimensions and quality of long screenshots and receipts, while AI recognition uses a separate compressed copy. Attachment import/export previews now show file size and width × height. See [Transaction Attachments](./record/attachment.md#keep-original-attachments).

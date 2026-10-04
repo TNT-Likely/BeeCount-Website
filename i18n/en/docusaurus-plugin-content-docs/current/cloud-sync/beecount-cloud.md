@@ -15,6 +15,14 @@ BeeCount Cloud is the **official self-hosted sync server** — deploy it in one 
 - 👥 **Multi-user isolation**: multiple users can register; their data is fully separated
 - 🐳 **One-command deploy**: docker-compose file under 10 lines
 
+## Project partnerships and setup help
+
+Since Cloud 1.6.8, the top-right avatar → About dialog links to [BeeCount project partnerships](/en/business). AI settings also includes a [provider setup guide](../ai/overview.md) below the provider section. These links open in a new tab and preserve your Cloud session.
+
+Self-host operators can set `PROJECT_PARTNERSHIPS_ENABLED: "false"` under Compose's `environment` section and recreate the container to hide both links. No frontend rebuild is required.
+
+1.6.8 also fixes offset-free MCP transaction timestamps: Cloud uses `SCHEDULER_TIMEZONE`, then `TZ` (the official image defaults to `Asia/Shanghai`), while explicit offsets retain their meaning. Existing transactions are not rewritten, and this release has no database schema migration. Upgrade with `docker compose pull && docker compose up -d`.
+
 ## Who is it for?
 
 | User type | Why it fits |
