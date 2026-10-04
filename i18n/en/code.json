@@ -212,7 +212,7 @@
     "description": "Community description line 1"
   },
   "homepage.community.desc2": {
-    "message": "No ads, no subscriptions, no hidden fees.",
+    "message": "No in-app ads, no memberships, no hidden fees.",
     "description": "Community description line 2"
   },
   "homepage.community.desc3": {
@@ -224,7 +224,7 @@
     "description": "Open source stat label"
   },
   "homepage.community.stats.ads": {
-    "message": "Ads",
+    "message": "In-app ads",
     "description": "Ads stat label"
   },
   "homepage.community.contact": {
@@ -260,7 +260,7 @@
     "description": "Donate section title"
   },
   "homepage.donate.desc": {
-    "message": "BeeCount is completely free and open source, with no ads or paid features. If you find it helpful, consider supporting the project's continued development.",
+    "message": "BeeCount is a free and open-source project with no in-app ads or paid features. If you find it helpful, consider supporting the project’s continued development.",
     "description": "Donate section description"
   },
   "homepage.donate.btn": {
@@ -302,5 +302,92 @@
   "homepage.beedns.feature4": {
     "message": "Multi-Provider",
     "description": "BeeDNS feature 4"
+  },
+  "business.title": {
+    "message": "Business Partnerships"
+  },
+  "business.intro": {
+    "message": "Partner with BeeCount to make AI bookkeeping more accessible and support the project’s continued development."
+  },
+  "business.ai.title": {
+    "message": "AI Service Partnerships"
+  },
+  "business.ai.description": {
+    "message": "We prioritize compliant AI model and API providers that make AI bookkeeping easier to use."
+  },
+  "business.ai.detail": {
+    "message": "Potential partnerships include user credits and discounts, referral revenue, project sponsorship, integration support, and joint tutorials."
+  },
+  "business.website.title": {
+    "message": "Website Brand Placement"
+  },
+  "business.website.description": {
+    "message": "Reach people interested in bookkeeping and control over their data through website sponsorship cards and brand placements."
+  },
+  "business.website.detail": {
+    "message": "Placement, duration, and format can be discussed, with optional combined website and README packages."
+  },
+  "business.readme.title": {
+    "message": "README Brand Placement"
+  },
+  "business.readme.description": {
+    "message": "Introduce your brand to developers and self-hosting users in the GitHub project’s sponsor area."
+  },
+  "business.readme.detail": {
+    "message": "Placements can include a logo, a short introduction, and a link. Position and duration are agreed by email."
+  },
+  "business.priority": {
+    "message": "Priority partnership"
+  },
+  "business.learnMore": {
+    "message": "Explore Partnerships"
+  },
+  "business.scope": {
+    "message": "Brand placements are limited to the website and README. The app stays ad-free."
+  },
+  "business.email.subject": {
+    "message": "BeeCount Business Partnership Inquiry"
+  },
+  "business.email.body": {
+    "message": "Brand / company:\nWebsite:\nPartnership type:\nProposal and user benefits:\nBudget and duration:\nContact details:\n"
+  },
+  "business.seo.description": {
+    "message": "BeeCount business partnerships: compliant AI model and API providers, website sponsorship, and GitHub README brand placements."
+  },
+  "business.contactAction": {
+    "message": "Discuss a Partnership"
+  },
+  "business.directions": {
+    "message": "Partnership Opportunities"
+  },
+  "business.principles.title": {
+    "message": "Partnership Principles"
+  },
+  "business.principles.provider": {
+    "message": "We prioritize AI providers with clear business identities, model sources, service authorizations, pricing, and privacy policies. Relevant qualifications are verified before partnering."
+  },
+  "business.principles.fit": {
+    "message": "AI partnerships are based on performance in real bookkeeping scenarios and benefits for users. Users retain the freedom to choose their providers."
+  },
+  "business.principles.transparency": {
+    "message": "Paid brand placements will be labeled as ads or sponsorships, and referral links will disclose the partnership. We do not integrate third-party ad tracking scripts."
+  },
+  "business.principles.privacy": {
+    "message": "Partnerships do not involve selling or sharing private data such as ledgers or API keys. The app stays ad-free."
+  },
+  "business.contact.title": {
+    "message": "Tell Us About Your Partnership Idea"
+  },
+  "business.contact.description": {
+    "message": "Please include your brand or company introduction, website, partnership type, user benefits, budget, and duration. Placement, pricing, and terms are discussed by email."
+  },
+  "business.contact.other": {
+    "message": "You can also contact this email for commercial licensing, deployment assistance, and custom development."
+  },
+  "business.embedNotice": {
+    "message": "This page is intended for website visitors. You can continue to the BeeCount user documentation."
+  },
+  "business.backToDocs": {
+    "message": "View Documentation"
   }
 }

@@ -7,6 +7,7 @@ import Heading from '@theme/Heading';
 import Translate, {translate} from '@docusaurus/Translate';
 
 import styles from './index.module.css';
+import BusinessCooperation from '../components/BusinessCooperation';
 
 // 滚动显示/隐藏导航栏
 function useScrollNavbar() {
@@ -499,7 +500,7 @@ function CommunitySection() {
             </Heading>
             <p>
               <Translate id="homepage.community.desc1">蜜蜂记账完全开源，代码托管在 GitHub。</Translate><br/>
-              <Translate id="homepage.community.desc2">无广告、无会员、无隐藏收费。</Translate><br/>
+              <Translate id="homepage.community.desc2">App 内无广告、无会员、无隐藏收费。</Translate><br/>
               <Translate id="homepage.community.desc3">欢迎 Star 支持，一起让它变得更好！</Translate>
             </p>
             <div className={styles.communityStats}>
@@ -516,7 +517,7 @@ function CommunitySection() {
               <div className={styles.statItem}>
                 <span className={styles.statNum}>0</span>
                 <span className={styles.statLabel}>
-                  <Translate id="homepage.community.stats.ads">广告</Translate>
+                  <Translate id="homepage.community.stats.ads">App 内广告</Translate>
                 </span>
               </div>
             </div>
@@ -568,7 +569,7 @@ function DonateSection() {
             <h3><Translate id="homepage.donate.title">支持项目</Translate></h3>
             <p>
               <Translate id="homepage.donate.desc">
-                蜜蜂记账是完全免费开源的项目，没有广告和付费功能。如果您觉得有帮助，欢迎捐赠支持项目持续发展。
+                蜜蜂记账是完全免费开源的项目，App 内没有广告和付费功能。如果您觉得有帮助，欢迎捐赠支持项目持续发展。
               </Translate>
             </p>
           </div>
@@ -599,6 +600,7 @@ export default function Home(): JSX.Element {
         <ScreenshotSection />
         <WebShowcaseSection />
         <CommunitySection />
+        <BusinessCooperation />
         <DonateSection />
       </main>
     </Layout>

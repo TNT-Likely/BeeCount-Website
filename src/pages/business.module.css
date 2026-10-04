@@ -1,0 +1,24 @@
+.page {
+  padding: 2rem 1.5rem 5rem;
+  background: radial-gradient(ellipse at 90% 0, rgba(248, 201, 28, 0.1), transparent 45%), var(--ifm-background-color);
+}
+
+.hero { padding-block: 3rem 4rem; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-block: 1rem; }
+.hero p { margin-bottom: 2rem; }
+.eyebrow { color: var(--ifm-color-emphasis-700); letter-spacing: 0.15em; font-size: 0.8rem; }
+.principles { margin-block: 3rem; max-width: 52rem; }
+.principles ul { padding-left: 1.25rem; color: var(--ifm-color-emphasis-700); }
+.principles li { margin-bottom: 1rem; line-height: 1.8; }
+.contact { padding: 2.5rem; border-radius: 18px; border: 1px solid var(--ifm-color-emphasis-300); background: var(--ifm-background-surface-color); scroll-margin-top: 5rem; }
+.contact > p { max-width: 48rem; line-height: 1.8; }
+.email { display: inline-block; margin: 1rem 0 1rem 1.5rem; color: var(--ifm-font-color-base); overflow-wrap: anywhere; }
+.contact > p:last-child { margin: 1.5rem 0 0; }
+.embedNotice { display: none; padding: 3rem 1.5rem; }
+
+@media (max-width: 600px) {
+  .page { padding: 1rem 1.25rem 3rem; }
+  .hero { padding-block: 2rem 3rem; }
+  .contact { padding: 1.5rem; }
+  .email { display: block; margin-left: 0; }
+}

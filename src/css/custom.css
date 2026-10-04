@@ -213,9 +213,13 @@ body.embed-mode article {
 html[data-bee-embed] .navbar__brand,
 html[data-bee-embed] .navbar a[href*='github.com'],
 html[data-bee-embed] .navbar a[href$='/donate'],
+html[data-bee-embed] .navbar a[href$='/business'],
+html[data-bee-embed] .navbar a[href$='/business/'],
 html[data-bee-embed] .navbar .dropdown,
 html[data-bee-embed] .navbar-sidebar a[href*='github.com'],
 html[data-bee-embed] .navbar-sidebar a[href$='/donate'],
+html[data-bee-embed] .navbar-sidebar a[href$='/business'],
+html[data-bee-embed] .navbar-sidebar a[href$='/business/'],
 html[data-bee-embed] .navbar-sidebar .dropdown {
   display: none !important;
 }
@@ -225,6 +229,13 @@ html[data-bee-embed] .theme-doc-breadcrumbs .breadcrumbs__item:first-child {
 }
 html[data-bee-embed] footer.footer {
   display: none !important;
+}
+/* 官网招商不进入 App 的使用帮助，包括内嵌模式下直接访问合作页。 */
+html[data-bee-embed] [data-business-section] {
+  display: none !important;
+}
+html[data-bee-embed] [data-business-embed-notice] {
+  display: block;
 }
 html[data-bee-embed] div[class^='announcementBar'] {
   display: none !important;

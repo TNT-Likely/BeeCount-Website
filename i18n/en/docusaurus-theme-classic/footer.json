@@ -54,5 +54,8 @@
   "link.item.label.抖音 @蜜蜂记账": {
     "message": "Douyin @BeeCount",
     "description": "The label of footer link with label=抖音 @蜜蜂记账"
+  },
+  "link.item.label.商务合作": {
+    "message": "Business Partnerships"
   }
 }

@@ -131,6 +131,11 @@ if(sp){
         },
         // {to: '/blog', label: '博客', position: 'left'},
         {
+          to: '/business',
+          label: '商务合作',
+          position: 'left',
+        },
+        {
           to: '/donate',
           label: '捐赠',
           position: 'left',
@@ -152,6 +157,10 @@ if(sp){
         {
           title: '社区',
           items: [
+            {
+              label: '商务合作',
+              to: '/business',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/TNT-Likely/BeeCount',

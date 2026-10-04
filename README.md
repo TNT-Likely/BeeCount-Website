@@ -17,6 +17,7 @@
 蜜蜂记账（BeeCount）的官方文档站点，包含使用指南、FAQ、更新日志，并为 BeeCount-Platform 的 ⌘K AI 文档搜索提供 RAG 索引。
 
 - 📖 文档与多语言（中文 / English）
+- 🤝 [商务合作](https://count.beejz.com/business)：AI 服务商合作、官网与 README 品牌展示
 - 🔍 站内本地搜索（@easyops-cn/docusaurus-search-local）
 - 🤖 RAG 索引产物（SiliconFlow embedding，供 Cloud 端 `/api/v1/ai/ask` 消费）
 - 🚀 静态托管（Cloudflare Pages）
@@ -144,6 +145,10 @@ pnpm write-translations           # 生成翻译模板
 - [ ] 不要提交 `data/docs-index.*.sqlite`（CI 自动重建）
 
 </details>
+
+## 🤝 商务合作设计
+
+官网入口与 Cloud / App 后续方案见 [planning/business-cooperation.md](planning/business-cooperation.md)。该文件为内部设计记录，不进入用户文档或 RAG 索引。
 
 ## 📄 License
 
