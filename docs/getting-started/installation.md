@@ -35,6 +35,8 @@ TestFlight 是 Apple 官方的测试分发平台，全球可用。
 
 ### 方式一：Google Play（推荐）
 
+3.8.4 起需要 **Android 7.0 及以上**。使用 Android 6.0 的设备可安装下方的 GitHub APK。
+
 1. 打开 Google Play 商店
 2. 搜索「BeeCount - Simple Ledger」或「蜜蜂记账」
 3. 点击「安装」下载
@@ -42,6 +44,8 @@ TestFlight 是 Apple 官方的测试分发平台，全球可用。
 [前往 Google Play](https://play.google.com/store/apps/details?id=com.tntlikely.beecount)
 
 ### 方式二：GitHub Release
+
+APK 支持 **Android 6.0 及以上**。
 
 1. 访问 [GitHub Release 页面](https://github.com/TNT-Likely/BeeCount/releases/latest)
 2. 下载最新的 APK 文件
@@ -72,7 +76,8 @@ TestFlight 是 Apple 官方的测试分发平台，全球可用。
 | 平台 | 最低版本 |
 |------|---------|
 | iOS | iOS 15.5 及以上 |
-| Android | Android 5.0 及以上 |
+| Android（GitHub APK） | Android 6.0 及以上（API 23） |
+| Android（Google Play，3.8.4 起） | Android 7.0 及以上（API 24） |
 
 ## 下一步
 
