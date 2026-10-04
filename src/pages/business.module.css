@@ -7,6 +7,11 @@
 .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-block: 1rem; }
 .hero p { margin-bottom: 2rem; }
 .eyebrow { color: var(--ifm-color-emphasis-700); letter-spacing: 0.15em; font-size: 0.8rem; }
+.ecosystem { margin-block: 3rem; }
+.ecosystemList { margin-top: 1.5rem; }
+.ecosystemItem { display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; padding-block: 1.5rem; border-top: 1px solid var(--ifm-color-emphasis-200); }
+.ecosystemItem h3 { margin: 0; font-size: 1.125rem; line-height: 1.8; }
+.ecosystemItem p { margin: 0; color: var(--ifm-color-emphasis-700); line-height: 1.8; }
 .principles { margin-block: 3rem; max-width: 52rem; }
 .principles ul { padding-left: 1.25rem; color: var(--ifm-color-emphasis-700); }
 .principles li { margin-bottom: 1rem; line-height: 1.8; }
@@ -21,4 +26,5 @@
   .hero { padding-block: 2rem 3rem; }
   .contact { padding: 1.5rem; }
   .email { display: block; margin-left: 0; }
+  .ecosystemItem { grid-template-columns: 1fr; gap: 0.5rem; }
 }

@@ -27,6 +27,25 @@ export default function BusinessPage() {
             <CooperationCards detailed />
           </section>
 
+          <section className={styles.ecosystem} aria-labelledby="ecosystem-heading">
+            <Heading as="h2" id="ecosystem-heading"><Translate id="business.ecosystem.title">项目赞助与生态共建</Translate></Heading>
+            <p className={shared.note}><Translate id="business.ecosystem.intro">除了品牌展示，也欢迎通过长期支持和技术合作，共同改善真实的记账体验。</Translate></p>
+            <div className={styles.ecosystemList}>
+              <div className={styles.ecosystemItem}>
+                <Heading as="h3"><Translate id="business.ecosystem.sponsor.title">长期项目赞助</Translate></Heading>
+                <p><Translate id="business.ecosystem.sponsor.description">按季度或年度支持项目维护，可洽谈官网与 README 致谢及定期项目进展。赞助不设置用户功能付费墙，也不涉及用户数据。</Translate></p>
+              </div>
+              <div className={styles.ecosystemItem}>
+                <Heading as="h3"><Translate id="business.ecosystem.deployment.title">Cloud 部署合作</Translate></Heading>
+                <p><Translate id="business.ecosystem.deployment.description">欢迎云服务、NAS 与部署平台伙伴，共建一键安装、升级和备份方案，降低自建门槛，保留用户对部署环境的自主选择。</Translate></p>
+              </div>
+              <div className={styles.ecosystemItem}>
+                <Heading as="h3"><Translate id="business.ecosystem.features.title">公共功能共建</Translate></Heading>
+                <p><Translate id="business.ecosystem.features.description">可共同支持导入适配、无障碍等通用功能的开发，成果面向所有用户开放。开发范围、交付阶段与维护责任通过邮件商议。</Translate></p>
+              </div>
+            </div>
+          </section>
+
           <section className={styles.principles} aria-labelledby="principles-heading">
             <Heading as="h2" id="principles-heading"><Translate id="business.principles.title">合作原则</Translate></Heading>
             <ul>

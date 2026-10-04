@@ -316,7 +316,7 @@
     "message": "We prioritize compliant AI model and API providers that make AI bookkeeping easier to use."
   },
   "business.ai.detail": {
-    "message": "Potential partnerships include user credits and discounts, referral revenue, project sponsorship, integration support, and joint tutorials."
+    "message": "Potential partnerships include user credits and discounts, referral revenue, project sponsorship, integration support, model testing, joint tutorials, and co-marketing."
   },
   "business.website.title": {
     "message": "Website Brand Placement"
@@ -389,5 +389,29 @@
   },
   "business.backToDocs": {
     "message": "View Documentation"
+  },
+  "business.ecosystem.title": {
+    "message": "Project Sponsorship and Ecosystem Partnerships"
+  },
+  "business.ecosystem.intro": {
+    "message": "Beyond brand placements, we welcome long-term support and technical partnerships that improve everyday bookkeeping."
+  },
+  "business.ecosystem.sponsor.title": {
+    "message": "Long-Term Project Sponsorship"
+  },
+  "business.ecosystem.sponsor.description": {
+    "message": "Support project maintenance quarterly or annually, with potential website and README acknowledgments and regular project updates. Sponsorship does not create user feature paywalls or involve user data."
+  },
+  "business.ecosystem.deployment.title": {
+    "message": "Cloud Deployment Partnerships"
+  },
+  "business.ecosystem.deployment.description": {
+    "message": "We welcome cloud, NAS, and deployment platform partners to develop one-click installation, upgrade, and backup solutions that simplify self-hosting while preserving users’ choice of deployment environment."
+  },
+  "business.ecosystem.features.title": {
+    "message": "Shared Feature Development"
+  },
+  "business.ecosystem.features.description": {
+    "message": "Help fund general-purpose features such as import integrations and accessibility improvements, with results available to all users. Scope, milestones, and maintenance responsibilities are discussed by email."
   }
 }

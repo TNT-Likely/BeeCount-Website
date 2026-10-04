@@ -8,7 +8,7 @@ export function CooperationCards({detailed = false}: {detailed?: boolean}) {
     {
       title: translate({id: 'business.ai.title', message: 'AI 服务合作'}),
       description: translate({id: 'business.ai.description', message: '优先欢迎合规的 AI 模型与 API 服务商，让智能记账更易用。'}),
-      detail: translate({id: 'business.ai.detail', message: '可洽谈用户专属额度与优惠、推广分成、项目赞助，以及接入适配和联合教程。'}),
+      detail: translate({id: 'business.ai.detail', message: '可洽谈用户专属额度与优惠、推广分成、项目赞助，以及接入适配、模型测试、联合教程与推广。'}),
     },
     {
       title: translate({id: 'business.website.title', message: '官网品牌展示'}),
