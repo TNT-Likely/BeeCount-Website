@@ -92,7 +92,7 @@ This allows you to leverage each provider's strengths for the best experience.
   Your browser does not support video playback
 </video>
 
-1. Visit [Zhipu Open Platform](https://open.bigmodel.cn/)
+1. Visit [Zhipu Open Platform](https://www.bigmodel.cn/invite?icode=sxVvBZcZQdcWqFB86%2BAy37C%2Fk7jQAKmT1mpEiZXXnFw%3D)
 2. Register an account
 3. Go to "API Keys" page and create a new API Key
 4. Copy the API Key to BeeCount
@@ -101,7 +101,7 @@ This allows you to leverage each provider's strengths for the best experience.
 
 ### SiliconFlow
 
-1. Visit [SiliconFlow](https://siliconflow.cn/)
+1. Visit [SiliconFlow](https://cloud.siliconflow.cn/i/3kE5zv08)
 2. Register and complete identity verification
 3. Get API Key from the console
 4. API URL: `https://api.siliconflow.cn/v1`
