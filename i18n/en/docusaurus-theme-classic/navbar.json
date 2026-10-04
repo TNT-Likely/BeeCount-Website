@@ -22,5 +22,8 @@
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "item.label.商务合作": {
+    "message": "Business Partnerships"
   }
 }

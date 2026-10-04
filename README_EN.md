@@ -16,6 +16,8 @@ Official website & docs for BeeCount · Docusaurus 3 · zh / en bilingual · shi
 
 The official documentation site for BeeCount. Hosts the user docs (Chinese + English), and produces a vector index consumed by BeeCount-Platform's ⌘K AI doc search.
 
+[Business partnerships](https://count.beejz.com/en/business): AI service partnerships, website sponsorship, and README brand placements.
+
 - 📖 Bilingual docs (zh / en)
 - 🔍 Local site search (`@easyops-cn/docusaurus-search-local`)
 - 🤖 RAG index artifacts (SiliconFlow embeddings, consumed by Cloud `/api/v1/ai/ask`)
@@ -144,6 +146,10 @@ Don't reference Claude Code / AI tools in commit messages.
 - [ ] Do not commit `data/docs-index.*.sqlite` (CI rebuilds it)
 
 </details>
+
+## 🤝 Partnership Design
+
+See [planning/business-cooperation.md](planning/business-cooperation.md) (Chinese) for the website implementation and proposed Cloud / App rollout. This internal design record is excluded from user docs and the RAG index.
 
 ## 📄 License
 

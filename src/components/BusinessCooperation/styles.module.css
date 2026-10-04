@@ -1,0 +1,113 @@
+.section {
+  padding: 5rem 1.5rem;
+  background: var(--ifm-background-surface-color);
+  border-block: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.intro {
+  color: var(--ifm-color-emphasis-700);
+  max-width: 42rem;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-block: 2rem;
+}
+
+.card {
+  padding: 1.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 18px;
+  background: var(--ifm-background-color);
+}
+
+.featured {
+  border-color: #b28f0a;
+  background: linear-gradient(145deg, rgba(248, 201, 28, 0.1), transparent 75%), var(--ifm-background-color);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.number {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.badge {
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  color: #604c00;
+  background: #f8c91c;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+}
+
+.card p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.card .detail {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  background: #f8c91c;
+  color: #242000;
+  font-weight: 700;
+  text-align: center;
+}
+
+.primaryButton:hover {
+  background: #f9d44a;
+  color: #242000;
+  text-decoration: none;
+}
+
+.note {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 850px) {
+  .cards { grid-template-columns: 1fr; }
+  .section { padding: 3.5rem 1.25rem; }
+  .cardTop { margin-bottom: 1rem; }
+}
