@@ -37,7 +37,7 @@ AI will attempt to identify:
 Since 3.2.3, the mobile AI flow supports **detecting multiple transactions from a single image** (previously only the first was kept). Bill screenshots, supermarket receipts, monthly Alipay / WeChat statements with many rows all yield a draft list of N transactions:
 
 - Confirm / tweak amount, category, account, tags and note per row
-- The original image is attached to **every one** of the N transactions, so the source is reachable from any of them
+- With Auto-add Attachment enabled, the full image is shared by **every one** of the N transactions, so it is reachable from any of them; enable Keep Original Attachments to preserve its original quality
 - Tap "Skip" on any row to drop it — only the rows you want get saved
 
 ## Tips
@@ -56,7 +56,9 @@ When using image recording, the system automatically adds an "Image Recording" t
 
 ## Auto-Save Attachment
 
-The image used for recognition is automatically saved as a transaction attachment. You can view the original image in the transaction details.
+Enable Auto-add Attachment in Me → Smart Billing to save the selected or captured image as a transaction attachment without adding it manually.
+
+Since **3.8.4**, enable Keep Original Attachments on the same page to preserve attachment dimensions and quality. AI recognition uses a separate compressed copy to avoid uploading oversized images. The switch is off by default, takes effect without restarting, and only affects new attachments. See [Keep Original Attachments](../record/attachment.md#keep-original-attachments).
 
 ## Web Image Recording
 

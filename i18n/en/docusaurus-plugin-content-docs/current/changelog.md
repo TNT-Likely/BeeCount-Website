@@ -12,6 +12,10 @@ View BeeCount's version update history.
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.8.4 highlights
+
+- 🖼 **Keep original attachments**: enable Keep Original Attachments in Smart Billing to preserve the dimensions and quality of long screenshots and receipts, while AI recognition uses a separate compressed copy. Attachment import/export previews now show file size and width × height. See [Transaction Attachments](./record/attachment.md#keep-original-attachments).
+
 ## 3.8.3 highlights
 
 - 🤖 **AI Assistant reading and follow-ups**: a full-width layout, streaming replies, expandable processing and tool progress, contextual questions under each latest eligible answer, and automatic context summaries for long conversations. See [AI Chat](./ai/chat.md).

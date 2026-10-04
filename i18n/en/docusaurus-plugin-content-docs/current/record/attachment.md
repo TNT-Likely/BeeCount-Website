@@ -36,18 +36,33 @@ Add image attachments to transactions for receipts, invoices, and more.
 
 ## Auto-Save Attachments
 
-When using these recording methods, images are automatically saved as attachments:
+Enable Auto-add Attachment in Me → Smart Billing to automatically save images with these recording methods:
 
-- **Image Recording** - The recognized image is auto-saved
+- **Image Recording** - The selected image is auto-saved
 - **Camera Recording** - The captured photo is auto-saved
+
+## Keep Original Attachments
+
+Since **3.8.4**, enable Keep Original Attachments in Me → Smart Billing, below Auto-add Attachment. The switch is off by default to keep the existing compression behavior. Changes take effect immediately without restarting the app.
+
+- When enabled, manually added attachments, image recording and camera recording preserve the incoming image's original dimensions and quality. iOS Shortcuts screenshot recording follows the same setting.
+- AI recognition uses a separate compressed copy with a longest edge of at most 1920 pixels; the saved original attachment is unaffected.
+- Automatic saving still requires Auto-add Attachment to be enabled. Manually added attachments can also keep their originals.
+- Original images use more storage and sync bandwidth.
+
+:::tip Existing attachments
+The switch only affects new attachments. Previously compressed images cannot recover their original quality automatically; add them again from the original files.
+:::
 
 ## Attachment Export
 
-When exporting transaction data, you can choose to include attachments:
+Attachments can be exported as a separate archive:
 
-1. Go to "Me" → "Data Management" → "Export Data"
-2. Select the "Include Attachments" option
-3. The exported zip file will contain an attachments folder
+1. Go to Me → Data Management → Export Attachments
+2. Preview attachments and custom icons
+3. Confirm to export the archive
+
+Since **3.8.4**, thumbnails and enlarged details in import/export previews show the actual file size and width × height, making it easier to check whether an image keeps its original dimensions.
 
 ## Notes
 
