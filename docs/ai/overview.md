@@ -92,7 +92,7 @@ AI 小助手查询账本需要文本模型支持**原生工具调用**；兼容 
   您的浏览器不支持视频播放
 </video>
 
-1. 访问 [智谱开放平台](https://www.bigmodel.cn/invite?icode=sxVvBZcZQdcWqFB86%2BAy37C%2Fk7jQAKmT1mpEiZXXnFw%3D)
+1. 访问 [智谱开放平台](https://cfg.beejz.com/invite)
 2. 注册账号
 3. 进入「API 密钥」页面，创建新的 API Key
 4. 复制 API Key 到蜜蜂记账

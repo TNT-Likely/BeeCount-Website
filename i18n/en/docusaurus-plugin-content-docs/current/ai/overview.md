@@ -92,7 +92,7 @@ This allows you to leverage each provider's strengths for the best experience.
   Your browser does not support video playback
 </video>
 
-1. Visit [Zhipu Open Platform](https://www.bigmodel.cn/invite?icode=sxVvBZcZQdcWqFB86%2BAy37C%2Fk7jQAKmT1mpEiZXXnFw%3D)
+1. Visit [Zhipu Open Platform](https://cfg.beejz.com/invite)
 2. Register an account
 3. Go to "API Keys" page and create a new API Key
 4. Copy the API Key to BeeCount
