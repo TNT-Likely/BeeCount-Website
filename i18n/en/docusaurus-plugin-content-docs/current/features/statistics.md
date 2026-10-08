@@ -6,7 +6,7 @@ sidebar_position: 2
 
 BeeCount provides rich statistical charts to help you understand your financial situation.
 
-![Statistics Page](/img/preview/zh/04-chart-analysis.png)
+![Statistics Page](/img/preview/en/04-chart-analysis.png)
 
 ## Income & Expense Trends
 

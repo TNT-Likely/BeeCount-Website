@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Categories help you organize income and expenses for easy analysis.
 
-![Category Management](/img/preview/zh/09-category-management.png)
+![Category Management](/img/preview/en/09-category-management.png)
 
 ## Preset Categories
 
@@ -107,7 +107,7 @@ Long-press and drag categories to reorder them. Place frequently used categories
 
 When deleting a category, you can choose to migrate its transactions to another category.
 
-![Category Migration](/img/preview/zh/08-category-migration.png)
+![Category Migration](/img/preview/en/08-category-migration.png)
 
 ## Web Category Management
 

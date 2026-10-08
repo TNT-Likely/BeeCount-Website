@@ -95,7 +95,7 @@ static/img/preview/{zh,en}/                        # 中英截图
 
 - 标准 Markdown / MDX（可嵌入 React 组件）
 - 图片放 `static/img/`，引用用绝对路径 `/img/...`
-- 截图：`static/img/preview/{zh,en}/01-home.png` 形式编号，竖屏 1080×1920
+- 截图：`static/img/preview/{zh,en}/01-home.png` 形式编号，竖屏 1206×2622（iPhone 17 Pro 原生截图），PNG
 - 告示框：`:::tip` / `:::warning` / `:::danger` / `:::info`
 
 ### 国际化

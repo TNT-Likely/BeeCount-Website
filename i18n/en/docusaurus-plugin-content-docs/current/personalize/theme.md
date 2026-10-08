@@ -6,7 +6,7 @@ sidebar_position: 1
 
 BeeCount supports custom theme colors for a personalized interface.
 
-![Personalization Settings](/img/preview/zh/10-personalization.png)
+![Personalization Settings](/img/preview/en/10-personalization.png)
 
 ## Change Theme Color
 

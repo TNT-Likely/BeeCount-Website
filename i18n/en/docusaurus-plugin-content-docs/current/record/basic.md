@@ -12,7 +12,7 @@ BeeCount supports three transaction types: Expense, Income, and Transfer.
 
 Tap the **"+" button** at the bottom center to open the recording page.
 
-![Recording Page](/img/preview/zh/03-edit-transaction.png)
+![Recording Page](/img/preview/en/03-edit-transaction.png)
 
 ### Steps
 

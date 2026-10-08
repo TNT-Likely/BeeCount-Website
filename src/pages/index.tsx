@@ -119,10 +119,10 @@ function DeviceShowcase() {
       >
         <div className={styles.phoneShowcase}>
           <div className={styles.phoneFrame}>
-            <img src="/img/preview/zh/01-home.png" alt={translate({id: 'homepage.hero.preview.home', message: '首页'})} className={styles.phoneScreen} />
+            <img src={`/img/preview/${lang}/01-home.png`} alt={translate({id: 'homepage.hero.preview.home', message: '首页'})} className={styles.phoneScreen} />
           </div>
           <div className={clsx(styles.phoneFrame, styles.phoneFrameBack)}>
-            <img src="/img/preview/dark/01-home.png" alt={translate({id: 'homepage.hero.preview.homeDark', message: '首页暗黑'})} className={styles.phoneScreen} />
+            <img src={`/img/preview/dark/${lang}/01-home.png`} alt={translate({id: 'homepage.hero.preview.homeDark', message: '首页暗黑'})} className={styles.phoneScreen} />
           </div>
         </div>
       </div>
@@ -143,7 +143,7 @@ function DeviceShowcase() {
                 <span style={{ background: '#ffbd2e' }} />
                 <span style={{ background: '#27c93f' }} />
               </div>
-              <div className={styles.browserUrl}>beecount.local · Transactions</div>
+              <div className={styles.browserUrl}>{isZh ? '交易' : 'Transactions'}</div>
             </div>
             <img
               src={`/img/preview/web/${lang}-02-transactions.png`}
@@ -158,7 +158,7 @@ function DeviceShowcase() {
                 <span style={{ background: '#ffbd2e' }} />
                 <span style={{ background: '#27c93f' }} />
               </div>
-              <div className={styles.browserUrl}>beecount.local · Dashboard</div>
+              <div className={styles.browserUrl}>{isZh ? '仪表盘' : 'Dashboard'}</div>
             </div>
             <img
               src={`/img/preview/web/${lang}-01-home.png`}
@@ -192,6 +192,8 @@ function DeviceShowcase() {
 
 // 全屏 Hero 区域 - 第一屏（极简版 + 预览图）
 function HeroSection() {
+  const {i18n} = useDocusaurusContext();
+  const isZh = i18n.currentLocale.startsWith('zh');
   const [showVideo, setShowVideo] = useState(false);
 
   return (
@@ -236,7 +238,7 @@ function HeroSection() {
               <span className={styles.heroTitleMain}>
                 <Translate id="homepage.hero.title">蜜蜂记账</Translate>
               </span>
-              <span className={styles.heroTitleSub}>BeeCount</span>
+              {isZh && <span className={styles.heroTitleSub}>BeeCount</span>}
             </Heading>
           </div>
 
@@ -408,6 +410,8 @@ function FeaturesSection() {
 
 // 截图展示
 function ScreenshotSection() {
+  const {i18n} = useDocusaurusContext();
+  const lang = i18n.currentLocale.startsWith('zh') ? 'zh' : 'en';
   return (
     <section className={styles.screenshots}>
       <div className={styles.container}>
@@ -419,12 +423,12 @@ function ScreenshotSection() {
         </p>
 
         <div className={styles.screenshotRow}>
-          <img src="/img/preview/zh/01-home.png" alt={translate({id: 'homepage.screenshots.alt.home', message: '首页'})} />
-          <img src="/img/preview/zh/04-chart-analysis.png" alt={translate({id: 'homepage.screenshots.alt.stats', message: '统计'})} />
-          <img src="/img/preview/zh/14-discover.png" alt={translate({id: 'homepage.screenshots.alt.discover', message: '发现'})} />
-          <img src="/img/preview/zh/03-edit-transaction.png" alt={translate({id: 'homepage.screenshots.alt.record', message: '记账'})} />
-          <img src="/img/preview/dark/01-home.png" alt={translate({id: 'homepage.screenshots.alt.homeDark', message: '暗黑首页'})} />
-          <img src="/img/preview/dark/05-ai-chat.png" alt={translate({id: 'homepage.screenshots.alt.aiChat', message: 'AI对话'})} />
+          <img src={`/img/preview/${lang}/01-home.png`} alt={translate({id: 'homepage.screenshots.alt.home', message: '首页'})} />
+          <img src={`/img/preview/${lang}/04-chart-analysis.png`} alt={translate({id: 'homepage.screenshots.alt.stats', message: '统计'})} />
+          <img src={`/img/preview/${lang}/14-ai-chat.png`} alt={translate({id: 'homepage.screenshots.alt.aiChat', message: 'AI对话'})} />
+          <img src={`/img/preview/${lang}/03-edit-transaction.png`} alt={translate({id: 'homepage.screenshots.alt.record', message: '记账'})} />
+          <img src={`/img/preview/dark/${lang}/01-home.png`} alt={translate({id: 'homepage.screenshots.alt.homeDark', message: '暗黑首页'})} />
+          <img src={`/img/preview/dark/${lang}/05-ai-chat.png`} alt={translate({id: 'homepage.screenshots.alt.aiChat', message: 'AI对话'})} />
         </div>
       </div>
     </section>
@@ -482,6 +486,44 @@ function WebShowcaseSection() {
             rel="noopener noreferrer">
             <Translate id="homepage.webShowcase.btn">一键自建 Docker 镜像</Translate>
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Localized recordings from the current App and Cloud, with explicit playback.
+function ProductDemosSection() {
+  const {i18n} = useDocusaurusContext();
+  const isZh = i18n.currentLocale.startsWith('zh');
+  const lang = isZh ? 'zh' : 'en';
+  const demos = [
+    {file: '01-add-transaction', title: isZh ? '记一笔' : 'Record a transaction', text: isZh ? '选择分类，输入金额，保存到日常账本。' : 'Pick a category, enter the amount and save to your ledger.', poster: `/img/preview/${lang}/03-edit-transaction.png`},
+    {file: isZh ? '02-ocr-recognition' : '02-ai-text', title: isZh ? 'AI 图片记账' : 'AI text bookkeeping', text: isZh ? '从相册选择小票，识别并保存交易与附件。' : 'Describe an expense, approve the AI action and save it to your ledger.', poster: `/img/preview/${lang}/${isZh ? '13-ocr-recognition' : '14-ai-chat'}.png`},
+    {file: '05-copy-transaction', title: isZh ? '复制交易' : 'Copy a transaction', text: isZh ? '长按历史交易，调整后保存为新记录。' : 'Hold a transaction, adjust it and save a new record.', poster: `/img/preview/${lang}/15-copy-transaction.png`},
+    {file: 'cloud-attachments', title: isZh ? 'Web 小票附件' : 'Receipts on the web', text: isZh ? '在浏览器里上传、查看并保存交易附件。' : 'Upload, preview and save receipt images in your browser.', poster: `/img/preview/web/${lang}-04-attachments.png`, wide: true},
+  ];
+  return (
+    <section className={styles.productDemos} id="product-demos">
+      <div className={styles.container}>
+        <Heading as="h2" className={styles.sectionTitle}>{isZh ? '看看实际操作' : 'See it in action'}</Heading>
+        <p className={styles.sectionSubtitle}>{isZh ? 'App 3.8.6 · Cloud 1.7.0，中英文真实界面演示；演示数据为虚构，视频剪短了等待时间。' : 'Real App 3.8.6 and Cloud 1.7.0 workflows, using fictional data. Waiting time is shortened.'}</p>
+        <div className={styles.demoGrid}>
+          {demos.map((demo) => (
+            <article className={clsx(styles.demoCard, demo.wide && styles.demoCardWide)} key={demo.file}>
+              <div className={clsx(styles.demoMedia, demo.wide && styles.demoMediaWide)}>
+                <video controls playsInline preload="none" poster={demo.poster} aria-label={demo.title}>
+                  <source src={`/img/demos/${lang}/${demo.file}.mp4`} type="video/mp4" />
+                  <a href={`/img/demos/${lang}/${demo.file}.gif`}>{demo.title}</a>
+                </video>
+              </div>
+              <div className={styles.demoCopy}>
+                <Heading as="h3">{demo.title}</Heading>
+                <p>{demo.text}</p>
+                <a href={`/img/demos/${lang}/${demo.file}.gif`} target="_blank" rel="noopener noreferrer">{isZh ? '打开 GIF' : 'Open GIF'} ↗</a>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -599,6 +641,7 @@ export default function Home(): JSX.Element {
         <FeaturesSection />
         <ScreenshotSection />
         <WebShowcaseSection />
+        <ProductDemosSection />
         <CommunitySection />
         <BusinessCooperation />
         <DonateSection />
