@@ -13,6 +13,10 @@ View the BeeCount App's release history. The self-hosted Cloud uses a separate v
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.8.6 highlights
+
+- 📋 **Copy transactions from the home page**: long-press an expense, income or transfer and choose Copy. Amount, category, accounts, notes and tags are prefilled, with the date set to now. Edit and save as an independent new entry. See [Copy Transactions](./record/basic.md#copy-transactions).
+
 ## 3.8.4 highlights
 
 - 🖼 **Keep original attachments**: enable Keep Original Attachments in Smart Billing to preserve the dimensions and quality of long screenshots and receipts, while AI recognition uses a separate compressed copy. Attachment import/export previews now show file size and width × height. See [Transaction Attachments](./record/attachment.md#keep-original-attachments).

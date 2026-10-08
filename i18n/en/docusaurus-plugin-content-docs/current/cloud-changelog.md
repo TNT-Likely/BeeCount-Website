@@ -9,11 +9,24 @@ keywords: [BeeCount Cloud changelog, self-hosted cloud releases]
 
 Core releases and recent maintenance updates for self-hosted BeeCount Cloud. The App uses a separate version series; see the [App Changelog](./changelog.md).
 
-This page covers core releases from 1.0.0 through 1.6.9. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
+This page covers core releases from 1.0.0 through 1.7.0. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
 
 :::tip Upgrades and compatibility
 
 For features that require both products, upgrade Cloud before the App. Back up your data and review the [deployment and upgrade guide](./cloud-sync/beecount-cloud.md). The MCP URL change in 1.5.3 also requires client configuration updates.
+
+:::
+
+## 1.7.0 · 2026-10-08
+
+- **Web image attachments**: upload, remove and replace images when creating or editing transactions, view originals, and sync with the App. See [Transaction Attachments](./record/attachment.md#web-attachments).
+- **MCP receipt uploads**: upload receipts and link them to new or existing transactions. The local adapter accepts file paths and preserves original images. See [Record with Attachments via MCP](./mcp/intro.md#record-with-attachments-via-mcp).
+- **Category and transaction flag sync fixes**: fixed missing child categories after a parent rename and loss of Exclude from Income/Expense or Budget flags during full sync.
+- **Multi-currency asset fix**: the home page asset breakdown converts balances into the base currency instead of adding different currencies directly.
+
+:::tip Upgrading to 1.7.0
+
+Back up the database and attachments first. The official Docker image automatically repairs category parent links that can be identified reliably. Upgrade Cloud before App **3.8.6** to sync changes to existing attachment order and details.
 
 :::
 

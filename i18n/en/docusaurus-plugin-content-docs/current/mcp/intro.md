@@ -143,7 +143,7 @@ In your LLM client, start a new chat and ask:
 
 The LLM will call `list_ledgers` and answer with your ledger list.
 
-## The 18 tools
+## The 19 tools
 
 ### Read (`mcp:read`)
 
@@ -165,13 +165,25 @@ The LLM will call `list_ledgers` and answer with your ledger list.
 
 | Tool | Purpose | Notes |
 |---|---|---|
-| `create_transaction` | Create a transaction | |
+| `upload_attachment` | Upload a receipt/image | Since Cloud 1.7.0; returns a file ID to link to a transaction |
+| `create_transaction` | Create a transaction | Pass `attachments` to link uploaded files |
 | `create_transactions` | Create many transactions | One call commits many — the efficient path for importing statements / spreadsheets; pass an explicit ledger when you have multiple |
-| `update_transaction` | Edit a transaction | Only changes fields you pass |
+| `update_transaction` | Edit a transaction | Only changes fields you pass; can update attachment links |
 | `delete_transaction` | Delete a transaction | **Two-step confirmation** — first call returns a "needs confirmation" placeholder; only deletes on explicit second call |
 | `create_category` | Create a category | |
 | `update_budget` | Change a budget's amount | |
 | `parse_and_create_from_text` | Natural-language to transaction | Uses BeeCount's own AI provider — you must configure one in web settings first |
+
+## Record with Attachments via MCP
+
+Since **Cloud 1.7.0**, call `upload_attachment` to upload a receipt, then pass the returned `file_id` list as `attachments` to `create_transaction` or `update_transaction`. This requires `mcp:write`; the files and transaction must belong to the same ledger.
+
+- A new transaction can include the uploaded receipt. For an existing transaction, omitting `attachments` preserves its files, `[]` clears the links, and a list replaces all links. To append files, query and retain the existing file IDs first.
+- **Direct HTTP connections** accept `content_base64`. To let AI use a file path on your computer, run the repository's **local stdio adapter**, `scripts/mcp_local_files.py`. The same upload tool accepts `file_path`; the program reads and uploads original bytes without making the model output Base64.
+- Configure the adapter with your Cloud URL, PAT and an allowed `--allow-dir`. Paths refer to the client computer; Cloud does not read arbitrary server paths. See the [local file upload setup](https://github.com/TNT-Likely/BeeCount-Cloud/blob/main/docs/MCP.en.md).
+- Uploading alone does not recognize the receipt or create a transaction. The bulk `create_transactions` tool does not support attachments yet.
+
+Linked images are visible in Web and the App. Upgrade Cloud before **App 3.8.6** to sync changes to existing attachment order and details.
 
 ## Security model
 
@@ -182,7 +194,7 @@ The LLM will call `list_ledgers` and answer with your ledger list.
 | Expiration | Optional at creation; expired tokens return 401 |
 | Scope separation | `mcp:read` / `mcp:write` are independent checkboxes |
 | Delete safety | `delete_transaction` requires explicit confirmation |
-| Protocol isolation | PATs can only call `/api/v1/mcp/*`; regular APIs reject PATs. Conversely, regular access tokens cannot call MCP endpoints |
+| Protocol isolation | PATs can only call `/api/v1/mcp`; regular APIs reject PATs. Conversely, regular access tokens cannot call MCP endpoints |
 | Audit | Every use bumps `last_used_at` + `last_used_ip`, visible in the web settings page |
 
 ## FAQ

@@ -35,6 +35,16 @@ For a new expense or income, double-tap **Done** to save the current entry and r
 - **Date & Time** - Change the recording time (for backdating)
 - **Image** - Add a receipt or proof
 
+## Copy Transactions
+
+Since **App 3.8.6**, you can copy a transaction from the home page list:
+
+1. Long-press an expense, income or transfer and choose **Copy**.
+2. Amount, category, accounts, notes, tags, currency and statistics/budget flags are prefilled. The date and time default to now and can be changed.
+3. Adjust the fields and tap **Done** to save an independent new transaction.
+
+The original transaction stays unchanged. Cancelling creates no record. Images from the original entry are not copied; add receipts for the new transaction separately.
+
 ## Edit & Delete
 
 - **Tap** a transaction to edit it
