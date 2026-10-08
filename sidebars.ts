@@ -102,7 +102,11 @@ const sidebars: SidebarsConfig = {
     },
     'faq',
     'contributing',
-    'changelog',
+    {
+      type: 'category',
+      label: '更新日志',
+      items: ['changelog', 'cloud-changelog'],
+    },
   ],
 };
 
