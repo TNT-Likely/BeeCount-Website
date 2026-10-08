@@ -1,20 +1,17 @@
 ---
 sidebar_position: 102
+sidebar_label: App Changelog
 description: "BeeCount version history and feature release notes. 3.0 introduces self-hosted BeeCount Cloud sync and Web access."
 keywords: [BeeCount changelog, BeeCount releases, BeeCount versions]
 ---
 
-# Changelog
+# App Changelog
 
-View BeeCount's version update history.
+View the BeeCount App's release history. The self-hosted Cloud uses a separate version series; see the [Cloud Changelog](./cloud-changelog.md).
 
 👉 [GitHub Releases](https://github.com/TNT-Likely/BeeCount/releases)
 
 All version details, release notes, and download links are available on the GitHub Releases page.
-
-## BeeCount Cloud 1.6.8 highlights
-
-- 🤝 **Project partnerships and AI setup help**: Web's About dialog now links to project partnerships, and AI settings includes a provider setup guide. Self-host operators can hide both links through runtime configuration. See [BeeCount Cloud](./cloud-sync/beecount-cloud.md#project-partnerships-and-setup-help).
 
 ## 3.8.4 highlights
 

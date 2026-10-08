@@ -1,20 +1,17 @@
 ---
 sidebar_position: 102
+sidebar_label: App 更新日志
 description: 蜜蜂记账版本更新历史与功能迭代日志。3.0 新增 BeeCount Cloud 自建云同步、Web 端访问等核心特性。
 keywords: [蜜蜂记账更新日志, 蜜蜂记账版本, BeeCount changelog]
 ---
 
-# 更新日志
+# App 更新日志
 
-查看蜜蜂记账的版本更新历史。
+查看蜜蜂记账 App 的版本更新历史。自建云使用独立版本号，见 [Cloud 更新日志](./cloud-changelog.md)。
 
 👉 [GitHub Releases](https://github.com/TNT-Likely/BeeCount/releases)
 
 所有版本的详细更新记录、下载链接都可以在 GitHub Releases 页面查看。
-
-## BeeCount Cloud 1.6.8 亮点
-
-- 🤝 **项目合作与 AI 接入帮助**：Web「关于」新增项目商务合作入口，AI 配置页新增服务商接入指南；自建实例可通过运行时配置关闭这两个入口。详见 [BeeCount Cloud](./cloud-sync/beecount-cloud.md#项目合作与接入帮助)。
 
 ## 3.8.4 亮点
 
