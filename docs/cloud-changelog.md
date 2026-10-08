@@ -9,11 +9,24 @@ keywords: [BeeCount Cloud 更新日志, 自建云版本, BeeCount Cloud changelo
 
 查看 BeeCount Cloud 自建云的核心发布与近期维护记录。App 使用独立版本号，见 [App 更新日志](./changelog.md)。
 
-本页回溯 1.0.0 至 1.6.9 的核心发布；日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
+本页记录 1.0.0 至 1.7.0 的核心发布；日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
 
 :::tip 升级与兼容
 
 涉及 App 配套能力时，先升级 Cloud，再升级 App；升级前备份数据，并查看 [部署与升级说明](./cloud-sync/beecount-cloud.md)。MCP 1.5.3 的连接地址变更需要客户端同步调整。
+
+:::
+
+## 1.7.0 · 2026-10-08
+
+- **Web 图片附件**：新建或编辑交易时上传、移除和替换图片，查看原图并与 App 同步。详见 [交易附件](./record/attachment.md#web-端附件)。
+- **MCP 小票上传**：上传后关联到新建或已有交易；本地适配器支持直接传文件路径，保留原始图片。详见 [MCP 附件记账](./mcp/intro.md#mcp-附件记账)。
+- **分类与账单标记同步修复**：修复父分类改名后子分类消失，以及全量同步丢失「不计入收支/预算」标记的问题。
+- **多币种资产修复**：首页资产构成按汇率折算到主币种，避免不同币种金额直接相加。
+
+:::tip 1.7.0 升级
+
+升级前备份数据库与附件。官方 Docker 启动会自动修复可确认的分类父子关联；先升级 Cloud，再升级 App **3.8.6**，以同步已有附件的顺序和信息变更。
 
 :::
 

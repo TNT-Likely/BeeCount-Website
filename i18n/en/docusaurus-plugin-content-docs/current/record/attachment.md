@@ -74,6 +74,14 @@ Since **3.8.4**, thumbnails and enlarged details in import/export previews show 
 
 After signing in to [BeeCount Cloud](../cloud-sync/beecount-cloud.md) on the web:
 
+Since **Cloud 1.7.0**, you can manage image attachments when creating or editing transactions:
+
+1. Click **New transaction**, or open an existing transaction and enter edit mode.
+2. Select images in the attachment area. When editing, remove an existing image and add a replacement if needed.
+3. Click **Save** to apply attachment changes. Cancelling keeps the transaction's existing attachment links.
+
+Web uploads preserve the original file bytes, with full-size viewing and downloads. Attachments sync both ways with the App. Upgrade Cloud before **App 3.8.6** so changes to existing attachment order and details also sync correctly.
+
 - **AI screenshot recording auto-attaches** — when you paste an image via ⌘K and AI recognizes N transactions, **all N transactions share the same original image** as the attachment; see [Image recognition](../ai/image.md#web-image-recording).
 - **📎 chip on transaction rows** — rows with attachments show an icon; clicking opens an attachment carousel (prev / next).
 - **Detail dialog viewer** — click a transaction row to open the detail dialog where attachments can be enlarged or downloaded.

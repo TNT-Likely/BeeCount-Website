@@ -143,7 +143,7 @@ VS Code → Cline 图标 → 右上角 `…` → **Edit MCP Settings**
 
 LLM 会调用 `list_ledgers` tool,返回你账本列表。
 
-## 18 个可用 tool
+## 19 个可用 tool
 
 ### 查询(`mcp:read`)
 
@@ -165,13 +165,25 @@ LLM 会调用 `list_ledgers` tool,返回你账本列表。
 
 | Tool | 用途 | 备注 |
 |---|---|---|
-| `create_transaction` | 新建交易 | |
+| `upload_attachment` | 上传小票/图片 | Cloud 1.7.0 起，返回可关联到交易的文件 ID |
+| `create_transaction` | 新建交易 | 可传 `attachments` 关联已上传文件 |
 | `create_transactions` | 批量新建交易 | 一次提交多笔 —— 导入对账单 / Excel 的高效方式;多账本时需显式指定账本 |
-| `update_transaction` | 改交易 | 只改传入的字段 |
+| `update_transaction` | 改交易 | 只改传入的字段；可更新附件关联 |
 | `delete_transaction` | 删交易 | **二次确认** — LLM 第一次调用返"待确认"占位符,你说"删"后才真删 |
 | `create_category` | 新建分类 | |
 | `update_budget` | 改预算金额 | |
 | `parse_and_create_from_text` | 自然语言记账 | 让 BeeCount 自己的 AI 解析,需要先在 Web 配 AI provider |
+
+## MCP 附件记账
+
+从 **Cloud 1.7.0** 起，先调用 `upload_attachment` 上传小票，再将返回的 `file_id` 列表作为 `attachments` 传给 `create_transaction` 或 `update_transaction`。需要 `mcp:write` 权限，附件与交易必须在同一账本。
+
+- 新建交易可以直接附上小票；修改已有交易时，不传 `attachments` 保留原附件，传 `[]` 清空关联，传列表替换全部关联。追加附件时先查询并保留原文件 ID。
+- **HTTP 直连**接收 `content_base64`。若希望 AI 直接使用电脑上的文件路径，可在客户端运行仓库的 **本地 stdio 适配器** `scripts/mcp_local_files.py`，同名上传工具改为接收 `file_path`，程序读取并上传原始文件，模型无需输出 Base64。
+- 本地适配器需配置 Cloud 地址、PAT 和允许读取的 `--allow-dir`；路径属于客户端电脑，Cloud 不会读取服务器任意路径。安装与配置见 [本地文件上传说明](https://github.com/TNT-Likely/BeeCount-Cloud/blob/main/docs/MCP.md)。
+- 上传不会自动识别小票或创建交易；`create_transactions` 批量工具暂不支持附件。
+
+上传关联后的图片可在 Web 和 App 查看。建议先升级 Cloud，再升级 **App 3.8.6**，以同步已有附件的顺序和信息变更。
 
 ## 安全模型
 
@@ -182,7 +194,7 @@ LLM 会调用 `list_ledgers` tool,返回你账本列表。
 | Token 过期 | 创建时可设,过期后自动 401 |
 | Scope 分离 | `mcp:read` / `mcp:write` 独立勾选 |
 | 删除保护 | `delete_transaction` 必须二次确认 |
-| 协议隔离 | PAT 只能调 `/api/v1/mcp/*`,常规 API 拒绝 PAT。同样,普通 access token 也不能调 MCP endpoint |
+| 协议隔离 | PAT 只能调 `/api/v1/mcp`,常规 API 拒绝 PAT。同样,普通 access token 也不能调 MCP endpoint |
 | 审计 | 每次使用都记录 `last_used_at` + `last_used_ip`,Web 设置页可查 |
 
 ## 常见问题
