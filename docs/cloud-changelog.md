@@ -9,7 +9,7 @@ keywords: [BeeCount Cloud 更新日志, 自建云版本, BeeCount Cloud changelo
 
 查看 BeeCount Cloud 自建云的核心发布与近期维护记录。App 使用独立版本号，见 [App 更新日志](./changelog.md)。
 
-本页回溯 1.0.0 至 1.6.9 的核心发布；日期取自 GitHub Release 的发布时间（UTC）。完整维护版、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)，尚未发布的变化见源码仓 [CHANGELOG](https://github.com/TNT-Likely/BeeCount-Cloud/blob/main/CHANGELOG.md)。
+本页回溯 1.0.0 至 1.6.9 的核心发布；日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
 
 :::tip 升级与兼容
 
