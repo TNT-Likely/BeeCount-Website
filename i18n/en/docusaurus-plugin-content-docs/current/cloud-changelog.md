@@ -19,12 +19,11 @@ For features that require both products, upgrade Cloud before the App. Back up y
 
 ## 1.6.9 · 2026-10-04
 
-- **MCP consistency fixes**: improved transaction associations and batch input consistency.
-- **Build maintenance**: frontend builds use a native platform to avoid QEMU build issues.
+- **MCP recording fixes**: creating, editing, and bulk recording correctly link categories and accounts, with consistent behavior for single and bulk entries.
+- **MCP transaction search**: find transactions by notes, categories, accounts, and tags.
 
 ## 1.6.8 · 2026-10-04
 
-- **Business and AI provider help**: the About page links to business inquiries, and AI settings link to provider setup guidance. Self-hosted instances can disable these entries.
 - **MCP time fix**: corrected transaction timezone offsets.
 
 ## 1.6.7 · 2026-09-25
@@ -41,7 +40,7 @@ For features that require both products, upgrade Cloud before the App. Back up y
 
 ## 1.6.4 · 2026-09-03
 
-- **Dynamic documentation index updates**: update the documentation index and inspect its version without rebuilding the Cloud image.
+- **AI documentation updates**: update the documentation Q&A knowledge base and check whether it is up to date.
 
 ## 1.6.3 · 2026-08-13
 
@@ -50,7 +49,7 @@ For features that require both products, upgrade Cloud before the App. Back up y
 
 ## 1.6.2 · 2026-08-02
 
-- **Compatibility maintenance**: corrected the rclone provider used for Tencent COS and constrained MCP dependencies to preserve compatibility.
+- **Tencent COS backup fix**: corrected the storage type configuration for Tencent COS cloud backups.
 
 ## 1.6.1 · 2026-07-20
 
@@ -92,7 +91,7 @@ The old `/api/v1/mcp/sse` and `/api/v1/mcp/messages/` endpoints are no longer av
 ## 1.3.0 · 2026-05-20
 
 - **Shared ledgers**: owners can invite editors to collaborate.
-- **Data cleanup fixes**: addressed avatar misclassification, database locking, and stuck deletion.
+- **Cleanup and deletion fixes**: keep active avatars out of the cleanup list and fix stalled data deletions.
 
 ## 1.2.0 · 2026-05-13
 
@@ -108,4 +107,3 @@ The old `/api/v1/mcp/sse` and `/api/v1/mcp/messages/` endpoints are no longer av
 ## 1.0.0 · 2026-04-19
 
 - **Stable self-hosted Cloud release**: a Docker image bundles the sync service and Web console, with bidirectional App/Web synchronization, isolated user data, and shared preferences.
-- **Initial database schema**: consolidated the initial migrations before the stable release.
