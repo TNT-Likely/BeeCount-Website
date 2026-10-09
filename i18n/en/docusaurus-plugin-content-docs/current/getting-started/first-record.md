@@ -12,7 +12,7 @@ This guide will help you quickly create your first transaction.
 
 Tap the **"+" button** at the bottom center to open the recording page.
 
-![Recording Page](/img/preview/zh/03-edit-transaction.png)
+![Recording Page](/img/preview/en/03-edit-transaction.png)
 
 ## Record an Expense
 

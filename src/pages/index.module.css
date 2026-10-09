@@ -37,7 +37,7 @@
 .hero {
   min-height: 100vh;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -660,29 +660,29 @@
   animation: browserFloat 4s ease-in-out infinite;
 }
 
-/* 后景(暗黑模式 dark)—— 右后,旋转 + 缩放 + 半透明。 */
+/* 后景为暗黑仪表盘，与前景保持相同截图比例。 */
 .browserFrameBack {
   z-index: 1;
   right: 0;
   top: 80px;
-  background: #1a1a1a;
+  background: #17181d;
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.55),
     0 0 0 1px rgba(255, 255, 255, 0.08),
     0 0 60px rgba(248, 201, 28, 0.08);
   transform: rotate(6deg) scale(0.9);
-  opacity: 0.85;
+  opacity: 0.95;
   animation: browserFloatBack 4s ease-in-out 1s infinite;
 }
 
 .browserFrameBack .browserChrome {
-  background: #2a2a2a;
+  background: #292a2f;
   border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 .browserFrameBack .browserUrl {
-  color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 @keyframes browserFloat {
@@ -703,7 +703,7 @@
   }
 }
 
-/* Hover:暗黑 frame 上前,light 退后 —— 跟 phoneShowcase 的 hover 逻辑对齐。 */
+/* Hover:后景上前，前景退后。 */
 .deviceShowcase:hover .browserShowcase > .browserFrame:first-child {
   transform: rotate(-4deg) translateX(-40px) scale(1.05);
   z-index: 1;
@@ -762,7 +762,9 @@
 .browserScreen {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
 }
 
 /* light 主题下再稍微柔化前景 frame 的阴影(默认已经是 light) */
@@ -1011,9 +1013,9 @@
 
 .screenshotRow {
   display: flex;
-  gap: 2rem;
+  gap: 1.25rem;
   overflow-x: auto;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
@@ -1033,7 +1035,8 @@
 }
 
 .screenshotRow img {
-  height: 550px;
+  display: block;
+  height: 300px;
   width: auto;
   border-radius: 28px;
   box-shadow:
@@ -1042,6 +1045,11 @@
   scroll-snap-align: start;
   flex-shrink: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screenshotRow a {
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .screenshotRow img:hover {
@@ -1062,9 +1070,10 @@
 
 .webShowcaseGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
@@ -1079,7 +1088,9 @@
 
 .webShowcaseItem img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
   border-radius: 16px;
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.5),
@@ -1530,8 +1541,8 @@
   }
 
   .browserFrame {
-    width: 100%;
-    max-width: 420px;
+    width: 82%;
+    max-width: 360px;
   }
 
   .featureGrid {
@@ -1667,7 +1678,7 @@
   }
 
   .screenshotRow img {
-    height: 400px;
+    height: 280px;
   }
 
   .communityStats {
@@ -1785,4 +1796,157 @@
   .scrollHint {
     display: none;
   }
+}
+
+.productPreview {
+  padding: 3rem 0;
+  background: var(--ifm-background-surface-color);
+  scroll-margin-top: 4rem;
+}
+
+.previewHeader,
+.demoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.previewHeader .sectionTitle {
+  font-size: 2rem;
+  text-align: left;
+  margin: 0;
+}
+
+.previewSubtitle {
+  color: var(--ifm-color-emphasis-700);
+  margin: .5rem 0 0;
+}
+
+.previewTabs {
+  display: flex;
+  flex-shrink: 0;
+  gap: .25rem;
+  padding: .25rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 999px;
+}
+
+.previewTab,
+.demoChoice {
+  border: 0;
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  font: inherit;
+  cursor: pointer;
+}
+
+.previewTab {
+  border-radius: 999px;
+  padding: .5rem 1.5rem;
+}
+
+.previewTabActive {
+  background: #F8C91C;
+  color: #171717;
+  font-weight: 600;
+}
+
+.previewTab:focus-visible,
+.demoChoice:focus-visible {
+  outline: 2px solid #F8C91C;
+  outline-offset: 3px;
+}
+
+.productDemos {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding-top: 1.25rem;
+}
+
+.demoHeader {
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.demoHeader h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.demoChoices {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.demoChoice {
+  padding: .4rem .75rem;
+  border-radius: 8px;
+  font-size: .9rem;
+}
+
+.demoChoiceActive {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+}
+
+.demoCard {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 16px;
+  background: var(--ifm-background-color);
+}
+
+.demoMedia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+  padding: .75rem;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.demoMedia video {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.demoCopy {
+  padding: 1.5rem 2rem;
+  align-self: center;
+}
+
+.demoCopy h4 { font-size: 1.2rem; }
+.demoCopy p { color: var(--ifm-color-emphasis-700); font-size: .95rem; }
+.demoCopy a { font-size: .9rem; }
+.demoDeploy { display: block; margin-top: 1rem; }
+
+@media (max-width: 640px) {
+  .productPreview { padding: 2.5rem 0; }
+  .previewHeader { align-items: flex-start; }
+  .previewHeader .sectionTitle { font-size: 1.6rem; }
+  .previewSubtitle { font-size: .9rem; }
+  .previewTab { padding: .4rem .9rem; font-size: .9rem; }
+  .webShowcaseGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+  }
+  .webShowcaseItem { flex: 0 0 88%; scroll-snap-align: start; }
+  .webShowcaseCaption { padding: 0; }
+  .demoHeader { gap: .75rem; }
+  .demoChoices { gap: .25rem; }
+  .demoChoice { padding: .4rem .5rem; font-size: .85rem; }
+  .demoCard { grid-template-columns: 1fr; }
+  .demoMedia { height: 260px; }
+  .demoCopy { padding: 1rem 1.25rem; }
+  .demoCopy h4 { font-size: 1rem; margin-bottom: .5rem; }
 }

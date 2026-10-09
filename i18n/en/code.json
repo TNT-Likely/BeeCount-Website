@@ -167,6 +167,10 @@
     "message": "Web dashboard",
     "description": "Web preview alt text"
   },
+  "homepage.hero.preview.webDark": {
+    "message": "Web dashboard in dark mode",
+    "description": "Dark dashboard screenshot in the hero"
+  },
   "homepage.hero.device.mobile": {
     "message": "Mobile",
     "description": "Hero device tab for mobile view"

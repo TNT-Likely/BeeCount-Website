@@ -96,7 +96,7 @@ static/img/preview/{zh,en}/                        # zh / en screenshots
 
 - Standard Markdown / MDX (React components allowed)
 - Images live in `static/img/`, referenced as `/img/...`
-- Screenshots: `static/img/preview/{zh,en}/01-home.png`, portrait 1080×1920, PNG
+- Screenshots: `static/img/preview/{zh,en}/01-home.png`, portrait 1206×2622 (native iPhone 17 Pro), PNG
 - Admonitions: `:::tip` / `:::warning` / `:::danger` / `:::info`
 
 ### i18n

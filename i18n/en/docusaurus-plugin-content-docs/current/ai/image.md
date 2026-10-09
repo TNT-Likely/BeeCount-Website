@@ -6,15 +6,15 @@ sidebar_position: 3
 
 Take or select a photo, and AI automatically recognizes bill information.
 
-![Image Recognition](/img/preview/zh/13-ocr-recognition.png)
+![Image Recognition](/img/preview/en/13-ocr-recognition.png)
 
 ## How to Use
 
-1. Open the recording page
-2. Tap the camera icon
-3. Take a photo or select from gallery
-4. AI automatically recognizes the bill
-5. Confirm and save
+1. Hold the **Record** button in the bottom bar
+2. Slide to **Camera** or **Gallery**
+3. Take or select a receipt photo
+4. AI recognizes the image and creates the transactions
+5. Open the saved transaction to check the amount, category, account and attachment; edit it if needed
 
 ## Supported Scenarios
 
@@ -34,11 +34,11 @@ AI will attempt to identify:
 
 ## Multiple Transactions per Image
 
-Since 3.2.3, the mobile AI flow supports **detecting multiple transactions from a single image** (previously only the first was kept). Bill screenshots, supermarket receipts, monthly Alipay / WeChat statements with many rows all yield a draft list of N transactions:
+A receipt or statement can contain several transactions. The current mobile flow creates the recognized transactions and displays the save result:
 
-- Confirm / tweak amount, category, account, tags and note per row
-- With Auto-add Attachment enabled, the full image is shared by **every one** of the N transactions, so it is reachable from any of them; enable Keep Original Attachments to preserve its original quality
-- Tap "Skip" on any row to drop it — only the rows you want get saved
+- Check each saved transaction's amount, category, account, tags and note; edit or delete it if needed
+- With Auto-add Attachment enabled, the image is attached to each recognized transaction so you can revisit the original receipt
+- Enable Keep Original Attachments when you need the original image quality
 
 ## Tips
 
@@ -48,7 +48,7 @@ Since 3.2.3, the mobile AI flow supports **detecting multiple transactions from 
 
 ## Manual Adjustment
 
-AI recognition may not be 100% accurate. Please verify and adjust manually before saving.
+AI recognition may not be 100% accurate. Check the saved transactions and edit them if needed.
 
 ## Auto Tag
 

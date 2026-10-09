@@ -28,7 +28,7 @@ Great for understanding spending structure.
 
 ## Category Details
 
-![Category Details](/img/preview/zh/07-category-detail.png)
+![Category Details](/img/preview/en/07-category-detail.png)
 
 Tap a category to view:
 

@@ -35,7 +35,7 @@ BeeCount supports CSV format for data import and export.
 3. Select a CSV file
 4. Preview and confirm import
 
-![Import Confirmation](/img/preview/zh/12-import-confirm.png)
+![Import Confirmation](/img/preview/en/12-import-confirm.png)
 
 ## Configuration Import/Export
 
