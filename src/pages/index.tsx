@@ -87,8 +87,8 @@ function VideoModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
   );
 }
 
-// Hero 右侧的设备预览 —— mobile(双手机叠放)/ web(笔记本 + 浏览器 chrome)
-// 5 秒自动切换,hover 暂停,底部指示点可手动切。两种形态尺寸相近(400x500),
+// Hero device previews switch every three seconds and pause on hover.
+// Both modes fit the same container and fade without changing its height.
 // 切换时交叉 fade 而不是重排,避免 hero 高度抖动。
 function DeviceShowcase() {
   const [mode, setMode] = useState<'mobile' | 'web'>('mobile');
@@ -111,7 +111,7 @@ function DeviceShowcase() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Mobile 形态:原来的双手机叠放,保持不变。 */}
+      {/* App: light and dark phone previews. */}
       <div
         className={clsx(styles.deviceView, styles.deviceViewMobile)}
         style={{ opacity: mode === 'mobile' ? 1 : 0, pointerEvents: mode === 'mobile' ? 'auto' : 'none' }}
@@ -127,9 +127,7 @@ function DeviceShowcase() {
         </div>
       </div>
 
-      {/* Web 形态:双浏览器窗口叠放,跟 mobile 的双手机叠放节奏对齐 ——
-          前:light 模式交易列表(zh-02-transactions 背景是白的);
-          后:dark 模式仪表盘(zh-01-home 背景是黑的,旋转 + 缩放 offset)。 */}
+      {/* Web: matching landscape windows in the same light theme. */}
       <div
         className={clsx(styles.deviceView, styles.deviceViewWeb)}
         style={{ opacity: mode === 'web' ? 1 : 0, pointerEvents: mode === 'web' ? 'auto' : 'none' }}
@@ -147,7 +145,7 @@ function DeviceShowcase() {
             </div>
             <img
               src={`/img/preview/web/${lang}-02-transactions.png`}
-              alt={translate({id: 'homepage.hero.preview.webLight', message: 'Web 日间模式'})}
+              alt={translate({id: 'homepage.webShowcase.alt.transactions', message: 'Web 交易列表'})}
               className={styles.browserScreen}
             />
           </div>
@@ -162,7 +160,7 @@ function DeviceShowcase() {
             </div>
             <img
               src={`/img/preview/web/${lang}-01-home.png`}
-              alt={translate({id: 'homepage.hero.preview.webDark', message: 'Web 暗黑模式'})}
+              alt={translate({id: 'homepage.webShowcase.alt.home', message: 'Web 仪表盘'})}
               className={styles.browserScreen}
             />
           </div>
@@ -408,125 +406,103 @@ function FeaturesSection() {
   );
 }
 
-// 截图展示
-function ScreenshotSection() {
-  const {i18n} = useDocusaurusContext();
-  const lang = i18n.currentLocale.startsWith('zh') ? 'zh' : 'en';
-  return (
-    <section className={styles.screenshots}>
-      <div className={styles.container}>
-        <Heading as="h2" className={styles.sectionTitle}>
-          <Translate id="homepage.screenshots.title">应用预览</Translate>
-        </Heading>
-        <p className={styles.sectionSubtitle}>
-          <Translate id="homepage.screenshots.subtitle">精心设计的界面，支持亮色与暗黑模式</Translate>
-        </p>
-
-        <div className={styles.screenshotRow}>
-          <img src={`/img/preview/${lang}/01-home.png`} alt={translate({id: 'homepage.screenshots.alt.home', message: '首页'})} />
-          <img src={`/img/preview/${lang}/04-chart-analysis.png`} alt={translate({id: 'homepage.screenshots.alt.stats', message: '统计'})} />
-          <img src={`/img/preview/${lang}/14-ai-chat.png`} alt={translate({id: 'homepage.screenshots.alt.aiChat', message: 'AI对话'})} />
-          <img src={`/img/preview/${lang}/03-edit-transaction.png`} alt={translate({id: 'homepage.screenshots.alt.record', message: '记账'})} />
-          <img src={`/img/preview/dark/${lang}/01-home.png`} alt={translate({id: 'homepage.screenshots.alt.homeDark', message: '暗黑首页'})} />
-          <img src={`/img/preview/dark/${lang}/05-ai-chat.png`} alt={translate({id: 'homepage.screenshots.alt.aiChat', message: 'AI对话'})} />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// Web 端展示
-function WebShowcaseSection() {
-  const {i18n} = useDocusaurusContext();
-  const isZh = i18n.currentLocale === 'zh-Hans' || i18n.currentLocale === 'zh';
-  const lang = isZh ? 'zh' : 'en';
-
-  return (
-    <section className={styles.webShowcase}>
-      <div className={styles.container}>
-        <Heading as="h2" className={styles.sectionTitle}>
-          <Translate id="homepage.webShowcase.title">Web 端</Translate>
-        </Heading>
-        <p className={styles.sectionSubtitle}>
-          <Translate id="homepage.webShowcase.subtitle">
-            3.0 起随 BeeCount Cloud 自带,浏览器直接用;PWA 装到桌面/Dock 像原生 app
-          </Translate>
-        </p>
-
-        <div className={styles.webShowcaseGrid}>
-          <div className={styles.webShowcaseItem}>
-            <img
-              src={`/img/preview/web/${lang}-01-home.png`}
-              alt={translate({id: 'homepage.webShowcase.alt.home', message: 'Web 仪表盘'})}
-            />
-            <p className={styles.webShowcaseCaption}>
-              <Translate id="homepage.webShowcase.caption.home">
-                💰 仪表盘:收支、资产构成、分类热力、趋势一屏总览
-              </Translate>
-            </p>
-          </div>
-          <div className={styles.webShowcaseItem}>
-            <img
-              src={`/img/preview/web/${lang}-02-transactions.png`}
-              alt={translate({id: 'homepage.webShowcase.alt.transactions', message: 'Web 交易列表'})}
-            />
-            <p className={styles.webShowcaseCaption}>
-              <Translate id="homepage.webShowcase.caption.transactions">
-                📒 交易列表:关键字 / 分类 / 账户 / 日期 / 标签多维筛选
-              </Translate>
-            </p>
-          </div>
-        </div>
-
-        <div className={styles.webShowcaseCta}>
-          <a
-            href="https://github.com/TNT-Likely/BeeCount-Cloud"
-            className={styles.btnPrimary}
-            target="_blank"
-            rel="noopener noreferrer">
-            <Translate id="homepage.webShowcase.btn">一键自建 Docker 镜像</Translate>
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// Localized recordings from the current App and Cloud, with explicit playback.
-function ProductDemosSection() {
+// Screenshots and recordings share one compact, localized preview section.
+function ProductPreviewSection() {
   const {i18n} = useDocusaurusContext();
   const isZh = i18n.currentLocale.startsWith('zh');
   const lang = isZh ? 'zh' : 'en';
-  const demos = [
+  const [platform, setPlatform] = useState<'app' | 'web'>('app');
+  const screenshots = [
+    {file: `/${lang}/01-home.png`, title: isZh ? '明细' : 'Transactions'},
+    {file: `/${lang}/04-chart-analysis.png`, title: isZh ? '洞察' : 'Insights'},
+    {file: `/${lang}/14-ai-chat.png`, title: isZh ? 'AI 助手' : 'AI assistant'},
+    {file: `/${lang}/03-edit-transaction.png`, title: isZh ? '记一笔' : 'Record'},
+    {file: `/dark/${lang}/01-home.png`, title: isZh ? '暗黑明细' : 'Transactions in dark mode'},
+    {file: `/dark/${lang}/05-ai-chat.png`, title: isZh ? '暗黑 AI 助手' : 'AI assistant in dark mode'},
+  ];
+  return (
+    <section className={styles.productPreview} id="product-demos">
+      <div className={styles.container}>
+        <div className={styles.previewHeader}>
+          <div>
+            <Heading as="h2" className={styles.sectionTitle}>{isZh ? '产品预览' : 'Product preview'}</Heading>
+            <p className={styles.previewSubtitle}>{isZh ? '从手机到浏览器，随时记录与查看。' : 'Record and explore, on your phone or in your browser.'}</p>
+          </div>
+          <div className={styles.previewTabs} aria-label={isZh ? '预览平台' : 'Preview platform'}>
+            {(['app', 'web'] as const).map((value) => (
+              <button type="button" key={value} aria-pressed={platform === value}
+                className={clsx(styles.previewTab, platform === value && styles.previewTabActive)}
+                onClick={() => setPlatform(value)}>{value === 'app' ? 'App' : 'Web'}</button>
+            ))}
+          </div>
+        </div>
+        {platform === 'app' ? (
+          <div className={styles.screenshotRow}>
+            {screenshots.map((shot) => (
+              <a key={shot.file} href={`/img/preview${shot.file}`} target="_blank" rel="noopener noreferrer" aria-label={shot.title}>
+                <img src={`/img/preview${shot.file}`} alt={shot.title} loading="lazy" />
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div className={styles.webShowcaseGrid}>
+            {[
+              {file: '01-home', title: isZh ? '仪表盘' : 'Dashboard'},
+              {file: '02-transactions', title: isZh ? '交易与筛选' : 'Transactions and filters'},
+            ].map((shot) => (
+              <a className={styles.webShowcaseItem} key={shot.file} href={`/img/preview/web/${lang}-${shot.file}.png`} target="_blank" rel="noopener noreferrer">
+                <img src={`/img/preview/web/${lang}-${shot.file}.png`} alt={shot.title} loading="lazy" />
+                <span className={styles.webShowcaseCaption}>{shot.title} ↗</span>
+              </a>
+            ))}
+          </div>
+        )}
+        <ProductDemos platform={platform} key={platform} />
+      </div>
+    </section>
+  );
+}
+
+function ProductDemos({platform}: {platform: 'app' | 'web'}) {
+  const {i18n} = useDocusaurusContext();
+  const isZh = i18n.currentLocale.startsWith('zh');
+  const lang = isZh ? 'zh' : 'en';
+  const [selected, setSelected] = useState(0);
+  const demos = platform === 'app' ? [
     {file: '01-add-transaction', title: isZh ? '记一笔' : 'Record a transaction', text: isZh ? '选择分类，输入金额，保存到日常账本。' : 'Pick a category, enter the amount and save to your ledger.', poster: `/img/preview/${lang}/03-edit-transaction.png`},
     {file: isZh ? '02-ocr-recognition' : '02-ai-text', title: isZh ? 'AI 图片记账' : 'AI text bookkeeping', text: isZh ? '从相册选择小票，识别并保存交易与附件。' : 'Describe an expense, approve the AI action and save it to your ledger.', poster: `/img/preview/${lang}/${isZh ? '13-ocr-recognition' : '14-ai-chat'}.png`},
     {file: '05-copy-transaction', title: isZh ? '复制交易' : 'Copy a transaction', text: isZh ? '长按历史交易，调整后保存为新记录。' : 'Hold a transaction, adjust it and save a new record.', poster: `/img/preview/${lang}/15-copy-transaction.png`},
-    {file: 'cloud-attachments', title: isZh ? 'Web 小票附件' : 'Receipts on the web', text: isZh ? '在浏览器里上传、查看并保存交易附件。' : 'Upload, preview and save receipt images in your browser.', poster: `/img/preview/web/${lang}-04-attachments.png`, wide: true},
+  ] : [
+    {file: 'cloud-attachments', title: isZh ? '小票附件' : 'Receipt attachments', text: isZh ? '在浏览器里上传、查看并保存交易附件。' : 'Upload, preview and save receipt images in your browser.', poster: `/img/preview/web/${lang}-04-attachments.png`},
   ];
+  const demo = demos[selected];
   return (
-    <section className={styles.productDemos} id="product-demos">
-      <div className={styles.container}>
-        <Heading as="h2" className={styles.sectionTitle}>{isZh ? '看看实际操作' : 'See it in action'}</Heading>
-        <p className={styles.sectionSubtitle}>{isZh ? 'App 3.8.6 · Cloud 1.7.0，中英文真实界面演示；演示数据为虚构，视频剪短了等待时间。' : 'Real App 3.8.6 and Cloud 1.7.0 workflows, using fictional data. Waiting time is shortened.'}</p>
-        <div className={styles.demoGrid}>
-          {demos.map((demo) => (
-            <article className={clsx(styles.demoCard, demo.wide && styles.demoCardWide)} key={demo.file}>
-              <div className={clsx(styles.demoMedia, demo.wide && styles.demoMediaWide)}>
-                <video controls playsInline preload="none" poster={demo.poster} aria-label={demo.title}>
-                  <source src={`/img/demos/${lang}/${demo.file}.mp4`} type="video/mp4" />
-                  <a href={`/img/demos/${lang}/${demo.file}.gif`}>{demo.title}</a>
-                </video>
-              </div>
-              <div className={styles.demoCopy}>
-                <Heading as="h3">{demo.title}</Heading>
-                <p>{demo.text}</p>
-                <a href={`/img/demos/${lang}/${demo.file}.gif`} target="_blank" rel="noopener noreferrer">{isZh ? '打开 GIF' : 'Open GIF'} ↗</a>
-              </div>
-            </article>
+    <div className={styles.productDemos}>
+      <div className={styles.demoHeader}>
+        <Heading as="h3">{isZh ? '看看实际操作' : 'See it in action'}</Heading>
+        {demos.length > 1 && <div className={styles.demoChoices} aria-label={isZh ? '操作演示' : 'Workflow demos'}>
+          {demos.map((item, index) => (
+            <button type="button" key={item.file} aria-pressed={selected === index}
+              className={clsx(styles.demoChoice, selected === index && styles.demoChoiceActive)}
+              onClick={() => setSelected(index)}>{item.title}</button>
           ))}
-        </div>
+        </div>}
       </div>
-    </section>
+      <article className={styles.demoCard}>
+        <div className={styles.demoMedia}>
+          <video key={demo.file} controls playsInline preload="none" poster={demo.poster} aria-label={demo.title}>
+            <source src={`/img/demos/${lang}/${demo.file}.mp4`} type="video/mp4" />
+            <a href={`/img/demos/${lang}/${demo.file}.gif`}>{demo.title}</a>
+          </video>
+        </div>
+        <div className={styles.demoCopy}>
+          <Heading as="h4">{demo.title}</Heading>
+          <p>{demo.text}</p>
+          <a href={`/img/demos/${lang}/${demo.file}.gif`} target="_blank" rel="noopener noreferrer">{isZh ? '打开 GIF' : 'Open GIF'} ↗</a>
+          {platform === 'web' && <a className={styles.demoDeploy} href="https://github.com/TNT-Likely/BeeCount-Cloud" target="_blank" rel="noopener noreferrer">{isZh ? '部署自己的 Cloud' : 'Host your own Cloud'} ↗</a>}
+        </div>
+      </article>
+    </div>
   );
 }
 
@@ -639,9 +615,7 @@ export default function Home(): JSX.Element {
       <HeroSection />
       <main>
         <FeaturesSection />
-        <ScreenshotSection />
-        <WebShowcaseSection />
-        <ProductDemosSection />
+        <ProductPreviewSection />
         <CommunitySection />
         <BusinessCooperation />
         <DonateSection />
