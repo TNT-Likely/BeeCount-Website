@@ -127,7 +127,7 @@ function DeviceShowcase() {
         </div>
       </div>
 
-      {/* Web: matching landscape windows in the same light theme. */}
+      {/* Web: light transactions and a dark dashboard, with matching landscape ratios. */}
       <div
         className={clsx(styles.deviceView, styles.deviceViewWeb)}
         style={{ opacity: mode === 'web' ? 1 : 0, pointerEvents: mode === 'web' ? 'auto' : 'none' }}
@@ -159,8 +159,8 @@ function DeviceShowcase() {
               <div className={styles.browserUrl}>{isZh ? '仪表盘' : 'Dashboard'}</div>
             </div>
             <img
-              src={`/img/preview/web/${lang}-01-home.png`}
-              alt={translate({id: 'homepage.webShowcase.alt.home', message: 'Web 仪表盘'})}
+              src={`/img/preview/web/${lang}-01-home-dark.png`}
+              alt={translate({id: 'homepage.hero.preview.webDark', message: 'Web 仪表盘暗黑模式'})}
               className={styles.browserScreen}
             />
           </div>

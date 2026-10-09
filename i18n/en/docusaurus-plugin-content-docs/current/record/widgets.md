@@ -6,9 +6,7 @@ keywords: [BeeCount widgets, home screen widget, expense tracker widget, quick a
 
 # Home Screen Widgets
 
-> ✨ **Fully upgraded in v3.7.0**: from a single style to **6 content types × 12 size variants**, on both iOS and Android.
-
-> 🐝 **Two additions in v3.8.3**: medium Spending Rhythm and small Record Bee Trail bring the total to **8 content types and 14 size variants**.
+**8 content types and 14 size variants** on both iOS and Android, including medium Spending Rhythm and small Record Bee Trail added in v3.8.3.
 
 Pin your books to the home screen — see today's spending, your net worth trend, and what's left of the budget without opening the app. Want to record something? Tap a category button on the widget and jump straight into the record screen.
 
@@ -26,8 +24,6 @@ Pin your books to the home screen — see today's spending, your net worth trend
 | Dashboard | L | Monthly overview + trend + recent records + quick add, all in one | Each block jumps to its matching page |
 | Spending Rhythm | M | Spending heatmap for the last 30 days and a comparison of the latest seven days with the previous seven | Opens statistics |
 | Record Bee Trail | S | Recorded-day honeycomb, current streak, and recorded-day percentage over the last 28 days | Opens transactions |
-
-The lineup image above shows the v3.7.0 styles. Preview the two new widgets in your system widget picker.
 
 ## Spending Rhythm and Record Bee Trail
 

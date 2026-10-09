@@ -660,12 +660,12 @@
   animation: browserFloat 4s ease-in-out infinite;
 }
 
-/* 后景与前景保持相同主题及截图比例。 */
+/* 后景为暗黑仪表盘，与前景保持相同截图比例。 */
 .browserFrameBack {
   z-index: 1;
   right: 0;
   top: 80px;
-  background: #fafafa;
+  background: #17181d;
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.55),
     0 0 0 1px rgba(255, 255, 255, 0.08),
@@ -676,13 +676,13 @@
 }
 
 .browserFrameBack .browserChrome {
-  background: #ececec;
-  border-bottom-color: rgba(0, 0, 0, 0.08);
+  background: #292a2f;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 .browserFrameBack .browserUrl {
-  color: rgba(0, 0, 0, 0.55);
-  background: rgba(0, 0, 0, 0.05);
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 @keyframes browserFloat {
