@@ -13,6 +13,11 @@ View the BeeCount App's release history. The self-hosted Cloud uses a separate v
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 3.9.0 highlights (pending release)
+
+- 🧾 **Generate transaction receipt images**: long-press a home-page entry, choose whether to include notes, tags, accounts and the ledger, then save or share. See [Transaction Receipt Images](./record/basic.md#transaction-receipt-images).
+- 💳 **Credit cards and account reconciliation**: enter debt and overpayments separately, read clearer repayment labels, and view all account transactions together. For self-hosted sync, upgrade **Cloud to 1.8.0 first** for matching Web behavior. See [Account Management](./account/manage.md#current-debt-and-overpayments).
+
 ## 3.8.6 highlights
 
 - 📋 **Copy transactions from the home page**: long-press an expense, income or transfer and choose Copy. Amount, category, accounts, notes and tags are prefilled, with the date set to now. Edit and save as an independent new entry. See [Copy Transactions](./record/basic.md#copy-transactions).

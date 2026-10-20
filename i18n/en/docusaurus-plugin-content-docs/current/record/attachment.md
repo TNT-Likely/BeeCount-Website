@@ -28,6 +28,17 @@ Add image attachments to transactions for receipts, invoices, and more.
 - Tap a transaction to view details and see all attachments
 - Tap an attachment image to view it full-screen
 
+## Web Receipt Gallery
+
+Starting with **BeeCount Cloud 1.8.0**, open Receipt Gallery from the Web sidebar to browse image attachments in the current ledger:
+
+- Filter by year, month, category or keyword, and browse groups by month.
+- Files linked to multiple transactions appear once, with related transactions available in the preview.
+- Switch images, zoom and download in the shared preview, also used by transaction lists and details.
+- Clear status messages identify files that are not uploaded, missing or unsupported for preview.
+
+The gallery displays existing transaction attachments. The App's [transaction receipt images](./basic.md#transaction-receipt-images) generate images from recorded entries, while attachments preserve original supporting images.
+
 ## Deleting Attachments
 
 1. Enter the transaction edit page

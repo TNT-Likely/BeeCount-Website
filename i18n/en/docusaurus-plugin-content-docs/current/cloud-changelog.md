@@ -17,6 +17,18 @@ For features that require both products, upgrade Cloud before the App. Back up y
 
 :::
 
+## 1.8.0 · Pending release
+
+- **Current-ledger receipt gallery**: browse image attachments, filter by year/month, category or keyword, and see all transactions linked to a file without duplicate tiles. See [Web Receipt Gallery](./record/attachment.md#web-receipt-gallery).
+- **Shared attachment preview**: switch images, zoom and download from the gallery, transaction lists or details.
+- **Accounts and repayments**: corrected balances, asset composition and transfer direction. Accounts display their own currencies; combined totals convert to the base currency.
+
+:::tip Upgrading to 1.8.0
+
+Upgrade Cloud before **App 3.9.0**. This release adds no database migrations. Source deployments must update dependencies to install Pillow; the official Docker image includes it. Keep backups of the database, attachments and configuration before upgrading.
+
+:::
+
 ## 1.7.0 · 2026-10-08
 
 - **Web image attachments**: upload, remove and replace images when creating or editing transactions, view originals, and sync with the App. See [Transaction Attachments](./record/attachment.md#web-attachments).
