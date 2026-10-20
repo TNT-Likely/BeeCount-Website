@@ -45,6 +45,16 @@ Since **App 3.8.6**, you can copy a transaction from the home page list:
 
 The original transaction stays unchanged. Cancelling creates no record. Images from the original entry are not copied; add receipts for the new transaction separately.
 
+## Transaction Receipt Images
+
+Starting with **App 3.9.0**, turn an expense, income or transfer into a receipt image:
+
+1. Long-press a transaction on the home page and choose Generate Receipt.
+2. Choose whether to include notes, tags, accounts and the ledger. Accounts and the ledger are hidden by default.
+3. Save the image to your photo library or use the system share menu.
+
+Generating an image does not create or change a transaction. Keep original supporting images as [transaction attachments](./attachment.md).
+
 ## Edit & Delete
 
 - **Tap** a transaction to edit it

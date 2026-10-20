@@ -54,6 +54,18 @@ Credit card accounts support additional features:
 - **Payment countdown** - Shows days until payment due, with color-coded urgency alerts
 - **Quick repayment** - One-tap to record a repayment (transfer to credit card)
 
+### Current Debt and Overpayments
+
+Starting with **App 3.9.0**, choose Current Debt or Overpayment when editing a credit card, and enter a positive amount:
+
+- **Current debt**: the amount still owed to the bank. Enter 0 when nothing is owed.
+- **Overpayment**: money left on the card after paying more than the debt. For example, select Overpayment and enter 200 for an extra payment of 200.
+- **Credit limit**: the bank's spending limit, which is not included in your total assets.
+
+Record purchases as credit-card expenses and repayments as transfers from the paying account to the card. The purchase already counts as an expense, so repayment does not count it again. Repayments reduce debt; any excess becomes an overpayment.
+
+For self-hosted sync, upgrade to **Cloud 1.8.0** before **App 3.9.0** for matching Web balance, currency and repayment displays.
+
 ## Account Details
 
 Tap an account to view:
@@ -61,6 +73,8 @@ Tap an account to view:
 - Balance, income, and expense statistics
 - Category expense/income pie chart
 - Transaction history (paginated)
+
+Starting with **App 3.9.0**, filter account entries by all transactions, expenses and transfers out, or income and transfers in. The all-transactions view shows purchases and repayments together for reconciliation. Filters do not change the account balance. **Cloud 1.8.0** updates the corresponding Web display: individual accounts keep their own currency, while totals are converted to the base currency.
 
 ## Account Sorting
 
