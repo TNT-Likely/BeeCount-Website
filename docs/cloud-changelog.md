@@ -9,7 +9,7 @@ keywords: [BeeCount Cloud 更新日志, 自建云版本, BeeCount Cloud changelo
 
 查看 BeeCount Cloud 自建云的核心发布与近期维护记录。App 使用独立版本号，见 [App 更新日志](./changelog.md)。
 
-本页记录 1.0.0 至 1.7.0 的核心发布；日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
+本页记录 1.0.0 至 1.8.0 的核心发布；日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
 
 :::tip 升级与兼容
 
@@ -17,7 +17,7 @@ keywords: [BeeCount Cloud 更新日志, 自建云版本, BeeCount Cloud changelo
 
 :::
 
-## 1.8.0 · 待发布
+## 1.8.0 · 2026-10-20
 
 - **当前账本票据墙**：集中浏览图片附件，按年月、分类与关键词筛选；同一文件关联多笔交易时合并展示，并可查看关联记录。详见 [Web 票据墙](./record/attachment.md#web-票据墙)。
 - **统一附件预览**：票据墙、交易列表和详情共用图片预览，支持切换、缩放与下载。

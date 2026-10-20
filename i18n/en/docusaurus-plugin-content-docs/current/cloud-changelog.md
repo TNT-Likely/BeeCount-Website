@@ -9,7 +9,7 @@ keywords: [BeeCount Cloud changelog, self-hosted cloud releases]
 
 Core releases and recent maintenance updates for self-hosted BeeCount Cloud. The App uses a separate version series; see the [App Changelog](./changelog.md).
 
-This page covers core releases from 1.0.0 through 1.7.0. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
+This page covers core releases from 1.0.0 through 1.8.0. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
 
 :::tip Upgrades and compatibility
 
@@ -17,7 +17,7 @@ For features that require both products, upgrade Cloud before the App. Back up y
 
 :::
 
-## 1.8.0 · Pending release
+## 1.8.0 · 2026-10-20
 
 - **Current-ledger receipt gallery**: browse image attachments, filter by year/month, category or keyword, and see all transactions linked to a file without duplicate tiles. See [Web Receipt Gallery](./record/attachment.md#web-receipt-gallery).
 - **Shared attachment preview**: switch images, zoom and download from the gallery, transaction lists or details.
