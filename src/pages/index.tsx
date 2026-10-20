@@ -127,7 +127,7 @@ function DeviceShowcase() {
         </div>
       </div>
 
-      {/* Web: light transactions and a dark dashboard, with matching landscape ratios. */}
+      {/* Web: show complete light and dark screenshots inside stable browser frames. */}
       <div
         className={clsx(styles.deviceView, styles.deviceViewWeb)}
         style={{ opacity: mode === 'web' ? 1 : 0, pointerEvents: mode === 'web' ? 'auto' : 'none' }}
@@ -449,6 +449,8 @@ function ProductPreviewSection() {
             {[
               {file: '01-home', title: isZh ? '仪表盘' : 'Dashboard'},
               {file: '02-transactions', title: isZh ? '交易与筛选' : 'Transactions and filters'},
+              {file: '05-assets', title: isZh ? '资产与账户' : 'Assets and accounts'},
+              {file: '04-attachments', title: isZh ? '小票附件预览' : 'Receipt preview'},
             ].map((shot) => (
               <a className={styles.webShowcaseItem} key={shot.file} href={`/img/preview/web/${lang}-${shot.file}.png`} target="_blank" rel="noopener noreferrer">
                 <img src={`/img/preview/web/${lang}-${shot.file}.png`} alt={shot.title} loading="lazy" />

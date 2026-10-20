@@ -762,8 +762,8 @@
 .browserScreen {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
   object-position: top;
 }
 
@@ -1088,9 +1088,8 @@
 
 .webShowcaseItem img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
+  display: block;
   border-radius: 16px;
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.5),
@@ -1103,6 +1102,12 @@
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.6),
     0 0 40px rgba(248, 201, 28, 0.12);
+}
+
+.webShowcaseItem:focus-visible {
+  outline: 2px solid #F8C91C;
+  outline-offset: 6px;
+  border-radius: 16px;
 }
 
 .webShowcaseCaption {
@@ -1935,12 +1940,9 @@
   .previewSubtitle { font-size: .9rem; }
   .previewTab { padding: .4rem .9rem; font-size: .9rem; }
   .webShowcaseGrid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  .webShowcaseItem { flex: 0 0 88%; scroll-snap-align: start; }
   .webShowcaseCaption { padding: 0; }
   .demoHeader { gap: .75rem; }
   .demoChoices { gap: .25rem; }
