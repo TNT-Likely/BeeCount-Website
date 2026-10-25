@@ -9,11 +9,24 @@ keywords: [BeeCount Cloud 更新日志, 自建云版本, BeeCount Cloud changelo
 
 查看 BeeCount Cloud 自建云的核心发布与近期维护记录。App 使用独立版本号，见 [App 更新日志](./changelog.md)。
 
-本页记录 1.0.0 至 1.8.0 的核心发布；日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
+本页记录 1.0.0 至 1.9.0 的核心发布；日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
 
 :::tip 升级与兼容
 
 涉及 App 配套能力时，先升级 Cloud，再升级 App；升级前备份数据，并查看 [部署与升级说明](./cloud-sync/beecount-cloud.md)。MCP 1.5.3 的连接地址变更需要客户端同步调整。
+
+:::
+
+## 1.9.0 · 2026-10-25
+
+- **完整 MCP 能力**：55 个工具覆盖查询、双账户转账、账户/分类/标签/预算/账本管理及共享权限，详见 [MCP 工具清单](./mcp/intro.md)。
+- **导入与对账**：原始 CSV、TSV、XLSX 先预览再确认导入，保留来源和检查点；支持安全重试及撤销未被后续修改的新增交易。
+- **分析、小票与复核**：分币种余额与净值历史、期间比较、小票/文字草稿，以及待核实项和确认后的分类规则；本地原文件适配器转发附件、导出资源和 Prompt。
+- **Cloud 周期记账**：支持日、周、月、年规则、时区、暂停与恢复；默认不补录历史，异常规则独立报告。完整流程见 [导入、对账与自动记账](./mcp/workflows.md)。
+
+:::tip 1.9.0 升级
+
+升级前备份数据库、附件和配置。官方镜像启动时自动执行 `0021_mcp_workflows` 迁移；源码部署需更新依赖并执行 `alembic upgrade head`。现有 App 同步格式、MCP 地址和 PAT 配置保持兼容，重新连接 MCP 客户端以发现新工具。Cloud 周期调度可用 `MCP_RECURRING_ENABLED=false` 关闭，同一业务不要同时建立 App 与 Cloud 周期规则。
 
 :::
 

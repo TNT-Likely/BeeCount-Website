@@ -9,11 +9,24 @@ keywords: [BeeCount Cloud changelog, self-hosted cloud releases]
 
 Core releases and recent maintenance updates for self-hosted BeeCount Cloud. The App uses a separate version series; see the [App Changelog](./changelog.md).
 
-This page covers core releases from 1.0.0 through 1.8.0. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
+This page covers core releases from 1.0.0 through 1.9.0. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
 
 :::tip Upgrades and compatibility
 
 For features that require both products, upgrade Cloud before the App. Back up your data and review the [deployment and upgrade guide](./cloud-sync/beecount-cloud.md). The MCP URL change in 1.5.3 also requires client configuration updates.
+
+:::
+
+## 1.9.0 · 2026-10-25
+
+- **Complete MCP capabilities**: 55 tools cover queries, two-account transfers, account/category/tag/budget/ledger management, and shared-ledger access. See the [MCP tool reference](./mcp/intro.md).
+- **Import and reconciliation**: preview original CSV, TSV, and XLSX files before approving imports, retain source identities and checkpoints, retry safely, and undo newly imported transactions that have not been edited later.
+- **Analysis, receipts, and review**: per-currency balances and net-worth history, period comparisons, receipt/text drafts, review items, and confirmed classification rules. The local original-file adapter forwards attachment/export resources and prompts.
+- **Cloud recurring entries**: daily, weekly, monthly, and yearly schedules with time zones, pause, and resume. Historical backfill is opt-in, and individual rule failures are reported independently. See [Import, reconciliation, and recurring entries](./mcp/workflows.md).
+
+:::tip Upgrading to 1.9.0
+
+Back up the database, attachments, and configuration first. The official image applies migration `0021_mcp_workflows` on startup; source deployments must update dependencies and run `alembic upgrade head`. Existing App sync formats, MCP URLs, and PAT configuration remain compatible. Reconnect MCP clients to discover the new tools. Disable Cloud's background recurring scheduler with `MCP_RECURRING_ENABLED=false` if needed, and avoid App and Cloud rules for the same business event.
 
 :::
 

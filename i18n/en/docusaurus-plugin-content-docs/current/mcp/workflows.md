@@ -7,7 +7,7 @@ description: Preview and import statements, retry safely, reconcile accounts, re
 
 # Import, reconciliation, and recurring entries
 
-Use this guide with [MCP setup and tool reference](./intro.md). The complete workflows correspond to [Cloud #133](https://github.com/TNT-Likely/BeeCount-Cloud/pull/133). Deploy Cloud containing that change and apply its database migration; attachment support in Cloud 1.7.0 alone does not include the new tools. Check the tools discovered by your connected client.
+Use this guide with [MCP setup and tool reference](./intro.md). It requires **Cloud 1.9.0 or later**. See the [Cloud Changelog](../cloud-changelog.md) for upgrade and migration requirements, then reconnect clients to discover the complete toolset.
 
 ## Select a ledger and check access
 

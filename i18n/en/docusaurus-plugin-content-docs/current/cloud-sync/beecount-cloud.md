@@ -15,6 +15,14 @@ BeeCount Cloud is the **official self-hosted sync server** — deploy it in one 
 - 👥 **Multi-user isolation**: multiple users can register; their data is fully separated
 - 🐳 **One-command deploy**: docker-compose file under 10 lines
 
+:::tip Upgrade notes (1.9.0)
+
+The [complete MCP toolset and workflows](../mcp/intro.md) require Cloud 1.9.0 or later and do not require App v4. Back up the database, attachments, and configuration first. The official image applies migration `0021_mcp_workflows` on startup; source deployments must update dependencies and run `alembic upgrade head`. Existing MCP URLs and PAT configuration remain valid; reconnect clients after upgrading.
+
+Disable Cloud's background recurring scheduler with `MCP_RECURRING_ENABLED=false` if needed, and avoid duplicate App and Cloud schedules for the same event. See the [Cloud Changelog](../cloud-changelog.md).
+
+:::
+
 ## Project partnerships and setup help
 
 Since Cloud 1.6.8, the top-right avatar → About dialog links to [BeeCount project partnerships](/en/business). AI settings also includes a [provider setup guide](../ai/overview.md) below the provider section. These links open in a new tab and preserve your Cloud session.

@@ -7,7 +7,7 @@ description: 使用 BeeCount Cloud MCP 完成对账单预览与导入、安全�
 
 # 导入、对账与自动记账
 
-本页配合 [MCP 配置与工具清单](./intro.md)使用。完整工作流对应 [Cloud #133](https://github.com/TNT-Likely/BeeCount-Cloud/pull/133)，需要部署包含该变更的 Cloud 并完成数据库迁移；不能仅凭 Cloud 1.7.0 的附件支持判断新工具已可用。连接后以客户端实际发现的工具为准。
+本页配合 [MCP 配置与工具清单](./intro.md)使用，需要 **Cloud 1.9.0 或更高版本**。升级与数据库迁移要求见 [Cloud 更新日志](../cloud-changelog.md)；升级后重新连接客户端以发现完整工具集。
 
 ## 先确定账本与权限
 
