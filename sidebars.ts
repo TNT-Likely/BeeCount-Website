@@ -76,7 +76,12 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'shared-ledger',
-    'mcp/intro',
+    {
+      type: 'category',
+      label: 'MCP',
+      link: {type: 'doc', id: 'mcp/intro'},
+      items: ['mcp/workflows'],
+    },
     {
       type: 'category',
       label: '数据维护',
