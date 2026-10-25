@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 slug: /mcp
-description: 通过 MCP(Model Context Protocol)让 Claude Desktop、Cursor、Cline 等 LLM 客户端直接读写你的 BeeCount 账本。
+description: 通过 MCP 的 55 个工具完成 BeeCount 账本查询、管理、导入、对账、小票草稿和 Cloud 周期记账。
 keywords: [蜜蜂记账 MCP, Claude Desktop 记账, Cursor 记账, LLM 记账, AI agent 记账, MCP server]
 ---
 
@@ -21,7 +21,7 @@ keywords: [蜜蜂记账 MCP, Claude Desktop 记账, Cursor 记账, LLM 记账, A
 
 > "我说一句话你帮我记一笔:刚才在便利店买了瓶水 3 块 5。"
 
-LLM 会自动选合适的 tool 帮你查询/记录,你不用打开 BeeCount。
+LLM 会自动选择工具查询或记账。还可以让它预览对账单导入、比较账户余额、整理待核实项，或在确认后建立 Cloud 周期规则。具体步骤见 [工作流指南](./workflows.md)。
 
 ## 前置条件
 
@@ -141,16 +141,22 @@ VS Code → Cline 图标 → 右上角 `…` → **Edit MCP Settings**
 
 > "查一下我有几个账本"
 
-LLM 会调用 `list_ledgers` tool,返回你账本列表。
+LLM 会调用 `list_ledgers` 返回账本列表。开始实际记账前，先用 `get_bookkeeping_context` 核对账本、账户/分类 ID、角色和 scope；有多个账本时让你选择，后续显式传 `ledger_id`。
 
-## 19 个可用 tool
+## 55 个可用工具
 
-### 查询(`mcp:read`)
+共 **26 个读权限工具、29 个写权限工具**，另有 2 类资源模板和 2 个 Prompt。完整流程见 [导入、对账与自动记账](./workflows.md)。
+
+:::info 完整工具集的版本要求
+以下完整工具集对应 [Cloud #133](https://github.com/TNT-Likely/BeeCount-Cloud/pull/133)，需部署包含该变更的 Cloud，并完成 Alembic `0021_mcp_workflows` 迁移。Cloud 1.7.0 的原附件能力不包含全部新工具，以客户端连接后发现的工具为准。
+:::
+
+### 查询与读取（26 个，需要 `mcp:read`）
 
 | Tool | 用途 |
 |---|---|
 | `list_ledgers` | 列所有账本 |
-| `get_active_ledger` | 当前默认账本 |
+| `get_active_ledger` | 兼容默认账本查询；多账本先通过上下文选择 |
 | `list_transactions` | 查交易,支持日期/分类/账户/关键词/金额范围筛选 |
 | `get_transaction` | 单条交易详情 |
 | `list_categories` | 列分类(可按 expense/income/transfer 筛) |
@@ -160,19 +166,55 @@ LLM 会调用 `list_ledgers` tool,返回你账本列表。
 | `get_ledger_stats` | 账本统计(交易数/分类数/账户数/标签数/预算数) |
 | `get_analytics_summary` | 月度/年度/全部范围的收入/支出/Top 分类 |
 | `search` | 全文模糊搜交易备注、分类名、账户名 |
+| `get_bookkeeping_context` | 选择账本，读取字典 ID、币种、角色与 PAT scope |
+| `list_ledger_members` | 查看账本成员与角色 |
+| `get_operation` | 查询持久化执行状态与逐步结果 |
+| `list_operations` | 查找执行记录，找回丢失响应对应的操作 |
+| `list_changes` | 增量读取交易变化与删除标记 |
+| `get_account_balances` | 按账户和币种查询余额及覆盖范围 |
+| `get_net_worth_history` | 分币种净值历史与明确的汇率覆盖 |
+| `analyze_transactions` | 组合分析、分组、期间比较与明细追踪 |
+| `list_attachments` | 列出账本附件 |
+| `read_attachment` | 读取原图、小文本或原文件资源 |
+| `export_transactions` | 保存完整 CSV 快照，最多 50,000 笔 |
+| `list_workflow_records` | 查找导入、复核、规则与对账记录 |
+| `get_workflow_record` | 读取持久化工作流及版本 |
+| `list_transaction_sources` | 查看交易关联的来源凭证 |
+| `reconcile_account` | 比较指定时点计算余额与实际余额 |
 
-### 修改(`mcp:write`,需勾选)
+### 修改与工作流（29 个，需要 `mcp:write`）
 
 | Tool | 用途 | 备注 |
 |---|---|---|
 | `upload_attachment` | 上传小票/图片 | Cloud 1.7.0 起，返回可关联到交易的文件 ID |
 | `create_transaction` | 新建交易 | 可传 `attachments` 关联已上传文件 |
-| `create_transactions` | 批量新建交易 | 一次提交多笔 —— 导入对账单 / Excel 的高效方式;多账本时需显式指定账本 |
+| `create_transactions` | 批量新建交易 | 最多 200 笔、每块最多 50 笔；支持逐笔附件与幂等键 |
 | `update_transaction` | 改交易 | 只改传入的字段；可更新附件关联 |
 | `delete_transaction` | 删交易 | **二次确认** — LLM 第一次调用返"待确认"占位符,你说"删"后才真删 |
 | `create_category` | 新建分类 | |
 | `update_budget` | 改预算金额 | |
 | `parse_and_create_from_text` | 自然语言记账 | 让 BeeCount 自己的 AI 解析,需要先在 Web 配 AI provider |
+| `manage_account` | 创建、修改或删除账户 | |
+| `manage_category` | 管理分类与层级 | |
+| `manage_tag` | 创建、修改或删除标签 | |
+| `manage_budget` | 创建、修改或删除预算 | |
+| `manage_ledger` | 创建、修改或删除账本 | |
+| `retry_operation` | 续接允许重试的执行步骤 | |
+| `parse_receipt` | 使用已配置视觉服务商生成小票草稿 | |
+| `preview_text_transactions` | 生成文字记账草稿 | |
+| `preview_import_file` | 映射原 CSV / TSV / XLSX 并保存导入计划 | |
+| `preview_import` | 预览结构化交易并保存导入计划 | |
+| `execute_import_plan` | 确认后执行指定版本的导入计划 | |
+| `undo_import_plan` | 撤销本计划新建且未被后续修改的交易 | |
+| `link_transaction_source` | 给交易关联来源身份 | |
+| `unlink_transaction_source` | 移除来源关联，保留交易 | |
+| `save_reconciliation_checkpoint` | 保存账户、来源与时间覆盖检查点 | |
+| `save_review_item` | 保存待核实问题和用户答复 | |
+| `save_classification_rule` | 保存推测或已确认分类规则及例外 | |
+| `apply_classification_rule` | 保存目标集和修改前后预览 | |
+| `execute_classification_preview` | 确认后执行带逐笔版本保护的分类预览 | |
+| `manage_recurring_rule` | 预览、保存、暂停或恢复 Cloud 周期规则 | |
+| `run_due_recurring_rules` | 执行到期周期规则 | |
 
 ## MCP 附件记账
 
@@ -181,19 +223,34 @@ LLM 会调用 `list_ledgers` tool,返回你账本列表。
 - 新建交易可以直接附上小票；修改已有交易时，不传 `attachments` 保留原附件，传 `[]` 清空关联，传列表替换全部关联。追加附件时先查询并保留原文件 ID。
 - **HTTP 直连**接收 `content_base64`。若希望 AI 直接使用电脑上的文件路径，可在客户端运行仓库的 **本地 stdio 适配器** `scripts/mcp_local_files.py`，同名上传工具改为接收 `file_path`，程序读取并上传原始文件，模型无需输出 Base64。
 - 本地适配器需配置 Cloud 地址、PAT 和允许读取的 `--allow-dir`；路径属于客户端电脑，Cloud 不会读取服务器任意路径。安装与配置见 [本地文件上传说明](https://github.com/TNT-Likely/BeeCount-Cloud/blob/main/docs/MCP.md)。
-- 上传不会自动识别小票或创建交易；`create_transactions` 批量工具暂不支持附件。
+- 上传不会自动识别小票或创建交易。`parse_receipt` 可另行调用已配置视觉服务商生成草稿；确认后再创建交易。批量 `create_transactions` 同样支持逐笔附件。
 
 上传关联后的图片可在 Web 和 App 查看。建议先升级 Cloud，再升级 **App 3.8.6**，以同步已有附件的顺序和信息变更。
+
+### 本地原文件适配器
+
+需要直接上传电脑里的原文件时，在客户端安装 Cloud 仓库的 Python 依赖，并运行 `scripts/mcp_local_files.py`。将下面的 Python、脚本和小票目录替换为本机实际路径，PAT 通过环境提供，不写入源码。
+
+```sh
+claude mcp add --transport stdio --scope user \
+  --env BEECOUNT_MCP_PAT=bcmcp_xxx beecount -- \
+  /absolute/path/to/python /absolute/path/to/BeeCount-Cloud/scripts/mcp_local_files.py \
+  --endpoint https://your-beecount-cloud.com/api/v1/mcp \
+  --allow-dir /absolute/path/to/receipts
+```
+
+适配器读取并上传 `file_path` 的原始字节，拒绝目录外文件、符号链接越界、空文件和特殊文件。它保留全部 Cloud 工具，并转发附件/导出资源与 Prompt。图片及 CSV、TSV、XLSX 都可以走同一个上传入口。
 
 ## 安全模型
 
 | 维度 | 措施 |
 |---|---|
 | Token 存储 | server 只存 `sha256` 哈希,常数时间比较;明文只在创建时返一次 |
-| Token 撤销 | 软删除,被撤销后立即失效 |
+| Token 撤销 | 删除 token 后立即失效 |
 | Token 过期 | 创建时可设,过期后自动 401 |
 | Scope 分离 | `mcp:read` / `mcp:write` 独立勾选 |
-| 删除保护 | `delete_transaction` 必须二次确认 |
+| 确认与并发保护 | 删除、导入执行和分类执行等操作需要明确确认；交易修改可用 `expected_revision` 防止覆盖后续编辑 |
+| 角色与重试 | 每次调用检查账本权限；幂等键和持久化执行记录支持安全续接 |
 | 协议隔离 | PAT 只能调 `/api/v1/mcp`,常规 API 拒绝 PAT。同样,普通 access token 也不能调 MCP endpoint |
 | 审计 | 每次使用都记录 `last_used_at` + `last_used_ip`,Web 设置页可查 |
 
@@ -230,6 +287,7 @@ LLM 会调用 `list_ledgers` tool,返回你账本列表。
 
 ## 相关链接
 
+- [导入、对账与自动记账](./workflows.md)
 - [Model Context Protocol 官网](https://modelcontextprotocol.io)
 - [BeeCount Cloud GitHub](https://github.com/TNT-Likely/BeeCount-Cloud)
 - [服务端详细文档](https://github.com/TNT-Likely/BeeCount-Cloud/blob/main/docs/MCP.md)
