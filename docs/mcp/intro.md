@@ -148,7 +148,7 @@ LLM 会调用 `list_ledgers` 返回账本列表。开始实际记账前，先用
 共 **26 个读权限工具、29 个写权限工具**，另有 2 类资源模板和 2 个 Prompt。完整流程见 [导入、对账与自动记账](./workflows.md)。
 
 :::info 完整工具集的版本要求
-以下完整工具集对应 [Cloud #133](https://github.com/TNT-Likely/BeeCount-Cloud/pull/133)，需部署包含该变更的 Cloud，并完成 Alembic `0021_mcp_workflows` 迁移。Cloud 1.7.0 的原附件能力不包含全部新工具，以客户端连接后发现的工具为准。
+完整工具集需要 **Cloud 1.9.0 或更高版本**，并完成 Alembic `0021_mcp_workflows` 迁移，详见 [Cloud 更新日志](../cloud-changelog.md)。旧版本只提供部分工具，升级后重新连接客户端以发现新工具。
 :::
 
 ### 查询与读取（26 个，需要 `mcp:read`）

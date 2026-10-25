@@ -148,7 +148,7 @@ The LLM calls `list_ledgers` and returns your ledgers. Before recording transact
 There are **26 read-scope tools and 29 write-scope tools**, plus 2 resource templates and 2 prompts. See [Import, reconciliation, and recurring entries](./workflows.md) for complete workflows.
 
 :::info Version requirement for the complete toolset
-The complete toolset below corresponds to [Cloud #133](https://github.com/TNT-Likely/BeeCount-Cloud/pull/133). Deploy Cloud containing that change and apply Alembic migration `0021_mcp_workflows`. Cloud 1.7.0 attachment support alone does not include all new tools; check what your connected client discovers.
+The complete toolset requires **Cloud 1.9.0 or later** and Alembic migration `0021_mcp_workflows`. See the [Cloud Changelog](../cloud-changelog.md). Older versions provide only part of the toolset; reconnect clients after upgrading to discover the new tools.
 :::
 
 ### Query and read (26 tools, `mcp:read`)
