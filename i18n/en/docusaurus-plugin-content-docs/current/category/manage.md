@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Categories help you organize income and expenses for easy analysis.
 
-![Category Management](/img/preview/en/09-category-management.png)
+![Category Management](/img/preview/v4/en/light/10-categories.png)
 
 ## Preset Categories
 

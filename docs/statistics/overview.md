@@ -8,7 +8,7 @@ keywords: [记账统计, 收支统计, 财务分析, 蜜蜂记账图表]
 
 蜜蜂记账提供丰富的统计功能，帮助你了解收支情况。
 
-![统计页面](/img/preview/zh/04-chart-analysis.png)
+![统计页面](/img/preview/v4/zh/light/02-analytics.png)
 
 ## 首页统计
 

@@ -8,7 +8,7 @@ keywords: [expense statistics, finance charts, budget analytics, BeeCount report
 
 BeeCount provides rich statistics to help you understand your financial situation.
 
-![Statistics Page](/img/preview/en/04-chart-analysis.png)
+![Statistics Page](/img/preview/v4/en/light/02-analytics.png)
 
 ## Home Page Statistics
 

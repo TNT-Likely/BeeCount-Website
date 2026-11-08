@@ -12,7 +12,7 @@ keywords: [蜜蜂记账操作, 记账教程, 快速记账, 收支记账, 转账�
 
 点击底部中央的 **「+」按钮** 进入记账页面。
 
-![记账页面](/img/preview/zh/03-edit-transaction.png)
+![记账页面](/img/preview/v4/zh/light/05-transaction.png)
 
 ### 操作步骤
 

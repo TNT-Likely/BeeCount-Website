@@ -6,7 +6,7 @@ sidebar_position: 2
 
 BeeCount supports creating multiple independent ledgers for different recording needs.
 
-![Ledger Management](/img/preview/en/05-ledger-management.png)
+![Ledger Management](/img/preview/v4/en/light/04-ledgers.png)
 
 ## Use Cases
 

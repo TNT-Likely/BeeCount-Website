@@ -6,7 +6,7 @@ sidebar_position: 2
 
 蜜蜂记账提供丰富的统计图表，帮助你了解自己的收支情况。
 
-![统计页面](/img/preview/zh/04-chart-analysis.png)
+![统计页面](/img/preview/v4/zh/light/02-analytics.png)
 
 ## 收支趋势
 

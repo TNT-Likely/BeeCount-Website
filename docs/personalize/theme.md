@@ -6,7 +6,7 @@ sidebar_position: 1
 
 蜜蜂记账支持自定义主题色，打造个性化界面。
 
-![个性化设置](/img/preview/zh/10-personalization.png)
+![个性化设置](/img/preview/v4/zh/light/11-personalization.png)
 
 ## 修改主题色
 
