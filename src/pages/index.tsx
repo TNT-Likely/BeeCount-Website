@@ -412,16 +412,14 @@ function ProductPreviewSection() {
   const isZh = i18n.currentLocale.startsWith('zh');
   const lang = isZh ? 'zh' : 'en';
   const [platform, setPlatform] = useState<'app' | 'web'>('app');
+  const [appearance, setAppearance] = useState<'light' | 'dark'>('light');
   const screenshots = [
-    {file: 'light/01-home.png', title: isZh ? '明细' : 'Transactions'},
-    {file: 'light/02-analytics.png', title: isZh ? '洞察' : 'Insights'},
-    {file: 'light/05-transaction.png', title: isZh ? '记一笔' : 'Record'},
-    {file: 'light/03-accounts.png', title: isZh ? '资产' : 'Accounts'},
-    {file: 'light/04-ledgers.png', title: isZh ? '多账本' : 'Ledgers'},
-    {file: 'light/06-budgets.png', title: isZh ? '预算' : 'Budgets'},
-    {file: 'dark/01-home.png', title: isZh ? '暗黑明细' : 'Transactions in dark mode'},
-    {file: 'dark/02-analytics.png', title: isZh ? '暗黑洞察' : 'Insights in dark mode'},
-    {file: 'dark/03-accounts.png', title: isZh ? '暗黑资产' : 'Accounts in dark mode'},
+    {scene: '01-home', title: isZh ? '生活有数' : 'Daily life, in view', text: isZh ? '每月收支与日常明细' : 'Monthly totals and everyday entries'},
+    {scene: '05-transaction', title: isZh ? '随手记一笔' : 'Make an entry', text: isZh ? '分类、账户与彩色标签' : 'Categories, accounts and tags'},
+    {scene: '02-analytics', title: isZh ? '看懂钱去哪了' : 'See where it goes', text: isZh ? '趋势、占比与分类排行' : 'Trends and category breakdowns'},
+    {scene: '06-budgets', title: isZh ? '花钱有计划' : 'Make a spending plan', text: isZh ? '月度总预算与分类预算' : 'Monthly and category budgets'},
+    {scene: '03-accounts', title: isZh ? '账户心中有数' : 'Know your balances', text: isZh ? '资产、负债与净资产' : 'Assets, liabilities and net worth'},
+    {scene: '04-ledgers', title: isZh ? '日常与远方' : 'A book for every plan', text: isZh ? '生活、旅行与成长分本记录' : 'Separate books for life and travel'},
   ];
   return (
     <section className={styles.productPreview} id="product-demos">
@@ -429,7 +427,7 @@ function ProductPreviewSection() {
         <div className={styles.previewHeader}>
           <div>
             <Heading as="h2" className={styles.sectionTitle}>{isZh ? '产品预览' : 'Product preview'}</Heading>
-            <p className={styles.previewSubtitle}>{isZh ? 'v4 App 实际界面，支持中英文与暗黑模式。画面使用合成示例数据。' : 'Real v4 App screens in English and Chinese, light and dark. Screens use synthetic sample data.'}</p>
+            <p className={styles.previewSubtitle}>{isZh ? '记下每笔日常，看清收支变化，为喜欢的生活留预算。' : 'Track everyday life, understand your spending and leave room for what matters.'}</p>
           </div>
           <div className={styles.previewTabs} aria-label={isZh ? '预览平台' : 'Preview platform'}>
             {(['app', 'web'] as const).map((value) => (
@@ -439,11 +437,18 @@ function ProductPreviewSection() {
             ))}
           </div>
         </div>
+        {platform === 'app' && <div className={styles.previewAppearance} aria-label={isZh ? '预览外观' : 'Preview appearance'}>
+          {(['light', 'dark'] as const).map(mode => <button type="button" key={mode} aria-pressed={appearance === mode}
+            className={clsx(styles.demoChoice, appearance === mode && styles.demoChoiceActive)}
+            onClick={() => setAppearance(mode)}>{mode === 'light' ? (isZh ? '浅色' : 'Light') : (isZh ? '暗黑' : 'Dark')}</button>)}
+          <span>{isZh ? '真实 App 界面 · 合成示例数据' : 'Real App screens · sample data'}</span>
+        </div>}
         {platform !== 'web' ? (
-          <div className={styles.screenshotRow}>
+          <div className={styles.appScreenshotGrid}>
             {screenshots.map((shot) => (
-              <a key={shot.file} href={`/img/preview/v4/${lang}/${shot.file}`} target="_blank" rel="noopener noreferrer" aria-label={shot.title}>
-                <img src={`/img/preview/v4/${lang}/${shot.file}`} alt={shot.title} loading="lazy" />
+              <a className={styles.appScreenshotItem} key={shot.scene} href={`/img/preview/v4/${lang}/${appearance}/${shot.scene}.png`} target="_blank" rel="noopener noreferrer">
+                <div className={styles.appScreenshotPaper}><img src={`/img/preview/v4/${lang}/${appearance}/${shot.scene}.png`} alt={shot.title} loading="lazy" width="1320" height="2868" /></div>
+                <strong>{shot.title}</strong><span>{shot.text}</span>
               </a>
             ))}
           </div>
@@ -462,39 +467,36 @@ function ProductPreviewSection() {
             ))}
           </div>
         )}
-        <ProductDemos platform={platform} key={platform} />
+        <ProductDemos platform={platform} key={platform} appearance={appearance} />
       </div>
     </section>
   );
 }
 
-function ProductDemos({platform}: {platform: 'app' | 'web'}) {
+function ProductDemos({platform, appearance}: {platform: 'app' | 'web'; appearance: 'light' | 'dark'}) {
   const {i18n} = useDocusaurusContext();
   const isZh = i18n.currentLocale.startsWith('zh');
   const lang = isZh ? 'zh' : 'en';
   const [selected, setSelected] = useState(0);
-  const [appearance, setAppearance] = useState<'light' | 'dark'>('light');
   const screenshot = (scene: string) => `/img/preview/v4/${lang}/${appearance}/${scene}.png`;
   const mediaRoot = platform === 'web' ? `/img/demos/${lang}` : `/img/demos/v4/${lang}/${appearance}`;
   const demos = platform !== 'web' ? [
     {file: '01-add-transaction', title: isZh ? '记一笔' : 'Record a transaction', text: isZh ? '选择分类，输入金额，保存到日常账本。' : 'Pick a category, enter the amount and save to your ledger.', poster: screenshot('05-transaction')},
+    {file: '03-ai-photo-recognition', title: isZh ? '图片识别记账' : 'Record from an image', text: isZh ? '选择账单图片，识别金额与分类，入账后可查看原图附件。' : 'Recognize a bill or receipt, save the entry and keep its source image.', poster: screenshot('01-home')},
     {file: '02-ai-chat', title: isZh ? 'AI 对话' : 'AI assistant', text: isZh ? '向 AI 助手提问，基于真实账本回答。' : 'Ask the AI assistant about your real books.', poster: screenshot('02-analytics')},
     {file: '04-data-analysis', title: isZh ? '数据分析' : 'Explore insights', text: isZh ? '查看收支趋势，切换周期与收入、支出。' : 'Explore trends across periods, income and expenses.', poster: screenshot('02-analytics')},
     {file: '05-copy-transaction', title: isZh ? '复制交易' : 'Copy a transaction', text: isZh ? '长按历史交易，调整后保存为新记录。' : 'Hold a transaction, adjust it and save a new record.', poster: screenshot('01-home')},
     {file: '06-import-ledger', title: isZh ? '导入账单' : 'Import a ledger', text: isZh ? '选择 CSV 账单文件，确认映射后批量入账。' : 'Pick a CSV export, confirm the mapping and import.', poster: screenshot('07-mine')},
+    {file: '07-ios-shortcut', title: isZh ? 'iOS 快捷指令' : 'iOS Shortcuts', text: isZh ? '手动运行快捷指令，截取演示小票并在后台识别入账。本条为中文浅色演示。' : 'Run a real iOS shortcut to capture a receipt and record it in the background. Recorded in Chinese, light mode.', poster: screenshot('01-home')},
   ] : [
     {file: 'cloud-attachments', title: isZh ? '小票附件' : 'Receipt attachments', text: isZh ? '在浏览器里上传、查看并保存交易附件。' : 'Upload, preview and save receipt images in your browser.', poster: `/img/preview/web/${lang}-04-attachments.png`},
   ];
   const demo = demos[selected];
+  const demoRoot = demo.file === '07-ios-shortcut' ? '/img/demos/v4/zh/light' : mediaRoot;
   return (
     <div className={styles.productDemos}>
       <div className={styles.demoHeader}>
         <Heading as="h3">{isZh ? '看看实际操作' : 'See it in action'}</Heading>
-        {platform !== 'web' && <div className={styles.demoChoices} aria-label={isZh ? '演示外观' : 'Demo appearance'}>
-          {(['light', 'dark'] as const).map(mode => <button type="button" key={mode} aria-pressed={appearance === mode}
-            className={clsx(styles.demoChoice, appearance === mode && styles.demoChoiceActive)}
-            onClick={() => setAppearance(mode)}>{mode === 'light' ? (isZh ? '浅色' : 'Light') : (isZh ? '暗黑' : 'Dark')}</button>)}
-        </div>}
         {demos.length > 1 && <div className={styles.demoChoices} aria-label={isZh ? '操作演示' : 'Workflow demos'}>
           {demos.map((item, index) => (
             <button type="button" key={item.file} aria-pressed={selected === index}
@@ -505,15 +507,13 @@ function ProductDemos({platform}: {platform: 'app' | 'web'}) {
       </div>
       <article className={styles.demoCard}>
         <div className={styles.demoMedia}>
-          <video key={`${mediaRoot}/${demo.file}`} controls playsInline preload="none" poster={demo.poster} aria-label={demo.title}>
-            <source src={`${mediaRoot}/${demo.file}.mp4`} type="video/mp4" />
-            <a href={`${mediaRoot}/${demo.file}.gif`}>{demo.title}</a>
+          <video key={`${demoRoot}/${demo.file}`} controls playsInline preload="none" poster={platform === 'app' ? `${demoRoot}/${demo.file}-poster.jpg` : demo.poster} aria-label={demo.title}>
+            <source src={`${demoRoot}/${demo.file}.mp4`} type="video/mp4" />
           </video>
         </div>
         <div className={styles.demoCopy}>
           <Heading as="h4">{demo.title}</Heading>
           <p>{demo.text}</p>
-          <a href={`${mediaRoot}/${demo.file}.gif`} target="_blank" rel="noopener noreferrer">{isZh ? '打开 GIF' : 'Open GIF'} ↗</a>
           {platform === 'web' && <a className={styles.demoDeploy} href="https://github.com/TNT-Likely/BeeCount-Cloud" target="_blank" rel="noopener noreferrer">{isZh ? '部署自己的 Cloud' : 'Host your own Cloud'} ↗</a>}
         </div>
       </article>
