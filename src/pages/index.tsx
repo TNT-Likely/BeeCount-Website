@@ -538,7 +538,7 @@ function CommunitySection() {
             </p>
             <div className={styles.communityStats}>
               <div className={styles.statItem}>
-                <span className={styles.statNum}>1000+</span>
+                <span className={styles.statNum}>2800+</span>
                 <span className={styles.statLabel}>Stars</span>
               </div>
               <div className={styles.statItem}>
