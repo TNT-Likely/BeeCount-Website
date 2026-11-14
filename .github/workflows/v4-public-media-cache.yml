@@ -1,0 +1,17 @@
+name: Cache Published 4.0 Website Assets
+on:
+  push:
+    branches: [chore/v4-website-media-cache]
+permissions:
+  contents: write
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Fetch public immutable App source
+        run: git -c http.https://github.com/.extraheader= fetch --no-tags --depth=1 https://github.com/TNT-Likely/BeeCount.git 7f2d5a416507ee091ee17039c815b43653ff0fb7
+      - name: Cache identical published assets without changing app-v4
+        run: python3 .release-public-cache/copy.py

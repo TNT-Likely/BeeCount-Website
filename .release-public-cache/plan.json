@@ -1,0 +1,545 @@
+{
+  "sourceApp": "7f2d5a416507ee091ee17039c815b43653ff0fb7",
+  "shared": [
+    {
+      "sha": "0318a7acc374dc977540b41f51c1d2ef1482f091",
+      "size": 105102,
+      "path": "static/img/demos/v4/en/dark/01-add-transaction-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/dark/01-add-transaction-poster.jpg"
+    },
+    {
+      "sha": "d90adebbe8d5a00012ce1425463ee69526a8775b",
+      "size": 858709,
+      "path": "static/img/demos/v4/en/dark/01-add-transaction.gif",
+      "sourcePath": "demo/videos/v4/en/dark/01-add-transaction.gif"
+    },
+    {
+      "sha": "0ec1737a02f8933ac9791c772b562f97644666cb",
+      "size": 106040,
+      "path": "static/img/demos/v4/en/dark/02-ai-chat-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/dark/02-ai-chat-poster.jpg"
+    },
+    {
+      "sha": "d5c37638bcc6d7cf12e3ab5f0f3ce7dda4148b32",
+      "size": 1349322,
+      "path": "static/img/demos/v4/en/dark/02-ai-chat.gif",
+      "sourcePath": "demo/videos/v4/en/dark/02-ai-chat.gif"
+    },
+    {
+      "sha": "909b1f86149ea1393d7568eb1296582acb15f910",
+      "size": 104778,
+      "path": "static/img/demos/v4/en/dark/03-ai-photo-recognition-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/dark/03-ai-photo-recognition-poster.jpg"
+    },
+    {
+      "sha": "08a5502438462ed93e3566463cfa6f84c8c94a53",
+      "size": 2096581,
+      "path": "static/img/demos/v4/en/dark/03-ai-photo-recognition.gif",
+      "sourcePath": "demo/videos/v4/en/dark/03-ai-photo-recognition.gif"
+    },
+    {
+      "sha": "c2b603eceb23c6c496c1a1dea6acb1291a1056e7",
+      "size": 102622,
+      "path": "static/img/demos/v4/en/dark/04-data-analysis-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/dark/04-data-analysis-poster.jpg"
+    },
+    {
+      "sha": "d8b6ee64c37da79c3a184e63af3407cc3b03e98b",
+      "size": 515993,
+      "path": "static/img/demos/v4/en/dark/04-data-analysis.gif",
+      "sourcePath": "demo/videos/v4/en/dark/04-data-analysis.gif"
+    },
+    {
+      "sha": "10dc830f0559822377ead156997260e640b07e79",
+      "size": 102556,
+      "path": "static/img/demos/v4/en/dark/05-copy-transaction-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/dark/05-copy-transaction-poster.jpg"
+    },
+    {
+      "sha": "1949cdee33e47b9c839c4e181b0bbbaae172b5a8",
+      "size": 881683,
+      "path": "static/img/demos/v4/en/dark/05-copy-transaction.gif",
+      "sourcePath": "demo/videos/v4/en/dark/05-copy-transaction.gif"
+    },
+    {
+      "sha": "eba8539d500db7dd3f036e4e8e6c75216464f016",
+      "size": 106364,
+      "path": "static/img/demos/v4/en/dark/06-import-ledger-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/dark/06-import-ledger-poster.jpg"
+    },
+    {
+      "sha": "fd4ffc9409c6c251709f83b741594bd0b6bf8248",
+      "size": 751856,
+      "path": "static/img/demos/v4/en/dark/06-import-ledger.gif",
+      "sourcePath": "demo/videos/v4/en/dark/06-import-ledger.gif"
+    },
+    {
+      "sha": "31a9cfbb0f22aeddb01261d60341118aeb4503b5",
+      "size": 105941,
+      "path": "static/img/demos/v4/en/light/01-add-transaction-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/light/01-add-transaction-poster.jpg"
+    },
+    {
+      "sha": "cbd2a248a44509860a0d98a234ccaae0d98af283",
+      "size": 484805,
+      "path": "static/img/demos/v4/en/light/01-add-transaction.gif",
+      "sourcePath": "demo/videos/v4/en/light/01-add-transaction.gif"
+    },
+    {
+      "sha": "eb6f728bab8c26611146678bedb8a77671a3debe",
+      "size": 108802,
+      "path": "static/img/demos/v4/en/light/02-ai-chat-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/light/02-ai-chat-poster.jpg"
+    },
+    {
+      "sha": "e180ce36273d36ed6dc364824d704136d2c81e30",
+      "size": 863197,
+      "path": "static/img/demos/v4/en/light/02-ai-chat.gif",
+      "sourcePath": "demo/videos/v4/en/light/02-ai-chat.gif"
+    },
+    {
+      "sha": "2ceca72876a84c61a48a9391c8808e2b8edc39a6",
+      "size": 107219,
+      "path": "static/img/demos/v4/en/light/03-ai-photo-recognition-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/light/03-ai-photo-recognition-poster.jpg"
+    },
+    {
+      "sha": "f8d5123f2fceebe53a4eb336cdb70256110caf83",
+      "size": 1821203,
+      "path": "static/img/demos/v4/en/light/03-ai-photo-recognition.gif",
+      "sourcePath": "demo/videos/v4/en/light/03-ai-photo-recognition.gif"
+    },
+    {
+      "sha": "67f748153aa304030b059679e803aea017c8464e",
+      "size": 104577,
+      "path": "static/img/demos/v4/en/light/04-data-analysis-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/light/04-data-analysis-poster.jpg"
+    },
+    {
+      "sha": "3cafc680f9c9e6345647db3df32ba281fe66f3f3",
+      "size": 498677,
+      "path": "static/img/demos/v4/en/light/04-data-analysis.gif",
+      "sourcePath": "demo/videos/v4/en/light/04-data-analysis.gif"
+    },
+    {
+      "sha": "43e57f910fc647e184cf56f5770cdea86dddc689",
+      "size": 105020,
+      "path": "static/img/demos/v4/en/light/05-copy-transaction-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/light/05-copy-transaction-poster.jpg"
+    },
+    {
+      "sha": "8953a04d23cd08acc507d54504ad7f442c37ee97",
+      "size": 833706,
+      "path": "static/img/demos/v4/en/light/05-copy-transaction.gif",
+      "sourcePath": "demo/videos/v4/en/light/05-copy-transaction.gif"
+    },
+    {
+      "sha": "48fb3408ead20339a8bc7b3ed05014caebaf739e",
+      "size": 108790,
+      "path": "static/img/demos/v4/en/light/06-import-ledger-poster.jpg",
+      "sourcePath": "demo/videos/v4/en/light/06-import-ledger-poster.jpg"
+    },
+    {
+      "sha": "ee021544a56bd7ccfd179e6b438411980741daed",
+      "size": 739201,
+      "path": "static/img/demos/v4/en/light/06-import-ledger.gif",
+      "sourcePath": "demo/videos/v4/en/light/06-import-ledger.gif"
+    },
+    {
+      "sha": "b00935549872e96b7766f6bf1156d890170253d3",
+      "size": 97327,
+      "path": "static/img/demos/v4/zh/dark/01-add-transaction-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/dark/01-add-transaction-poster.jpg"
+    },
+    {
+      "sha": "22e14f20125731834fc3566475c50ce8120b3c1d",
+      "size": 891190,
+      "path": "static/img/demos/v4/zh/dark/01-add-transaction.gif",
+      "sourcePath": "demo/videos/v4/zh/dark/01-add-transaction.gif"
+    },
+    {
+      "sha": "da64956d70b0effe78e4acfa19f18f1200b30c50",
+      "size": 95593,
+      "path": "static/img/demos/v4/zh/dark/02-ai-chat-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/dark/02-ai-chat-poster.jpg"
+    },
+    {
+      "sha": "bc6651ff24ad771823d30cfdb7c42f2c3ee228bc",
+      "size": 1369234,
+      "path": "static/img/demos/v4/zh/dark/02-ai-chat.gif",
+      "sourcePath": "demo/videos/v4/zh/dark/02-ai-chat.gif"
+    },
+    {
+      "sha": "86ad5a6ecbc905836a1549814fe572b41cb71071",
+      "size": 96560,
+      "path": "static/img/demos/v4/zh/dark/03-ai-photo-recognition-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/dark/03-ai-photo-recognition-poster.jpg"
+    },
+    {
+      "sha": "bb8b01b8035004a18d6a25b4d6d8ae854e8cb1ef",
+      "size": 1922114,
+      "path": "static/img/demos/v4/zh/dark/03-ai-photo-recognition.gif",
+      "sourcePath": "demo/videos/v4/zh/dark/03-ai-photo-recognition.gif"
+    },
+    {
+      "sha": "995ce938bbc7951a1814e71c961f6d9f6e80bd7e",
+      "size": 97788,
+      "path": "static/img/demos/v4/zh/dark/04-data-analysis-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/dark/04-data-analysis-poster.jpg"
+    },
+    {
+      "sha": "b9a4e457c3954c578eb6f2ff626f8eb76b92a6e6",
+      "size": 482447,
+      "path": "static/img/demos/v4/zh/dark/04-data-analysis.gif",
+      "sourcePath": "demo/videos/v4/zh/dark/04-data-analysis.gif"
+    },
+    {
+      "sha": "02dcf58578678ff1640104ff6d517d359cce8699",
+      "size": 98347,
+      "path": "static/img/demos/v4/zh/dark/05-copy-transaction-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/dark/05-copy-transaction-poster.jpg"
+    },
+    {
+      "sha": "675c48322a9d679d760b149f5ada105ba6a41925",
+      "size": 839786,
+      "path": "static/img/demos/v4/zh/dark/05-copy-transaction.gif",
+      "sourcePath": "demo/videos/v4/zh/dark/05-copy-transaction.gif"
+    },
+    {
+      "sha": "7f212fbe7de502289d2f85fc3f2e426e4c9c1b9b",
+      "size": 95739,
+      "path": "static/img/demos/v4/zh/dark/06-import-ledger-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/dark/06-import-ledger-poster.jpg"
+    },
+    {
+      "sha": "1e983c3bd1a2f06d31adde01873b7fbd4bc04df5",
+      "size": 693862,
+      "path": "static/img/demos/v4/zh/dark/06-import-ledger.gif",
+      "sourcePath": "demo/videos/v4/zh/dark/06-import-ledger.gif"
+    },
+    {
+      "sha": "aa1d6dac8f06628f2c8e8affca1324b217003614",
+      "size": 98647,
+      "path": "static/img/demos/v4/zh/light/01-add-transaction-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/light/01-add-transaction-poster.jpg"
+    },
+    {
+      "sha": "ac9e2a4568b75c01b1375bdbaa0061fc20436eae",
+      "size": 747744,
+      "path": "static/img/demos/v4/zh/light/01-add-transaction.gif",
+      "sourcePath": "demo/videos/v4/zh/light/01-add-transaction.gif"
+    },
+    {
+      "sha": "797d6f673c99d763b10cbf8a69b6b5136c20058a",
+      "size": 99796,
+      "path": "static/img/demos/v4/zh/light/02-ai-chat-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/light/02-ai-chat-poster.jpg"
+    },
+    {
+      "sha": "c38446fa5db519e009430f8d24051558af808567",
+      "size": 766463,
+      "path": "static/img/demos/v4/zh/light/02-ai-chat.gif",
+      "sourcePath": "demo/videos/v4/zh/light/02-ai-chat.gif"
+    },
+    {
+      "sha": "d090533b578bd4fcef39065a63dd4e0f5d5b4e3a",
+      "size": 98386,
+      "path": "static/img/demos/v4/zh/light/03-ai-photo-recognition-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/light/03-ai-photo-recognition-poster.jpg"
+    },
+    {
+      "sha": "435e43780c069af8e717231a5e20f5b0a052db53",
+      "size": 2128922,
+      "path": "static/img/demos/v4/zh/light/03-ai-photo-recognition.gif",
+      "sourcePath": "demo/videos/v4/zh/light/03-ai-photo-recognition.gif"
+    },
+    {
+      "sha": "e0e7665b6cb3ff853f58f8c23ceaea9af6d2fbcd",
+      "size": 98895,
+      "path": "static/img/demos/v4/zh/light/04-data-analysis-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/light/04-data-analysis-poster.jpg"
+    },
+    {
+      "sha": "08e3c6fbca954e77e2e03f497eeeb038eeffdd4c",
+      "size": 468820,
+      "path": "static/img/demos/v4/zh/light/04-data-analysis.gif",
+      "sourcePath": "demo/videos/v4/zh/light/04-data-analysis.gif"
+    },
+    {
+      "sha": "292e97390d574e1b96413bf5de07606fd149689f",
+      "size": 99102,
+      "path": "static/img/demos/v4/zh/light/05-copy-transaction-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/light/05-copy-transaction-poster.jpg"
+    },
+    {
+      "sha": "fa0c6fc3557961c9268eeb7a7b85d5db7c445bb7",
+      "size": 738196,
+      "path": "static/img/demos/v4/zh/light/05-copy-transaction.gif",
+      "sourcePath": "demo/videos/v4/zh/light/05-copy-transaction.gif"
+    },
+    {
+      "sha": "bb32b060f24c1dda2b4426bf40e1d3ce54411ea2",
+      "size": 99802,
+      "path": "static/img/demos/v4/zh/light/06-import-ledger-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/light/06-import-ledger-poster.jpg"
+    },
+    {
+      "sha": "7eda213781857c79463af42d84b706481185cbc2",
+      "size": 650298,
+      "path": "static/img/demos/v4/zh/light/06-import-ledger.gif",
+      "sourcePath": "demo/videos/v4/zh/light/06-import-ledger.gif"
+    },
+    {
+      "sha": "fd193f066ee6e71b69d9668663fed361a3e059b6",
+      "size": 74545,
+      "path": "static/img/demos/v4/zh/light/07-ios-shortcut-poster.jpg",
+      "sourcePath": "demo/videos/v4/zh/light/07-ios-shortcut-poster.jpg"
+    },
+    {
+      "sha": "d9d1f1756113efd8573173de60b628a74808bfe2",
+      "size": 2745976,
+      "path": "static/img/demos/v4/zh/light/07-ios-shortcut.gif",
+      "sourcePath": "demo/videos/v4/zh/light/07-ios-shortcut.gif"
+    },
+    {
+      "sha": "819fbdf35cee54c0792ce873228607f0557a4683",
+      "size": 384012,
+      "path": "static/img/preview/v4/en/dark/01-home.png",
+      "sourcePath": "preview/v4/en/dark/01-home.png"
+    },
+    {
+      "sha": "38943cb5e9adae24249aa2474497bf25e44de2c0",
+      "size": 311813,
+      "path": "static/img/preview/v4/en/dark/02-analytics.png",
+      "sourcePath": "preview/v4/en/dark/02-analytics.png"
+    },
+    {
+      "sha": "921dabb16d25d23cf70eb2c0cac4c6fa896cf60e",
+      "size": 283620,
+      "path": "static/img/preview/v4/en/dark/03-accounts.png",
+      "sourcePath": "preview/v4/en/dark/03-accounts.png"
+    },
+    {
+      "sha": "11c98fee41db1fc0e9d4ab59aa866971fa7f8159",
+      "size": 279695,
+      "path": "static/img/preview/v4/en/dark/04-ledgers.png",
+      "sourcePath": "preview/v4/en/dark/04-ledgers.png"
+    },
+    {
+      "sha": "02c83026e1c504ac1dcc795b7c7655200bcfea06",
+      "size": 254015,
+      "path": "static/img/preview/v4/en/dark/05-transaction.png",
+      "sourcePath": "preview/v4/en/dark/05-transaction.png"
+    },
+    {
+      "sha": "0269336600e88c2c39fa5dd02b995fa7dfeb5c21",
+      "size": 264942,
+      "path": "static/img/preview/v4/en/dark/06-budgets.png",
+      "sourcePath": "preview/v4/en/dark/06-budgets.png"
+    },
+    {
+      "sha": "f45d5662ac8380a42369ef84d8976cdad8a8f324",
+      "size": 381951,
+      "path": "static/img/preview/v4/en/dark/07-mine.png",
+      "sourcePath": "preview/v4/en/dark/07-mine.png"
+    },
+    {
+      "sha": "3765201aa627f8d4f1e965fc7329fcd2820331c5",
+      "size": 173688,
+      "path": "static/img/preview/v4/en/dark/08-tags.png",
+      "sourcePath": "preview/v4/en/dark/08-tags.png"
+    },
+    {
+      "sha": "6490a20135ec1451a4ef8c2603a11e3ec07165da",
+      "size": 275883,
+      "path": "static/img/preview/v4/en/dark/10-categories.png",
+      "sourcePath": "preview/v4/en/dark/10-categories.png"
+    },
+    {
+      "sha": "124ec143c3a33c833df1733b8c47fa1c801df74f",
+      "size": 328805,
+      "path": "static/img/preview/v4/en/dark/12-search.png",
+      "sourcePath": "preview/v4/en/dark/12-search.png"
+    },
+    {
+      "sha": "dd31da48612c8e50ad30890c9617b506d98a73b4",
+      "size": 369761,
+      "path": "static/img/preview/v4/en/light/01-home.png",
+      "sourcePath": "preview/v4/en/light/01-home.png"
+    },
+    {
+      "sha": "892f2a39fcdd297c61669b81f60ec2d1e83dd93b",
+      "size": 299079,
+      "path": "static/img/preview/v4/en/light/02-analytics.png",
+      "sourcePath": "preview/v4/en/light/02-analytics.png"
+    },
+    {
+      "sha": "d39b30ff53a603f7719e0589af4c000128513f01",
+      "size": 276594,
+      "path": "static/img/preview/v4/en/light/03-accounts.png",
+      "sourcePath": "preview/v4/en/light/03-accounts.png"
+    },
+    {
+      "sha": "f65e8beb6c697ae17ebf8d9de6858ca0752f2dea",
+      "size": 272284,
+      "path": "static/img/preview/v4/en/light/04-ledgers.png",
+      "sourcePath": "preview/v4/en/light/04-ledgers.png"
+    },
+    {
+      "sha": "6333aa16157622af92d10efcc2d4226e3832cce9",
+      "size": 248976,
+      "path": "static/img/preview/v4/en/light/05-transaction.png",
+      "sourcePath": "preview/v4/en/light/05-transaction.png"
+    },
+    {
+      "sha": "c70606cfa83b36074e3ed6f1592f34c52765a3df",
+      "size": 248355,
+      "path": "static/img/preview/v4/en/light/06-budgets.png",
+      "sourcePath": "preview/v4/en/light/06-budgets.png"
+    },
+    {
+      "sha": "4f9985ade243a72ef7f08d71dab78eb03cf3ecf9",
+      "size": 363797,
+      "path": "static/img/preview/v4/en/light/07-mine.png",
+      "sourcePath": "preview/v4/en/light/07-mine.png"
+    },
+    {
+      "sha": "feaecefbb1608635f924cd9cdbe1c407182825c8",
+      "size": 166442,
+      "path": "static/img/preview/v4/en/light/08-tags.png",
+      "sourcePath": "preview/v4/en/light/08-tags.png"
+    },
+    {
+      "sha": "c1bfc52b2de1a5521ad83472ab70aec45348c92e",
+      "size": 265048,
+      "path": "static/img/preview/v4/en/light/10-categories.png",
+      "sourcePath": "preview/v4/en/light/10-categories.png"
+    },
+    {
+      "sha": "100d18a3c18a3b7a02d4a01bbcff33ee74fe3bd3",
+      "size": 316037,
+      "path": "static/img/preview/v4/en/light/12-search.png",
+      "sourcePath": "preview/v4/en/light/12-search.png"
+    },
+    {
+      "sha": "aa6a28e4427c31d56017df287904f312a0daa36b",
+      "size": 353663,
+      "path": "static/img/preview/v4/zh/dark/01-home.png",
+      "sourcePath": "preview/v4/zh/dark/01-home.png"
+    },
+    {
+      "sha": "5448b1a76687787d346cdbb78e16c6e027985ba7",
+      "size": 291492,
+      "path": "static/img/preview/v4/zh/dark/02-analytics.png",
+      "sourcePath": "preview/v4/zh/dark/02-analytics.png"
+    },
+    {
+      "sha": "960cb182125849926cab600111fb7bf0516d339b",
+      "size": 264091,
+      "path": "static/img/preview/v4/zh/dark/03-accounts.png",
+      "sourcePath": "preview/v4/zh/dark/03-accounts.png"
+    },
+    {
+      "sha": "52e64a5413f7a95da2bea653011594d040c948e5",
+      "size": 272448,
+      "path": "static/img/preview/v4/zh/dark/04-ledgers.png",
+      "sourcePath": "preview/v4/zh/dark/04-ledgers.png"
+    },
+    {
+      "sha": "74c8e6aee5084497f96988d9820297e7da09137f",
+      "size": 268551,
+      "path": "static/img/preview/v4/zh/dark/05-transaction.png",
+      "sourcePath": "preview/v4/zh/dark/05-transaction.png"
+    },
+    {
+      "sha": "2cb518b4eaa316b1cf173fd48cf735db80ac4167",
+      "size": 258211,
+      "path": "static/img/preview/v4/zh/dark/06-budgets.png",
+      "sourcePath": "preview/v4/zh/dark/06-budgets.png"
+    },
+    {
+      "sha": "8a24de18b07e1a8e2d7354cd874e059e272ca519",
+      "size": 359936,
+      "path": "static/img/preview/v4/zh/dark/07-mine.png",
+      "sourcePath": "preview/v4/zh/dark/07-mine.png"
+    },
+    {
+      "sha": "24552bb408f1f2560491fc386fa8cb84000f1123",
+      "size": 154857,
+      "path": "static/img/preview/v4/zh/dark/08-tags.png",
+      "sourcePath": "preview/v4/zh/dark/08-tags.png"
+    },
+    {
+      "sha": "260e4dfc0ea070287dbb56f925b458466f0f4f3e",
+      "size": 287096,
+      "path": "static/img/preview/v4/zh/dark/10-categories.png",
+      "sourcePath": "preview/v4/zh/dark/10-categories.png"
+    },
+    {
+      "sha": "66a8eabe076c92192550621600d1762812699dea",
+      "size": 298860,
+      "path": "static/img/preview/v4/zh/dark/12-search.png",
+      "sourcePath": "preview/v4/zh/dark/12-search.png"
+    },
+    {
+      "sha": "25add927885a87ff6403fc6e9a6097ac349d8c72",
+      "size": 343256,
+      "path": "static/img/preview/v4/zh/light/01-home.png",
+      "sourcePath": "preview/v4/zh/light/01-home.png"
+    },
+    {
+      "sha": "d56d3face7bd62ee64243788be1f306cf0577098",
+      "size": 282764,
+      "path": "static/img/preview/v4/zh/light/02-analytics.png",
+      "sourcePath": "preview/v4/zh/light/02-analytics.png"
+    },
+    {
+      "sha": "0123a441e9b1098f7a500ca8f51926590408539f",
+      "size": 260508,
+      "path": "static/img/preview/v4/zh/light/03-accounts.png",
+      "sourcePath": "preview/v4/zh/light/03-accounts.png"
+    },
+    {
+      "sha": "12aff9e588f857f040240c505ba40f937119ffc9",
+      "size": 265023,
+      "path": "static/img/preview/v4/zh/light/04-ledgers.png",
+      "sourcePath": "preview/v4/zh/light/04-ledgers.png"
+    },
+    {
+      "sha": "bea565b18e39c39c0a93f0a99e5e050d09d52f49",
+      "size": 258708,
+      "path": "static/img/preview/v4/zh/light/05-transaction.png",
+      "sourcePath": "preview/v4/zh/light/05-transaction.png"
+    },
+    {
+      "sha": "09b22270d0ec502d1bb09a1cf50cd4dbc42116b2",
+      "size": 243979,
+      "path": "static/img/preview/v4/zh/light/06-budgets.png",
+      "sourcePath": "preview/v4/zh/light/06-budgets.png"
+    },
+    {
+      "sha": "dbed66ae1d53a542b6c52f7b4791eef6e2a979b1",
+      "size": 345821,
+      "path": "static/img/preview/v4/zh/light/07-mine.png",
+      "sourcePath": "preview/v4/zh/light/07-mine.png"
+    },
+    {
+      "sha": "e5c23c7223a0a04c9da738db1415309d3edc8f17",
+      "size": 152148,
+      "path": "static/img/preview/v4/zh/light/08-tags.png",
+      "sourcePath": "preview/v4/zh/light/08-tags.png"
+    },
+    {
+      "sha": "70a9bc9d696926a064d28c67af513b49a60e8af1",
+      "size": 278125,
+      "path": "static/img/preview/v4/zh/light/10-categories.png",
+      "sourcePath": "preview/v4/zh/light/10-categories.png"
+    },
+    {
+      "sha": "a21e6256a6e052a77b9ea420294a8a2089a132b8",
+      "size": 286063,
+      "path": "static/img/preview/v4/zh/light/12-search.png",
+      "sourcePath": "preview/v4/zh/light/12-search.png"
+    }
+  ]
+}
