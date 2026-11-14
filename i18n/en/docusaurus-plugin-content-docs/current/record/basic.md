@@ -26,7 +26,7 @@ Tap the **"+" button** at the bottom center to open the recording page.
 
 ### Record Another Entry
 
-For a new expense or income, tap **Record Another** to save and continue with the next entry. Tap **Save** to return to the transaction list.
+For a new expense or income, tap **Save & add another** to save and continue with the next entry. Tap **Save** to return to the transaction list.
 
 ### Optional Information
 
