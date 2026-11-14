@@ -18,19 +18,19 @@ Tap the **"+" button** at the bottom center to open the recording page.
 
 1. **Select Type** - Expense / Income / Transfer
 2. **Enter Amount** - Use the number pad
-3. **Select Category** - Tap a category icon
+3. **Select Category** - Tap an icon; expand a parent category and select a leaf when subcategories exist
 4. **Select Account** - Choose the associated account
-5. **Save** - Tap the save button in the top right
+5. **Save** - Tap Save below the number pad
 
-> ✨ **Since v3.3.0**: the amount keypad supports + − × ÷ — long-press or double-tap to switch, handy for splitting bills or merging receipts right on the keypad.
+> **App 4.0** keeps the number pad at the bottom and uses the remaining space for categories. Subcategories use four columns, with longer names taking two cells. Arithmetic keys let you calculate a split or combined amount directly.
 
 ### Record Another Entry
 
-For a new expense or income, double-tap **Done** to save the current entry and return to category selection for the next one. A single tap keeps the usual behavior: save and return to the transaction list.
+For a new expense or income, tap **Record Another** to save and continue with the next entry. Tap **Save** to return to the transaction list.
 
 ### Optional Information
 
-- **Note** - Add a transaction description
+- **Note** - Type and edit the description directly in the form
 - **Tags** - Add one or more tags
 - **Date & Time** - Change the recording time (for backdating)
 - **Image** - Add a receipt or proof
@@ -67,6 +67,8 @@ Transfers move funds between different accounts:
 - Select "Transfer" type
 - Choose source and destination accounts
 - Enter transfer amount
+
+App 4.0 places account selection and amount entry on the same page. New transfers require two accounts with the same currency. For foreign-currency accounts, review the amount converted to the current ledger's base currency and supply a missing exchange rate before saving.
 
 The system automatically updates both account balances.
 

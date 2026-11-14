@@ -13,6 +13,15 @@ View the BeeCount App's release history. The self-hosted Cloud uses a separate v
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 4.0.0 highlights
+
+- **A refreshed interface and interaction system**: Transactions, Record, Insights, Assets and Me share consistent cards, typography and controls, with refinements for light/dark mode, smaller screens and larger text.
+- **Smoother recording**: the keypad stays at the bottom, notes can be edited inline, long subcategory names adapt to the grid, and transfer accounts and amounts are entered together. See [Basic Recording](./record/basic.md).
+- **Clearer records and statistics**: improved foreign-currency conversions, multiple tags and time labels; redesigned account, category and budget details. The home menu switches between full and compact summaries, while Insights uses tabs for periods and expense/income/balance views. See [Statistics](./features/statistics.md).
+- **Consistent themes and feedback**: refined calendar selection, save feedback and smart-entry progress. Page skins connect the background with cards; Aurora and Mountains remain as static skins, alongside both anniversary animations. See [Theme Settings](./personalize/theme.md).
+
+Back up ledgers, settings and attachments before updating, and install over the existing app. Retired static skins fall back to a plain background and the user's previous theme color without changing transaction data.
+
 ## 3.9.0 highlights
 
 - 🧾 **Generate transaction receipt images**: long-press a home-page entry, choose whether to include notes, tags, accounts and the ledger, then save or share. See [Transaction Receipt Images](./record/basic.md#transaction-receipt-images).
