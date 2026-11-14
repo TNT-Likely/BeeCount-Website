@@ -6,15 +6,15 @@ sidebar_position: 2
 
 BeeCount provides rich statistical charts to help you understand your financial situation.
 
-![Statistics Page](/img/preview/en/04-chart-analysis.png)
+![Statistics Page](/img/preview/v4/en/light/02-analytics.png)
 
 ## Income & Expense Trends
 
-Line charts show daily/weekly/monthly income and expense trends, giving you insight into your spending patterns.
+App 4.0 uses tabs for expense, income and balance views. The trend bar chart includes an average line; tap a bar to inspect its day or month.
 
 ## Category Breakdown
 
-Pie charts show the proportion of expenses by category, helping you identify your main spending areas.
+A separate card shows category proportions and rankings using the theme accent. The balance view shows the income/expense composition.
 
 ## Category Ranking
 
@@ -22,7 +22,11 @@ A list view shows categories ranked by amount. Tap to view all transactions in t
 
 ## Time Filter
 
-View statistics by week, month, or year. Swipe left/right to switch between time periods.
+Use the Month / Year / All tabs, then the date control to select a specific period.
+
+## Home Summary Layout
+
+The home page defaults to the full summary. Open its top-right More menu and choose the compact summary to combine the budget indicator with income and expenses in one card. Switch back to the full summary from the same menu; the preference is saved.
 
 ## Web Statistics
 

@@ -6,7 +6,7 @@ sidebar_position: 2
 
 蜜蜂记账支持创建多个独立账本，适合不同场景的记账需求。
 
-![账本管理](/img/preview/zh/05-ledger-management.png)
+![账本管理](/img/preview/v4/zh/light/04-ledgers.png)
 
 ## 使用场景
 

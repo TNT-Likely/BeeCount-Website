@@ -6,7 +6,7 @@ sidebar_position: 1
 
 BeeCount supports custom theme colors for a personalized interface.
 
-![Personalization Settings](/img/preview/en/10-personalization.png)
+![Personalization Settings](/img/preview/v4/en/light/11-personalization.png)
 
 ## Change Theme Color
 
@@ -41,11 +41,13 @@ The theme color is applied to:
 
 > ✨ **New in v3.3.0**
 
-"Personalization" now includes **Skins**: decorative header artwork that follows your theme color, in both light and dark mode.
+**Skins** in Personalization decorate the app background. App 4.0 extends them across the page, status bar and bottom navigation, connecting with the card material in light and dark mode.
 
-- Built-in gradient / scene / geometric styles, organized by series
+- App 4.0 keeps **Aurora and Mountains** as static skins, alongside both anniversary animations
 - Syncs across devices
 - Config import/export so you can share your setup
+
+Card opacity and blur can be adjusted. If a previously selected static skin has been retired, the app falls back to a plain background and the user's previous theme color without changing transaction data.
 
 ### Animated skins
 

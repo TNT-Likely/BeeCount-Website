@@ -1952,3 +1952,25 @@
   .demoCopy { padding: 1rem 1.25rem; }
   .demoCopy h4 { font-size: 1rem; margin-bottom: .5rem; }
 }
+
+/* v4 launch gallery: one appearance switch, six readable product stories. */
+.previewAppearance { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin: 1.75rem 0 1rem; }
+.previewAppearance span { margin-left: auto; color: var(--ifm-color-emphasis-600); font-size: .8rem; }
+.appScreenshotGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; margin: 1rem 0 2.5rem; }
+.appScreenshotItem { color: var(--ifm-font-color-base); min-width: 0; text-decoration: none; }
+.appScreenshotItem:hover { color: var(--ifm-font-color-base); text-decoration: none; }
+.appScreenshotPaper { background: #f7f7f5; padding: 1.5rem 1.75rem; border-radius: 16px; overflow: hidden; }
+[data-theme='dark'] .appScreenshotPaper { background: #1c1e1c; }
+.appScreenshotPaper img { display: block; width: 100%; height: auto; }
+.appScreenshotItem strong, .appScreenshotItem > span { display: block; }
+.appScreenshotItem strong { margin-top: 1rem; font-size: 1.1rem; }
+.appScreenshotItem > span { margin-top: .35rem; color: var(--ifm-color-emphasis-700); font-size: .9rem; line-height: 1.6; }
+.demoMedia { height: 480px; }
+@media (max-width: 700px) {
+  .appScreenshotGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem .8rem; }
+  .appScreenshotPaper { padding: .8rem; border-radius: 10px; }
+  .appScreenshotItem strong { font-size: .95rem; }
+  .appScreenshotItem > span { font-size: .8rem; }
+  .previewAppearance span { flex-basis: 100%; margin: .3rem 0 0; }
+  .demoMedia { height: 420px; }
+}

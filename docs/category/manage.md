@@ -6,7 +6,7 @@ sidebar_position: 1
 
 分类帮助你归类收支，便于统计分析。
 
-![分类管理](/img/preview/zh/09-category-management.png)
+![分类管理](/img/preview/v4/zh/light/10-categories.png)
 
 ## 预设分类
 

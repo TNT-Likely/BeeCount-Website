@@ -95,7 +95,7 @@ static/img/preview/{zh,en}/                        # 中英截图
 
 - 标准 Markdown / MDX（可嵌入 React 组件）
 - 图片放 `static/img/`，引用用绝对路径 `/img/...`
-- 截图：`static/img/preview/{zh,en}/01-home.png` 形式编号，竖屏 1206×2622（iPhone 17 Pro 原生截图），PNG
+- v4 App 截图：`static/img/preview/v4/{zh,en}/{light,dark}/`，PNG，1320×2868；官网只维护一套通用 App 展示，不按平台重复。原始双平台商店素材在 BeeCount-Press 维护，来源和 SHA256 见截图目录中的 `manifest.json`。Web 和小组件资源独立保留。
 - 告示框：`:::tip` / `:::warning` / `:::danger` / `:::info`
 
 ### 国际化

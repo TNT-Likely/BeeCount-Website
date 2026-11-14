@@ -96,7 +96,7 @@ static/img/preview/{zh,en}/                        # zh / en screenshots
 
 - Standard Markdown / MDX (React components allowed)
 - Images live in `static/img/`, referenced as `/img/...`
-- Screenshots: `static/img/preview/{zh,en}/01-home.png`, portrait 1206×2622 (native iPhone 17 Pro), PNG
+- v4 App screenshots: `static/img/preview/v4/{zh,en}/{light,dark}/`, PNG, 1320×2868. The website maintains one shared App showcase without platform duplicates; platform-specific store artwork lives in BeeCount-Press. See `manifest.json` for provenance and SHA256. Web and widget assets remain separate.
 - Admonitions: `:::tip` / `:::warning` / `:::danger` / `:::info`
 
 ### i18n
