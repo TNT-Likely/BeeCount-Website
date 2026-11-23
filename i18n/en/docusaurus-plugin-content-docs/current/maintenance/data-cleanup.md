@@ -103,6 +103,12 @@ Cleans **server-side orphan data across all users**: Postgres / SQLite database 
 
 Same as the App side: scan → three groups → select → single / batch delete → confirmation → auto rescan.
 
+### Subcategories with a missing parent
+
+Starting with Cloud 1.10.0, open the bell in the top-right corner after signing in to Web to see category relationship issues for your account. Select “View categories” to review them on the Categories page.
+
+If the App shows fewer categories than Cloud, an admin can rescan in **Data Cleanup** and check **Database orphans** for the subcategory names and parent details. A subcategory can be selected for cleanup once its parent is confirmed deleted and no transaction, budget, or other category references it. The deletion takes effect in the App on the next sync. If the subcategory is still referenced, reassign the affected records first. If the parent's deletion is unconfirmed, review the category hierarchy.
+
 ### Web-side detection list
 
 #### Type A: database reference broken
@@ -115,6 +121,7 @@ Same as the App side: scan → three groups → select → single / batch delete
 | A4 | Tx to-account missing (transfer) | `tx_missing_to_account` |
 | A5 | Budget category missing | `budget_missing_category` |
 | A6 | sync_changes orphan entity | `sync_change_missing_entity` — drop subsequent LWW writes |
+| A7 | Subcategory missing a valid parent | `category_missing_parent`. Cleanup requires a confirmed parent deletion and no references. |
 
 #### Type B: attachments / files
 

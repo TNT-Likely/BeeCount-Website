@@ -9,11 +9,24 @@ keywords: [BeeCount Cloud changelog, self-hosted cloud releases]
 
 Core releases and recent maintenance updates for self-hosted BeeCount Cloud. The App uses a separate version series; see the [App Changelog](./changelog.md).
 
-This page covers core releases from 1.0.0 through 1.9.0. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
+This page covers core releases from 1.0.0 through 1.10.0. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
 
 :::tip Upgrades and compatibility
 
 For features that require both products, upgrade Cloud before the App. Back up your data and review the [deployment and upgrade guide](./cloud-sync/beecount-cloud.md). The MCP URL change in 1.5.3 also requires client configuration updates.
+
+:::
+
+## 1.10.0 · 2026-11-23
+
+- **Web notifications.** Open the bell in the top-right corner for account notices. When a parent category is missing, the notice identifies affected subcategories and links to the Categories page.
+- **Orphaned subcategory cleanup.** Admins can review subcategories by name and remove entries that are safe to delete. The result syncs to the App. See [Data Cleanup](./maintenance/data-cleanup.md#subcategories-with-a-missing-parent).
+- **Web loading fix.** Fixed a connection pool issue that could cause the Web UI to hang and return HTTP 500 when opened or refreshed.
+- **Moving transactions between ledgers.** Cloud supports moves between personal ledgers with the same owner and base currency, with attachments and reporting flags preserved. The companion App release provides the controls for moving transactions.
+
+:::tip Upgrading to 1.10.0
+
+You can upgrade Cloud independently and keep syncing with your current App. Back up the database, attachments, and configuration first. The official image applies the migrations on startup. For source deployments, run `alembic upgrade head`.
 
 :::
 
