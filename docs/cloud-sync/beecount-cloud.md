@@ -245,6 +245,15 @@ docker compose up -d
 
 数据库自动 migrate。`data/` 目录不动。
 
+## 通过Cloudflare Workers部署
+
+如果不想购买服务器，可以通过Cloudflare部署，开通R1数据库和D1数据库等服务，使用免费额度即可满足日常使用，不会产生任何费用
+详细可见WuBarlynn/BeeCount-Cloud-Worker：
+
+- [BeeCount-Cloud-Worker](https://github.com/WuBarlynn/BeeCount-Cloud-Worker)
+
+此项目与官方项目无关联，有问题请提交到项目issue
+
 ## 常见问题
 
 ### Q: 手机连不上服务器
@@ -275,3 +284,4 @@ docker compose up -d
 
 - [BeeCount-Cloud](https://github.com/TNT-Likely/BeeCount-Cloud) —— server + Web UI 代码
 - [BeeCount](https://github.com/TNT-Likely/BeeCount) —— mobile app 代码
+- [BeeCount-Cloud-Worker](https://github.com/WuBarlynn/BeeCount-Cloud-Worker) —— 第三方开发者维护的Cloudflare部署方案
