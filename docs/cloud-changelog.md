@@ -9,11 +9,24 @@ keywords: [BeeCount Cloud 更新日志, 自建云版本, BeeCount Cloud changelo
 
 查看 BeeCount Cloud 自建云的核心发布与近期维护记录。App 使用独立版本号，见 [App 更新日志](./changelog.md)。
 
-本页记录 1.0.0 至 1.9.0 的核心发布；日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
+本页记录 1.0.0 至 1.10.0 的核心发布。日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
 
 :::tip 升级与兼容
 
 涉及 App 配套能力时，先升级 Cloud，再升级 App；升级前备份数据，并查看 [部署与升级说明](./cloud-sync/beecount-cloud.md)。MCP 1.5.3 的连接地址变更需要客户端同步调整。
+
+:::
+
+## 1.10.0 · 2026-11-23
+
+- **Web 通知中心**。从右上角的铃铛查看账号提醒。父分类缺失时会提示受影响的子分类，可在通知中打开分类页。
+- **清理残留子分类**。管理员可按名称排查和清理确认安全的条目，结果会同步到 App。详见 [数据清理](./maintenance/data-cleanup.md#子分类缺少父分类)。
+- **Web 首屏修复**。数据库连接池占满时，打开 Web 或刷新页面不再因等待连接而卡住并返回 HTTP 500。
+- **跨账本移动交易**。Cloud 支持在同一用户、相同本位币的个人账本间移动交易，并保留附件和统计标记。操作入口由配套 App 版本提供。
+
+:::tip 1.10.0 升级
+
+Cloud 可独立升级，现有 App 可继续同步。升级前备份数据库、附件和配置。官方镜像会在启动时自动执行迁移，源码部署需运行 `alembic upgrade head`。
 
 :::
 
