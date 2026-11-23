@@ -9,13 +9,21 @@ keywords: [BeeCount Cloud 更新日志, 自建云版本, BeeCount Cloud changelo
 
 查看 BeeCount Cloud 自建云的核心发布与近期维护记录。App 使用独立版本号，见 [App 更新日志](./changelog.md)。
 
-本页记录 1.0.0 至 1.10.0 的核心发布。日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
+本页记录 1.0.0 至 1.10.1 的核心发布。日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
 
 :::tip 升级与兼容
 
 涉及 App 配套能力时，先升级 Cloud，再升级 App；升级前备份数据，并查看 [部署与升级说明](./cloud-sync/beecount-cloud.md)。MCP 1.5.3 的连接地址变更需要客户端同步调整。
 
 :::
+
+## 1.10.1 · 2026-11-23
+
+- **分类异常直达数据清理**。管理员点击通知中的「前往数据清理」即可查看受影响的子分类。普通成员可以把通知中列出的名称交给管理员核对。[分类清理说明](./maintenance/data-cleanup.md#子分类缺少父分类)
+- **备份异常提醒**。已启用的计划最近一次仅部分成功、连续两次未完整备份，或超过预定时间一小时仍无完整备份时，管理员会看到提醒。可从通知打开运行记录或计划，补跑成功后提醒自动消失。
+- **设备同步失败提醒**。Cloud 连续三次记录到同一设备上传或下载失败时，会在该账号的通知中心显示设备、方向和原因。恢复成功的方向会从提醒中移除。[通知中心使用说明](./cloud-sync/beecount-cloud.md#web-通知中心)
+
+从 1.10.0 升级无需更换 App。官方 Docker 镜像会在启动时执行 `0024_operational_notices` 迁移。源码部署请运行 `alembic upgrade head`。[完整发布说明](https://github.com/TNT-Likely/BeeCount-Cloud/releases/tag/1.10.1)
 
 ## 1.10.0 · 2026-11-23
 

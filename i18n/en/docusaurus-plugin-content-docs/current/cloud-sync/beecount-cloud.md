@@ -126,6 +126,16 @@ Browser to `http://<your-server>:8869`, sign in as admin.
 
 After first login, **change the password immediately** (top-right avatar → account settings).
 
+### Web notifications
+
+After signing in, open the bell in the top-right corner. Starting with Cloud 1.10.1, you can act on three kinds of alerts here.
+
+- **Subcategory with a missing parent.** Admins can select **Go to Data Cleanup** to review the affected entries before deciding whether to remove them. Other members can share the names in the alert with an admin. [Data cleanup guide](../maintenance/data-cleanup.md#subcategories-with-a-missing-parent)
+- **Backup plan issue.** Admins can open a failed or partially successful run from their own plan, or open an overdue plan and run it immediately. A fully successful backup clears that plan’s alert.
+- **Repeated sync failures.** Cloud counts uploads and downloads separately for each device. After three consecutive failures in one direction, select **View device issue** for the reason, count and timestamps. Requests made while the device is offline never reach Cloud and do not count toward this alert.
+
+Marking an alert as read clears its unread badge. You can still open it until the issue is resolved. Read status carries over to other Web sessions for the same account.
+
 ### Connect from the mobile app
 
 1. Open BeeCount → **Me** → **Cloud sync**

@@ -105,7 +105,7 @@ Same as the App side: scan → three groups → select → single / batch delete
 
 ### Subcategories with a missing parent
 
-Starting with Cloud 1.10.0, open the bell in the top-right corner after signing in to Web to see category relationship issues for your account. Select “View categories” to review them on the Categories page.
+Starting with Cloud 1.10.0, open the bell in the top-right corner after signing in to Web to see category relationship issues for your account. On 1.10.1 or later, admins can select **Go to Data Cleanup** to see the scan results. Other members can share the subcategory names listed in the alert with an admin.
 
 If the App shows fewer categories than Cloud, an admin can rescan in **Data Cleanup** and check **Database orphans** for the subcategory names and parent details. A subcategory can be selected for cleanup once its parent is confirmed deleted and no transaction, budget, or other category references it. The deletion takes effect in the App on the next sync. If the subcategory is still referenced, reassign the affected records first. If the parent's deletion is unconfirmed, review the category hierarchy.
 
