@@ -9,13 +9,21 @@ keywords: [BeeCount Cloud changelog, self-hosted cloud releases]
 
 Core releases and recent maintenance updates for self-hosted BeeCount Cloud. The App uses a separate version series; see the [App Changelog](./changelog.md).
 
-This page covers core releases from 1.0.0 through 1.10.0. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
+This page covers core releases from 1.0.0 through 1.10.1. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
 
 :::tip Upgrades and compatibility
 
 For features that require both products, upgrade Cloud before the App. Back up your data and review the [deployment and upgrade guide](./cloud-sync/beecount-cloud.md). The MCP URL change in 1.5.3 also requires client configuration updates.
 
 :::
+
+## 1.10.1 · 2026-11-23
+
+- **Category alerts open Data Cleanup.** Admins can select **Go to Data Cleanup** to find affected subcategories. Other members can share the names shown in the alert with an admin. [Category cleanup guide](./maintenance/data-cleanup.md#subcategories-with-a-missing-parent)
+- **Backup alerts.** Admins see an alert when an enabled plan's latest run partially succeeds, two consecutive runs fail to complete in full, or a scheduled backup is an hour overdue. Open the run or plan from the alert. A successful retry clears it.
+- **Device sync alerts.** When Cloud records three consecutive failures for uploads or downloads on the same device, the account owner can see the device, direction and reason. Each direction clears when it succeeds. [How Web notifications work](./cloud-sync/beecount-cloud.md#web-notifications)
+
+You can keep your current App when upgrading from 1.10.0. The official Docker image applies migration `0024_operational_notices` on startup. For a source installation, run `alembic upgrade head`. [Full release notes](https://github.com/TNT-Likely/BeeCount-Cloud/releases/tag/1.10.1)
 
 ## 1.10.0 · 2026-11-23
 
