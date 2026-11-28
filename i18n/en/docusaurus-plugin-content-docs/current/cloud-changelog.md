@@ -9,13 +9,22 @@ keywords: [BeeCount Cloud changelog, self-hosted cloud releases]
 
 Core releases and recent maintenance updates for self-hosted BeeCount Cloud. The App uses a separate version series; see the [App Changelog](./changelog.md).
 
-This page covers core releases from 1.0.0 through 1.10.1. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
+This page covers core releases from 1.0.0 through 1.11.0. Dates are GitHub Release publication dates in UTC. See [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases) for all maintenance releases, full release notes, Docker images, and commits.
 
 :::tip Upgrades and compatibility
 
 For features that require both products, upgrade Cloud before the App. Back up your data and review the [deployment and upgrade guide](./cloud-sync/beecount-cloud.md). The MCP URL change in 1.5.3 also requires client configuration updates.
 
 :::
+
+## 1.11.0 · 2026-11-28
+
+- **Cloud recurring bills across Web, App, and MCP.** All three surfaces share the same recurring rules and execution history. With **App 4.1.0**, Cloud automatically takes over scheduled posting while preserving existing entries across retries and due-date changes.
+- **App ↔ Cloud version compatibility checks.** The version endpoint now advertises minimum and recommended App versions, sync requests keep device app versions up to date, clients below the minimum receive a structured upgrade prompt, and Web **Settings → Devices** flags outdated mobile apps.
+- **Stronger concurrent sync consistency.** Publishes incremental events in commit order with per-item write receipts, improving multi-device concurrent edits, first-time device restores, shared ledger resources, and attachment references.
+- **PostgreSQL fresh-install migration fix.** Resolved the 1.10.1 migration error when initializing an empty PostgreSQL database from scratch.
+
+Upgrade Cloud to 1.11.0 before updating to **App 4.1.0** (App 4.0.x continues syncing normally during the transition). The official Docker image applies migrations `0025`–`0027` automatically on startup; source deployments should run `alembic upgrade head`.
 
 ## 1.10.1 · 2026-11-23
 

@@ -235,6 +235,16 @@ docker compose up -d
 
 Database migration runs automatically. `data/` is untouched.
 
+:::tip Upgrade order and version compatibility
+
+Starting with **App 4.1.0** and **Cloud 1.11.0**, both sides check version compatibility automatically:
+
+- **Upgrade Cloud before updating the App**, and back up `./data/` before upgrading.
+- If Cloud is below the recommended version, the App shows a gentle upgrade reminder while continuing to sync normally.
+- If either side is below the required minimum, the App pauses cloud sync to protect your data (local bookkeeping, browsing, and export remain fully available). After upgrading, tap **Recheck** in **Me → Cloud Sync** to resume immediately.
+
+:::
+
 ## FAQ
 
 ### Q: App can't connect to the server

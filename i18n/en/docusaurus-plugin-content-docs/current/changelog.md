@@ -13,6 +13,14 @@ View the BeeCount App's release history. The self-hosted Cloud uses a separate v
 
 All version details, release notes, and download links are available on the GitHub Releases page.
 
+## 4.1.0 highlights
+
+- **Upgraded 4.x AI Ledger Assistant**: resumes conversations per ledger with multi-turn queries, period reviews, inline transaction evidence, and confirm/undo before recording. See [AI Chat](./ai/chat.md).
+- **Cloud recurring handoff & moving transactions**: connecting to **BeeCount Cloud 1.11.0+** automatically hands recurring schedules over to Cloud for server-side posting; move transactions between personal ledgers of the same currency via long-press, detail view, batch actions, or AI chat. See [Recurring Bills](./record/recurring.md).
+- **Full per-ledger data export**: export a single ledger's transaction CSV, original photo attachments, and `config.yaml` as a structured ZIP archive. See [Import & Export](./record/import-export.md).
+- **4.x widgets & daily refinements**: upgraded all 14 home screen widget sizes with live system language and light/dark updates, added 4- or 5-column category layout options when recording, added per-collection skin unlocks and full-screen dynamic preview on iOS, and improved log filtering/full-screen reading and empty-account guidance. See [Home Screen Widgets](./record/widgets.md).
+- **App ↔ Cloud version checks & sync fixes**: added version compatibility prompts between App and Cloud and fixed bidirectional edit loss, multi-ledger catch-up, and deleted parent/child category sync. Self-hosted users should upgrade **Cloud to 1.11.0** before updating the App. See [BeeCount Cloud](./cloud-sync/beecount-cloud.md#upgrade).
+
 ## 4.0.0 highlights
 
 - **A refreshed interface and interaction system**: Transactions, Record, Insights, Assets and Me share consistent cards, typography and controls, with refinements for light/dark mode, smaller screens and larger text.
