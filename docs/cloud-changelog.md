@@ -9,13 +9,22 @@ keywords: [BeeCount Cloud 更新日志, 自建云版本, BeeCount Cloud changelo
 
 查看 BeeCount Cloud 自建云的核心发布与近期维护记录。App 使用独立版本号，见 [App 更新日志](./changelog.md)。
 
-本页记录 1.0.0 至 1.10.1 的核心发布。日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
+本页记录 1.0.0 至 1.11.0 的核心发布。日期取自 GitHub Release 的发布时间（UTC）。完整维护版、发布说明、Docker 镜像与提交记录见 [Cloud GitHub Releases](https://github.com/TNT-Likely/BeeCount-Cloud/releases)。
 
 :::tip 升级与兼容
 
 涉及 App 配套能力时，先升级 Cloud，再升级 App；升级前备份数据，并查看 [部署与升级说明](./cloud-sync/beecount-cloud.md)。MCP 1.5.3 的连接地址变更需要客户端同步调整。
 
 :::
+
+## 1.11.0 · 2026-11-28
+
+- **云端周期账单与双端协同**。Web、App 与 MCP 共用同一套周期规则及执行记录；配套 **App 4.1.0** 连接后自动交由服务端按期入账，同期重试或调整扣款日时保留原账单。
+- **双端版本兼容检测与旧版提示**。公开版本接口公布最低与推荐 App 版本，同步时自动刷新设备版本号，对低于最低要求的客户端返回结构化升级提示；Web「设置 → 设备」支持标记低于推荐版本的旧版 App。
+- **并发增量同步可靠性提升**。按提交顺序发布增量事件并返回逐项写入回执，修复多端并发编辑、新设备恢复、共享资源与图片附件引用的一致性问题。
+- **PostgreSQL 空库迁移修复**。修复了 1.10.1 中 PostgreSQL 从零执行完整迁移链时的历史迁移报错。
+
+建议先升级 Cloud 至 1.11.0，再升级配套 **App 4.1.0**（现有 App 4.0.x 升级期间可继续正常同步）。官方 Docker 镜像启动时自动执行 `0025`–`0027` 迁移，源码部署请先运行 `alembic upgrade head`。
 
 ## 1.10.1 · 2026-11-23
 
